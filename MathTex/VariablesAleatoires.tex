@@ -17,6 +17,8 @@
 \usepackage[symbol]{footmisc}
 \usepackage{lmodern} % keep above "fourier" to avoir font change (allows minted text to be displayed as vector)
 \usepackage[upright]{fourier}
+\usepackage{hhline}
+\usepackage{ChkTeX}
 %\usepackage{showframe}
 
 \graphicspath{ {./rsc/} }
@@ -60,7 +62,7 @@
     \begin{Exercise}[number={35}]
       \begin{enumerate}[a)]
         \item On a: 
-              \begin{center}\begin{tabular}{ | l | *{8}{c|} }
+              \begin{center}\begin{tabular}{ | l || *{8}{c|} }
                 \hline
                 $x_i$                     & -1             & 0              & 1              & 3              & 4             & 5             & 6              & 8              \\ \hline
                 $P(X=x_i)$ \hspace{0.5cm} & $\frac{1}{20}$ & $\frac{1}{10}$ & $\frac{1}{10}$ & $\frac{3}{20}$ & $\frac{1}{4}$ & $\frac{1}{5}$ & $\frac{1}{10}$ & $\frac{1}{20}$ \\ \hline
@@ -74,7 +76,7 @@
     \begin{Exercise}[number={36}]
       \begin{enumerate}[a)]
         \item On a:
-              \begin{center}\begin{tabular}{ | l | *{3}{c|} }
+              \begin{center}\begin{tabular}{ | l || *{3}{c|} }
                 \hline      
                 $x_i$                     & -4            & 0             & 2             \\ \hline
                 $P(X=x_i)$ \hspace{0.5cm} & $\frac{1}{9}$ & $\frac{5}{9}$ & $\frac{1}{3}$ \\ \hline
@@ -85,7 +87,7 @@
               \begin{equation*}
                 \begin{cases}2x+y=20\\y=2x\end{cases}\iff\begin{cases}x=5\\y=10\end{cases}
               \end{equation*} \medbreak
-              \begin{center}\begin{tabular}{ | l | *{3}{c|} }
+              \begin{center}\begin{tabular}{ | l || *{3}{c|} }
                 \hline
                 $x_i$                     & -4            & 0             & 2             \\ \hline
                 $P(X=x_i)$ \hspace{0.5cm} & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{4}$ \\ \hline
@@ -126,21 +128,21 @@
       \begin{enumerate}[1)]
         \item $E(X)=p_0x_0+\dots+p_rx_r=4{,}9$ \\ $V(X)=p_0(x_0-E(X))^2+\dots+p_r(x_r-E(X))^2=1{,}81$ \\ $\sigma(X)\approx 1{,}35$
         \item \begin{enumerate}[a)]
-              \item \ \begin{center}\begin{tabular}{ | l | *{6}{c|} }
+              \item \ \begin{center}\begin{tabular}{ | l || *{6}{c|} }
                       \hline
                       $y_j$                     & 0      & 1      & 2      & 3     & 4      & 5      \\ \hline
                       $P(Y=y_j)$ \hspace{0.5cm} & 0{,}05 & 0{,}12 & 0{,}18 & 0{,}3 & 0{,}23 & 0{,}12 \\ \hline
                     \end{tabular}\end{center}
                     \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de Y}}
 
-                    \begin{center}\begin{tabular}{ | l | *{6}{c|} }
+                    \begin{center}\begin{tabular}{ | l || *{6}{c|} }
                       \hline
                       $z_j$                     & 2{,}4  & 3{,}6  & 4{,}8  & 6     & 7{,}2  & 8{,}4  \\ \hline
                       $P(Z=z_j)$ \hspace{0.5cm} & 0{,}05 & 0{,}12 & 0{,}18 & 0{,}3 & 0{,}23 & 0{,}12 \\ \hline
                     \end{tabular}\end{center}
                     \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de Z}}
 
-                    \begin{center}\begin{tabular}{ | l | *{6}{c|} }
+                    \begin{center}\begin{tabular}{ | l || *{6}{c|} }
                       \hline
                       $t_j$                     & 2{,}8  & 3{,}7  & 4{,}6  & 5{,}5 & 6{,}4  & 7{,}3  \\ \hline
                       $P(T=t_j)$ \hspace{0.5cm} & 0{,}05 & 0{,}12 & 0{,}18 & 0{,}3 & 0{,}23 & 0{,}12 \\ \hline
@@ -248,7 +250,7 @@
       \begin{enumerate}[1.]
         \item \ \\\parbox{\linewidth}{
                     \centering
-                    \includegraphics[width=10cm]{VAfig1.jpg}
+                    \includegraphics[width=10cm]{VAimg1.jpg}
                     \captionof{figure}{Arbre pondéré}
                   } \bigbreak
         \item \begin{enumerate}[a)]
@@ -270,7 +272,7 @@
       \begin{enumerate}[a)]
         \item \ \\\parbox{\linewidth}{
                     \centering
-                    \includegraphics[width=13cm]{VAfig2.jpg}
+                    \includegraphics[width=13cm]{VAimg2.jpg}
                     \captionof{figure}{Arbre pondéré}
                   } \bigbreak
 
@@ -318,6 +320,68 @@
               \end{equation*}
               Finallement, on a $P(Y=7)=0{,}62^7\times 0{,}38^3\times 120\approx 0{,}2319$ \\ 
               Ceci est cohérent avec ce que je retrouve dans mes simualtions $(n=10\ 000)$. \\ Cependant, je suis certain qu'il existe  une méthode $\infty$ment plus simple de résoudre le problème, et que ne demande pas au moins une heure de recherche pour pouvoir calculer le nombre de combinations avec répetition possibles... 
+      \end{enumerate}
+    \end{Exercise}
+
+    \begin{Exercise}[number={71}]
+      \begin{enumerate}[a)]
+        \item \ \begin{center}\begin{tabular}{|>{\centering}m{0.2\textwidth}||>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering\arraybackslash}m{0.05\textwidth}| } \hline
+                Numéro sur la face & 1 & 2 & 3 & 4 \\ \hhline{|=#=|=|=|=|}
+                1 & 2 & 3 & 4 & 5 \\ \hline
+                2 & 3 & 4 & 5 & 6 \\ \hline
+                3 & 4 & 5 & 6 & 7 \\ \hline
+                4 & 5 & 6 & 7 & 8 \\ \hline
+              \end{tabular}\end{center}
+              \parbox{\linewidth}{\captionof{figure}{Tableau à double entrée présentant l'ensemble des valeurs prises par \textit{S}}}
+
+        \item \ \begin{center}\begin{tabular}{|l||>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering}m{0.05\textwidth}|>{\centering\arraybackslash}m{0.05\textwidth}| } \hline
+                  $s_i$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+                  $P(S=s_i)$ & $\frac{1}{16}$ & $\frac{1}{8}$ & $\frac{3}{16}$ & $\frac{1}{4}$ & $\frac{3}{16}$ & $\frac{1}{8}$ & $\frac{1}{16}$ \\ \hline
+                \end{tabular}\end{center}
+                \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de S}}
+
+        \item \begin{itemize}
+                \item $P(A)=p_2+p_4+p_6+p_8=0{,}5$ \qquad ou \qquad $P(A)=\frac{8}{16}=0{,}5$                     % Need to fix alignment some time
+                \item $P(B)=p_3+p_5+p_7=0{,}5\hphantom{+p_8\ \,}$ \qquad ou \qquad $P(B)=\frac{8}{16}=0{,}5$
+                \item $P(C)=p_2+p_4+p_5+p_7+p_8=\frac{11}{16}$\ \ ou \qquad $P(C)=\frac{11}{16}$
+                \item $P(D)=p_3=\frac{1}{8}$ \hspace{3cm} \quad ou \qquad $P(C)=\frac{2}{16}$
+              \end{itemize} \medbreak
+        \item \begin{itemize}
+                \item Les deux experiences sont indépendantes, donc $P(A\cap B)=P(A)\times P(B)=0{,}25$
+                \item Les deux experiences sont indépendantes, donc $P(\bar{C}\cap\bar{C})=\left(\frac{5}{16}\right)^2=\frac{25}{256}\approx 0{,}0977$
+              \end{itemize}
+      \end{enumerate}
+    \end{Exercise}
+
+    \begin{Exercise}[number={73}]
+      \begin{enumerate}[1)]
+        \item On définit A:~``L'adhérent a moins de 15 ans.''; B:~``l'adhérent a entre 15 et 25 ans.''; C:~``L'adhérent a entre 26 et 60 ans.''; D: ``L'adhérent a plus de 60 ans.'' \\\parbox{\linewidth}{
+                    \centering
+                    \includegraphics[width=4cm]{VAimg3.jpg}
+                    \captionof{figure}{Arbre pondéré}
+                  } \bigbreak
+
+        \item Je n'avais pas anticipé le conflit entre les noms des évènements, desormais, les evenements $A$ et $B$ du manuel seront notés $A'$ et $B'$, réspectivement.
+              \begin{itemize}
+                \item Les réponses sont indépendantes, donc, $P(A')=P(A\cap A)=P(A)^2=0{,}09$
+                \item $P(B')=P(D)+P(C\cap D)+P(B\cap D)+P(A\cap D)=0{,}0591$
+              \end{itemize} \medbreak
+        \item \begin{enumerate}[a)]
+                \item $0{,}30^{10}=0{,}000006$
+                \item $P(\text{\small{``elles ont tous plus que 60 ans''}})=0{,}03^{10}=6\times 10^{-16}$ \\ D'où $P(\text{\small{``elles n'ont pas tous plus que 60 ans'}})=1-1\times 10^{-16}\approx 0{,}999999$
+              \end{enumerate}
+      \end{enumerate}
+    \end{Exercise}
+
+    \begin{Exercise}
+      \begin{enumerate}[a)]
+        \item \ \footnotesize{\begin{center}\begin{tabular}{|l||>{\centering}m{0.13\textwidth}|>{\centering}m{0.13\textwidth}|>{\centering}m{0.13\textwidth}|>{\centering}m{0.13\textwidth}|>{\centering\arraybackslash}m{0.13\textwidth}| } \hline
+                  $x_i$      & 0                         & 1                                                & 2 & 3 & 4 \\ \hline
+                  $P(X=x_i)$ & $0{,}55^4\approx 0{,}092$ & $0{,}55^3\times 0{,}45^1\times 4\approx 0{,}300$ & $0{,}55^2\times 0{,}45^2\times 6\approx 0{,}368$ & $0{,}55^1\times 0{,}45^3\times 4\approx 0{,}200$ & $0{,}45^4\approx 0{,}041$ \\ \hline
+                \end{tabular}\end{center}}
+                \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de X}}
+
+        \item $E(X)=p_0x_0+\dots+p_rx_r=1{,}8$ \\ C'est-à-dire qu'en moyenne, 1,8 sur 4, soit 45\%, des femmes agées de 16 ans ou plus, font de l'exercice.
       \end{enumerate}
     \end{Exercise}
 \end{document}
