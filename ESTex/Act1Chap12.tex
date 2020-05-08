@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[shortlabels]{enumitem}
+\usepackage[upright]{fourier}
+\usepackage[francais]{babel}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\title{Enseignement Scientifique: Activité 1 Chapitre 12}
+\author{Diego Van Overberghe}
+\begin{document}
+    \maketitle
+    \section{Maths et musique dans l'antiquité}
+    \begin{enumerate}
+        \item Deux notes sont harmonieuses entre-elles si leur rapport des fréquances forme une fraction simple d'entiers naturels. Par exemple, quand \quad $\dfrac{f_2}{f_1}=\dfrac{2}{1}$
+        \item Pour obtenir la quinte au dessus, il suffit de multiplier la fréquance par $\frac{3}{2}$. Pour obtenir la fréquance de l'octave supérieur, il faut multiplier par $2$.
+        \item La fréquance de la n-ième fréquance \\ est égale à \ $2^n\times f_1 \begin{cases}n\in\mathbb{N} \\ f_1\text{: La fréquance intitiale}\end{cases}$ \bigbreak De même, la fréquance de la p-ième fréquance \\ est égale à \ $\left(\frac{3}{2}\right)^p\times f_1 \begin{cases}p\in\mathbb{N} \\ f_1\text{: La fréquance initiale}\end{cases}$ \bigbreak La gamme de Pythagore comporte douze notes, parce que, la 12\textsuperscript{ème} quinte $\frac{3^{12}}{2^{12}}$, divisée par $2^6$, on retrouve $\approx 2{,}03$, ce qui n'est pas exactement égal à deux, c'est-à-dire la fréquance de l'octave supérieure. Ceci est un problème parce que au fur et à mesure des empilements de ces notes, l'ecart entre l'octave dans la gamme de Pythagore (toutes les douze notes), et la ``Vraie'' octave, grandira, ce qui rendera les notes dissonantes entre-elles.
+        \item L'équation est \quad $2^n=\left(\dfrac{3}{2}\right)^p$ \smallbreak Toutes les puissances de 2 sont paires, pusique la définition d'un nombre paire est $2n$. On se demande donc si $\left(\dfrac{3}{2}\right)^p$ peut etre paire.
+        \begin{flalign*}
+            \quad \left(\dfrac{3}{2}\right)^p&=2n &&\\
+            \iff\quad \dfrac{3^p}{2^p}&=2n &&\\
+        \end{flalign*}
+        On sait que $2^p$ est pair, et $3^p$ est impair. \\ Or un nombre impair divisé par un nombre pair donne toujours un nombre impair, donc l'equation n'a pas de solution.
+        \item La quantité utilisable de la gamme est réduite. Si le musicien joue des notes tres aïgues, il entrera dans la zone où la difference entre l'octave pythagorien et le vrai octave se définit, et donc forme un dissonance de plus en plus marquée.
+    \end{enumerate}
+
+\pagebreak
+
+\section{Maths et Musique à la fin du moyen âge}
+    \begin{enumerate}
+        \item Zarlino a inventé une nouvelle gamme pour pouvoir jouer des tierces majeures et mineures, impossibles à jouer avec la gamme de Pythagore. Zarlino cree une game `naturelle', formée à partir de petits dénominateurs.
+        \item Le problème avec la gamme de Zarlino est qu'il est difficile de transposer des morceaux, c'est-à-dire que les intervalles entre les notes ne sont pas égaux. Par exemple, le rapport ré-do est égal à $\frac{1}{8}$, alors que le rapport fa-mi est égal à $\frac{1}{12}$.
+        \item Le diabolus ou ``Devil's Interval'' en anglais, correspond à l'intervalle de la quinte diminuée (equivalent à une quarte augmentée). Cet interval, formé à partir de trois tons, a été désgine par l'église comme un son impur, ce qui contribue à la dissonance perçue par nos oreilles.
+    \end{enumerate}
+
+\section{Maths et musique à la renaissance}
+    \begin{enumerate}
+        \item La gamme tempérée est considérée comme régulière parce que l'intervalle entre chaque \\ demi-ton est exactement égal. Ceci veut dire qu'il n'y a pas de problèmes de comma puisque les intervaux sont calculés pour tomber pile sur l'octave.
+        \item Pour passer d'une note à une autre, il suffit de multiplier ou diviser par $\sqrt[12]{2}$.
+        \item Pour retrouver la fréquance d'un intervalle dans la gamme tempérée, il faut calculer $\sqrt[12]{2}^n$, avec $n$ qui représente le nombre de demi-tons dans l'intervalle. Une autre methode de calculer ce coefficient multiplicateur est de calculer \quad $\log_{12}{\left(n\right)}$, avec $n$ qui représente le nombre de demi-tons dans l'intervalle.
+    \end{enumerate}
+
+    Pour le bonus, il faut cliquer sur F, puis B (intervalle d'une quinte diminuée).
+\end{document}

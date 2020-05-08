@@ -1,0 +1,676 @@
+%&exerciseformat.fmt
+\documentclass[12pt, a4paper]{article}
+\usepackage{exercise}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage{esvect}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage[upright]{fourier}
+\usepackage[french]{babel}
+%\usepackage{showframe}
+%\csname endofdump \endcsname
+%\endofdump
+
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.64pt\box2}}
+
+\renewcommand{\ExerciseHeader}
+{
+  \par\noindent
+  \textbf{\large \ExerciseName\ \ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \par\nopagebreak\medskip
+}
+\renewcommand{\ExerciseName}{Exercice}
+
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\title{Exercices Chapitre sur le Produit Scalaire}
+\author{Diego Van Overberghe}
+\thanks{pp233-244}
+\date{28 Avril 2020}
+
+\begin{document}
+\maketitle
+\begin{Exercise}[number={34}]
+    \begin{enumerate}[a)]
+      \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{6}}=AB\times AC\times \dfrac{\sqrt{3}}{2}=\dfrac{20\sqrt{3}}{2}$
+      \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=5$ \\ H étant le projeté orthogonal de AC sur [AB].
+      \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=20$ \\ H étant le projeté orthogonal de AC sur la demie-droite [AB)
+      \item $\widehat{BAC}=60^{\circ}=\dfrac{\pi}{3}$ (angles alternes-internes) \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{3}}=12$
+      \item Non Traité
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={35}]
+  \begin{enumerate}[a)]
+    \item $-2\vec{u}\cdot(3\vec{u}+\vec{v})=-6\vec{u}^2-2\vec{u}\cdot\vec{v}=-166$
+    \item $-8\vec{u}^2+14\vec{u}\cdot\vec{v}-3\vec{v}^2=-155$
+    \item Demander Correction%$\norm{\vec{u}+\vec{v}}=\sqrt{\norm{\vec{u}}^2+\norm{\vec{v}}^2}=\sqrt{34}$
+    \item Demander Correction
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={44}]
+  \begin{enumerate}[a)]
+    \item La projéction orthogonale de $\overrightarrow{AC}$ sur $(AB)$ est $\overrightarrow{AO}$
+    \item La projéction orthogonale de $\overrightarrow{BD}$ sur $(DC)$ est $\overrightarrow{DO}$
+    \item La projéction orthogonale de $\overrightarrow{OC}$ sur $(BC)$ est $\overrightarrow{OC}$
+    \item La projéction orthogonale de $\overrightarrow{AD}$ sur $(CD)$ est $\overrightarrow{OD}$
+    \item La projéction orthogonale de $\overrightarrow{OB}$ sur $(EF)$ est $\overrightarrow{OE}$
+    \item La projéction orthogonale de $\overrightarrow{AB}$ sur $(EF)$ est $\overrightarrow{FE}$
+  \end{enumerate}
+\end{Exercise}
+    
+\pagebreak %spacing might have to remove later
+
+\begin{Exercise}[number={45}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{AB}\cdot\overrightarrow{DC}=1$
+    \item $\overrightarrow{AB}\cdot\overrightarrow{CD}=-1$
+    \item $\overrightarrow{OB}\cdot\overrightarrow{OD}=-\dfrac{1}{2}$
+    \item $\overrightarrow{DB}\cdot\overrightarrow{DC}=\dfrac{3\sqrt{2}}{2}$
+    \item $\overrightarrow{DO}\cdot\overrightarrow{DC}=\dfrac{1}{2}$
+    \item $\overrightarrow{AO}\cdot\overrightarrow{CB}=-\dfrac{1}{2}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={46}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{EF}\cdot\overrightarrow{EG}=EF\times EG\times\cos{\ \dfrac{\pi}{2}}=12\sqrt{2}$
+    \item $\overrightarrow{EF}\cdot\overrightarrow{EG}=EF\times EG\times\cos{\ \dfrac{5\pi}{6}}=-\dfrac{15\sqrt{3}}{2}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={48}]
+  \begin{enumerate}[a)]
+    \item $\vec{u}\begin{psmallmatrix}2\\-1\end{psmallmatrix},\quad\vec{v}\begin{psmallmatrix}4\\5\end{psmallmatrix}:$ \quad $\vec{u}\cdot\vec{v}=x_{\vec{u}}\times x_{\vec{v}}+y_{\vec{u}}\times y_{\vec{v}}=3$
+    \item $\vec{u}\begin{psmallmatrix}\frac{1}{2}\\-3\end{psmallmatrix},\quad\vec{v}\begin{psmallmatrix}\frac{1}{4}\\\frac{1}{3}\end{psmallmatrix}:$ \quad $\vec{u}\cdot\vec{v}=x_{\vec{u}}\times x_{\vec{v}}+y_{\vec{u}}\times y_{\vec{v}}=\dfrac{-7}{8}$
+    \item $\vec{u}=3\overrightarrow{\imath}+2\overrightarrow{\jmath}$, et $\vec{v}=3\overrightarrow{\imath}+\overrightarrow{\jmath}:$ \quad $\vec{u}\cdot\vec{v}=x_{\vec{u}}\times x_{\vec{v}}+y_{\vec{u}}\times y_{\vec{v}}=11$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={49}]
+  \begin{enumerate}[a)]
+    \item Faux. Si les deux vecteurs ont un sens opposé, alors le produit scalaire sera l'opposé du produit de leurs normes.
+    \item Faux. Il suffit d'imaginer deux vecteurs ayant le même projeté orthogonal sur un vecteur. Ces deux derniers sont différents, et pourtant leur produit scalaire est identique.
+    \item Faux. $\norm{\vec{u}}^2+\norm{\vec{v}}^2-2\vec{u}\cdot\vec{v}<0\iff\norm{\vec{u}+\vec{v}}^2<0$ \\ Or, un nombre au carré est positif.
+    \item Vrai. $\vec{u}^2=\vec{u}\cdot\vec{u}=\norm{\vec{u}}\times\norm{\vec{u}}\times\cos{\ 0}\footnote{L'angle entre deux vecteurs identiques est $0^{\circ}$}=\norm{\vec{u}}^2$
+  \end{enumerate}  
+\end{Exercise}
+
+\begin{Exercise}[number={50}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=-9$
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=-12$
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=8$
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=-10$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={51}]
+  \begin{enumerate}[a)]
+    \item $\vec{u}\cdot\vec{v}=12$
+    \item $\vec{t}\cdot\vec{w}=-12$
+    \item $\vec{m}\cdot\vec{h}=2$
+    \item $\vec{w}\cdot\vec{u}=16$
+    \item $\vec{v}\cdot\vec{w}=12$
+    \item $\vec{m}\cdot\vec{u}=12$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={52}]
+  \begin{enumerate}
+    \item \begin{enumerate}[a)]
+          \item $\norm{\vec{u}}=4$ \quad $\norm{\vec{v}}=3\sqrt{2}$
+          \item $\vec{u}\cdot\vec{v}=12$
+          \item $cos{\ \alpha}=\dfrac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\times \norm{\vec{v}}}=\dfrac{\sqrt{2}}{2} \quad \alpha= 45^{\circ}$
+          \end{enumerate}
+    \item \begin{enumerate}[a)]
+          \item $\norm{\vec{u}}=2\sqrt{2}$ \quad $\norm{\vec{v}}=4$
+          \item $\vec{u}\cdot\vec{v}=-8$
+          \item $cos{\ \alpha}=\dfrac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\times \norm{\vec{v}}}=-\dfrac{\sqrt{2}}{2} \quad \alpha= 135^{\circ}$
+          \end{enumerate}
+    \item \begin{enumerate}[a)]
+          \item $\norm{\vec{u}}=\sqrt{5}$ \quad $\norm{\vec{v}}=3$
+          \item $\vec{u}\cdot\vec{v}=3$
+          \item $cos{\ \alpha}=\dfrac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\times \norm{\vec{v}}}=\dfrac{\sqrt{5}}{5} \quad \alpha\approx 63^{\circ}$
+          \end{enumerate}
+    \item \begin{enumerate}[a)]
+          \item $\norm{\vec{u}}=2\sqrt{2}$ \quad $\norm{\vec{v}}=\sqrt{10}$
+          \item $\vec{u}\cdot\vec{v}=4$
+          \item $cos{\ \alpha}=\dfrac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}}\times \norm{\vec{v}}}=\dfrac{\sqrt{5}}{5} \quad \alpha\approx 63^{\circ}$
+          \end{enumerate}
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={53}]
+  \begin{enumerate}
+    \item \begin{enumerate}[a)]
+          \item Ce n'est pas possible. L'angle est inférieur à $90^{\circ}$ mais le produit scalaire est négatif.
+          \item $AC=\dfrac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{AB\times\cos{\dfrac{3\pi}{4}}}=2\sqrt{2}$
+          \end{enumerate}
+    \item \begin{enumerate}[a)]
+          \item $cos{\ \alpha}=\dfrac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{AB\times AC}=-\dfrac{\sqrt{2}}{2} \quad \alpha=135^{\circ}$
+          \item Ce n'est pas possible. $AB\times AC = 10$, \quad Or, \quad $\overrightarrow{AB}\cdot\overrightarrow{AC}=15$
+          \item $AB\times AC = \overrightarrow{AB}\cdot\overrightarrow{AC}$, \quad Donc, \quad $\alpha=0^{\circ}$
+          \end{enumerate}
+  \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={54}]
+  \begin{enumerate}[a)]
+    \item $5\vec{u}^2+9\vec{u}\cdot\vec{v}-2\vec{v}^2=117$
+    \item $\vec{u}^2+2\vec{u}\cdot\vec{v}+\vec{v}^2=30$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={57}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=20$
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=8$
+    \item Le triangle est réctangle en B. Le projeté orthogonal de C sur [AB] est B. \smallskip \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AB=36$ \bigskip \\ou \bigskip \\D'Après le théorème de Pythagore: $BC^2=AC^2-AB^2=64$ \smallskip \\ Alors \quad $\overrightarrow{AB}\cdot\overrightarrow{AC}=36$
+    \item $BC=AD=7$ \quad Donc, $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}(AB^2+AC^2-BC^2)=-4$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={58}]
+  \begin{enumerate}[a)]
+    \item $\vec{u}\cdot\vec{v}=x_{\vec{u}}\times x_{\vec{v}}+y_{\vec{u}}\times y_{\vec{v}}=4$
+    \item $-4\vec{u}\cdot\vec{v}=-16$
+    \item $-2\vec{u}\cdot\vec{v}=-8$
+    \item $\vec{u}+\vec{v}=\begin{psmallmatrix}2\\-4\end{psmallmatrix}$ \quad $\vec{u}-\vec{v}=\begin{psmallmatrix}0\\-2\end{psmallmatrix}$ \smallskip \\ $\begin{psmallmatrix}2\\-4\end{psmallmatrix}\cdot\begin{psmallmatrix}0\\-2\end{psmallmatrix}=8$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={60}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=-AB\times AC\implies$ A,B et C sont alignés.
+    \item $\vec{u}\cdot\vec{v}=0\implies\vec{u}=0$ ou $\vec{v}=0$
+    \item $\vec{u}=3\vec{v}\implies\vec{u}^2=9\vec{v}^2$
+    \item $\norm{\vec{u}}=0\iff\vec{u}=\overrightarrow{0}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={61}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ 40^{\circ}}\approx15{,}3$
+    \item D'Après le théorème d'Al-Kashi, $a^2=b^2+c^2-2bc\times\cos{\ \widehat{A}}$. \smallskip \\ Donc, $cos{\ \widehat{A}}=\dfrac{b^2+c^2-a^2}{2bc}$ \smallskip \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times \dfrac{6^2+4^2-3^2}{2\times 6\times 4}=21{,}5$
+    \item Le triangle est isocèle, donc, le projeté orthogonal de B sur [AC] se situe au centre de ce ségment. $\overrightarrow{AB}\cdot\overrightarrow{AC}=6\times 3=18$
+    \item On imagine le point E qui forme le carré ADCE, avec une diagonale de 3, et donc un côté de $\frac{3}{\sqrt{2}}$ \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=5\times \dfrac{3}{\sqrt{2}}=\dfrac{15}{\sqrt{2}}$
+    \item On assume que ADCB est un parallélogramme. On imagine le point E qui forme le réctangle HDCE, [EB] $=1$. E est le projeté orthogonal de C sur [AE]. $\overrightarrow{AB}\cdot\overrightarrow{AC}=30$
+    \item $(\overrightarrow{AB}\ ;\overrightarrow{AC})=(\pi-\dfrac{2\pi}{3})=-\dfrac{\pi}{3})$ \quad et \quad $\overrightarrow{AB}\cdot\overrightarrow{AC}=7\times\cos{\ -\dfrac{-\pi}{3}=\dfrac{7}{2}}$
+    
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={63}]
+  \begin{enumerate}[a)]
+    \item \begin{itemize}[leftmargin=3cm]
+            \item[Méthode 1:] On utilise la relation de Chasles.
+              \begin{flalign*}
+                \overrightarrow{EC}\cdot\overrightarrow{ED}&=(\overrightarrow{EA}+\overrightarrow{AC})\cdot(\overrightarrow{EB}+\overrightarrow{BD}) &\\ 
+                &=\overrightarrow{EA}\cdot\overrightarrow{EB}+\overrightarrow{EA}\cdot\overrightarrow{BD}+\overrightarrow{AC}\cdot\overrightarrow{EB}+\overrightarrow{AC}\cdot\overrightarrow{BD} &\\
+                &= 9{,}25 &
+              \end{flalign*}
+            \item[Méthode 2:] Posons le repère $(A\ ;\vec{\imath}\ ;\vec{\jmath}\ )$ où $\begin{psmallmatrix}\vec{\imath}=\frac{1}{6}\vec{AB}\\\vec{\jmath}=\frac{1}{4}\overrightarrow{AC}\end{psmallmatrix}$ \medbreak
+            $\begin{cases}\overrightarrow{EC}\begin{psmallmatrix}x_C-x_E\\y_C-y_E\end{psmallmatrix}\\\overrightarrow{ED}\begin{psmallmatrix}x_D-x_E\\y_D-y_E\end{psmallmatrix}\end{cases}\iff\begin{cases}\overrightarrow{EC}\begin{psmallmatrix}-1{,}5\\4\end{psmallmatrix}\\\overrightarrow{ED}\begin{psmallmatrix}4{,}5\\4\end{psmallmatrix}\end{cases}$ \medbreak
+            $\overrightarrow{EC}\cdot\overrightarrow{ED}=x_{\overrightarrow{EC}}\times x_{\overrightarrow{ED}}+y_{\overrightarrow{EC}}\times y_{\overrightarrow{ED}}=9{,}25$ \bigbreak
+            \item[Angle $\widehat{DEC}$:] $\overrightarrow{EC}\cdot\overrightarrow{ED}=EC\times ED\times\cos{\ \widehat{DEC}}$ \smallskip \\ $EC=\sqrt{x^{2}_{\overrightarrow{EC}}+y^{2}_{\overrightarrow{EC}}}=\sqrt{18{,}25}$ \\ $ED=\sqrt{x^{2}_{\overrightarrow{ED}}+y^{2}_{\overrightarrow{ED}}}=\sqrt{36{,}25}$ \smallskip \\ $cos{\ \widehat{DEC}}=\dfrac{\overrightarrow{EC}\cdot\overrightarrow{ED}}{EC\times ED}=\dfrac{9{,}25}{\sqrt{661{,}5625}}$ \medskip \\ $\widehat{DEC}=cos^{-1}{\left(\ \dfrac{9{,}25}{\sqrt{661{,}5625}}\right)\approx 68{,}92^{\circ}}$
+          \end{itemize} \bigbreak
+    \item \begin{itemize}[leftmargin=3cm]
+            \item[Méthode 1:] On voit que B est le projeté orthogonal de E sur [DB], donc, \medskip \\ $\overrightarrow{DB}\cdot\overrightarrow{DE}=DB\times DB=16$ \bigbreak
+            \item[Méthode 2:] Dans $(A;\overrightarrow{\imath};\overrightarrow{\jmath})$: $\overrightarrow{DB}(0\,;-4) \quad \overrightarrow{DE}(-4{,}5\,;-4)$ \smallskip \\ $\overrightarrow{DB}\cdot\overrightarrow{DE}=16$ \bigbreak
+            \item[Longeur de BF:] Aire DBC $=\dfrac{DB\times DE}{2}=\dfrac{DF\times DE}{2}$ donc $DB\times BE=BF\times DE$ \medskip \\ $BF=\dfrac{DB\times BE}{DE}\approx2{,}99$
+          \end{itemize}
+  \end{enumerate}  
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={65}]
+  \begin{enumerate}[a)]
+    \item Faux. Les vecteurs sont colinéaires. $\vec{u}\cdot\vec{v}=x_{\vec{u}} x_{\vec{v}}+y_{\vec{u}} y_{\vec{v}}=-13$ \\ $\vec{u}\cdot\vec{v}\neq0\iff\lnot(\vec{u}\perp \vec{v})$
+    \item Vrai. $\vec{u}\cdot\vec{v}=x_{\vec{u}} x_{\vec{v}}+y_{\vec{u}} y_{\vec{v}}=0$ \\ $\vec{u}\cdot\vec{v}=0\iff \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq0$ et $\vec{v}\neq0$)
+    \item Faux. Pour $a=2$, on a $\vec{u}\begin{psmallmatrix}2\\-1\end{psmallmatrix}$ et $ \vec{v}\begin{psmallmatrix}0\\1\end{psmallmatrix}$. Or $x_{\vec{u}}x_{\vec{v}}+y_{\vec{u}}y_{\vec{v}}=-1$ \\ $\vec{u}\cdot\vec{v}\neq0\iff\lnot(\vec{u}\perp \vec{v})$
+    \item On a $\vec{u}\begin{psmallmatrix}2\\-3\end{psmallmatrix}$ et $\vec{v}\begin{psmallmatrix}6\\4\end{psmallmatrix}$. $x_{\vec{u}}x_{\vec{v}}+y_{\vec{u}}y_{\vec{v}}=0$ \\ $\vec{u}\cdot\vec{v}=0\iff \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq0$ et $\vec{v}\neq0$)
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={66}]
+  $\vec{u}\cdot\vec{v}=0\iff x_{\vec{u}}x_{\vec{v}}+y_{\vec{u}}y_{\vec{v}}=0$
+  \begin{enumerate}[a)]
+    \item $\vec{u}\perp\vec{v}$ pour $\vec{v}\begin{psmallmatrix}-2\\1\end{psmallmatrix}$
+    \item $\vec{u}\perp\vec{v}$ pour $\vec{v}\begin{psmallmatrix}4\\3\end{psmallmatrix}$
+    \item $\vec{u}\perp\vec{v}$ pour $\vec{v}\begin{psmallmatrix}1\\-2\end{psmallmatrix}$
+    \item $\vec{u}\perp\vec{v}$ pour $\vec{v}\begin{psmallmatrix}2\\\sqrt{2}\end{psmallmatrix}$
+    \item $\vec{u}\perp\vec{v}$ pour $\vec{v}\begin{psmallmatrix}-a\\1\end{psmallmatrix}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={68}]
+  \begin{enumerate}[a)]
+    \item Vrai. Si les deux vecteurs sont orthogonaux, alors, leur produit scalaire sera nul.
+    \begin{flalign*}
+      &\quad (\vec{u}+\vec{v})\cdot(\vec{u}-\vec{v})=0 &&\\
+      \iff&\quad \vec{u}^2-\vec{v}^2=0 &&\\
+      \iff&\quad \norm{\vec{u}}^2-\norm{\vec{v}}^2=0 &&\\
+      \iff&\quad \norm{\vec{u}}=\norm{\vec{v}}
+    \end{flalign*}
+    \item Vrai. 
+    \item Vrai. Il s'agit tout simplement du théorème de Pythagore.
+    \item Vrai. Ici, il s'agit de la réciproque du théorème de Pythagore.
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={69}]
+    Si ABC est réctangle, alors, $\overrightarrow{AB}\cdot\overrightarrow{AC}=0$. \bigbreak 
+    $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{BC}\begin{psmallmatrix}x_C-x_B\\y_C-y_B\end{psmallmatrix}\end{cases} \iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}2\\1\end{psmallmatrix}\\[0.2cm]\overrightarrow{BC}\begin{psmallmatrix}2\\-3\end{psmallmatrix}\end{cases}$ \bigbreak
+    $\overrightarrow{AB}\cdot\overrightarrow{BC}=x_{\overrightarrow{AB}}\times x_{\overrightarrow{BC}}+y_{\overrightarrow{AB}}\times y_{\overrightarrow{BC}}=1$ \qquad Donc, $\widehat{B}\neq 90^{\circ}$
+\end{Exercise}
+
+\begin{Exercise}[number={70}]
+  \begin{enumerate}[a)]
+    \item $\vec{u}\cdot\vec{v}=15+m$ \\ $\vec{u}\cdot\vec{v}=0\iff 15+m=0\iff m=-15$
+    \item $\vec{u}\cdot\vec{v}=5m-6$ \\ $\vec{u}\cdot\vec{v}=0\iff 5m-6=0\iff m=\dfrac{6}{5}$
+    \item $\vec{u}\cdot\vec{v}=8-m^2$ \\  $\vec{u}\cdot\vec{v}=0\iff 8-m^2=0\iff m=2\sqrt{2}$ \quad ou \quad $m=-2\sqrt{2}$
+    \item $\vec{u}\cdot\vec{v}=0$ \\  $\vec{u}\cdot\vec{v}=0\iff m=m$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={72}]
+  \begin{enumerate}[a)]
+    \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm] \overrightarrow{AD}\begin{psmallmatrix}x_D-x_A\\y_D-y_A\end{psmallmatrix} \\[0.2cm] \overrightarrow{BA}\begin{psmallmatrix}x_A-x_B\\y_A-y_B\end{psmallmatrix} \\[0.2cm] \overrightarrow{BC}\begin{psmallmatrix}x_C-x_B\\y_C-y_B\end{psmallmatrix}\end{cases} \iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}-3\\1\end{psmallmatrix}\\[0.2cm] \overrightarrow{AD}\begin{psmallmatrix}-1\\-3\end{psmallmatrix} \\[0.2cm] \overrightarrow{BA}\begin{psmallmatrix}3\\-1\end{psmallmatrix} \\[0.2cm] \overrightarrow{BC}\begin{psmallmatrix}-2\\-6\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{AD}=x_{\overrightarrow{AB}}x_{\overrightarrow{AD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{AD}}=0 \\ \overrightarrow{BA}\cdot\overrightarrow{BC}=x_{\overrightarrow{BA}}x_{\overrightarrow{BC}}+y_{\overrightarrow{BA}}y_{\overrightarrow{BC}}=0$
+    \item $\overrightarrow{AD}$ et $\overrightarrow{BC}$ sont colinéaires, puisque ils sont tous les deux orthogonaux avec $\overrightarrow{AB}$. Donc, [AD] et [BC] sont parallèles. Comme $AD\neq BC$ $(\overrightarrow{AD}=\frac{1}{2}\overrightarrow{BC})$, il ne s'agit pas d'un carré ou d'un rectangle, donc le quadrilatère est un trapèze.
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={73}]
+  \begin{enumerate}[a)]
+    \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}1\\1\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}-5\\4\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=-1$ \smallbreak $\vec{u}\cdot\vec{v}\neq0\iff\lnot(\vec{u}\perp\vec{v})$ \smallbreak On peut donc conclure que (AB) et (CD) ne sont pas perpendiculaires.
+    \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}2\\-7\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}-7\\-2\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=0$ \medbreak $\vec{u}\cdot\vec{v}=0\impliedby \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq0$ et $\vec{v}\neq0$) \smallbreak On peut donc conclure que (AB) et (CD) sont perpendiculaires.
+    \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}\sqrt{2}-\sqrt{3}\\-5\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}5\\\sqrt{2}-\sqrt{3}\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=0$ \medbreak $\vec{u}\cdot\vec{v}=0\impliedby \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq\vec{0}$ et $\vec{v}\neq\vec{0}$) \smallbreak On peut donc conclure que (AB) et (CD) sont perpendiculaires.
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={74}]
+  \begin{enumerate}[a)]
+   \item On pose le repère $(A\, ;\overrightarrow{\imath}\,;\overrightarrow{\jmath})$ où $\begin{psmallmatrix}\overrightarrow{\imath}=\frac{1}{4}\overrightarrow{AB}\\\overrightarrow{\jmath}=\frac{1}{4}\overrightarrow{AD}\end{psmallmatrix}$ \smallskip \\
+    $A(0\,;0)$, $G(-2\,;4)$, $H(6\,;4)$ \medbreak
+    $\begin{cases}\overrightarrow{AG}\begin{psmallmatrix}x_G-x_A\\y_G-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{AH}\begin{psmallmatrix}x_H-x_A\\y_H-y_A\end{psmallmatrix}\end{cases} \iff\begin{cases}\overrightarrow{AG}\begin{psmallmatrix}-2\\4\end{psmallmatrix}\\[0.2cm]\overrightarrow{AH}\begin{psmallmatrix}6\\4\end{psmallmatrix}\end{cases}$ \medbreak
+    $\overrightarrow{AG}\cdot\overrightarrow{AH}=x_{\overrightarrow{AG}}\times x_{\overrightarrow{AH}}+y_{\overrightarrow{AG}}\times y_{\overrightarrow{AH}}=4$ \qquad Donc, $\widehat{A}\neq 90^{\circ}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={78}]
+  \begin{enumerate}[1)]
+    \item \begin{minted}[autogobble]{python}
+      def orthogonaux(a,b,c,d):
+        p=a*c+b*d
+        if p==0:
+          return True
+        else:
+          return False
+    \end{minted}
+    \item \begin{enumerate}[a)]
+          \item True
+          \item False
+          \end{enumerate}
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={79}]
+  \begin{enumerate}[1)]
+    \item \begin{enumerate}[a)]
+            \item \begin{itemize}[leftmargin=3cm]
+                    \item[Méthode 1:] $\begin{cases}\overrightarrow{AH}\begin{psmallmatrix}x_H-x_A\\y_H-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CB}\begin{psmallmatrix}x_B-x_C\\y_B-y_C\end{psmallmatrix}\end{cases}\iff\begin{cases}\overrightarrow{AH}\begin{psmallmatrix}x_H\\y_H-3\end{psmallmatrix}\\[0.2cm]\overrightarrow{CB}\begin{psmallmatrix}4\\-4\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AH}\cdot\overrightarrow{CB}=x_{\overrightarrow{AH}}x_{\overrightarrow{CB}}+y_{\overrightarrow{AH}}y_{\overrightarrow{CB}}=4x_H-4y_H+12$ \medbreak
+                    \item[Méthode 2:] La hauteur issue de BC passe par le point H et A. \\ Donc, \quad $([AH]\perp[CB])\iff\overrightarrow{AH}\cdot\overrightarrow{CB}=0$
+                  \end{itemize}
+          \item On a donc,
+                \begin{flalign*}
+                  \quad&\quad\overrightarrow{AH}\cdot\overrightarrow{CB}=0 &\\
+                  \iff&\quad 4x_H-4y_H+12=0 &\\
+                  \iff&\quad 4x_H-4y_H-12 &\\
+                  \iff&\quad x_H=y_H-3 &\\
+                  \iff&\quad y_H=x_H+3
+               \end{flalign*}
+          \end{enumerate}
+    \item \begin{itemize}[leftmargin=3cm]
+            \item[Méthode 1:] $\begin{cases}\overrightarrow{BH}\begin{psmallmatrix}x_H-x_B\\y_H-y_B\end{psmallmatrix}\\[0.2cm]\overrightarrow{AC}\begin{psmallmatrix}x_C-x_A\\y_C-y_A\end{psmallmatrix}\end{cases}\iff\begin{cases}\overrightarrow{BH}\begin{psmallmatrix}x-2\\y+1\end{psmallmatrix}\\[0.2cm]\overrightarrow{AC}\begin{psmallmatrix}-2\\0\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{BH}\cdot\overrightarrow{AC}=x_{\overrightarrow{BH}}x_{\overrightarrow{AC}}+y_{\overrightarrow{BH}}y_{\overrightarrow{AC}}=4-2x_H$ \medbreak
+            \item[Méthode 2:] La hauteur issue de AC passe par le point H et B. \\ Donc, \quad $([BH]\perp[AC])\iff\overrightarrow{BH}\cdot\overrightarrow{AC}=0$
+          \end{itemize}
+    \item $\begin{cases}4-2x_H=0\\[0.2cm]y_H=x_H+3\end{cases}\iff\begin{cases}x_H=2\\[0.2cm]y_H=5\end{cases} \quad H(2\ ;5)$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={81}]
+  \begin{enumerate}[a)]
+    \item $\overrightarrow{CD}\cdot\overrightarrow{EA}=CD\times EA\times\cos{\ 0}=ax$ \\ $\overrightarrow{DF}\cdot\overrightarrow{AD}=DF\times AD\times\cos{\ 180^{\circ}}=-ax$
+    \item On pose le repère $\delimiterfactor=1200\left(D\ ;\overrightarrow{DC}\ ;\overrightarrow{DA}\right)$.\medskip \\ 
+          $\begin{cases}\overrightarrow{CF}\begin{psmallmatrix}x_F-x_C\\y_F-y_C\end{psmallmatrix}\\[0.2cm]\overrightarrow{ED}\begin{psmallmatrix}x_D-x_E\\y_D-y_E\end{psmallmatrix}\end{cases}$ 
+          $\iff \begin{cases}\overrightarrow{CF}\begin{psmallmatrix}-a\\x\end{psmallmatrix}\\[0.2cm]\overrightarrow{ED}\begin{psmallmatrix}-x\\-a\end{psmallmatrix}\end{cases}$ \medskip \\
+          $\overrightarrow{CF}\cdot\overrightarrow{ED}=-a\times-x-a\times x=0$ \smallskip \\
+          Or, \quad $\overrightarrow{CD}\cdot\overrightarrow{ED}=0\iff(CF)\perp(ED)$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={83}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+  \medbreak Tout d'Abord, $(TU)\perp(RS)\implies\overrightarrow{TU}\cdot\overrightarrow{RS}=0\iff x_{\overrightarrow{TU}}x_{\overrightarrow{RS}}+y_{\overrightarrow{TU}}y_{\overrightarrow{RS}}=0$ \smallbreak De plus, $\overrightarrow{RS}\begin{psmallmatrix}x_S-x_R\\y_S-y_R\end{psmallmatrix}\iff\overrightarrow{RS}\begin{psmallmatrix}6\\2\end{psmallmatrix}$, \quad et \quad $x_{\overrightarrow{TU}}=x_U-x_T$, \quad $y_{\overrightarrow{TU}}=y_U-y_T$ \smallbreak
+    \moveright\parindent\vbox
+    {%
+      {\setlength{\abovedisplayskip}{0pt}
+      {\setlength{\belowdisplayskip}{0pt}
+        \begin{flalign*}
+          \overrightarrow{TU}\cdot\overrightarrow{RS}=0&\iff 6x_{\overrightarrow{TU}}+2y_{\overrightarrow{TU}}=0 &\\
+          &\iff 6(x_U-3)=-2(y_U+2) &\\
+          &\iff 6x_U-18=-2y_U-4 &\\
+          &\iff 6x_U+2y_U=14
+        \end{flalign*}
+      }
+      }
+    }
+    Tout doublet qui satisfie cette equation représente un point qui se situera sur la droite (TU), mais n'appartiendra pas forcément à la doite (RS). \\ On définit donc cette droite. $y=\frac{1}{3}x+\frac{11}{3}$ \\ On cherche donc le doublet qui satisfait les deux équations. \medbreak
+    $\begin{cases}6x_U+2y_U=14\\[0.2cm]y_U=\dfrac{1}{3}x_U+\dfrac{11}{3}\end{cases}\iff\begin{cases}6x_U+\dfrac{2}{3}x_U+\dfrac{22}{3}=14\\[0.2cm] y_U=\dfrac{1}{3}x_U+\dfrac{11}{3}\end{cases}\iff\begin{cases}x_U=1\\[0.2cm]y_U=4\end{cases} \quad U(1\ ;4)$
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={85}]
+  D'Après le théorème d'Al-Kashi: \smallbreak $AC^2=BC^2+BA^2-2\times BC\times BA\times\cos{\ \widehat{ABC}}$ \smallbreak $AC=\sqrt{AB^2+BC^2-2\times AB\times BC\times\cos{\ 30^{\circ}}}\approx 4{,}6$
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={86}]
+  D'Après le théorème d'Al-Kashi: \smallbreak $EF^2=DE^2+DF^2-2\times DE\times DF\times\cos{\ \widehat{EDF}}$ \smallbreak $EF=\sqrt{DE^2+DF^2-2DE\times DF\times\cos{\ 45^{\circ}}}\approx 3{,}6$
+\end{Exercise}
+
+\begin{Exercise}[number={87}]
+  \begin{enumerate}[a)]
+    \item $IJ^2+JK^2=IK^2$ \smallbreak Donc, d'après la réciproque du théorème de Pythagore, le triangle IJK est un triangle rectangle en J.
+    \item $\widehat{J}=90^{\circ}$ \medbreak $\widehat{I}=\cos^{-1}\left({\dfrac{j^2+k^2-i^2}{2jk}}\right)\approx 41^{\circ}$ \medbreak $\widehat{K}=\cos^{-1}\left({\dfrac{i^2+j^2-k^2}{2ij}}\right)\approx 49^{\circ}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={89}]
+  \begin{enumerate}[a)]
+    \item $\cos{\ \widehat{G}}=\dfrac{h^2+l^2-g^2}{2hl}=\dfrac{31}{44}$ \smallbreak $\cos{\ \widehat{H}}=\dfrac{g^2+l^2-h^2}{2gl}=-\dfrac{7}{32}$
+    \item $\widehat{L}=180-\cos^{-1}\left({\ \dfrac{31}{44}}\right)-\cos^{-1}\left({-\dfrac{7}{32}}\right)\approx 32{,}2^{\circ}$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={90}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \begin{flalign*}
+      &\quad MA^2+MB^2=2MI^2+\dfrac{AB^2}{2} &&\\
+      \iff&\quad MI=\sqrt{\frac{1}{2}\left(MA^2+MB^2-\frac{AB^2}{2}\right)} &&\\
+      \iff&\quad MI=5
+    \end{flalign*}
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={91}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak $n^2=q^2+r^2-2pr\times\cos{\ \widehat{N}}=76$ \\ $n=2\sqrt{19}\approx 8{,}7\approx 4{,}4NP$
+  \end{minipage}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={92}]
+  \medbreak \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    D'après le théorème d'Al-Kashi: 
+    \begin{flalign*}
+      &\quad r^2=s^2+n^2-2sn\times\cos{\ \widehat{R}} &\\
+      \iff&\quad \widehat{R}=\cos^{-1}\left({\dfrac{s^2+n^2-r^2}{2sn}}\right)\approx 123^{\circ} &\\
+      \text{De même,} &\quad \widehat{N}=\cos^{-1}\left({\dfrac{r^2+s^2-n^2}{2rs}}\right)\approx 16^{\circ} &\\
+      &\quad \widehat{S}=\cos^{-1}\left({\dfrac{n^2+r^2-s^2}{2nr}}\right)\approx 41^{\circ}
+    \end{flalign*}
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={93}]
+  \begin{enumerate}[a)]
+    \item D'après le théorème d'Al-Kashi dans le trianlge ABC, et avec $a=BC$, $b=AC$ et $c=AB$:
+          \begin{flalign*}
+            &\quad a^2=b^2+c^2-2bc\times\cos{\ \widehat{A}} &\\
+            \iff&\quad \widehat{A}=\cos^{-1}\left({\dfrac{b^2+c^2-a^2}{2bc}}\right)\approx 26{,}6^{\circ} &\\
+            \text{De même,}&\quad \widehat{B}=\cos^{-1}\left({\dfrac{c^2+a^2-b^2}{2ca}}\right)\approx 137{,}9^{\circ} &\\
+            &\quad \widehat{C}=\cos^{-1}\left({\dfrac{a^2+b^2-c^2}{2ab}}\right)\approx 15{,}6^{\circ}
+          \end{flalign*}
+    \item D'après le théorème d'Al-Kashi dans le triangle EDF, et avec $d=EF$, $e=DF$ et $f=DE$:
+          \begin{flalign*}
+            d&=\sqrt{e^2+f^2-2ef\times\cos{\dfrac{\pi}{3}}} &\\
+            &=\sqrt{79} &\\
+            &\approx 8{,}9
+          \end{flalign*}
+    \item D'après le théorème d'Al-Kashi dans le triangle IJK, et avec $i=JK$, $j=IK$ et $k=IJ$:
+          \begin{flalign*}
+            i&=\sqrt{j^2+k^2-2jk\times\cos{\dfrac{\pi}{6}}} &\\
+            &\approx 17{,}8
+          \end{flalign*}
+    \item D'après le théorème d'Al-Kashi dans le triangle GHL, et avec $g=HL$, $l=GH$ et $h=GL$:
+          \begin{flalign*}
+            &\quad h^2=g^2+l^2-2gl\times\cos{\ \widehat{H}} &\\
+            \iff&\quad \widehat{H}=\cos^{-1}\left({\dfrac{g^2+l^2-h^2}{2gl}}\right)\approx71^{\circ}
+          \end{flalign*}
+  \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={95}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak D'après le théorème de la médiane:
+      \begin{flalign*}
+        &\quad MP^2+MN^2=2MM'^2+\dfrac{MP^2}{2} &\\
+        \iff&\quad MM'=\sqrt{\frac{1}{2}\left(MP^2+MN^2-\dfrac{NP^2}{2}\right)} &\\
+        \iff&\quad MM'\approx 6{,}2
+      \end{flalign*}
+      \begin{flalign*}
+        &\quad MP^2+NP^2=2PP'^2+\dfrac{NM^2}{2} &\\
+        \iff&\quad PP'=\sqrt{\frac{1}{2}\left(MP^2+NP^2-\dfrac{NM^2}{2}\right)} &\\
+        \iff&\quad PP'\approx 4{,}5
+      \end{flalign*}
+      \begin{flalign*}
+        &\quad NM^2+NP^2=2NN'^2+\dfrac{MP^2}{2} &\\
+        \iff&\quad NN'=\sqrt{\frac{1}{2}\left(NM^2+NP^2-\dfrac{MP^2}{2}\right)} &\\
+        \iff&\quad NN'\approx 7{,}9
+      \end{flalign*}
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={96}]
+  \begin{enumerate}[a)]
+    \item D'après le théorème d'Al-Kashi dans le triangle ABC, avec $a=BC$, $b=AC$ et $c=AB$:
+          \begin{flalign*}
+            &\quad b^2=a^2+c^2-2ac\times\cos{\widehat{B}} &\\
+            \iff&\quad b=\sqrt{a^2+c^2-2ac\times\cos{\widehat{B}}} &\\
+            \iff&\quad AC=\sqrt{19}\approx 4{,}4
+          \end{flalign*}
+    \item De plus,
+          \begin{flalign*}
+            &\quad \widehat{A}=\cos^{-1}\left({\dfrac{b^2+c^2-a^2}{2bc}}\right) &\\
+            \iff&\quad \widehat{A}\approx 32^{\circ} &\\
+          \end{flalign*}
+          \begin{flalign*}
+            &\quad \widehat{C}=180-30-32 &\\
+            \iff&\quad \widehat{C}=118^{\circ}
+          \end{flalign*}
+  \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={97}]
+  \begin{enumerate}[a)]
+    \item D'Après le théorème d'Al-Kashi dans le triangle IMJ, \\avec $i=MJ$, $m=IJ$ et $j=IM$. $\widehat{I}=30^{\circ}$:
+    \begin{flalign*}
+      &i^2=m^2+j^2-2mj\times\cos{\ \widehat{I}}&\\
+      \iff\quad &i=\sqrt{m^2+j^2-2mj\times\cos{\ \widehat{I}}}&\\
+      \iff\quad &MJ\approx 3{,}4
+    \end{flalign*}
+    De même, dans le triangle IML, \\avec $i=[ML]$, $m=[IL]$ et $l=[IM]$. $\widehat{I}=60^{\circ}$:
+    \begin{flalign*}
+      &i^2=m^2+l^2-2ml\times\cos{\ \widehat{I}}&\\
+      \iff\quad &i=\sqrt{m^2+l^2-2ml\times\cos{\ \widehat{I}}}&\\
+      \iff\quad &ML\approx 3{,}5
+    \end{flalign*}
+    \item On cherche d'Abord $\widehat{MLK}$. \quad $\widehat{MLK}=90-\widehat{ILM}$ \\ D'après le théorème d'Al-Kashi dans le triangle IML, avec $l=IM$, $i=ML$ et $m=IL$:
+    \item \setlength{\abovedisplayskip}{0pt}
+    \begin{flalign*} 
+      &\quad l^2=i^2+m^2-2im\times\cos{\ \widehat{ILM}}&\\
+      \iff&\quad\widehat{ILM}=\cos^{-1}\left({\dfrac{i^2+m^2-l^2}{2im}}\right)&\\
+      \iff&\quad\widehat{ILM}=30^{\circ}=\frac{\pi}{6}.
+    \end{flalign*}
+    On conclut que $\widehat{MLK}=60^{\circ}=\frac{\pi}{3}$ \\ D'après le théorème d'Al-Kashi, dans le triangle MLK, avec $l=MK$, $m=LK$ et $k=ML$:
+    \begin{flalign*}
+      &\quad l^2=m^2+k^2-2mk\times\cos{\ \widehat{L}}&\\
+      \iff&\quad l=\sqrt{m^2+k^2-2mk\times\cos{\ \widehat{L}}}&\\
+      \iff&\quad MK\approx 4{,}4
+    \end{flalign*}
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={99}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak $[AB]=\cos{\ \dfrac{\pi}{6}}\times [AE]=7$ \medbreak D'Après la contraposée du théorème de Pythagore, dans le triangle ABE, rectangle en E: \medbreak $[BE]=\sqrt{AE^2-AB^2}=\dfrac{7\sqrt{3}}{3}\approx 4$ \medbreak D'après le théorème d'Al-Kashi, dans le triangle ADB, avec $a=DB$, $d=AB$ et $b=AD$: \medbreak $a=\sqrt{d^2+b^2-2db\times\cos{\dfrac{\pi}{6}}}\approx 3{,}5$ \medbreak Donc, le chemin a une longeur d'à peu près $7{,}5$
+  \end{minipage}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={101}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak D'Après le théorème d'Al-Kashi, dans le triangle ABC, avec $a=BC$, $b=AC$ et $c=AB$: \medbreak $\widehat{I}=\cos^{-1}\left({\dfrac{b^2+c^2-a^2}{2bc}}\right)\approx 39^{\circ}$ \medbreak $[CH]=\sin{\ 39^{\circ}}\times [AC]\approx 3{,}7$ \medbreak $\text{Aire}_{ABC}=\dfrac{bh}{2}\approx 15$
+    \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={108}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak On cherche d'abord la longuer de $ST$. \\ D'Après le théorème d'Al-Kashi, dans le triangle RST, avec $r=ST$, $s=RT$ et $t=RS$: \begin{flalign*}
+      &\quad r^2=s^2+t^2-2st\times\cos{\widehat{TRS}} &\\
+      \iff&\quad r=\sqrt{s^2+t^2-2st\times\cos{45^{\circ}}} &\\
+      \iff&\quad ST\approx 3{,}6
+    \end{flalign*}
+    On définit le point $I$ tel que $TI=IS$
+    \begin{flalign*}
+      &\quad RT^2+RS^2=2RI^2+\dfrac{TS^2}{2} &\\
+      \iff&\quad RI=\sqrt{\dfrac{1}{2}\left(RT^2+RS^2-\dfrac{TS^2}{2}\right)} &\\
+      \iff&\quad RI\approx 4{,}2
+    \end{flalign*}
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={109}]
+  \begin{enumerate}[a)]
+    \item Pour BP: \medbreak $\widehat{BAP}=\widehat{BAC}-15$ \medbreak D'après le théorème de Pythagore dans le triangle ABC, rectangle en B: \\ $AC=\sqrt{AB^2+BC^2}\approx 10{,}8$ \medbreak D'après le théorème d'Al-Kashi dans le triangle ABC, avec $a=BC$, $b=AC$ et $c=AB$:
+    \begin{flalign*}
+      &\quad a^2=b^2+c^2-2bc\times\cos{\widehat{BAC}} &\\
+      \iff&\quad \widehat{BAC}=\cos^{-1}\left({\dfrac{b^2+c^2-a^2}{2bc}}\right) &\\
+      \iff&\quad \widehat{BAC}\approx 21{,}7^{\circ}
+    \end{flalign*}
+    Donc, $\widehat{BAP}\approx6{,}8^{\circ}$ \medbreak D'après le théorème d'Al-Kashi dans le triangle ABP, avec $a=BP$, $b=AP$ et $p=AB$:
+    \begin{flalign*}
+      &\quad a=\sqrt{b^2+p^2-2bp\times\cos{\ 6{,}8^{\circ}}} &\\
+      \iff&\quad BP\approx 7{,}0
+    \end{flalign*} 
+    
+    \pagebreak
+
+    Pour DP: \medbreak $\widehat{PAD}=90-6{,}8=84{,}2^{\circ}$ \medbreak D'après le théorème d'Al-Kashi dans le triangle ADP, avec $a=DP$, $d=AP$ et $p=AD$:
+    \begin{flalign*}
+      &\quad a=\sqrt{d^2+p^2-2dp\times\cos{\ 83{,}2^{\circ}}} &\\
+      \iff&\quad DP\approx 4{,}7
+    \end{flalign*}
+    \item Pour CP: \medbreak D'après le théorème d'Al-Kashi dans le triangle ACP, avec $a=CP$, $c=AP$ et $p=AC$:
+    \begin{flalign*}
+      &\quad a=\sqrt{c^2+p^2-2cp\times\cos{\ 15^{\circ}}} &\\
+      \iff&\quad CP\approx 7{,}9
+    \end{flalign*}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={112}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+    \medbreak D'après le théorème d'Al-Kashi dans le triangle IJK, avec $i=JK$, $j=IK$ et $k=IJ$:
+    \begin{flalign*}
+      &\quad i^2=j^2+k^2-2jk\times\cos{\widehat{I}} &\\
+      \iff&\quad i=\sqrt{j^2+k^2-2jk\times\cos{\widehat{I}}} &\\
+      \iff&\quad JK\approx15{,}7
+    \end{flalign*}
+    \begin{flalign*}
+      &\quad\widehat{J}=cos^{-1}\left({\dfrac{i^2+k^2-j^2}{2ik}}\right) &\\
+      \iff&\quad \widehat{J}\approx9{,}6^{\circ}
+    \end{flalign*}
+    Donc, $\widehat{K}=50{,}5^{\circ}$
+  \end{minipage}
+\end{Exercise}
+
+\begin{Exercise}[number={114}]
+  \begin{enumerate}[a)]
+    \item Le triangle $PRR'$ est isocèle si et seulement si $PR=PR'$.
+    \begin{flalign*}
+      &\quad PR^2+QR^2=2RR'+\dfrac{PQ^2}{2} &\\
+      \iff&\quad RR'=\sqrt{\dfrac{1}{2}\left(PR^2+QR^2-\dfrac{PQ^2}{2}\right)}&\\
+      \iff&\quad RR'=5
+    \end{flalign*}
+    $[RR']=[PR]$, donc $PRR'$ est bien isocèle.
+    \item $P'$ appartient au cercle si et seulement si $[QP']=[QP]$. \\ Or, \quad $[QP']=\dfrac{\sqrt{97}}{2}\approx 4{,}9$ \quad et \quad $[QP]=12$
+  \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={142}]
+  \begin{enumerate}
+    \item D'Après le théorème d'Al-Kashi dans le triangle QNZ, avec $q=NZ$, $n=QZ$ et $z=QN$.
+    \begin{flalign*}
+      &\quad q^2=n^2+z^2-2nz\times\cos{\widehat{NQZ}} &\\
+      \iff&\quad q=\sqrt{n^2+z^2-2nz\times\cos{\widehat{NQZ}}} &\\
+      \iff&\quad NZ=\dfrac{\sqrt{6}-\sqrt{2}}{2}
+    \end{flalign*}
+    \item \begin{enumerate}[a)]
+            \item Dans un triangle isocèle, la hauteur coupe la base en son milieu, de plus,
+            \begin{flalign*}
+              &\quad\widehat{HQZ}=\sin^{-1}\left({\dfrac{HZ}{QZ}}\right) &\\
+              \iff&\quad\widehat{HQZ}=\sin^{-1}\left({\dfrac{\sqrt{6}-\sqrt{2}}{4}}\right) &\\
+              \iff&\quad\widehat{HQZ}=15^{\circ}
+            \end{flalign*}
+            \item $\sin{15^{\circ}}=\dfrac{\sqrt{6}-\sqrt{2}}{4}$
+            \item $HQ=\cos{15^{\circ}}=\dfrac{\sqrt{6}+\sqrt{2}}{4}$
+          \end{enumerate}
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={144}]
+  \begin{enumerate}[a)]
+    \item D'après la loi des Sinus dans le triangle DEF, \\ \quad $\dfrac{\sin{\widehat{D}}}{d}=\dfrac{\sin{\widehat{E}}}{e}=\dfrac{\sin{\widehat{F}}}{f}$ \qquad De plus, \quad $\widehat{F}=97^{\circ}$ \medbreak D'où \quad $e=\dfrac{\sin{\widehat{E}}\times f}{\sin{\widehat{F}}}\approx 3{,}0$ \qquad $d=\dfrac{\sin{\widehat{D}}\times f}{\sin{\widehat{F}}}\approx 2{,}3$ \medbreak
+    \item D'après la loi des Sinus dans le triangle GHK, \\ \quad $\dfrac{\sin{\widehat{K}}}{k}=\dfrac{\sin{\widehat{G}}}{g}=\dfrac{\sin{\widehat{H}}}{h}$ \qquad De plus, \quad $\widehat{G}=105^{\circ}$ \medbreak D'où \quad $k=\dfrac{\sin{\widehat{K}}\times g}{\sin{\widehat{G}}}\approx 7{,}3$ \qquad $h=\dfrac{\sin{\widehat{H}}\times g}{\sin{\widehat{G}}}\approx 5{,}2$
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={146}]
+  \begin{minipage}{\dimexpr\textwidth-10px-\parindent\relax}
+  \medbreak Je ne sais pas résoudre le problème sans faire recours à la loi des Sinus, vue en Enseignement Scientifique.\footnote{je viens de voir que l'on peut utiliser la loi des sinus, démontrée dans l'exercice 143} \\
+  On trouve $\widehat{R}=180-30-45=105^{\circ}$ \bigbreak
+  D'après la loi des Sinus: \qquad $\dfrac{\sin{\widehat{A}}}{a}=\dfrac{\sin{\widehat{R}}}{r}=\dfrac{\sin{\widehat{B}}}{b}$ \medbreak
+  D'où: \quad $a=\dfrac{\sin{\widehat{A}\times r}}{\sin{\widehat{R}}}\approx 2{,}6$ \quad et \quad $b=\dfrac{\sin{B}\times r}{\sin{R}}\approx 3{,}7$
+  \end{minipage}
+\end{Exercise}
+
+\end{document}

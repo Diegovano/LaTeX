@@ -1,0 +1,14 @@
+# SYNCTEX FILES #
+#################
+
+*.synctex.gz
+
+# BUILD DIR #
+#############
+
+build
+
+# MINTED FOLDERS #
+##################
+
+_minted*
