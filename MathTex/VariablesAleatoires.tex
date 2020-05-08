@@ -9,13 +9,14 @@
 \usepackage{enumitem}
 \usepackage{minted}
 \usepackage{booktabs}
-\usepackage[upright]{fourier}
 \usepackage[french]{babel}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{array}
 \usepackage{multirow}
 \usepackage[symbol]{footmisc}
+\usepackage{lmodern} % keep above "fourier" to avoir font change (allows minted text to be displayed as vector)
+\usepackage[upright]{fourier}
 %\usepackage{showframe}
 
 \graphicspath{ {./rsc/} }
@@ -303,19 +304,20 @@
                 # Note 1: Il s'agit ici d'un "default parameter", c'est-à-dire que
                 # si l'utilisateur ne donne pas d'argument, alors 10 est utilisé.
               \end{minted}
-              Si on imagine l'arbre pondéré de cette situation, on obtient un arbre énorme. 
-              \begin{equation*}
-                \sum^{10}_{n=1}\left({2^n}\right)=2048 \quad \text{branches en total}
-              \end{equation*}
+              On cherche quelle est la probabilité que sept des usagers sur les dix soient abonnés. J'utilise la méthode décrite dans le ``Savoir-Faire'' n$^{\circ}$ 4, Page 323. \smallbreak
+              Si on imagine l'arbre pondéré qui modélise la situation, on obtient un arbre énorme. La difficulté est de retrouver combien de branches de l'arbre satisfont notre évènement.
               \begin{equation*}
                 2^{10}=1024 \quad \text{branches au niveau de la dernière colonne}
+              \end{equation*}
+              \begin{equation*}
+                \sum^{10}_{n=1}\left({2^n}\right)=2048 \quad \text{branches en total}
               \end{equation*} \medbreak
-              Dont seulement une petite partie satisfont P(\text{\small{``7 Usagers sont abonnés''}}):
+              Dont seulement une petite partie satisfont P(\text{\small{``7 usagers sont abonnés''}}):
               \begin{equation*}
                 \frac{10!}{7!\times 3!}=120\footnote[2]{10 niveaux dans l'arbre, avec 7 ``la personne est abonnée'', et 3 ``la personne n'est pas abonnée''.}
               \end{equation*}
-              Finallement, on a $P(X=7)=0{,}62^7\times 0{,}38^3\times 120\approx 0{,}2319$ \\ 
-              Ceci est cohérent avec ce que je retrouve dans mes simualtions $(n=10\ 000)$. \\ Cependant, je suis certain qu'il existe  une méthode $\infty$ment plus simple de résoudre le problème. 
+              Finallement, on a $P(Y=7)=0{,}62^7\times 0{,}38^3\times 120\approx 0{,}2319$ \\ 
+              Ceci est cohérent avec ce que je retrouve dans mes simualtions $(n=10\ 000)$. \\ Cependant, je suis certain qu'il existe  une méthode $\infty$ment plus simple de résoudre le problème, et que ne demande pas au moins une heure de recherche pour pouvoir calculer le nombre de combinations avec répetition possibles... 
       \end{enumerate}
     \end{Exercise}
 \end{document}
