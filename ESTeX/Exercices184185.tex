@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{lmodern}
+\usepackage[upright]{fourier}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{siunitx}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommand{\logb}[1]{
+    \log\left(#1\right)
+}
+
+\sisetup{inter-unit-product=\ensuremath{{}\cdot{}}}
+
+\begin{document}
+    \title{Enseignement Scientifique \\ Exercices page 185}
+    \author{Diego Van Overberghe}
+    \date{9 Mai 2020}
+    \maketitle
+    
+    \section{Intensité Sonore et Niveau d'Intensité Sonore}
+    \begin{enumerate}[1.]
+        \item   La transmission des fluctuations de pression dans les milieux materiaux, tels que l'air.
+        \item   L'Intensité sonore dépend de la puissance sonore, exprimée en $W$, et la surface de propagation des ondes, en $m^2$. Lorsqu'on s'éloigne de la source du son, le rayon de la sphère qui modélise le son augmente. Ceci augmente la surface de la sphère, et réduit donc l'Intensité sonore.
+        \item   $I_\text{seuil de douleur}=10^0\ \si{W.m^{-2}}$ \\ $L=10\times\log{\frac{I}{I_0}}=10\times\logb{10^{12}}=120\ \si{dB}$
+        \item   $I_\text{10\ \si{m}}=\frac{P}{S}=\frac{12{,}5}{4\pi\times 10^2}=9{,}9\times 10^{-3}\ \si{W.m^{-2}}$ \smallbreak $I_\text{20\ \si{m}}=\frac{P}{S}=\frac{12{,}5}{4\pi\times 20^2}=2{,}5\times 10^{-3}\ \si{W.m^{-2}}$ \smallbreak On voit donc que multiplier la distance par deux résulte en un diminution de $2^2=4$ fois.
+        \item $L_\text{10\ \si{m}}=10\times\logb{\frac{I_\text{10\ \si{m}}}{I_0}}=1{,}0\times 10^2\ \si{dB}$ \quad Ceci dépasse le seuil de danger. \smallbreak $L_\text{20\ \si{m}}=10\times\logb{\frac{I_\text{20\ \si{m}}}{I_0}}=9{,}4\times 10^{1}\ \si{dB}$ \quad Ceci dépasse aussi le seuil de danger.
+        \item Le niveau sonore dépend de l'Intensité sonore, qui dépend de la distance par rapport à la source (paramètre le plus influent) ainsi que la puissance sonore.
+    \end{enumerate}
+\end{document}
