@@ -6,7 +6,6 @@
 \usepackage{mathtools}
 \usepackage[shortlabels]{enumitem}
 \usepackage[margin=2.5cm]{geometry}
-\usepackage{enumitem}
 \usepackage{minted}
 \usepackage{booktabs}
 \usepackage[french]{babel}
@@ -18,8 +17,7 @@
 \usepackage{lmodern} % keep above "fourier" to avoir font change (allows minted text to be displayed as vector)
 \usepackage[upright]{fourier}
 \usepackage{hhline}
-\usepackage{ChkTeX}
-%\usepackage{showframe}
+\usepackage{showframe}
 
 \graphicspath{ {./rsc/} }
 % New definition of square root:
@@ -50,6 +48,7 @@
 
     \title{Exercices Chapitre sur les Variables Aléatoires\footnote{Page 328 du manuel Hatier}}
     \author{Diego Van Overberghe}
+    \date{13 Mai 2020}
     \maketitle
     
     \begin{Exercise}[number={33}]
@@ -339,7 +338,7 @@
                 \end{tabular}\hfill\mbox{}\medbreak
                 \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de S}}
 
-        \item \parbox[t]{\textwidth}{\vspace{-2.6em}\begin{align*}
+        \item \noindent\parbox[t]{\textwidth-30pt}{\vspace{-2.6em}\begin{align*}
                 P(A)&=p_2+p_4+p_6+p_8=0{,}5 & &\text{ou} & P(A)&=\frac{8}{16} &\\[0.01\textwidth]
                 P(B)&=p_3+p_5+p_7=0{,}5 & &\text{ou} & P(B)&=\frac{8}{16} &\\[0.01\textwidth]
                 P(C)&=p_2+p_4+p_5+p_7+p_8=\frac{11}{16} & &\text{ou} & P(C)&=\frac{11}{16} &\\[0.01\textwidth]
@@ -446,11 +445,11 @@
                 \iff&\quad p_1x_1+p_2x_2=0 &\\
                 \iff&\quad \frac{15}{20}\times -1+\frac{5}{20}x=0 &\\
                 \iff&\quad x=3 
-              \end{flalign*}
-              \hfill\begin{tabular}[t]{ | l || >{\centering}m{0.05\textwidth}| >{\centering\arraybackslash}m{0.05\textwidth}| } \firsthline
+              \end{flalign*} \pagebreak
+              \begin{center}\begin{tabular}[t]{ | l || >{\centering}m{0.05\textwidth}| >{\centering\arraybackslash}m{0.05\textwidth}| } \firsthline
                 $c_i$      & $-1$          & $3$           \\ \hline
                 $P(C=c_i)$ \hspace{0.5cm} & $\frac{3}{4}$ & $\frac{1}{4}$ \\ \hline        
-              \end{tabular}\hfill\mbox{}\medbreak
+              \end{tabular}\end{center}\medbreak
               \parbox{\linewidth}{\captionof{figure}{Tableau présentant la loi de probabilité de C}}
               On déduit $p_2=\frac{1}{9}$, parce que $\displaystyle\sum^r_{i=1}\left(p_i\right)=1$
               \vspace{-\baselineskip}
