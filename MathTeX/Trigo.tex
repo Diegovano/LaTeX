@@ -1,11 +1,17 @@
-\documentclass[12pt]{book}
+\documentclass[12pt, a4paper]{article}
 \usepackage{exercise}
 \usepackage{amsmath}
-\usepackage[shortlabels]{enumitem}
-\usepackage{siunitx}
 \usepackage{amsfonts}
-\usepackage[margin=1in]{geometry}
-
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[french]{babel}
+\usepackage[upright]{fourier}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{caption}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{arrows.meta}
 
 \renewcommand{\ExerciseHeader}{%
   \par\noindent
@@ -16,8 +22,11 @@
 
 \begin{document}
 
+    \title{Exercices Chapitre sur la Trigonométrie\footnote{Page 202 du Manuel Hatier}}
+    \author{Diego Van Overberghe}
+    \maketitle
+
 \begin{Exercise}[number={45}]
-    \vskip 20px
     \begin{enumerate}
         \item   \begin{enumerate}[a)]
                 \item $\frac{\pi}{4}\times8=2\pi$ \qquad Il faut donc multiplier par 8.
@@ -32,7 +41,6 @@
 \end{Exercise}
 
 \begin{Exercise}[number={46}]
-    \vskip 20px
     \begin{enumerate}
         \item   \begin{enumerate}[a)]
                 \item $\frac{\pi}{3}$ est associé au point A.
@@ -51,18 +59,18 @@
 \begin{Exercise}[number={47}]
     \begin{enumerate}[a)]
         \item Faux. 0 est associé au point $(1;0)$, et $\pi$ est associé au point $(-1;0)$
-        \item Vrai. $\dfrac{180}{\pi}\times\dfrac{2\pi}{5}=\ang{72}$
+        \item Vrai. $\dfrac{180}{\pi}\times\dfrac{2\pi}{5}=72^{\circ}$
         \item Vrai.
         \item Faux. $\dfrac{11\pi}{6}<2\pi$
         \item Vrai. Ajoutter $k\times2\pi,$ avec $k\in \mathbb{Z}$, ne fait que ajoutter une rotation entière, vu que le périmètre du cercle trigonométrique est $2\pi$
-        \item Faux. \ang{103} est associé au nombre $\dfrac{103\pi}{180}$
+        \item Faux. $103^{\circ}$ est associé au nombre $\dfrac{103\pi}{180}$
     \end{enumerate}
 \end{Exercise}
 
 \begin{Exercise}[number={50}]
     \begin{enumerate}[a)]
         \item Le périmètre de la bobine est de $2\pi$ puisque son rayon est 1. Or $\dfrac{2019\pi}{2}=1009\pi+\dfrac{\pi}{2}$ \\ Soit $\frac{1014\pi}{2\pi}=513$ tours complets.
-        \item La première extremité se situe du côté droite du cercle. Après les 513 tours complets, il reste $\frac{\pi}{2}$ cm de fil. Ceci correspond à un angle de \ang{90} en avant. L'autre éxtrémité du fil se situe donc du côté supérieur du cercle.
+        \item La première extremité se situe du côté droite du cercle. Après les 513 tours complets, il reste $\frac{\pi}{2}$ cm de fil. Ceci correspond à un angle de $90^{\circ}$ en avant. L'autre éxtrémité du fil se situe donc du côté supérieur du cercle.
     \end{enumerate}
 \end{Exercise}
 
@@ -75,18 +83,18 @@
 
 \begin{Exercise}[number={59}]
     \begin{enumerate}[a)]
-        \item $cos{\ \dfrac{\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ \dfrac{\pi}{3}}=\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ -\dfrac{\pi}{2}}=0$ \quad et \quad $sin{\ -\dfrac{\pi}{2}}=-1$
-        \item $cos{\ \dfrac{7\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ \dfrac{7\pi}{3}}=\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ -\pi}=-1$ \quad et \quad $sin{\ -\pi}=0$
-        \item $cos{\ -\dfrac{\pi}{4}}=\dfrac{1}{2}$ \quad et \quad $sin{\ -\dfrac{\pi}{4}}=-\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ \dfrac{5\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $sin{\ \dfrac{5\pi}{6}}=\dfrac{1}{2}$
-        \item $cos{\ 0}=1$ \quad et \quad $sin{\ 0}=1$
-        \item $cos{\ \dfrac{3\pi}{4}}=-\dfrac{\sqrt{2}}{2}$ \quad et \quad $sin{\ \dfrac{3\pi}{4}}=\dfrac{\sqrt{2}}{2}$
-        \item $cos{\ \dfrac{5\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ \dfrac{5\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ \dfrac{3\pi}{2}}=0$ \quad et \quad $sin{\ \dfrac{3\pi}{2}}=-1$
-        \item $cos{\ \dfrac{7\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $sin{\ \dfrac{7\pi}{6}}=-\dfrac{1}{2}$
-        \item $cos{\ -\dfrac{2\pi}{3}}=-\dfrac{1}{2}$ \quad et \quad $sin{\ -\dfrac{2\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ \dfrac{\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ \dfrac{\pi}{3}}=\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ -\dfrac{\pi}{2}}=0$ \quad et \quad $\sin{\ -\dfrac{\pi}{2}}=-1$
+        \item $\cos{\ \dfrac{7\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ \dfrac{7\pi}{3}}=\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ -\pi}=-1$ \quad et \quad $\sin{\ -\pi}=0$
+        \item $\cos{\ -\dfrac{\pi}{4}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ -\dfrac{\pi}{4}}=-\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ \dfrac{5\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $\sin{\ \dfrac{5\pi}{6}}=\dfrac{1}{2}$
+        \item $\cos{\ 0}=1$ \quad et \quad $\sin{\ 0}=1$
+        \item $\cos{\ \dfrac{3\pi}{4}}=-\dfrac{\sqrt{2}}{2}$ \quad et \quad $\sin{\ \dfrac{3\pi}{4}}=\dfrac{\sqrt{2}}{2}$
+        \item $\cos{\ \dfrac{5\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ \dfrac{5\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ \dfrac{3\pi}{2}}=0$ \quad et \quad $\sin{\ \dfrac{3\pi}{2}}=-1$
+        \item $\cos{\ \dfrac{7\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $\sin{\ \dfrac{7\pi}{6}}=-\dfrac{1}{2}$
+        \item $\cos{\ -\dfrac{2\pi}{3}}=-\dfrac{1}{2}$ \quad et \quad $\sin{\ -\dfrac{2\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
     \end{enumerate}
 \end{Exercise}
 
@@ -123,36 +131,189 @@
 
 \begin{Exercise}
     \begin{enumerate}[a)]
-        \item $cos{\ \dfrac{15\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ \dfrac{15\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ -\dfrac{5\pi}{2}}=-1$ \quad et \quad $sin{\ -\dfrac{5\pi}{2}}=0$
-        \item $cos{\ -\dfrac{9\pi}{4}}=\dfrac{\sqrt{2}}{2}$ \quad et \quad $sin{\ -\dfrac{9\pi}{4}}=-\dfrac{\sqrt{2}}{2}$
-        \item $cos{\ -\dfrac{28\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ -\dfrac{28\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
-        \item $cos{\ -\dfrac{7\pi}{6}}=\dfrac{\sqrt{3}}{2}$ \quad et \quad $sin{\ -\dfrac{7\pi}{6}}=-\dfrac{1}{2}$
-        \item $cos{\ \dfrac{2018\pi}{4}}=0$ \quad et \quad $sin{\ \dfrac{2018\pi}{4}}=1$
+        \item $\cos{\ \dfrac{15\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ \dfrac{15\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ -\dfrac{5\pi}{2}}=-1$ \quad et \quad $\sin{\ -\dfrac{5\pi}{2}}=0$
+        \item $\cos{\ -\dfrac{9\pi}{4}}=\dfrac{\sqrt{2}}{2}$ \quad et \quad $\sin{\ -\dfrac{9\pi}{4}}=-\dfrac{\sqrt{2}}{2}$
+        \item $\cos{\ -\dfrac{28\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ -\dfrac{28\pi}{3}}=-\dfrac{\sqrt{3}}{2}$
+        \item $\cos{\ -\dfrac{7\pi}{6}}=\dfrac{\sqrt{3}}{2}$ \quad et \quad $\sin{\ -\dfrac{7\pi}{6}}=-\dfrac{1}{2}$
+        \item $\cos{\ \dfrac{2018\pi}{4}}=0$ \quad et \quad $\sin{\ \dfrac{2018\pi}{4}}=1$
+    \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={65}]
+    \begin{enumerate}[a)]
+        \item $\cos{\ \dfrac{101\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $\sin{\ \dfrac{101\pi}{6}}=\dfrac{1}{2}$
+        \item $\cos{\ \dfrac{43\pi}{4}}=-\dfrac{\sqrt{2}}{2}$ \quad et \quad $\sin{\ \dfrac{43\pi}{4}}=\dfrac{\sqrt{2}}{2}$
+        \item $\cos{\ \dfrac{19\pi}{6}}=\dfrac{\sqrt{3}}{2}$ \quad et \quad $\sin{\ \dfrac{19\pi}{6}}=\dfrac{1}{2}$
+        \item $\cos{\ -\dfrac{25\pi}{4}}=\dfrac{\sqrt{2}}{2}$ \quad et \quad $\sin{\ -\dfrac{25\pi}{4}}=-\dfrac{\sqrt{2}}{2}$
+        \item $\cos{\ -\dfrac{21\pi}{2}}=0$ \quad et \quad $\sin{\ -\dfrac{21\pi}{2}}=-1$
+        \item $\cos{\ -\dfrac{15\pi}{2}}=0$ \quad et \quad $\sin{\ -\dfrac{15\pi}{2}}=1$
+        \item $\cos{\ \dfrac{1981\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $\sin{\ \dfrac{1981\pi}{3}}=\dfrac{\sqrt{3}}{2}$
     \end{enumerate}
 \end{Exercise}
 
 \begin{Exercise}[number={65}]
     \begin{enumerate}[a)]
-        \item $cos{\ \dfrac{101\pi}{6}}=-\dfrac{\sqrt{3}}{2}$ \quad et \quad $sin{\ \dfrac{101\pi}{6}}=\dfrac{1}{2}$
-        \item $cos{\ \dfrac{43\pi}{4}}=-\dfrac{\sqrt{2}}{2}$ \quad et \quad $sin{\ \dfrac{43\pi}{4}}=\dfrac{\sqrt{2}}{2}$
-        \item $cos{\ \dfrac{19\pi}{6}}=\dfrac{\sqrt{3}}{2}$ \quad et \quad $sin{\ \dfrac{19\pi}{6}}=\dfrac{1}{2}$
-        \item $cos{\ -\dfrac{25\pi}{4}}=\dfrac{\sqrt{2}}{2}$ \quad et \quad $sin{\ -\dfrac{25\pi}{4}}=-\dfrac{\sqrt{2}}{2}$
-        \item $cos{\ -\dfrac{21\pi}{2}}=0$ \quad et \quad $sin{\ -\dfrac{21\pi}{2}}=-1$
-        \item $cos{\ -\dfrac{15\pi}{2}}=0$ \quad et \quad $sin{\ -\dfrac{15\pi}{2}}=1$
-        \item $cos{\ \dfrac{1981\pi}{3}}=\dfrac{1}{2}$ \quad et \quad $sin{\ \dfrac{1981\pi}{3}}=\dfrac{\sqrt{3}}{2}$
+        \item $C=1+0+\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}+\dfrac{\sqrt{2}}{2}=\dfrac{\sqrt{2}+\sqrt{3}+3}{2}$ \\ $S=0+1+\dfrac{\sqrt{3}}{2}+\dfrac{\sqrt{2}}{2}+\dfrac{1}{2}=\dfrac{\sqrt{2}+\sqrt{3}+3}{2}$
+        \item Les deux nombres sont égaux. Ceci est cohérent, vu que $\cos{\ \dfrac{\pi}{2}}=\sin{\ 0}$, $\cos{\ \dfrac{\pi}{3}}=\sin{\ \dfrac{\pi}{6}}$ et $\cos{\ \dfrac{\pi}{4}}=\sin{\ \dfrac{\pi}{4}}$
     \end{enumerate}
 \end{Exercise}
 
-\pagebreak %for spacing may need to remove later
-
-\begin{Exercise}
+\begin{Exercise}[number={77}]
+    Tout d'Abord, $\forall x\in[-2\pi\,;2\pi], -x\in[-2\pi\,;2\pi]$. Ceci est vrai pour chaque fonction qui suit.
     \begin{enumerate}[a)]
-        \item $C=1+0+\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}+\dfrac{\sqrt{2}}{2}=\dfrac{\sqrt{2}+\sqrt{3}+3}{2}$ \\ $S=0+1+\dfrac{\sqrt{3}}{2}+\dfrac{\sqrt{2}}{2}+\dfrac{1}{2}=\dfrac{\sqrt{2}+\sqrt{3}+3}{2}$
-        \item Les deux nombres sont égaux. Ceci est cohérent, vu que $cos{\ \dfrac{\pi}{2}}=sin{\ 0}$, $cos{\ \dfrac{\pi}{3}}=sin{\ \dfrac{\pi}{6}}$ et $cos{\ \dfrac{\pi}{4}}=sin{\ \dfrac{\pi}{4}}$
-        
+        \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe $\mathcal{C}_1$. \\ Donc, $f_1(x)=f_1(-x)$, c'est-à-dire que la fonction est paire.
+        \item On peut voir que l'origine est un point de symmétrie de la courbe $\mathcal{C}_2$. \\ Donc, $f_2(-x)=-f_2(x)$, c'est-à-dire que la fonction est impaire.
+        \item La fonction $f_3$ est quelconque. Elle est ni paire, ni impaire.
+        \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe $\mathcal{C}_4$. \\ Donc, $f_4(x)=f_4(-x)$, c'est-à-dire que la fonction est paire.
     \end{enumerate}
-    
+\end{Exercise}
+
+\begin{Exercise}[number={78}]
+    Tout d'Abord, $\forall x\in[-2\pi\,;2\pi], -x\in[-2\pi\,;2\pi]$. Ceci est vrai pour chaque fonction qui suit.
+    \begin{enumerate}[a)]
+        \item On peut voir que l'origine est un point de symmétrie de la courbe $\mathcal{C}_1$. \\ Donc, $f_1(-x)=-f_1(x)$, c'est-à-dire que la fonction est impaire.
+        \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe $\mathcal{C}_2$. \\ Donc, $f_2(x)=f_2(-x)$, c'est-à-dire que la fonction est paire.
+        \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe $\mathcal{C}_3$. \\ Donc, $f_3(x)=f_3(-x)$, c'est-à-dire que la fonction est paire.
+        \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe $\mathcal{C}_4$. \\ Donc, $f_4(x)=f_4(-x)$, c'est-à-dire que la fonction est paire.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={80}]
+    \begin{center}\begin{tikzpicture}[scale=0.8, domain=-7:7, smooth, samples=100]
+        \draw[gray,very thin] (-7,-3) grid (7,4);
+        \draw[thick, -{Latex[length=3mm]}] (-7,0) -- (7,0) node[anchor=north east, scale=0.75] {$x$};
+        \draw[thick, -{Latex[length=3mm]}] (0,-3) -- (0,4) node[anchor=north east, scale=0.75] {$y$};
+        \foreach \x in {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6}
+        \draw[line width=0.2mm] (\x, 0) -- (\x, -0.25);
+        \foreach \x / \xtext in {-2*pi/-2\pi,-pi/-\pi,pi/\pi,2*pi/2\pi}
+        \draw[line width=0.2mm] (\x, 0) -- (\x, 0.25) node[anchor=south, scale=0.7, fill=white] {$\xtext$};
+        \foreach \x in {-2,-1,1,2,3}
+        \draw[line width=0.2mm] (-0.25, \x) -- (0, \x);
+        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1) node[anchor=north east, scale=0.7] {$\vec{\jmath}$};
+        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0) node[anchor=north east, scale=0.7] {$\vec{\imath}$};
+        \draw (0,0) node[anchor=north east, scale=0.7] {O};
+        
+        \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-3:4]
+            \addplot[red, very thick]{cos(deg(2*x))};
+            \addplot[black!30!green, very thick]{sin(deg(3*x))};
+            \addplot[blue, very thick]{2*sin(deg(x))-1};
+            \addplot[purple, very thick]{x-cos(deg(x))};  
+        \end{axis}
+    \end{tikzpicture}\end{center}
+    \parbox{\linewidth}{\captionof{figure}{Représentation Graphique des Fonctions $f$, $g$, $h$ et $k$}}
+    \begin{enumerate}[a)]
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe rouge.
+                    \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe rouge. \\ Donc, $f(-x)=f(x)$, c'est-à-dire que la fonction semble être paire.
+                    \item $f(-x)=\cos(-2x) \qquad f(x)=\cos(2x)\iff f(x)=\cos(-2x)\iff f(-x)=f(x)$ \\ La fonction est donc bien paire.
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe verte.
+                    \item On peut voir que l'origine est un point de symmétrie de la courbe verte. \\ Donc, $g(-x)=-g(x)$, c'est-à-dire que la fonction semble être impaire.
+                    \item $g(-x)=\sin(-3x) \quad -g(x)=-\sin(3x)\iff -g(x)=\sin(-3x)\iff g(-x)=-g(x)$ \\ la fonction est donc bien impaire
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe bleue.
+                    \item On n'a pas l'impression que la fonction est paire ou impaire.
+                    \item $h(-x)=2\sin(-x)-1=-2\sin(x)-1\neq h(x)\neq -h(x)$ \\ La fonction est bien donc ni paire, ni impaire.
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe bordeaux.
+                    \item On n'a pas l'impression que la fonction est paire ou impaire.
+                    \item $k(-x)=-x-cos(-x)=-x-cos(x)\neq k(x)\neq -k(x)$ \\ La fonction est bien donc ni paire, ni impaire.
+                \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{Exercise}[number={81}]
+    \begin{center}\begin{tikzpicture}[scale=0.8, domain=-7:7, smooth, samples=100]
+        \draw[gray,very thin] (-7,-4) grid (7,4);
+        \draw[thick, -{Latex[length=3mm]}] (-7,0) -- (7,0) node[anchor=north east, scale=0.75] {$x$};
+        \draw[thick, -{Latex[length=3mm]}] (0,-4) -- (0,4) node[anchor=north east, scale=0.75] {$y$};
+        \foreach \x in {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6}
+        \draw[line width=0.2mm] (\x, 0) -- (\x, -0.25);
+        \foreach \x / \xtext in {-2*pi/-2\pi,-pi/-\pi,pi/\pi,2*pi/2\pi}
+        \draw[line width=0.2mm] (\x, 0) -- (\x, 0.25) node[anchor=south, scale=0.7, fill=white] {$\xtext$};
+        \foreach \x in {-3,-2,-1,1,2,3}
+        \draw[line width=0.2mm] (-0.25, \x) -- (0, \x);
+        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1) node[anchor=north east, scale=0.7] {$\vec{\jmath}$};
+        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0) node[anchor=north east, scale=0.7] {$\vec{\imath}$};
+        \draw (0,0) node[anchor=north east, scale=0.7] {O};
+        
+        \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-4:4]
+            \addplot[red, very thick]{cos(deg(x))*sin(deg(x))};
+            \addplot[black!30!green, very thick]{(cos(deg(x))^2};
+            \addplot[blue, very thick]{(sin(deg(x)))^2};
+            \addplot[purple, very thick]{x+sin(deg(x))};  
+        \end{axis}
+    \end{tikzpicture}\end{center}
+    \parbox{\linewidth}{\captionof{figure}{Représentation Graphique des Fonctions $f$, $g$, $h$ et $k$}}
+    \begin{enumerate}[a)]
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe rouge.
+                    \item On peut voir que l'origine est un point de symmétrie de la courbe rouge. \\ Donc, $f(-x)=-f(x)$, c'est-à-dire que la fonction semble être impaire.
+                    \item $f(-x)=\cos(-x)\sin(-x) \quad -f(x)=-\cos(x)\sin(x)\iff -f(x)=\cos(-x)\sin(-x)\\\iff f(-x)=-f(x)$ \quad La fonction est bien impaire.
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe verte.
+                    \item On peut voir que la droite $x=0$ est un axe de symmétrie de la courbe verte. \\ Donc, $g(-x)=g(x)$, c'est-à-dire que la fonction semble être paire.
+                    \item $g(-x)=\left(\cos(-x)\right)^2 \quad g(x)=\left(\cos(x)\right)^2\iff g(x)=\left(\cos(-x)\right)^2\iff g(-x)=g(x)$ \\ La fonction est donc bien paire.
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la courbe bleue.
+                    \item On peut voir que la droit $x=9$ est un axe de symmétrie de la courbe bleue. \\ Donc, $h(-x)=h(x)$, c'est-à-dire que la fonction semble être paire.
+                    \item $h(-x)=\left(\sin(-x)\right)^2 \quad h(x)=\left(\sin(x)\right)^2\iff h(x)=\left(\sin(-x)\right)^2\iff h(-x)=h(x)$ \\ La fonction est donc bien paire.
+                \end{enumerate}\smallbreak
+        \item   \begin{enumerate}[1)]
+                    \item Il s'agit de la droite bordeaux.
+                    \item On peut voir que l'origine est un point de symmétrie de la courbe bordeaux. \\ Donc, $k(-x)=-k(x)$, c'est-à-dire que la fonction semble être impaire.
+                    \item $k(-x)=-x+\sin(-x) \quad -k(x)=-x-\sin(x)\iff -k(x)=-x\sin(-x)\\\iff k(-x)=-k(x)$ \quad La fonction est bien impaire.
+                \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={82}]
+    \begin{itemize}
+        \item $\mathcal{C}_1\longrightarrow f(x)$
+        \item $\mathcal{C}_2\longrightarrow h(x)$
+        \item $\mathcal{C}_3\longrightarrow g(x)$
+    \end{itemize}
+\end{Exercise}
+
+\begin{Exercise}[number={83}]
+    \begin{enumerate}[1)]
+        \item   \begin{enumerate}[a)]
+                    \item Vrai. $f(x+2k\pi)=f(x)\quad\text{avec}\ \begin{cases}k\in\mathbb{Z}\end{cases}$
+                    \item Vrai. Pour la même raison.
+                \end{enumerate}
+        \item Vrai. Rajoutter deux à $x$ revient à éffectuer un tour en plus du cercle trigonomérique,\\\phantom{Vrai.} et ne change donc pas la valeur de $f(x)$.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={88}]
+    \begin{enumerate}[a)]
+        \item Il semble que la période est autour de $6{,}2x$. On observe par lecture graphique que $g(x)$ semble compris entre $1$ et $7$.
+        \item   \begin{itemize}
+                    \item   $\begin{aligned}[t]
+                                &\quad g(x+y)=g(x) \\
+                                \iff&\quad 4+3\cos(x+y)=4+3\cos(x) \\
+                                \iff&\quad \cos(x+y)=\cos(x) \\
+                                \iff&\quad y=2k\pi\quad k\in\mathbb{Z} \\
+                            \end{aligned}$ \smallbreak
+                            La période est donc de $2k\pi$, avec $k=1$, c'est-à-dire $2\pi\approx 6{,}3$ \medbreak
+                    \item   $\begin{aligned}[t]
+                                &\quad -1\leq\cos(x)\leq 1 \\
+                                \iff&\quad -3\leq\ 3\cos(x)\leq 3 \\
+                                \iff&\quad 1\leq\ 4+3\cos(x)\leq 70 \\
+                            \end{aligned}$ \smallbreak
+                            La conjecture est vérifiée. \medbreak
+                \end{itemize}
+    \end{enumerate}
 \end{Exercise}
 
 \end{document}
