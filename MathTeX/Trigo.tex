@@ -183,25 +183,27 @@
 
 \begin{Exercise}[number={80}]
     \begin{center}\begin{tikzpicture}[scale=0.8, domain=-7:7, smooth, samples=100]
-        \draw[gray,very thin] (-7,-3) grid (7,4);
+        \draw[gray,very thin] (-7,-4) grid (7,4);
         \draw[thick, -{Latex[length=3mm]}] (-7,0) -- (7,0) node[anchor=north east, scale=0.75] {$x$};
-        \draw[thick, -{Latex[length=3mm]}] (0,-3) -- (0,4) node[anchor=north east, scale=0.75] {$y$};
+        \draw[thick, -{Latex[length=3mm]}] (0,-4) -- (0,4) node[anchor=north east, scale=0.75] {$y$};
         \foreach \x in {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6}
         \draw[line width=0.2mm] (\x, 0) -- (\x, -0.25);
         \foreach \x / \xtext in {-2*pi/-2\pi,-pi/-\pi,pi/\pi,2*pi/2\pi}
         \draw[line width=0.2mm] (\x, 0) -- (\x, 0.25) node[anchor=south, scale=0.7, fill=white] {$\xtext$};
-        \foreach \x in {-2,-1,1,2,3}
+        \foreach \x in {-3,-2,-1,1,2,3}
         \draw[line width=0.2mm] (-0.25, \x) -- (0, \x);
-        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1) node[anchor=north east, scale=0.7] {$\vec{\jmath}$};
-        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0) node[anchor=north east, scale=0.7] {$\vec{\imath}$};
-        \draw (0,0) node[anchor=north east, scale=0.7] {O};
+        \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1);
+        \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0);
         
-        \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-3:4]
+        \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-4:4]
             \addplot[red, very thick]{cos(deg(2*x))};
             \addplot[black!30!green, very thick]{sin(deg(3*x))};
             \addplot[blue, very thick]{2*sin(deg(x))-1};
             \addplot[purple, very thick]{x-cos(deg(x))};  
         \end{axis}
+        \draw (0,0) node[anchor=north east, scale=0.9] {O};
+        \draw (0.5,0) node[outer sep=10pt, anchor=north, scale=0.9] {$\vec{i}$}; 
+        \draw (0,0.5) node[anchor=east, scale=0.9] {$\vec{j}$};
     \end{tikzpicture}\end{center}
     \parbox{\linewidth}{\captionof{figure}{Représentation Graphique des Fonctions $f$, $g$, $h$ et $k$}}
     \begin{enumerate}[a)]
@@ -217,12 +219,12 @@
                 \end{enumerate}\smallbreak
         \item   \begin{enumerate}[1)]
                     \item Il s'agit de la courbe bleue.
-                    \item On n'a pas l'impression que la fonction est paire ou impaire.
+                    \item On a l'impression que la fonction est ni paire ni impaire.
                     \item $h(-x)=2\sin(-x)-1=-2\sin(x)-1\neq h(x)\neq -h(x)$ \\ La fonction est bien donc ni paire, ni impaire.
                 \end{enumerate}\smallbreak
         \item   \begin{enumerate}[1)]
                     \item Il s'agit de la courbe bordeaux.
-                    \item On n'a pas l'impression que la fonction est paire ou impaire.
+                    \item On a l'impression que la fonction est ni paire ni impaire.
                     \item $k(-x)=-x-cos(-x)=-x-cos(x)\neq k(x)\neq -k(x)$ \\ La fonction est bien donc ni paire, ni impaire.
                 \end{enumerate}
     \end{enumerate}
@@ -241,9 +243,8 @@
         \draw[line width=0.2mm] (\x, 0) -- (\x, 0.25) node[anchor=south, scale=0.7, fill=white] {$\xtext$};
         \foreach \x in {-3,-2,-1,1,2,3}
         \draw[line width=0.2mm] (-0.25, \x) -- (0, \x);
-        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1) node[anchor=north east, scale=0.7] {$\vec{\jmath}$};
-        \draw[line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0) node[anchor=north east, scale=0.7] {$\vec{\imath}$};
-        \draw (0,0) node[anchor=north east, scale=0.7] {O};
+        \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1);
+        \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0); 
         
         \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-4:4]
             \addplot[red, very thick]{cos(deg(x))*sin(deg(x))};
@@ -251,6 +252,10 @@
             \addplot[blue, very thick]{(sin(deg(x)))^2};
             \addplot[purple, very thick]{x+sin(deg(x))};  
         \end{axis}
+
+        \draw (0,0) node[outer sep=12pt, anchor=north east, scale=0.9] {O};
+        \draw (0.5,0) node[anchor=north, scale=0.9] {$\vec{i}$};
+        \draw (0,0.5) node[anchor=east, scale=0.9] {$\vec{j}$};
     \end{tikzpicture}\end{center}
     \parbox{\linewidth}{\captionof{figure}{Représentation Graphique des Fonctions $f$, $g$, $h$ et $k$}}
     \begin{enumerate}[a)]
@@ -297,7 +302,7 @@
 
 \begin{Exercise}[number={88}]
     \begin{enumerate}[a)]
-        \item Il semble que la période est autour de $6{,}2x$. On observe par lecture graphique que $g(x)$ semble compris entre $1$ et $7$.
+        \item Il semble que la période est autour de $6{,}2$. On observe par lecture graphique que $g(x)$ semble compris entre $1$ et $7$.
         \item   \begin{itemize}
                     \item   $\begin{aligned}[t]
                                 &\quad g(x+y)=g(x) \\
