@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[upright]{fourier}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{siunitx}
+\geometry
+{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+\sisetup{inter-unit-product=\ensuremath{{}\cdot{}}}
+
+\begin{document}
+    \title{Enseignement Scientifique \\ Exercices Pages 210 à 213}
+    \author{Diego Van Overberghe}
+    \date{15 Mai 2020}
+    \maketitle
+
+    \section{La Numérisation d'un Signal Sonore}
+    \begin{itemize}
+        \item[] L'oreille humaine ``entend'' seulement les signaux analogiques. La difficulté est donc de pouvoir transformer ces signaux analogiques, qui peuvent être entendus, en signaux numériques, qui peuvent être facilement transportés ou envoyés. \\ Le problème est, que nous avons pas une infinité de 1 et 0 qui pourraient parfaitement décrire l'allure d'une courbe. \\ Il faut donc compromiser, et, perdre de la fidélité accoustique. \\ Un convertisseur analogique-numérique (CAN), éffectue d'abord un échantillonage, c'est-à-dire noter la valeur de signal de façon periodique, et crée une approximation de cette courbe. Cette approximation est dite un ensemble ``discret'' c'est-à-dire qu'elle ne contient pas toutes les valeurs intérmédaires (c'est la fameuse perte de fidélité). \\ Cependant, la qualité de cette nouvelle version digitale dépend de plusieurs facteurs, notamment la fréquance d'échantillonage $f_e$, ainsi que le pas de quantification, $p$. \\ Théoriquement, le signal de plus fidèle à sa contrepartie digitale aurait une fréquance d'échantillonage infinie, et un pas de quantification, infiniment petit. \\ Bien sûr, ceci n'est pas possible pour des raisons de stockage.
+    \end{itemize}
+    
+    \section{La Compression des Données Numériques}
+
+    \begin{enumerate}[1.]
+       \item   De nos jours, il est nécessaire de compresser les fichiers numériques parce que nous consommons des médias qui, sans compression seraient impossible à télécharger ou transferer dû à leur taille énorme. 
+       \item    $\begin{aligned}[t]
+                    &\quad N=f_e\times \frac Q8\times n\times\Delta t &\\
+                    \iff&\quad N=44{,}1\times 10^3\times\frac{16}{8}\times 2\times 3\times 60 &\\
+                    \iff&\quad N=3{,}2\times 10^7\ \si{B}=32\ \si{MB}
+                \end{aligned}$ \medbreak
+                Dans 1 $\si{GB}$, on a $1024\ \si{MB}$. Donc, $128\ \si{GB}=1{,}31\times 10^5\ \si{MB}$ \medbreak $\dfrac{1{,}31\times 10^5}{32}=4096$ \qquad On pourra avoir ce fichier $4096$ fois.
+        \item   Avec un taux de compression de $90\%$, le nouveau fichier aura un taille de $3{,}2\ \si{MB}$. \\ On pourra avoir $10\times$ le nombre de fichiers, c'est-à-dire $40960$ fichiers.
+        \item   Le format MP3 est un type de compression qu'on appelle en anglais ``lossy'', par opposition au ``lossless''. L'algorithme cherche des petites parties d'information qui peuvent être suprimés, tels que les périodes de silence ou de répétition. En faisant ceci, l'information est perdue, c'est-à-dire qu'il est impossible de recréer cette information à partir du fichier compressé.
+        \item   La compression est essentielle dans notre vie moderne. Si ce n'etait pas pour la compression, on ne pourrait pas faire nos Google Meet! Elle permet réduire l'information à son minimum pour pouvoir faciliter la communication. Le débat, cependant, se centre autour de ce qu'est ce minimum. Il faut choisir qu'est-ce que nous est plus cher, la portabilité, ou la qualité.
+    \end{enumerate}
+\end{document}
