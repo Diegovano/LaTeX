@@ -10,6 +10,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{caption}
+\usepackage{tkz-tab}
 \pgfplotsset{compat=1.17}
 \usetikzlibrary{arrows.meta}
 
@@ -19,6 +20,15 @@
   \par\nopagebreak\medskip
 }
 \renewcommand{\ExerciseName}{Exercice}
+
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.64pt\box2}}
 
 \begin{document}
 
@@ -304,14 +314,14 @@
     \begin{enumerate}[a)]
         \item Il semble que la période est autour de $6{,}2$. On observe par lecture graphique que $g(x)$ semble compris entre $1$ et $7$.
         \item   \begin{itemize}
-                    \item   $\begin{aligned}[t]
+                    \item[] $\begin{aligned}[t]
                                 &\quad g(x+y)=g(x) \\
                                 \iff&\quad 4+3\cos(x+y)=4+3\cos(x) \\
                                 \iff&\quad \cos(x+y)=\cos(x) \\
                                 \iff&\quad y=2k\pi\quad k\in\mathbb{Z} \\
                             \end{aligned}$ \smallbreak
                             La période est donc de $2k\pi$, avec $k=1$, c'est-à-dire $2\pi\approx 6{,}3$ \medbreak
-                    \item   $\begin{aligned}[t]
+                    \item[] $\begin{aligned}[t]
                                 &\quad -1\leq\cos(x)\leq 1 \\
                                 \iff&\quad -3\leq\ 3\cos(x)\leq 3 \\
                                 \iff&\quad 1\leq\ 4+3\cos(x)\leq 7 \\
@@ -319,6 +329,51 @@
                             La conjecture est vérifiée. \medbreak
                 \end{itemize}
     \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={89}]
+   \begin{enumerate}[a)]
+        \item \ \begin{center}\begin{tikzpicture}
+                    \tkzTabInit[lgt=3]{$x$ / 1, {Signe de $\tan(x)$ /1.5}, {Variations de \\ $x\mapsto\tan(x)$} / 1.5 }{$-\dfrac{\pi}{2}$, $\dfrac{\pi}{2}$}
+                    \tkzTabLine{d, +, d}
+                    \tkzTabVar{D- /, +D /}
+                \end{tikzpicture}\end{center}
+                \parbox{\linewidth}{\captionof{figure}{Tableau de Signes et de Variations de la fonction $\tan(x)$}}
+                \pagebreak
+        \item \ \begin{center}\begin{tikzpicture}[scale=0.8, domain=-pi*0.5:pi*0.5, smooth, samples=200]
+                    \draw[gray,very thin] (-pi*0.5-0.0125,-4) grid (pi*0.5+0.0125,4);
+                    \draw[thick, -{Latex[length=2mm]}] (-pi*0.5-0.0125,0) -- (pi*0.5+0.0125,0) node[anchor=north east, scale=0.75] {$x$};
+                    \draw[thick, -{Latex[length=2mm]}] (0,-4) -- (0,4) node[anchor=north east, scale=0.75] {$y$};
+                    \foreach \x in {-1.5,-1,-0.5,0.5,1,1.5}
+                    \draw[line width=0.2mm] (\x, 0) -- (\x, -0.125);
+                    \foreach \x / \xtext in {-pi*0.5/-\frac{\pi}{2},pi*0.5/\frac{\pi}{2}}
+                    \draw[line width=0.2mm] (\x, 0) -- (\x, 0.25) node[anchor=south, scale=0.7, fill=white] {$\xtext$};
+                    \foreach \x in {-3,-2,-1,1,2,3}
+                    \draw[line width=0.2mm] (-0.25, \x) -- (0, \x);
+                    \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (0,1);
+                    \draw[darkgray, line width=0.5mm, -{Latex[length=2mm]}] (0,0) -- (1,0); 
+                    
+                    \begin{axis}[anchor=origin,x=1cm, y=1cm,hide axis,restrict y to domain=-4:4]
+                        \addplot[red, very thick]{tan(deg(x))};
+                    \end{axis}
+            
+                    \draw (0,0) node[outer sep=0pt, anchor=north west, scale=0.7] {O};
+                    \draw (0.5,0) node[anchor=north, scale=0.9] {$\vec{i}$};
+                    \draw (0,0.5) node[anchor=east, scale=0.9] {$\vec{j}$};
+                \end{tikzpicture}\end{center}
+                \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de la Fonction $\tan(x)$}}
+   \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={93}]
+   \begin{enumerate}[a)]
+        \item   Il s'agit d'un triangle équilatéral. 
+        \item   Il faut calculer la hauteur du triangle. D'après le théorème de Pythagore, dans le triangle réctangle $ABA'$ de côté $a$, où $A'$ est le projeté orthogonal de $A$ sur $[BC]$: \medbreak
+                $AA'=\sqrt{AB^2-BA'^2}=\sqrt{1-0{,}25}=\sqrt{0{,}75}=\sqrt{\frac{3}{4}}=\frac{\sqrt{3}}{2}$ \medbreak
+        On a donc $\cos\left(\frac{\pi}{6}\right)=\frac{\sqrt{3}}{2}$
+        \item   Pour en déduire la valeur de $\sin\left(\frac{\pi}{6}\right)$, il faut retourner au triangle réctangle $ABA'$, où on cherche maintenant la valeur de $BA'$. \medbreak
+                $BA'=\sqrt{AB^2-AA'^2}=\sqrt{1-0{,}75}=\sqrt{0{,}25}=\frac{1}{2}$
+   \end{enumerate}
 \end{Exercise}
 
 \end{document}

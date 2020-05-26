@@ -1,0 +1,239 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{exercise}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[french]{babel}
+\usepackage[upright]{fourier}
+%\usepackage{showframe}
+
+% New definition of square root:
+\let\oldsqrt\sqrt
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.64pt\box2}}
+
+\renewcommand{\ExerciseHeader}
+{
+  \par\noindent
+  \textbf{\large \ExerciseName\ \ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+  \par\nopagebreak\medskip
+}
+
+\renewcommand{\ExerciseName}{Exercice}
+
+\begin{document}
+	\title{Exercices Chapitre sur les Géométrie Repérée\footnote{Page 249 du manuel Hatier}}
+	\author{Diego Van Overberghe}
+	\maketitle
+
+	\begin{Exercise}[number={5}]
+		\begin{enumerate}[1)]
+		   \item 	\begin{itemize}
+						\item 	Un vecteur directeur de la droite $(d_1)$ pourrait être $\vec{u}\ \begin{psmallmatrix}4 \\ 2\end{psmallmatrix}$
+						\item 	Un vecteur directeur de la droite $(d_2)$ pourrait être $\vec{v}\ \begin{psmallmatrix}1 \\ 0\end{psmallmatrix}$
+						\item	Un vecteur directeur de la droite $(d_3)$ pourrait être $\vec{w}\ \begin{psmallmatrix}0 \\ 1\end{psmallmatrix}$
+						\item	Un vecteur directeur de la droite $(d_4)$ pourrait être $\vec{x}\ \begin{psmallmatrix}1 \\ 4\end{psmallmatrix}$
+					\end{itemize}
+			\item	\begin{itemize}
+						\item 	Une équation carthésienne qui pourrait représenter l'ensemble de points de la droite $(d_1)$ est: $-\frac{1}{2}x+y+2=0$
+						\item 	Une équation carthésienne qui pourrait représenter l'ensemble de points de la droite $(d_2)$ est: $y+4=0$
+						\item 	Une équation carthésienne qui pourrait représenter l'ensemble de points de la droite $(d_3)$ est: $x-3=0$
+						\item 	Une équation carthésienne qui pourrait représenter l'ensemble de points de la droite $(d_4)$ est: $4x+y-1=0$
+					\end{itemize}
+		\end{enumerate}
+	\end{Exercise}
+	
+	\begin{Exercise}[number={6}]
+	   \begin{enumerate}[1)]
+		  \item		On trouve d'abord $\overrightarrow{AB}\ \begin{psmallmatrix}x_B-x_A = &4 \\ y_B-y_A = &-8\end{psmallmatrix}$ \quad Il s'agit d'un vecteur directeur de la droite $(AB)$. \\ On sait que $\vec{u}$, un vecteur directeur d'une droite dont les points satisfont l'équation $ax+by+c=0$, \quad vaut $\vec{u}\ \begin{psmallmatrix}-b \\ a\end{psmallmatrix}$ \\ On a donc \quad $b=-4$ \quad et \quad $a=8$ \\ On obtient une équation carthésienne qui pourrait caractériser les points de cette droite \quad $-8x-4y+c=0$ \\ Or on a:
+		  \begin{flalign*}
+			  A\in(AB)&\iff -8x_A-4y_a+c=0 &\\
+			  &\iff 24-24+c=0 &\\
+			  &\iff c=0 
+		  \end{flalign*} 
+		  Au final, une équation carthésienne de la droite $(AB)$: $-2x-y=0$
+		  \item 	On calcule une équation de la droite $(BC)$ de la même manière: \\ On trouve une équation de la droite $(BC)$: $-2x-y=0$ \\ Comme les deux droites partagent une même équation, elles sont confondues, et les points A, B, et C sont alignés. 
+		  \item 	\begin{enumerate}[a)]
+						\item	L'équation réduite de la droite $(AC)$ est $y=-2x$. L'équation réduite de la droite $(d)$ est $y=-\frac{3}{4}x+\frac{1}{4}$. Comme les coéfficients directeurs sont différents, les droites sont forcément sécantes.
+						\item 	On recherche un doublet satisfaisant les deux équations simultanement:
+								\begin{flalign*}
+									(d)=(AB)&\iff -\frac{3}{4}x+\frac{1}{4}=-2x &\\
+									&\iff -\frac{5}{4}x=\frac{1}{4} &\\
+									&\iff x=-\frac{1}{5}
+								\end{flalign*}
+							On calcule ensuite la valeur de $y$ en ce point: $y=-2x\iff y=\frac{2}{5}$ \begin{center}$S=\Big\{-\frac{1}{5}\,;\frac{2}{5}\Big\}$\end{center}
+					\end{enumerate}
+	   \end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={7}]
+		\begin{enumerate}[1)]
+		   \item	\begin{enumerate}[a)]
+						\item	$\vec{u}$ et $\vec{v}$ colinéaires $\iff \vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=0$ \\ $\vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=4\times 6-(-8)\times(-3)=0$ \\ Donc, $\vec{u}$ et $\vec{v}$ sont colinéaires.
+						\item 	$\vec{u}$ et $\vec{v}$ colinéaires $\iff \vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=0$ \\ $\vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=(-5)\times(-2)-3\times 3=1$ \\ Donc, $\vec{u}$ et $\vec{v}$ ne sont pas colinéaires.
+					\end{enumerate}
+			\item	\begin{enumerate}[a)]
+						\item	$\vec{u}$ et $\vec{v}$ orthogonaux $\iff \vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=0$ \\ $\vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=-1\times 4+5\times 3=11$ \\ Donc, $\vec{u}$ et $\vec{v}$ ne sont pas orthogonaux.
+						\item	$\vec{u}$ et $\vec{v}$ orthogonaux $\iff \vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=0$ \\ $\vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=\sqrt{3}\sqrt{6}+(-3)\sqrt{2}=0$ \\ Donc, $\vec{u}$ et $\vec{v}$ sont orthogonaux.
+					\end{enumerate}		
+		\end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={8}]
+		\begin{enumerate}[a)]
+			\item	$\vec{u}$ et $\vec{v}$ colinéaires $\iff \vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=0$
+					\begin{flalign*}
+						&\quad\vec{u}_x\vec{v}_y-\vec{u}_y\vec{v}_x=0 &\\
+						\iff&\quad(-3)\times 5-(-(1)\times(2a-1))=0 &\\
+						\iff&\quad -15+2a-1=0 &\\
+						\iff&\quad a=8
+					\end{flalign*}
+			\item	$\vec{u}$ et $\vec{v}$ orthogonaux $\iff \vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=0$
+					\begin{flalign*}
+						&\quad \vec{u}_x\vec{v}_x+\vec{u}_y\vec{v}_y=0 &\\
+						\iff&\quad (b-1)\times(b+2)+5\times(-2)=0 &\\
+						\iff&\quad b^2+b-12=0 \qquad \Delta=b'\,^2-4a'c'=49 &\\
+						\iff&\quad b_1=\frac{-b'-\sqrt{\Delta}}{2a'}\hphantom{-4}\qquad b_2=\frac{-b'+\sqrt{\Delta}}{2a'} \\
+						\iff&\quad b_1=-4\hphantom{\frac{-b'-\sqrt{\Delta}}{2a'}}\qquad b_2=3
+					\end{flalign*}
+		\end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={49}]
+	   $\overrightarrow{n_2}$ et $\overrightarrow{n_3}$ sont des normales de la droite $(d)$, parce que $\vec{n}\ \begin{psmallmatrix}a \\ b\end{psmallmatrix}$
+	\end{Exercise}
+
+	\begin{Exercise}[number={50}]
+		\begin{enumerate}[a)]
+		   \item	Faux. $\cdots$ %need explaination
+		   \item	Faux. Deux droites ne peuvent partager une normale si et seulement si elles sont parallèles.
+		   \item	Vrai. $\cdots$ %need explaination
+		   \item	Vrai. Il s'agit tout simplement d'une droite parallèle.
+		\end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={51}]
+		\begin{itemize}
+			\item $d_1 \quad \overrightarrow{n_1}\ \begin{psmallmatrix}1 \\ 0\end{psmallmatrix}$
+			\item $d_2 \quad \overrightarrow{n_2}\ \begin{psmallmatrix}-3 \\ 2\end{psmallmatrix}$
+			\item $d_3 \quad \overrightarrow{n_3}\ \begin{psmallmatrix}1 \\ 1\end{psmallmatrix}$
+			\item $d_4 \quad \overrightarrow{n_4}\ \begin{psmallmatrix}-1 \\ 2\end{psmallmatrix}$
+		\end{itemize}
+	\end{Exercise}
+
+	\begin{Exercise}[number={52}]
+		On a $\vec{u}\ \begin{psmallmatrix}-b \\ a\end{psmallmatrix}$, un vecteur directeur, et $\vec{n}\ \begin{psmallmatrix}a \\ b\end{psmallmatrix}$, une normale.
+		\begin{enumerate}[a)]
+		   \item	$(d):\ \vec{u}\ \begin{psmallmatrix}-3 \\ 2\end{psmallmatrix} \quad \vec{n}\ \begin{psmallmatrix}2 \\ 3\end{psmallmatrix} \qquad (d'):\ \vec{u}\ \begin{psmallmatrix}-2 \\ -3\end{psmallmatrix} \quad \vec{n}\ \begin{psmallmatrix}-3 \\ 2\end{psmallmatrix}$ \\ Un des vecteurs directeurs de $(d')$ est colinéaire à une normale de $(d)$, on peut donc conclure que les deux droites sont perpendiculaires.
+		   \item	$(d):\ \vec{u}\ \begin{psmallmatrix}3 \\ 4\end{psmallmatrix} \quad \vec{n}\ \begin{psmallmatrix}-4 \\ 3\end{psmallmatrix} \qquad (d'):\ \vec{u}\ \begin{psmallmatrix}6 \\ 8\end{psmallmatrix} \quad \vec{n}\ \begin{psmallmatrix}8 \\ -6\end{psmallmatrix}$ \\ Un des vecteurs directeurs de $(d)$ est colinéaire avec un des vecteurs directeurs de $(d')$, on peut donc conclure que les deux droites sont parallèles.
+		   \end{enumerate}	
+	\end{Exercise}
+
+	\begin{Exercise}[number={53}]
+		On a $\vec{u}\ \begin{psmallmatrix}-b \\ a\end{psmallmatrix}$, un vecteur directeur, et $\vec{n}\ \begin{psmallmatrix}a \\ b\end{psmallmatrix}$, une normale.
+	   \begin{enumerate}[a)]
+			\item	Faux. $(CB):\ \vec{u}\ \begin{psmallmatrix}x_B-x_C\ =& -2 \\ y_B-y_C\ =& 4\end{psmallmatrix} \quad \vec{v}\ \begin{psmallmatrix}\hphantom{-}\vec{u}_y\ =& 4 \\ -\vec{u}_x\ =& 2\end{psmallmatrix} \qquad (AC):\ \vec{u}\ \begin{psmallmatrix}x_C-x_A\ =& -3 \\ y_C-y_A\ =& 2\end{psmallmatrix}$ \smallbreak Un $\vec{u}$ de $(CB)$ n'est pas colinéaire à un $\vec{n}$ de $(AC)$. Donc, l'affirmation est bien fausse.
+			\item	Vrai. $(AC):\ \vec{u}\ \begin{psmallmatrix}x_C-x_A\ =& -3 \\ y_C-y_A\ =& 2\end{psmallmatrix} \quad \vec{n}\ \begin{psmallmatrix}\hphantom{-}\vec{u}_y\ =& 2 \\ -\vec{u}_x\ =& 3\end{psmallmatrix} \qquad (AD):\ \vec{u}\ \begin{psmallmatrix}x_D-x_A\ =& -4 \\ y_D-y_A\ =& -6\end{psmallmatrix}$ \smallbreak Un $\vec{n}$ de $(AC)$ est colinéaires avec un $\vec{u}$ de $(AD)$. Donc, l'affirmation est bien vraie.
+	   \end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={54}]
+		On a pour toute équation carthésienne $ax+by+c=0$, un vecteur normal $\vec{n}\ \begin{psmallmatrix}a \\ b\end{psmallmatrix}$
+		\begin{enumerate}[a)]
+			 	\item	On a $\vec{n}\ \begin{psmallmatrix}2 \\ 3\end{psmallmatrix}$, d'où une équation de $(d)$ pourrait être $2x+3y+c=0$. \\ Or on sait que $A\ (1\,;2)\in(d)$ 
+						\begin{flalign*}
+							A\ (1\,;2)\in(d)&\iff 2\times 1+3\times 2+c=0 &\\
+							&\iff c=-8
+						\end{flalign*}
+						Au final, une équation carthésienne de la droite $(d)$, de vecteur normal $\vec{n}\ \begin{psmallmatrix}2 \\ 3\end{psmallmatrix}$, passant par le point $A\ (1\,;2)$ est: \quad$2x+3y-8=0$
+				\item	$\vec{n}\ \begin{psmallmatrix}0 \\ 2\end{psmallmatrix}$, d'où une équation carthésienne de la droite $(d)$ pourrait être $2y+c=0$
+						\begin{flalign*}
+							A\ (3\,;1)\in(d)&\iff 2\times 1+c=0 &\\
+							&\iff c=-2
+						\end{flalign*}
+						Une équation carthésienne qui pourrait représenter la droite $(d)$ est: \quad $2y-2=0$
+				\item	$\vec{n}\ \begin{psmallmatrix}-3 \\ 0\end{psmallmatrix}$, d'où une équation carthésienne de la droite $(d)$ pourrait être $-3x+c=0$
+						\begin{flalign*}
+							A\ (-5\,;2)\in(d)&\iff (-3)\times(-5)+c=0 &\\
+							&\iff c=-15
+						\end{flalign*}
+						Une équation carthésienne qui pourrait représenter la droite $(d)$ est: \quad $-3x-15=0$
+				\item	$\vec{n}\ \begin{psmallmatrix}4 \\ -1\end{psmallmatrix}$, d'où une équation carthésienne de la droite $(d)$ pourrait être $4x-y+c=0$		
+						\begin{flalign*}
+							A\ (-1\,;0)\in(d)&\iff 4\times (-1)+c=0 &\\
+							&\iff c=4
+						\end{flalign*}
+						Une équation carthésienne qui pourrait représenter la droite $(d)$ est: \quad $4x-y+4=0$
+		\end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={55}]
+	   \begin{enumerate}[a)]
+			\item	Un vecteur directeur: $\vec{u}\ \begin{psmallmatrix}-b\ =& -5 \\ \hphantom{-}a\ =& -2\end{psmallmatrix}$ \quad et \quad Un vecteur normal: $\vec{n}\ \begin{psmallmatrix}a\ =& -2 \\ b\ =& 5\end{psmallmatrix}$
+			\item	Une droite perpendiculaire à une autre droite aura un vecteur directeur colinéaire au vecteur normal de cette droite. Le vecteur directeur de notre droite perpendiculaire sera donc $\vec{n}\ \begin{psmallmatrix}-2 \\ 5\end{psmallmatrix}$. On a donc $5x+2y+c=0$.
+					\begin{flalign*}
+						A\ (3\,;-7)\in(d)&\iff 5\times 3+2\times(-7)+c=0 &\\
+						&\iff c=-1
+					\end{flalign*}
+					Donc, une équation carthésienne de la droite $(d')$ pourrait est: \quad $5x+2y-1=0$
+			\item 	On cherche les formes réduites des deux équations:
+					\begin{flalign*}
+						-2x+5y+12=0&\iff y=\frac{2}{5}x-\frac{12}{5} &\\
+						5x+2y-1=0&\iff y=-\frac{5}{2}x+\frac{1}{2}
+					\end{flalign*}
+					On peut ensuite calculer leur point d'interséction. 
+					\begin{flalign*}
+						&\quad \frac{2}{5}x-\frac{12}{5}=-\frac{5}{2}x+\frac{1}{2} &\\
+						\iff&\quad \frac{29}{10}x=\frac{29}{10} &\\
+						\iff&\quad x=1
+					\end{flalign*}
+					On calcule maintenant le composant $y$:\quad $y=\frac{2}{5}x-\frac{12}{5}\iff y=-2$ \\ On a donc le point d'intersection $B\ (1\,;-2)$
+	   \end{enumerate}
+	\end{Exercise}
+
+	\pagebreak
+
+	\begin{Exercise}[number={56}]
+		\begin{enumerate}[a)]
+		   	\item	$\overrightarrow{BC}\ \begin{psmallmatrix}x_C-x_B\ =& 6\ =& -b \\ y_C-y_B\ =& 2\ =& a\end{psmallmatrix}$ \quad $\vec{n}\ \begin{psmallmatrix}a\ =& 2\\ b\ =& -6\end{psmallmatrix}$
+			   \item 	La droite perpendiculaire aura un vecteur directeur colinéaire au vecteur normal de la première droite. $\vec{u}\ \begin{psmallmatrix}\hphantom{-}2\ =& -b \\ -6\ =& a\end{psmallmatrix}$, d'où une équation carthésienne de cette droite est: \quad $-6x-2y+c=0$.
+						\begin{flalign*}
+							A\ (3\,;2)\in(d')&\iff (-6)\times 3-(2\times 2)+c=0 &\\
+							&\iff c=22
+						\end{flalign*}
+						Une équation carthésienne qui représente la droite est donc: \quad $-6x-2y+22=0$
+				\item 	Le projeté orthogonal de A sur $(BC)$ est le point d'intersection de la droite $(BC)$ et la droite perpendiculaire à cette dernière, passant par A: $(d')$. On calcule d'abord les formes réduites des équations des deux droites.
+						\begin{flalign*}
+							&-6x-2y+22=0\iff y=-3x+11 &\\
+							&y=\frac{1}{3}x-\frac{4}{3} \qquad \text{Par lecture graphique de (BC)} 
+						\end{flalign*}
+						On calcule ensuite le point d'intersection:
+						\begin{flalign*}
+							&\quad -3x+11=\frac{1}{3}x-\frac{4}{3} &\\
+							\iff&\quad\frac{10}{3}x=\frac{37}{3} &\\
+							\iff&\quad x=\frac{37}{10}
+						\end{flalign*}
+						On peut finalement calculer le composant y: $y=\frac{1}{3}\times\frac{37}{10}-\frac{4}{3}\iff y=-0{,}1$ \\ Au final, le projeté orthogonal de A sur (BC) a pour coordonnées $H\ (\frac{37}{10}\,;-0{,}1)$
+				\item 	$AH=\sqrt{(x_A-x_H)^2+(y_A-y_H)^2}\approx 2{,}21$
+		\end{enumerate}
+	\end{Exercise}
+
+	\begin{Exercise}[number={57}]
+	   \begin{itemize}
+		   \item[] 		La médiatrice d'un ségment est la droite dont tous ses points sont equidistants aux extrémités du ségment. C'est donc la normale passant par le point au centre du ségment. On cherche donc tout d'abord le point au centre du ségment, que l'on appelera $C\ (x\,;y)$ \medbreak 
+						$x_C=\frac{x_A+x_B}{2}=4$ \qquad $y_C=\frac{y_A+y_B}{2}=4$ \qquad $C\ (4\,;4)$. \medbreak
+						On doit maintenant calculer un vecteur normal $\vec{n}\ \begin{psmallmatrix}a \\ b\end{psmallmatrix}$. \\ On a $\overrightarrow{AB}\ \begin{psmallmatrix}x_B-x_A\ =& 2\ =& -b \\ y_B-y_A\ =& 4\ =& a\end{psmallmatrix}$, un vecteur directeur. \\ On calcule donc $\vec{n}\ \begin{psmallmatrix}4 \\ -2\end{psmallmatrix}$, ceci est un vecteur directeur d'une droite $(d')$, perpendiculaire, représentée par $-2x-4y+c=0$.
+						\begin{flalign*}
+							C\ (4\,;4)\in(d')&\iff (-2)\times 4-(4\times 4)+c=0 &\\
+							&\iff c=24
+						\end{flalign*}
+						Une équation carthésienne de la médiatrice est donc: \quad $-2x-4y+24=0$
+	   \end{itemize}
+	\end{Exercise}
+\end{document}
