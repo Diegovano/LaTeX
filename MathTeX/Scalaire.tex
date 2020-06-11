@@ -12,6 +12,10 @@
 \usepackage{minted}
 \usepackage[upright]{fourier}
 \usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{caption}
+\usetikzlibrary{patterns}
+\usetikzlibrary{patterns.meta}
 %\usepackage{showframe}
 %\csname endofdump \endcsname
 %\endofdump
@@ -32,30 +36,29 @@
     \par\noindent
     \textbf{\large \ExerciseName\ \ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
     \par\nopagebreak\medskip
-}
-\renewcommand{\ExerciseName}{Exercice}
-
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}
-
-
-\begin{document}
+    }
+    \renewcommand{\ExerciseName}{Exercice}
+    
+    \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+     
+    \begin{document}
     \title{Exercices Chapitre sur le Produit Scalaire\footnote{Page 233 du manuel Hatier}}
     \author{Diego Van Overberghe}
     \date{4 Juin 2020}
     \maketitle
     \begin{Exercise}[number={34}]
-            \begin{enumerate}[a)]
-                \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{6}}=AB\times AC\times \dfrac{\sqrt{3}}{2}=\dfrac{20\sqrt{3}}{2}$
-                \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=5$ \\ H étant le projeté orthogonal de AC sur [AB].
-                \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=20$ \\ H étant le projeté orthogonal de AC sur la demie-droite [AB)
-                \item $\widehat{BAC}=60^{\circ}=\dfrac{\pi}{3}$ (angles alternes-internes) \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{3}}=12$
-                \item Non Traité
-            \end{enumerate}
+        \begin{enumerate}[a)]
+            \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{6}}=AB\times AC\times \dfrac{\sqrt{3}}{2}=\dfrac{20\sqrt{3}}{2}$
+            \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=5$ \\ H étant le projeté orthogonal de AC sur [AB].
+            \item $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH=20$ \\ H étant le projeté orthogonal de AC sur la demie-droite [AB)
+            \item $\widehat{BAC}=60^{\circ}=\dfrac{\pi}{3}$ (angles alternes-internes) \\ $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos{\ \dfrac{\pi}{3}}=12$
+            \item Non Traité
+        \end{enumerate}
     \end{Exercise}
-
-\begin{Exercise}[number={35}]
-    \begin{enumerate}[a)]
-        \item $-2\vec{u}\cdot(3\vec{u}+\vec{v})=-6\vec{u}^2-2\vec{u}\cdot\vec{v}=-166$
+    
+    \begin{Exercise}[number={35}]
+        \begin{enumerate}[a)]
+            \item $-2\vec{u}\cdot(3\vec{u}+\vec{v})=-6\vec{u}^2-2\vec{u}\cdot\vec{v}=-166$
         \item $-8\vec{u}^2+14\vec{u}\cdot\vec{v}-3\vec{v}^2=-155$
         \item Demander Correction%$\norm{\vec{u}+\vec{v}}=\sqrt{\norm{\vec{u}}^2+\norm{\vec{v}}^2}=\sqrt{34}$
         \item Demander Correction
@@ -715,17 +718,19 @@
                     \end{aligned}$ \medbreak Donc $\mathcal{D}_1$ est la droite $(d)$.
                 \end{enumerate}
         \item   \begin{enumerate}[a)]
-                    \item   Soit le point B de $(DE)$ tel que $\overrightarrow{DB}\cdot\overrightarrow{DE}=10$. \\ $\overrightarrow{DB}$ et $\overrightarrow{DE}$ sont de même sens et $DB\times DE=10$, $DB=2$, et $\overrightarrow{DB}=\frac{2}{5}\overrightarrow{DE}$. \\
+                    \item   Soit le point B de $(DE)$ tel que $\overrightarrow{DB}\cdot\overrightarrow{DE}=10$. \\ $\overrightarrow{DB}$ et $\overrightarrow{DE}$ sont de même sens et $DB\times DE=10$, $DB=2$, et $\overrightarrow{DB}=\frac{2}{5}\overrightarrow{DE}$.
                     \item   $\begin{aligned}[t]
                                 P\in\mathcal{D}_2\iff\overrightarrow{DP}\cdot\overrightarrow{DE}=10&\iff\left(\overrightarrow{DB}+\overrightarrow{BP}\right)\cdot\overrightarrow{DE}=10 &\\
                                 &\iff 10+\overrightarrow{BP}\cdot\overrightarrow{DE}=10 &\\
                                 &\iff \overrightarrow{BP}\cdot\overrightarrow{DE}=0 &\\
-                                &\iff\text{P est sur la perpendiculaire à }(DE)\text{ passant par B.}
+                                &\iff\text{P}\in\ \perp(DE)\text{ passant par B.}
                             \end{aligned}$ 
                     \item   Donc, $\mathcal{D}_2$ est la perpendiculaire à $(DE)$ passant par B.
                 \end{enumerate}
     \end{enumerate}
 \end{Exercise}
+
+\pagebreak
 
 \begin{Exercise}[number={122}]
     \begin{enumerate}[1)]
@@ -743,6 +748,88 @@
                             \end{aligned}$
                     \item   Il s'agit d'un cercle de centre T et de rayon $\sqrt{13}$.
                 \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={123}]
+    \begin{enumerate}[a)]
+        \item	On pose $I$, tel que $GI=IH$. \smallbreak
+        $\begin{aligned}[t]
+            \overrightarrow{MG}\cdot\overrightarrow{MH}=5&\iff\left(\overrightarrow{MI}+\overrightarrow{IG}\right)\cdot\left(\overrightarrow{MI}+\overrightarrow{IH}\right)=5 &\\
+            &\iff MI^2+\overrightarrow{MI}\left(\overrightarrow{IH}+\overrightarrow{IG}\right)-GI^2=5 &\\
+            &\iff MI^2-GI^2=5 &\\
+            &\iff MI^2-\tfrac{GH^2}{4}=5 &\\
+            &\iff MI^2=30
+        \end{aligned}$ \smallbreak Il s'agit bien d'un cercle, de centre $I$, et de rayon $\sqrt{30}$.
+        \item   $\overrightarrow{MG}\cdot\overrightarrow{MH}=x\iff MI^2=x+\tfrac{GH^2}{4}$ \smallbreak
+        $\begin{aligned}[t] 
+            \mathcal{E}:\text{ Cercle}&\iff MI^2>0 &\\
+            &\iff x+\tfrac{GH^2}{4}>0 &\\
+            &\iff x> -25
+        \end{aligned}$ \smallbreak
+        $\begin{aligned}[t]
+            \mathcal{E}:\text{ Point}&\iff MI=0 &\\
+            &\iff x+\tfrac{GH^2}{4}=0 &\\
+            &\iff x=-25
+        \end{aligned}$ \smallbreak
+        $\begin{aligned}[t]
+            \mathcal{E}:\ \emptyset&\iff MI^2<0 &\\
+            &\iff x< -25
+        \end{aligned}$
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={125}]
+    \begin{enumerate}[a)]
+        \item	Soit $H\in[CD]$ tel que $\overrightarrow{CH}\cdot\overrightarrow{CD}=12$. \smallbreak
+                $\begin{aligned}[t]
+                    \overrightarrow{CH}\cdot\overrightarrow{CD}=12&\iff CH\times CD=12\iff CH=2 &\\
+                    &\iff \overrightarrow{CH}=\tfrac{1}{3}\overrightarrow{CD}
+                \end{aligned}$ \smallbreak $\mathcal{D}_1$: La droite perpendiculaire à $[CD]$, passant par $H$. \pagebreak
+                Soit $G\in[CD]$ tel que $\overrightarrow{CG}\cdot\overrightarrow{CD}=3$. \smallbreak
+                $\begin{aligned}[t]
+                    \overrightarrow{CG}\cdot\overrightarrow{CD}=3&\iff CG\times CD=3\iff CG=0{,}5 &\\
+                    &\iff\overrightarrow{CG}=\tfrac{1}{12}\overrightarrow{CD}
+                \end{aligned}$ \smallbreak $\mathcal{D}_2$: La droite perpendiculaire à $[CD]$, passant par $G$.
+        \item   Soit $I\in[CD]$ tel que $3\leq\overrightarrow{CI}\cdot\overrightarrow{CD}\leq 12$. \smallbreak
+                $\begin{aligned}[t]
+                    3\leq\overrightarrow{CI}\cdot\overrightarrow{CD}\leq 12&\iff 3\leq CI\times CD\leq 12\iff 0{,}5\leq CI\leq 2 &\\
+                    &\iff \tfrac{1}{12}\overrightarrow{CD}\leq\overrightarrow{CI}\leq\tfrac{1}{3}\overrightarrow{CD}
+                \end{aligned}$ \smallbreak $\mathcal{E}$: Une droite perpendiculaire à $[CD]$, passant par $I$. \bigbreak
+                \begin{center}\begin{tikzpicture}
+                    %\pattern[pattern=north east hatch, pattern color=gray, hatch distance=10mm, hatch thickness=.5pt] (-2.5, -2) rectangle (-1, 2);
+                    %\fill[pattern={north east lines}, pattern color={gray}] (-2.5, -2) rectangle (-1, 2);
+                    \fill[pattern={Lines[angle=45, distance={15pt}]}, pattern color={gray}] (-2.5, -2) rectangle (-1, 2);
+                    \draw[thick] (-3, 0) node[anchor=north]{C} -- (3, 0) node[anchor=north]{D};
+                    \draw (-3, -0.08) -- (-3, 0.08) (3, -0.08) -- (3, 0.08);
+                    \draw[color=gray] (-2.5, -2) -- (-2.5, 2) (-1, -2) -- (-1, 2);
+                    \draw[fill=black] (-2.5, 0) node[anchor=south east, scale=0.75]{I} circle (1.5pt);
+                    \draw[fill=black] (-1, 0) node[anchor=south west, scale =0.75]{I} circle (1.5pt);
+                    \draw (-1.75, 0.50) node[scale=0.75]{$\mathcal{E}$};
+                \end{tikzpicture}\end{center}
+                \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de l'Ensemble $\mathcal{E}$}}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={128}]
+    \begin{enumerate}[1)]
+        \item	\begin{enumerate}[a)]
+                    \item	$\begin{aligned}[t]
+                                M\in\mathcal{E}&\iff GM^2+HM^2=56 &\\
+                                &\iff 2MI^2+\tfrac{GH^2}{2}=56 &\\
+                                &\iff MI^2=\tfrac{1}{2}\left(56-\tfrac{10^2}{2}\right) &\\
+                                &\iff MI=\sqrt{3}
+                            \end{aligned}$
+                    \item   L'ensemble $\mathcal{E}$ est un cercle de centre $I$, de rayon $\sqrt{3}$.
+                \end{enumerate}
+        \item   $\begin{aligned}[t]
+                    GM^2+HM^2=k&\iff MI^2=\tfrac{1}{2}\left(k-\tfrac{10^2}{2}\right)
+                \end{aligned}$ \\
+                $\begin{aligned}[t]
+                    \mathcal{C}_k:\emptyset&\iff MI^2<0 &\\
+                    &\iff\tfrac{1}{2}\left(k-50\right)<0 &\\
+                    &\iff k<50
+                \end{aligned}$
     \end{enumerate}
 \end{Exercise}
 
