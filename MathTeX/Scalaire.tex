@@ -31,6 +31,10 @@
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
 {\box0\lower0.64pt\box2}}
 
+\let\oldnorm\norm   % <-- Store original \norm as \oldnorm
+\let\norm\undefined % <-- "Undefine" \norm
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
 \renewcommand{\ExerciseHeader}
 {
     \par\noindent
@@ -305,7 +309,7 @@
     \begin{enumerate}[a)]
         \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}1\\1\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}-5\\4\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=-1$ \smallbreak $\vec{u}\cdot\vec{v}\neq0\iff\lnot(\vec{u}\perp\vec{v})$ \smallbreak On peut donc conclure que (AB) et (CD) ne sont pas perpendiculaires.
         \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}2\\-7\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}-7\\-2\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=0$ \medbreak $\vec{u}\cdot\vec{v}=0\impliedby \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq0$ et $\vec{v}\neq0$) \smallbreak On peut donc conclure que (AB) et (CD) sont perpendiculaires.
-        \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}\sqrt{2}-\sqrt{3}\\-5\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}5\\\sqrt{2}-\sqrt{3}\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=0$ \medbreak $\vec{u}\cdot\vec{v}=0\impliedby \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq\vec{0}$ et $\vec{v}\neq\vec{0}$) \smallbreak On peut donc conclure que (AB) et (CD) sont perpendiculaires.
+        \item $\begin{cases}\overrightarrow{AB}\begin{psmallmatrix}x_B-x_A\\y_B-y_A\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}x_D-x_C\\y_D-y_C\end{psmallmatrix}\end{cases}\iff \begin{cases}\overrightarrow{AB}\begin{psmallmatrix}\sqrt{2}-\sqrt{3}\\-5\end{psmallmatrix}\\[0.2cm]\overrightarrow{CD}\begin{psmallmatrix}5\\\sqrt{2}-\sqrt{3}\end{psmallmatrix}\end{cases}$ \medbreak $\overrightarrow{AB}\cdot\overrightarrow{CD}=x_{\overrightarrow{AB}}x_{\overrightarrow{CD}}+y_{\overrightarrow{AB}}y_{\overrightarrow{CD}}=0$ \medbreak $\vec{u}\cdot\vec{v}=0\impliedby \vec{u}\perp \vec{v}$ \quad (Parce que $\vec{u}\neq\overrightarrow{0}$ et $\vec{v}\neq\overrightarrow{0}$) \smallbreak On peut donc conclure que (AB) et (CD) sont perpendiculaires.
     \end{enumerate}
 \end{Exercise}
 
@@ -830,6 +834,123 @@
                     &\iff\tfrac{1}{2}\left(k-50\right)<0 &\\
                     &\iff k<50
                 \end{aligned}$
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={133}]
+    \begin{enumerate}[a)]
+        \item	$\begin{aligned}[t]
+                    \overrightarrow{GE}+5\left(\overrightarrow{GE}+\overrightarrow{EF}\right)=\overrightarrow{0}&\iff6\overrightarrow{GE}+5\overrightarrow{EF}=\overrightarrow{0} &\\
+                    &\iff \overrightarrow{EG}=\tfrac{5}{6}\overrightarrow{EF}
+                \end{aligned}$
+        \item   $GE=\frac{5}{6}$ \quad $EF=\frac{10}{3}$
+        \item   $\begin{aligned}[t]
+                    ME^2+5MF^2=400 &\iff \left(\overrightarrow{MG}+\overrightarrow{GE}\right)^2+5\left(\overrightarrow{MG}+\overrightarrow{GF}\right)^2=400 &\\
+                    &\iff MG^2+2\overrightarrow{MG}\cdot\overrightarrow{GE}+GE^2+5MG^2+2\overrightarrow{MG}\cdot5\overrightarrow{GF}+5GF^2=400 &\\
+                    %&\iff 6MG^2+2\overrightarrow{MG}\cdot\overrightarrow{GE}+2\overrightarrow{MG}\cdot5\overrightarrow{GF}=\tfrac{256}{9} &\\
+                    %&\iff 6MG^2+2\overrightarrow{MG}\left(\overrightarrow{GE}+5\overrightarrow{GF}\right)=\tfrac{256}{9} &\\
+                    %&\iff 6MG^2+2\overrightarrow{MG}\left(5\overrightarrow{GF}+\tfrac{5}{6}\overrightarrow{FE}\right)=\tfrac{256}{9} &\\
+                    %&\iff 6MG^2+2\overrightarrow{MG}\left(\overrightarrow{GE}-\tfrac{1}{5}\overrightarrow{FE}+4\overrightarrow{GF}\right)=\tfrac{256}{9} &\\
+                    &\iff 6MG^2+2\overrightarrow{MG}\underbrace{\left(\overrightarrow{GE}+5\overrightarrow{GF}\right)}_{\overrightarrow{0}}+\tfrac{40}{3}=400 &\\
+                    &\iff 6MG^2+\tfrac{40}{3}=ME^2+5MF^2
+                \end{aligned}$
+        \item   Il s'agit d'un cercle de centre G, et de rayon $MG=\sqrt{MG^2}=\sqrt{\frac{400-\frac{40}{3}}{6}}=\sqrt{\frac{580}{9}}=\frac{2\sqrt{145}}{3}$
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={135}]
+    \begin{enumerate}[a)]
+        \item	$\begin{aligned}[t]
+                    \norm[\big]{\overrightarrow{PA}+\overrightarrow{PB}}=PA&\iff\norm[\big]{\overrightarrow{PI}+\overrightarrow{IA}+\overrightarrow{PI}+\overrightarrow{IB}}=PA &\\
+                    &\iff\norm[\big]{2\overrightarrow{PI}+\overrightarrow{IA}+\overrightarrow{IB}}=PA &\\
+                    &\iff\norm[\big]{2\overrightarrow{PI}}=PA &\\
+                    &\iff 2PI=PA
+                \end{aligned}$ \smallbreak Donc $\norm[\big]{\overrightarrow{PA}+\overrightarrow{PB}}=2PI$
+        \item   $\begin{aligned}[t]
+                    P\in\mathcal{F}&\iff\norm[\big]{\overrightarrow{PA}+\overrightarrow{PB}}-2PI=0 &\\
+                    &\iff\norm[\big]{\overrightarrow{PA}+\overrightarrow{PB}}^2-4\left(\norm[\big]{\overrightarrow{PA}+\overrightarrow{PB}}\times PI\right)+4PI^2=0 &\\
+                    &\iff PA^2-4PI^2=0
+                \end{aligned}$
+        \item   $\begin{aligned}[t]
+                    \overrightarrow{AC}+2\overrightarrow{IC}=\overrightarrow{0}&\implies\overrightarrow{AC}=2\overrightarrow{CI} &\\
+                    &\implies\norm[\big]{\overrightarrow{AC}}=\norm[\big]{2\overrightarrow{CI}} &\\
+                    &\implies 2CI=CA &\\
+                    &\implies C\in\mathcal{F}
+                \end{aligned}$ \medbreak
+                $\begin{aligned}
+                    \overrightarrow{AD}-2\overrightarrow{ID}=\overrightarrow{0}&\implies\overrightarrow{AD}=2\overrightarrow{ID} &\\
+                    &\implies 2DI=DA &\\
+                    &\implies D\in\mathcal{F}
+                \end{aligned}$
+        \item   $\begin{aligned}[t]
+                    \overrightarrow{PA}+2\overrightarrow{PI}&=\overrightarrow{PC}+\overrightarrow{CA}+2\overrightarrow{PC}+2\overrightarrow{CI} &\\
+                    &=3\overrightarrow{PC}+\overrightarrow{CA}+2\overrightarrow{CI} &\\
+                    &=3\overrightarrow{PC}-\left(\overrightarrow{AC}+2\overrightarrow{IC}\right) &\\
+                    &=3\overrightarrow{PC}-\overrightarrow{0} &\\
+                    &=3\overrightarrow{PC}
+                \end{aligned}$ \medbreak
+                $\begin{aligned}
+                    \overrightarrow{PA}-2\overrightarrow{PI}&=\overrightarrow{PD}+\overrightarrow{DA}-2\overrightarrow{PD}-2\overrightarrow{DI} &\\
+                    &=-\overrightarrow{PD}+\overrightarrow{DA}-2\overrightarrow{DI} &\\
+                    &=-\overrightarrow{PD}-\left(-\overrightarrow{DA}+2\overrightarrow{DI}\right) &\\
+                    &=-\overrightarrow{PD}-\left(\overrightarrow{AD}-2\overrightarrow{ID}\right) &\\
+                    &=-\overrightarrow{PD}
+                \end{aligned}$
+        \item   $\begin{aligned}[t]
+                    \overrightarrow{PC}\cdot\overrightarrow{PD}=0&\iff 3\overrightarrow{PC}\cdot\left(-\overrightarrow{PD}\right)=0 &\\
+                    &\iff\left(\overrightarrow{PA}+2\overrightarrow{PI}\right)\cdot\left(\overrightarrow{PA}-2\overrightarrow{PI}\right)=0 &\\
+                    &\iff PA^2\underbrace{-2\overrightarrow{PA}\cdot\overrightarrow{PI}+2\overrightarrow{PI}\cdot\overrightarrow{PA}}_{0}-4PI^2=0 &\\
+                    &\iff PA^2-4PI^2=0 &\\
+                    &\iff P\in\mathcal{F}
+                \end{aligned}$
+        \item   $P\in\mathcal{F}\iff\overrightarrow{PC}\cdot\overrightarrow{PD}=0\iff$ P est sur le cercle de diametre $[CD]$ \medbreak
+                $\begin{aligned}
+                    \overrightarrow{AC}+2\overrightarrow{IC}=\overrightarrow{0}&\iff\overrightarrow{AC}+2\overrightarrow{IA}+2\overrightarrow{AC}=\overrightarrow{0} &\\
+                    &\iff 3\overrightarrow{AC}=-2\overrightarrow{IA} &\\
+                    &\iff\overrightarrow{AC}=\tfrac{2}{3}\overrightarrow{AI} &\\
+                    &\iff\overrightarrow{AC}=\tfrac{1}{3}\overrightarrow{AB}
+                \end{aligned}$ \medbreak
+                $\begin{aligned}
+                    \overrightarrow{AD}-2\overrightarrow{ID}=\overrightarrow{0}&\iff-\overrightarrow{AD}-2\overrightarrow{IA}=\overrightarrow{0} &\\
+                    &\iff\overrightarrow{AD}=-2\overrightarrow{IA} &\\
+                    &\iff\overrightarrow{AD}=\overrightarrow{AB}
+                \end{aligned}$
+                \begin{center}\begin{tikzpicture}[scale=1.5, every node/.style={scale=1.6}]
+                    \draw[thick] (-2, 0.1) -- (-2, 0) node[scale=0.75, anchor=north east]{A} -- (1, 0) node[scale=0.75, anchor=north west]{B} node[scale=0.75, anchor=south west]{D} -- (1, 0.1) (-1, -0.1) -- (-1, 0.1) node[scale=0.75, anchor=south east]{C};
+                    \draw[thin, red] (0, 0) circle (1) (0.75, 1) node[scale=0.75]{$\mathcal{F}$};
+                \end{tikzpicture}\end{center}
+                \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de l'Ensemble $\mathcal{F}$}}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[number={136}]
+    \begin{enumerate}[1)]
+        \item	\begin{enumerate}[a)]
+                    \item	$\begin{aligned}[t]
+                                \overrightarrow{BG}-2\overrightarrow{BH}+3\overrightarrow{BK}=\overrightarrow{0}&\iff\overrightarrow{BG}-2\left(\overrightarrow{BG}+\overrightarrow{GH}\right)+3\left(\overrightarrow{BG}+\overrightarrow{GK}\right)=\overrightarrow{0} &\\
+                                &\iff 2\overrightarrow{BG}-2\overrightarrow{GH}+3\overrightarrow{GK}=\overrightarrow{0} &\\
+                                &\iff -2\overrightarrow{BG}=-2\overrightarrow{GH}+3\overrightarrow{GK} &\\
+                                &\iff\overrightarrow{GB}=-\overrightarrow{GH}+\tfrac{3}{2}\overrightarrow{GK}
+                            \end{aligned}$
+                    \item   $\begin{aligned}[t]
+                                MG^2-2MH^2+3MK^2&=\left(\overrightarrow{MB}+\overrightarrow{BG}\right)^2-2\left(\overrightarrow{MB}+\overrightarrow{BH}\right)^2+3\left(\overrightarrow{MB}+\overrightarrow{BK}\right)^2 &\\
+                                &=  \begin{aligned}[t]
+                                        MB^2+2\overrightarrow{MB}\cdot\overrightarrow{BG}+BG^2-2&MB^2-2\overrightarrow{MB}\cdot 2\overrightarrow{BH}-2BH^2 \\
+                                                                                                                              &+3MB^2+2\overrightarrow{MB}\cdot 3\overrightarrow{BK}+3BK^2
+                                    \end{aligned} &\\
+                                &= 2MB^2+2\overrightarrow{MB}\cdot\underbrace{\left(\overrightarrow{BG}-2\overrightarrow{BH}+3\overrightarrow{BK}\right)}_{\vec{0}}+BG^2-2BH^2+4BK^2 &\\
+                                &=2MB^2+BG^2-2BH^2+3BK^2
+                            \end{aligned}$
+                    \item   $\mathcal{C}$ est l'ensemble de points M tels que: \medbreak
+                            $\begin{aligned}
+                                2MB^2+BG^2-2BH^2+3BK^2=50&\iff MB^2=-\tfrac{1}{2}BG^2+BH^2-\tfrac{3}{2}BK^2+50 &\\
+                                &\iff MB^2=-\tfrac{1}{2}\times 32{,}5+154-\tfrac{3}{2}\times 41{,}5+50 &\\
+                                &\iff MB^2=125{,}5 &\\
+                                &\iff MB=\sqrt{125{,}5}
+                            \end{aligned}$ \medbreak
+                            Donc, $\mathcal{C}$ est le cercle de centre B et de rayon $\sqrt{125{,}5}$.
+                \end{enumerate}
+        \item   $MG^2-2MH^2+3MK^2=k\iff MB^2=k+75{,}5$ \\ Donc, si $k\geq -75{,}5$, $\mathcal{C}$ n'est pas l'ensemble vide.
     \end{enumerate}
 \end{Exercise}
 

@@ -67,7 +67,7 @@
                                     &\iff -\frac{5}{4}x=\frac{1}{4} &\\
                                     &\iff x=-\frac{1}{5}
                                 \end{flalign*}
-                            On calcule ensuite la valeur de $y$ en ce point: $y=-2x\iff y=\frac{2}{5}$ \begin{center}$S=\Big\{-\frac{1}{5}\,;\frac{2}{5}\Big\}$\end{center}
+                            On calcule ensuite la valeur de $y$ en ce point: $y=-2x\iff y=\frac{2}{5}$ \begin{center}$S=\big\{-\frac{1}{5}\,;\frac{2}{5}\big\}$\end{center}
                     \end{enumerate}
        \end{enumerate}
     \end{Exercise}
@@ -376,7 +376,7 @@
                         A\ (4\,;2)\in\mathcal{C}&\iff (4-1)^2+(2+2)^2=25 &\\
                         &\iff 9+16=25
                     \end{aligned}$
-            \item   Un vecteur normal de la tangente est $\overrightarrow{OA}$, avec $O\ (1\,;-2)$, le centre du cercle. $\overrightarrow{OA}\ \begin{psmallmatrix}x_A-x_O\ =& 3\ =& a \\y_A-y_O\ =& 4\ =& b \end{psmallmatrix}$ \\ D'où une équation de la tangente pourrait être $ax+by+c=0\iff3x+4y+c=0$
+            \item   Un vecteur normal de la tangente est $\overrightarrow{OA}$, avec $O\ (1\,;-2)$, le centre du cercle. \\ $\overrightarrow{OA}\ \begin{psmallmatrix}x_A-x_O\ =& 3\ =& a \\y_A-y_O\ =& 4\ =& b \end{psmallmatrix}$ \\ D'où une équation de la tangente pourrait être $ax+by+c=0\iff3x+4y+c=0$
                     $\begin{aligned}[t]
                         A\ (4\,;2)\in\mathcal{C}&\iff 3\times 4+4\times 2+c=0 &\\
                         &\iff c=-20
@@ -398,6 +398,30 @@
                         &\iff MI^2=\tfrac{1}{2}\left(92-\tfrac{(x_B-x_A)^2+(y_B-y_A)^2)}{2}\right) &\\
                         &\iff MI^2=36
                     \end{aligned}$ \smallbreak Il s'agit donc d'un cercle de centre $I$ et de rayon $\sqrt{36}=6$.
+        \end{enumerate}
+    \end{Exercise}
+
+    \begin{Exercise}[number={81}]
+        \begin{enumerate}[a)]
+            \item	On a $A\ (4\,;0)\in\mathcal{C}$ et $B\ (-4\,;0)\in\mathcal{C}$. De plus, $C\ (0\,;5)\in\mathcal{C}$. \\ Le centre du cercle $\mathcal{C}_4$, noté E, est le point d'interséction des médiatrices du triangle ABC. \medbreak
+                    La médiatrice $(d')$ du ségment AB à pour vecteur normal \smallbreak
+                    $\overrightarrow{AB}\ \begin{psmallmatrix}x_B-x_A\ =& -8 \\ y_B-y_A\ =& 0\end{psmallmatrix}$ \quad Donc une équation de $(d')$ est $-8x+c=0$. \\ On note $M$ le milieu de $[AB]$, on obtient $M\ (0\,;0)$ \smallbreak
+                    $\begin{aligned}
+                        M\ (0\,;0)\in (d')&\iff -8x_M+c=0 &\\
+                        &\iff c=0
+                    \end{aligned}$ \smallbreak C'est-à-dire que $(d'):\ x=0$ \bigbreak 
+                    On détermine, de même façon, une équation $(d)$, médiatrice du segment $[BC]$. \smallbreak
+                    $\overrightarrow{BC}\ \begin{psmallmatrix}x_C-x_B\ =& 4 \\ y_C-y_B\ =& 5\end{psmallmatrix}$ \quad Donc une équation de $(d)$ est $4x+5y+c=0$. \\ On note $M$ le milieu de $[BC]$, on obtient $M\ (-2\,;2{,}5)$ \smallbreak
+                    $\begin{aligned}
+                        M\ (-2\,;2{,}5)\in (d)&\iff 4x_M+5y_M+c=0 &\\
+                        &\iff c=-4{,}5
+                    \end{aligned}$ \smallbreak C'est-à-dire que $(d):\ 4x+5y-4{,}5=0\iff x=\frac{4{,}5}{4}-\frac{5}{4}y$ \bigbreak
+                    L'intersection de ces deux droites est le point $E$. \smallbreak
+                    $\frac{4{,}5}{4}-\frac{5}{4}y=0\iff y=0{,}9$ \smallbreak $E\ (0\,;0{,}9)$ \bigbreak
+                    On finit en déterminant le rayon au carré du cercle. \smallbreak
+                    $AE=(4-0)^2+(0-0{,}9)^2=16{,}81$ \bigbreak
+                    $\mathcal{C}:\ x^2+(y-0{,}9)^2=4{,}1^2$
+            \item   On cherche l'autre point d'intersection de la droite $(AE)$ avec le tunnel. Ses coordonnées sont $(-4\,;1{,}8)$
         \end{enumerate}
     \end{Exercise}
 \end{document}
