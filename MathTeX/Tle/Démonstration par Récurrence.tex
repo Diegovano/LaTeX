@@ -11,8 +11,7 @@
 \renewcommand\maketitle{
 {\raggedright
 {\large \bfseries Chapitre 1}\\[4ex]
-{\Large \bfseries \@title}\\[4ex]
-\@date \\[8ex]}}
+{\Large \bfseries \@title}\\[4ex]}}
 \makeatother
 \setlength{\headheight}{15pt}
 
@@ -25,7 +24,6 @@
 
 \begin{document}
     \title{\underline{Suites: La Démonstration par Récurrence}}
-    \date{ 12 Septembre 2020}
     \maketitle
 
     \textbf{\underline{Exemple:}}\\[2ex]
@@ -46,12 +44,12 @@
             P(0)\text{ est vraie (Initialisation)} \\ \forall k\in\mathbb{N}, P(k)\text{ vraie}\implies P(k+1)\text{ vraie (hérédité)}
         \end{cases}$ \\[2ex]
 
-        Alors: $P(n)$ est vraie pour tout entier naturel
+        Alors: $P(n)$ est vraie pour tout entier naturel.
     }}\\[4ex]
     {\indent\parbox[t]{\dimexpr\linewidth-\parindent}{
         Reprenons notre exemple. La propriété: ``$4^n-1$ est un multiple de 3'', est vraie pour $n=0$. La propriété est donc initialisée.\\[2ex]
         Hérédité: Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.\\[2ex]
-        L'Hypothèse de récurrence est donc: ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$ \pagebreak
+        L'Hypothèse de récurrence est donc: ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$. \pagebreak
     }}
 
     {\begin{center}
