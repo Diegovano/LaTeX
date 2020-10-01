@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper]{book}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage[upright]{fourier}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage[]{titlesec}
+\usepackage{soulutf8}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\thesection.\Alph{subsection}}
+
+\makeatletter
+\renewcommand\maketitle{
+{\raggedright
+{\large \bfseries Chapitre 2}\\[4ex]
+{\Large \bfseries \@title}\\[4ex]}}
+\makeatother
+\setlength{\headheight}{15pt}
+
+\setcounter{chapter}{2}
+
+\titleformat{\chapter}{\large\bfseries}
+\titleformat{\title}{\Large\bfseries}
+\titleformat{\section}{\bfseries}{\ul{\thesection.\enspace}}{-0.15em}{\ul}
+\titleformat{\subsection}{\bfseries}{\ul{\thesubsection.\enspace}}{-0.15em}{\ul}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{20 Septembre 2020}
+\fancyhead[RO,LE]{Spé Mathématiques}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+    \title{Continuité des Fonctions d'une Variable Réele}
+    \maketitle
+    \section{Définition}
+        \hspace*{1\parindent}{\parbox[t]{\dimexpr\linewidth-1\parindent}{
+        Soit $f$, définie sur un intervalle $I$, et soit $a$, un réel de $I$.
+        La fonction $f$ est continue si et seulement si: \[\lim_{x \to a} f(x)=f(a)\]
+        $f$ est continue sur l'intervalle $I$, si et seulement si, quel que soit le réel $x\in I$, $f$ est continue en $x$.
+        \subsection{Exemple}
+        }
+        \hspace*{3\parindent}{\parbox[t]{\dimexpr\linewidth-3\parindent}{
+            La fonction inverse est continue sur $]-\infty\,;0[$, et sur $]0\,;+\infty[$.\\
+            La fonction ``Partie Enitère'' est définie sur $\mathbb{R}$, mais pas continue sur $\mathbb{R}$.
+            \begin{center}\begin{tikzpicture}
+                \draw[gray,very thin] (-.75,-.75) grid (3.75,3.75);
+                \draw[thick, -{Latex[length=3mm]}] (0,0) -- (3.75,0) node[anchor=north east] {$x$};
+                \draw[thick, -{Latex[length=3mm]}] (0,0) -- (0,3.75) node[anchor=north east] {$y$};
+            \end{tikzpicture}\end{center}
+
+        }
+        
+\end{document}
