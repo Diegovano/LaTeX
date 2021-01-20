@@ -1,69 +1,40 @@
-\documentclass[12pt, a4paper]{book}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-%\usepackage[upright]{fourier}
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{fancyhdr}
+\documentclass{cours}
 
-\makeatletter
-\renewcommand\maketitle{
-{\raggedright
-{\large \bfseries Chapitre 1}\\[4ex]
-{\Large \bfseries \@title}\\[4ex]}}
-\makeatother
-\setlength{\headheight}{15pt}
+\title{Suites : La Démonstration par Récurrence}
 
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LO,RE]{12 Septembre 2020}
-\fancyhead[RO,LE]{Spé Mathématiques}
-\fancyfoot[C]{\thepage}
 
 \begin{document}
-    \title{\underline{Suites: La Démonstration par Récurrence}}
-    \maketitle
+    \maketitle{1}
 
-    \textbf{\underline{Exemple:}}\\[2ex]
-    \hspace*{2\parindent}{\parbox[t]{\dimexpr\linewidth-2\parindent}{
+    % \setlength{\baselineskip}{1.5em}
+    \begin{Gpartie}{Exemple}
         On considère la suite $\left(u_n\right)$, définie pour tout $n\in\mathbb{N}$, par $u_n=4^n-1$.
-        \begin{center}
-            % \vspace{\baselineskip}
-            $\left(u_n\right)=\left\{0\,;3\,;15\,;63\,;255\,;\dots\right\}$
-            % \vspace{\baselineskip}
-        \end{center}
+            \[\left(u_n\right)=\left\{0\,;3\,;15\,;63\,;255\,;\dots\right\}\]
         On remarque que tous ces nombres sont des multiples de 3. On se demande si $\forall n\in\mathbb{N}$, $4^n-1$ est un multiple de 3.
-    }} \\[2ex]
-    \indent \textbf{\underline{Axiome de la récurrence:}}\\[2ex]
-    \hspace*{2\parindent}{\parbox[t]{\dimexpr\linewidth-2\parindent}{
+    \end{Gpartie}
+    \begin{Gpartie}{Axiome de Récurrence}
         Soit $P(n)$, une propriété dépendante de l'entier naturel $n$. \\[2ex]
-        Si:
+        Si :
         $\begin{cases}
             P(0)\text{ est vraie (Initialisation)} \\ \forall k\in\mathbb{N}, P(k)\text{ vraie}\implies P(k+1)\text{ vraie (hérédité)}
         \end{cases}$ \\[2ex]
 
-        Alors: $P(n)$ est vraie pour tout entier naturel.
-    }}\\[4ex]
-    {\indent\parbox[t]{\dimexpr\linewidth-\parindent}{
-        Reprenons notre exemple. La propriété: ``$4^n-1$ est un multiple de 3'', est vraie pour $n=0$. La propriété est donc initialisée.\\[2ex]
-        Hérédité: Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.\\[2ex]
-        L'Hypothèse de récurrence est donc: ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$. \pagebreak
-    }}
+        Alors : $P(n)$ est vraie pour tout entier naturel. \\[4ex]
+        Reprenons notre exemple. La propriété : ``$4^n-1$ est un multiple de 3'', est vraie pour $n=0$. La propriété est donc initialisée.\\[2ex]
+        Hérédité : Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.\\[2ex]
+        \pagebreak L'Hypothèse de récurrence est donc : ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$. \\[4ex]
 
-    {\begin{center}
-    $\begin{aligned}[t]
-        4^{k+1}-1&=4\times 4^k-1 &\\
-        &= 4\times\left(3p+1\right)-1 \quad \text{(Hypothèse de récurrence)} &\\
-        &=12p+4-1 &\\
-        &=12p+3 &\\
-        &=3\left(4p+1\right) \quad \text{(Il s'agit bien d'un multiple de 3)}
-    \end{aligned}$
-    \end{center}} \vspace{\baselineskip}
-    {\indent\parbox[t]{\dimexpr\linewidth-\parindent}{
-    Donc, la propriété est héréditaire.
+        {\begin{center}
+        $\begin{aligned}[t]
+            4^{k+1}-1&=4\times 4^k-1 &\\
+            &= 4\times\left(3p+1\right)-1 \quad \text{(Hypothèse de récurrence)} &\\
+            &=12p+4-1 &\\
+            &=12p+3 &\\
+            &=3\left(4p+1\right) \quad \text{(Il s'agit bien d'un multiple de 3)}
+        \end{aligned}$
+        \end{center}} \vspace{4ex}
+        Donc, la propriété est héréditaire.
 
-    On a démontré par récurrence que $\forall n\in\mathbb{N},4^n-1$ est un multiple de 3.
-    }} 
-\end{document}}
+        On a démontré par récurrence que $\forall n\in\mathbb{N},4^n-1$ est un multiple de 3.
+    \end{Gpartie}
+\end{document}

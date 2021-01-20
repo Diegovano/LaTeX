@@ -1,59 +1,69 @@
-\documentclass[12pt, a4paper]{book}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-%\usepackage[upright]{fourier}
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{fancyhdr}
-\usepackage[]{titlesec}
-\usepackage{soulutf8}
+\documentclass{cours}
+
+\usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 
-\renewcommand\thesection{\Roman{section}}
-\renewcommand\thesubsection{\thesection.\Alph{subsection}}
-
-\makeatletter
-\renewcommand\maketitle{
-{\raggedright
-{\large \bfseries Chapitre 2}\\[4ex]
-{\Large \bfseries \@title}\\[4ex]}}
-\makeatother
-\setlength{\headheight}{15pt}
-
-\setcounter{chapter}{2}
-
-\titleformat{\chapter}{\large\bfseries}
-\titleformat{\title}{\Large\bfseries}
-\titleformat{\section}{\bfseries}{\ul{\thesection.\enspace}}{-0.15em}{\ul}
-\titleformat{\subsection}{\bfseries}{\ul{\thesubsection.\enspace}}{-0.15em}{\ul}
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LO,RE]{20 Septembre 2020}
-\fancyhead[RO,LE]{Spé Mathématiques}
-\fancyfoot[C]{\thepage}
+\title{Continuité des Fonctions d'une \\ Variable Réelle}
+\author{Diego Van Overberghe}
 
 \begin{document}
-    \title{Continuité des Fonctions d'une Variable Réele}
-    \maketitle
-    \section{Définition}
-        \hspace*{1\parindent}{\parbox[t]{\dimexpr\linewidth-1\parindent}{
+    \maketitle{2}
+
+    \begin{Gpartie}{Définition}
         Soit $f$, définie sur un intervalle $I$, et soit $a$, un réel de $I$.
-        La fonction $f$ est continue si et seulement si: \[\lim_{x \to a} f(x)=f(a)\]
+        La fonction $f$ est continue si et seulement si : \[\lim_{x \to a} f(x)=f(a)\]
         $f$ est continue sur l'intervalle $I$, si et seulement si, quel que soit le réel $x\in I$, $f$ est continue en $x$.
-        \subsection{Exemple}
-        }
-        \hspace*{3\parindent}{\parbox[t]{\dimexpr\linewidth-3\parindent}{
+
+        \begin{Spartie}{Exemple}
             La fonction inverse est continue sur $]-\infty\,;0[$, et sur $]0\,;+\infty[$.\\
-            La fonction ``Partie Enitère'' est définie sur $\mathbb{R}$, mais pas continue sur $\mathbb{R}$.
+            La fonction ``Partie Entière'' est définie sur $\mathbb{R}$, mais pas continue sur $\mathbb{R}$. \\[2ex]
             \begin{center}\begin{tikzpicture}
                 \draw[gray,very thin] (-.75,-.75) grid (3.75,3.75);
                 \draw[thick, -{Latex[length=3mm]}] (0,0) -- (3.75,0) node[anchor=north east] {$x$};
                 \draw[thick, -{Latex[length=3mm]}] (0,0) -- (0,3.75) node[anchor=north east] {$y$};
             \end{tikzpicture}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique de la Fonction \linebreak ``Partie Entière'', continue sur $[n\,;n+1[$ avec $n\in\mathbb{Z}$.}}
+            \begin{center}\begin{tikzpicture}
+                \draw[gray, very thin] (-2.75,-.75) grid (2.75,2.75);
+                \draw[thick, -{Latex[length=3mm]}] (-2.75,0) -- (2.75,0) node[anchor=north east] {$x$};
+                \draw[thick, -{Latex[length=3mm]}] (0,-.75) -- (0,2.75) node[anchor=north east] {$y$};
+            \end{tikzpicture}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de la Fonction Absolue}}
+        \end{Spartie}
 
-        }
-        
+        \begin{Spartie}{Propriété}
+            La somme, le produit et la composée de deux fonctions continues est continue. \\
+            L'inverse d'une fonction continue est continue sur tout intervalle où elle ne s'annule pas.
+            \[f : x\mapsto x^2\quad\text{continue}\] \[g : x\mapsto\dfrac{1}{x^2}\quad\text{Définie sur }\mathbb{R}^*\text{, continue sur }]-\infty\,;0[\text{ et }]0\,;+\infty]\]
+        \end{Spartie}
+    \end{Gpartie}
+
+    \hspace{4ex}
+
+    \begin{Gpartie}{Théorème des Valeurs Intermédiaires}
+        \begin{Spartie}{Théorème}
+            Si une fonction $f$ est continue sur un intervalle $[a\,;b]$ alors, pour tout réel $k\in[\text{min}(f(a)\,;f(b))\,;\text{max}(f(a)\,;f(b))]$ il existe au moins un réel $c\in[a\,;b]$ tel que $f(c)=k$ \\
+            C'est-à-dire, pour tout réel $k$, compris entre $f(a)$ et $f(b)$, il existe un réel $c\in[a\,;b]$ tel que $f(c)=k$
+            \begin{center}
+                %\begin{tikzpicture}
+                    \noindent\includegraphics[width=6cm]{example-image}
+                    \parbox{\linewidth}{\captionof{figure}{Exemple du Théorème des Valeurs Intermédiaires}}
+                %\end{tikzpicture}
+            \end{center}
+            Pour tout $k$ appartenant à $[f(b)\,;f(a)]$, il existe au moins un réel $c\in[a\,;b]$, tel que $f(c)=k$
+        \end{Spartie}
+        \begin{Spartie}{Corollaire}
+            Si une fonction $f$ est continue et strictement monotone sur un intervalle $[a\,;b]$, alors, pour tout $k\in[\text{min}(f(a)\,;f(b))\,;\text{max}(f(a)\,;f(b))]$, il existe un {\it unique} réel $c\in[a\,;b]$, tel que $f(c)=k$. 
+            \begin{center}
+                % \begin{tikzpicture}
+                    \noindent\includegraphics[width=6cm]{example-image}
+                    \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Corollaire du Théorème \linebreak des Valeurs Intermédiaires}}
+                % \end{tikzpicture}
+            \end{center}
+            \begin{SSpartie}{Cas Particulier}
+                Si une fonction $f$ est continue sur un intervalle $[a\,;b]$, et si $f(a)$ et $f(b)$ sont de signes contraires, alors il existe au moins une solution à $f(x)=0$, sur $[a\,;b]$.
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
 \end{document}
