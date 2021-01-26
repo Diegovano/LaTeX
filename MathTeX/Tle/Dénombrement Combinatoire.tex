@@ -13,8 +13,8 @@
             L'Ensemble vide, noté $\varnothing$ est une partie de tout ensemble. \\
             L'Ensemble des parties de $E$ est noté $\mathcal{P}(E)$.
             \begin{SSpartie}{Exemple}
-                Si $E=\{x\,;y\}$ est un ensemble de deux éléments :
-                \[\mathcal{P}(E)=\{\varnothing\,,\{x\}\,,\{y\}\,,\{x\,;y\}\}\]
+                Si $E=\big\{x\,;y\big\}$ est un ensemble de deux éléments :
+                \[\mathcal{P}(E)=\Big\{\varnothing\,,\big\{x\big\}\,,\big\{y\big\}\,,\big\{x\,;y\big\}\Big\}\]
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Définition}
@@ -30,28 +30,35 @@
         \begin{Spartie}{Propriété (Principe Additif)}
             Si $A$ et $B$ sont deux parties quelconques d'un ensemble fini, $E$, alors :
             \[\text{Card}(A\cup B)=\text{Card}(A)+\text{Card}(B)-\text{Card}(A\cap B)\]
-            De plus, si $A_1, A_2, \cdots, A_p$ sont $p$ parties deux à deux disjointes d'un ensemble fini, alors :
-            \[\text{Card}(A_1\cup A_2\cup\cdots\cup A_p)=\text{Card}(A_1)+\text{Card}(A_2)+\cdots+\text{Card}(A_p)\]
+            De plus, si $A_1, A_2,\dotsc, A_p$ sont $p$ parties deux à deux disjointes d'un ensemble fini, alors :
+            \[\text{Card}(A_1\cup A_2\cup\dotsb\cup A_p)=\text{Card}(A_1)+\text{Card}(A_2)+\dotsb+\text{Card}(A_p)\]
         \end{Spartie}
         \begin{Spartie}{Propriété}
             Soit $n\in\mathbb{N}$, et $E$ un ensemble tel que $\text{Card}(E)=n$. Alors, $E$ possède $2^n$ parties. Autrement dit :
             \[\text{Card}(\mathcal{P}(E))=2^n\]
             \begin{SSpartie}{Démonstration par Récurrence}
                 \begin{SSSpartie}{Initialisation}
-                    Pour $n=0$, $E=\varnothing$, donc la seule partie de $E$ est $\{\varnothing\}$ et $1=2^0$.
+                    Pour $n=0$, $E=\varnothing$, donc la seule partie de $E$ est $\big\{\varnothing\big\}$ et $1=2^0$.
                 \end{SSSpartie}
                 \begin{SSSpartie}{Hérédité}
-                    Supposons que tout ensemble à $k$ élément, où $k$ est un certain entier naturel, admet $2^k$ parties. \par
-                    Alors, soit $E$, un ensemble à $k+1$ éléments. \par
-                    Soit $x$, un élément de $E$. \par
-                    Alors, il y a deux familles de parties de $E$, celles qui contiennent $x$ et celles qui ne le contiennent pas. \par
-                    Or $E\setminus\{x\}$ est un ensemble à $k$ éléments, il y a donc $2^k$ parties de $E$ qui ne contiennent pas $x$. \par
-                    En adjoignant $x$ à toutes ces parties, on obtient toutes les parties qui contiennent $x$, donc il y en a également $2^k$. \par
+                    Supposons que tout ensemble à $k$ élément, où $k$ est un certain entier naturel, admet $2^k$ parties.
+
+                    Alors, soit $E$, un ensemble à $k+1$ éléments.
+
+                    Soit $x$, un élément de $E$.
+
+                    Alors, il y a deux familles de parties de $E$, celles qui contiennent $x$ et celles qui ne le contiennent pas.
+
+                    Or $E\setminus\big\{x\big\}$ est un ensemble à $k$ éléments, il y a donc $2^k$ parties de $E$ qui ne contiennent pas $x$.
+
+                    En adjoignant $x$ à toutes ces parties, on obtient toutes les parties qui contiennent $x$, donc il y en a également $2^k$.
+                    
                     Ainsi, le nombre de parties de $E$ est de $2^k+2^k=2^{k+1}\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
@@ -60,109 +67,125 @@
             \end{itemize}
             \begin{SSpartie}{Cas Général}
                 \begin{itemize}
-                    \item Le produit cartésien $E_1\times E_2\times\cdots\times E_n$ des ensembles $E_1,\,E_2,\,\cdots,\,E_n$ est l'ensemble des n-uplets $(a_1\,;a_2\,;\cdots\,;a_n)$ où $a_1\in E_1,\,a_2\in E_2,\,\cdots,\,a_n\in E_n$.
+                    \item Le produit cartésien $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1,\,E_2,\,\dotsc,\,E_n$ est l'ensemble des n-uplets $(a_1\,;a_2\,;\dotsc\,;a_n)$ où $a_1\in E_1,\,a_2\in E_2,\,\dotsc,\,a_n\in E_n$.
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Notations}
-            $E\times E$ se note $E^2$, $\overbrace{E\times E\times\cdot\times E}^\text{$k$ fois}$ se note $E^k$.
+            $E\times E$ se note $E^2$, $\overbrace{E\times E\times\dotsb\times E}^\text{$k$ fois}$ se note $E^k$.
         \end{Spartie}
         \begin{Spartie}{Exemples}
-            Soit $E=\{a\,;b\,;c\}$ et $F=\{1\,;2\}$
+            Soit $E=\big\{a\,;b\,;c\big\}$ et $F=\big\{1\,;2\big\}$
             \begin{itemize}
-                \item $E\times F=\{(a\,;1)\,;(a\,;2)\,;(b\,;1)\,;(b\,;2)\,;(c\,;1)\,;(c\,;2)\}$
-                \item $F\times F=\{(1\,;1)\,;(1\,;2)\,;(2\,;1)\,;(2\,;2)\}$
+                \item $E\times F=\big\{(a\,;1)\,;(a\,;2)\,;(b\,;1)\,;(b\,;2)\,;(c\,;1)\,;(c\,;2)\big\}$
+                \item $F\times F=\big\{(1\,;1)\,;(1\,;2)\,;(2\,;1)\,;(2\,;2)\big\}$
                 \item $(a\,;b\,;b\,;a\,;c)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Si $E_1,\,E_2,\,\cdots,\,E_n$ sont $n$ ensembles finis :
-            \[\text{Card}(E_1\times E_2\times\cdots\times E_n)=\text{Card}(E_1)\times\text{Card}(E_2)\times\cdots\times\text{Card}(E_n)\]
+            Si $E_1,\,E_2,\,\dotsc,\,E_n$ sont $n$ ensembles finis :
+            \[\text{Card}(E_1\times E_2\times\dotsb\times E_n)=\text{Card}(E_1)\times\text{Card}(E_2)\times\dotsb\times\text{Card}(E_n)\]
             \begin{SSpartie}{Cas Particulier}
                 Si $E$ est un ensemble fini, pour tout $k\in\mathbb{N^*}$ :
-                \[\text{Card}(E^k)=(\text{Card}(E))^k\]
+                \[\text{Card}(E^k)=\big(\text{Card}(E)\big)^k\]
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Exemples}
                 Dans les exemples précédents :
                 \begin{itemize}
                     \item $\text{Card}(E\times F)=6=\text{Card}(E)\times\text{Card}(F)$
-                    \item $\text{Card}(F^2)=4=2^2=(\text{Card}(F))^2$
+                    \item $\text{Card}(F^2)=4=2^2=\big(\text{Card}(F)\big)^2$
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak[3]
     \begin{Gpartie}{Permutations}
         \begin{Spartie}{Définition}
-            Soit $E$, un ensemble à $n$ éléments, une permutation est un n-uplet d'éléments distincts de $E$. \par
+            Soit $E$, un ensemble à $n$ éléments, une permutation est un n-uplet d'éléments distincts de $E$.
+
             Autrement dit, une permutation est une façon d'ordonner les $n$ éléments de $E$.
             \begin{SSpartie}{Exemple}
-                On considère l'ensemble $G=\{a\,;b\,;c\}$ \\ Ses permutations sont :
+                On considère l'ensemble $G=\big\{a\,;b\,;c\big\}$ \\ Ses permutations sont :
                 \[(a\,;b\,;c),\,(a\,;c\,;b),\,(b\,;a\,;c),\,(b\,;c\,;a),\,(c\,;a\,;b),\,(c\,;b\,;a)\]
                 $G$ admet donc 6 permutations.
             \end{SSpartie}
-            \begin{SSpartie}{Propriété}
-                Le nombre de permutations d'un ensemble à $n$ éléments est $n!$
-            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Propriété}
+            Le nombre de permutations d'un ensemble à $n$ éléments est $n!$
             \begin{SSpartie}{Remarque}
-                $n! =n\times(n-1)\times\cdots\times 2\times 1$ \\
+                $n! =n\times(n-1)\times\dotsb\times 2\times 1$ \\
                 $n!$ est le produit de tous les entiers de $1$ à $n$. \\
                 $n!$ se lit ``factorielle de $n$''.
             \end{SSpartie}
             \begin{SSpartie}{Explication}
                 On peut considérer que faire une permutation c'est faire un tirage sans remise des $n$ éléments de $E$. Il y $n$ choix pour le premier élément, $n-1$ pour le deuxième et ainsi de suite.
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Démonstration par Récurrence}
                 \begin{SSSpartie}{Initialisation}
                     Un ensemble à un élément admet une permutation, et $1! =1$.
                 \end{SSSpartie}
                 \begin{SSSpartie}{Hérédité}
-                    Supposons que tout ensemble à $n$ élément ($n$ fixé) admette $n!$ permutations. \par
+                    Supposons que tout ensemble à $n$ élément ($n$ fixé) admette $n!$ permutations.
+
                     Soit $E$, un ensemble à $n+1$ éléments. \\
                     On choisit un élément $x$ de $E$. \\
-                    Dans chacune des permutations des $n$ éléments restants, il y $n+1$ positions où insérer $x$. \par
+                    Dans chacune des permutations des $n$ éléments restants, il y $n+1$ positions où insérer $x$.
+
                     Ainsi, le nombre de permutations de $E$ est $(n+1)\times n! =(n+1)!\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak[3]
     \begin{Gpartie}{Combinaisons}
         Dans tout ce sous-chapitre, $E$ est un ensemble à $n$ éléments et p est un entier naturel tel que $p\leq n$.
         \begin{Spartie}{Définition}
             Une combinaison de $p$ éléments de $E$ est une partie de $E$ possédant $p$ éléments.
-        \end{Spartie}
-        \begin{Spartie}{Remarque}
-            L'Ordre des éléments n'a pas d'importance, les éléments sont distincts.
+            \begin{SSpartie}{Remarque}
+                L'Ordre des éléments n'a pas d'importance, les éléments sont distincts.
+            \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Le nombre de combinaisons à $p$ éléments de $E$ est égal à $\binom{n}{p}$. \\
-            Où : $\binom{n}{p}=\dfrac{n!}{p!(n-p)!}$ \par
-            $\binom{n}{p}$ est appelé coefficient binomial et il se lit ``$p$ parmi $n$''. \par
-            $\binom{n}{p}=\dfrac{n(n-1)\times\cdots\times(n-p+1)}{p!}$
-        \end{Spartie}
-        \begin{Spartie}{Explication}
-            Lorsqu'on choisit $p$ éléments dans un ensemble à $n$ éléments, on a $n$ choix pour le premier, $n-1$ choix pour le deuxième, etc.\ mais ainsi, les $p$ éléments sont ordonnés. \par
-            On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$
-        \end{Spartie}
-        \pagebreak
-        \begin{Spartie}{Cas Particuliers}
-            $\binom{n}{0}=1\quad$ La seule partie de $E$ à $0$ élément est $\varnothing$. \par
-            $\binom{n}{n}=1\quad$ La seule partie de $E$ à $n$ éléments est $E$. \par
-            $\binom{n}{1}=n\quad$ Il y à $n$ parties de $E$ à $1$ élément.
+            Le nombre de combinaisons à $p$ éléments de $E$ est égal à $\binom{n}{p}$, où :
+            \[\binom{n}{p}=\dfrac{n!}{p!(n-p)!}\]
+            \[\binom{n}{p}=\dfrac{n(n-1)\times\dotsb\times(n-p+1)}{p!}\]
+            $\dbinom{n}{p}$ est appelé coefficient binomial et il se lit ``$p$ parmi $n$''.
+            \begin{SSpartie}{Explication}
+                Lorsqu'on choisit $p$ éléments dans un ensemble à $n$ éléments, on a $n$ choix pour le premier, $n-1$ choix pour le deuxième, etc.\ mais ainsi, les $p$ éléments sont ordonnés.
+
+                On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$
+            \end{SSpartie}
+            \begin{SSpartie}{Cas Particuliers}
+                $\dbinom{n}{0}=1\quad$ La seule partie de $E$ à $0$ élément est $\varnothing$.
+
+                $\dbinom{n}{n}=1\quad$ La seule partie de $E$ à $n$ éléments est $E$.
+
+                $\dbinom{n}{1}=n\quad$ Il y à $n$ parties de $E$ à $1$ élément.
+            \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété : Symétrie}
-            $\binom{n}{n-p}=\binom{n}{p}\quad$ Choisir $p$, c'est ne pas choisir $n-p$. \par
-            Démonstration Alternative : \par 
-            $\binom{n}{n-p}=\dfrac{n!}{(n-p)!(n-(n-p))!}=\dfrac{n!}{(n-p)!p!}=\binom{n}{p}$.
+            Choisir $p$, c'est ne pas choisir $n-p$ :
+            \[\binom{n}{n-p}=\binom{n}{p}\quad\]
+            Démonstration Alternative : 
+            \[\binom{n}{n-p}=\dfrac{n!}{(n-p)!(n-(n-p))!}=\dfrac{n!}{(n-p)!p!}=\binom{n}{p}\]
         \end{Spartie}
         \begin{Spartie}{Propriété : Relation de Pascal}
-            $\binom{n+1}{p+1}=\binom{n}{p}+\binom{n}{p+1}$
+            \[\binom{n+1}{p+1}=\binom{n}{p}+\binom{n}{p+1}\]
             \begin{SSpartie}{Démonstration}
-                Soit $E$, un ensemble à $n+1$ éléments (on va compter le nombre de parties de E à $p+1$ éléments). \par
-                Soit $x$ un élément de $E$. \par
-                Alors il y a deux ``familles'' de parties : celles qui contiennent $x$ et celles qui ne le contiennent pas. \par
-                Or $E\setminus\{x\}$ contient $n$ éléments. \par
-                Donc il y a $\binom{n}{p}$ à $p$ éléments de $E\setminus\{x\}$. \par
-                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent $x$. \par
+                Soit $E$, un ensemble à $n+1$ éléments (on va compter le nombre de parties de E à $p+1$ éléments).
+
+                Soit $x$ un élément de $E$.
+
+                Alors il y a deux ``familles'' de parties : celles qui contiennent $x$ et celles qui ne le contiennent pas.
+
+                Or $E\setminus\big\{x\big\}$ contient $n$ éléments.
+
+                Donc il y a $\binom{n}{p}$ à $p$ éléments de $E\setminus\big\{x\big\}$.
+
+                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent $x$.
+
                 Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).
             \end{SSpartie}
         \end{Spartie}
@@ -175,7 +198,7 @@
             \end{center}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            \[\sum_{p=0}^{n}\binom{n}{p}=\binom{n}{0}+\binom{n}{1}+\cdots+\binom{n}{n}=2^n\]
+            \[\sum_{p=0}^{n}\binom{n}{p}=\binom{n}{0}+\binom{n}{1}+\dotsb+\binom{n}{n}=2^n\]
         \end{Spartie}
     \end{Gpartie}
 \end{document}

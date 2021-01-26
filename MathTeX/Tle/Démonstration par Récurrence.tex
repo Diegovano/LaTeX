@@ -8,30 +8,29 @@
     % \setlength{\baselineskip}{1.5em}
     \begin{Gpartie}{Exemple}
         On considère la suite $\left(u_n\right)$, définie pour tout $n\in\mathbb{N}$, par $u_n=4^n-1$.
-            \[\left(u_n\right)=\left\{0\,;3\,;15\,;63\,;255\,;\dots\right\}\]
+            \[\left(u_n\right)=\big\{0\,;3\,;15\,;63\,;255\,;\dotsc\big\}\]
         On remarque que tous ces nombres sont des multiples de 3. On se demande si $\forall n\in\mathbb{N}$, $4^n-1$ est un multiple de 3.
     \end{Gpartie}
     \begin{Gpartie}{Axiome de Récurrence}
-        Soit $P(n)$, une propriété dépendante de l'entier naturel $n$. \\[2ex]
+        Soit $P(n)$, une propriété dépendante de l'entier naturel $n$.\\
         Si :
-        $\begin{cases}
+        \[\begin{cases}
             P(0)\text{ est vraie (Initialisation)} \\ \forall k\in\mathbb{N}, P(k)\text{ vraie}\implies P(k+1)\text{ vraie (hérédité)}
-        \end{cases}$ \\[2ex]
+        \end{cases}\]
 
         Alors : $P(n)$ est vraie pour tout entier naturel. \\[4ex]
-        Reprenons notre exemple. La propriété : ``$4^n-1$ est un multiple de 3'', est vraie pour $n=0$. La propriété est donc initialisée.\\[2ex]
-        Hérédité : Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.\\[2ex]
-        \pagebreak L'Hypothèse de récurrence est donc : ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$. \\[4ex]
-
-        {\begin{center}
-        $\begin{aligned}[t]
+        Reprenons notre exemple. La propriété : ``$4^n-1$ est un multiple de 3'', est vraie pour $n=0$. La propriété est donc initialisée.
+        
+        Hérédité : Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.
+        
+        L'Hypothèse de récurrence est donc : ``$4^n-1$ est un multiple de 3''. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$.
+        \[\begin{aligned}[t]
             4^{k+1}-1&=4\times 4^k-1 &\\
             &= 4\times\left(3p+1\right)-1 \quad \text{(Hypothèse de récurrence)} &\\
             &=12p+4-1 &\\
             &=12p+3 &\\
             &=3\left(4p+1\right) \quad \text{(Il s'agit bien d'un multiple de 3)}
-        \end{aligned}$
-        \end{center}} \vspace{4ex}
+        \end{aligned}\]
         Donc, la propriété est héréditaire.
 
         On a démontré par récurrence que $\forall n\in\mathbb{N},4^n-1$ est un multiple de 3.

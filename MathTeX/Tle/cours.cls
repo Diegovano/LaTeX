@@ -2,7 +2,7 @@
 
 \ProvidesClass{cours}[2021/20/01]
 
-\LoadClass[12pt, a4paper, leqno, notitlepage, draft]{report}
+\LoadClass[12pt, a4paper, leqno, notitlepage, draft]{scrreprt}
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -12,59 +12,89 @@
 \RequirePackage{lmodern}
 \RequirePackage[upright]{fourier}
 \RequirePackage{caption}
-\RequirePackage{fancyhdr}
+\RequirePackage[headsepline, plainheadsepline, automark]{scrlayer-scrpage}
 \RequirePackage{ulem}
-\RequirePackage{titlesec}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{microtype}
 
 \setcounter{secnumdepth}{4}
+
+\setlength{\parindent}{0pt}
+
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+
+\setkomafont{chapter}{\huge\normalfont\bfseries}
+\RedeclareSectionCommand[
+    beforeskip=0pt,
+    afterskip=2\baselineskip
+]{chapter}
+
+\setkomafont{section}{\large\normalfont\scshape\uline}
+\renewcommand*{\thesection}{\Roman{section}}
+\RedeclareSectionCommand[
+    afterskip=.5\baselineskip
+]{section}
+
+\setkomafont{subsection}{\normalsize\normalfont\scshape\uline}
+\renewcommand*{\thesubsection}{\Roman{section}.\arabic{subsection}}
+\RedeclareSectionCommand[
+    beforeskip=.5\baselineskip,
+    afterskip=.5\baselineskip
+]{subsection}
+
+\setkomafont{subsubsection}{\normalsize\normalfont\scshape\uline}
+\renewcommand*{\thesubsubsection}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}
+
+\setkomafont{paragraph}{\normalsize\normalfont\scshape\uline}
+\renewcommand*{\theparagraph}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}.\roman{paragraph}}
+\RedeclareSectionCommand[
+    beforeskip=0pt,
+    afterskip=.5\baselineskip
+]{paragraph}
 
 \renewcommand{\ULdepth}{4pt}
 
 \renewcommand{\maketitle}[1]{\raggedright
     \setcounter{chapter}{#1}
+    \chapter*{Chapitre \Roman{chapter}}
 
-    {\large \bfseries Chapitre \Roman{chapter}} \\[4ex]
     \setlength{\baselineskip}{20pt}
-    {\Large \bfseries {\uline{\@title}}} \\[4ex]
+    {\LARGE \bfseries {\uline{\@title}}} \\[4ex]
 
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{17pt}
 }
 
-\titleformat{\section}
-    {\large\normalfont\scshape}{\Roman{section}}{1em}{\uline}
-
-\titleformat{\subsection}
-    {\normalsize\normalfont\scshape}{\Roman{section}.\arabic{subsection}}{1em}{\uline}
-
-\titleformat{\subsubsection}
-    {\normalsize\normalfont\scshape}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}{1em}{\uline}
-
-\titleformat{\paragraph}
-    {\normalsize\normalfont\scshape}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}.\roman{paragraph}}{1em}{\uline}
-
 \newenvironment{Gpartie}[1]
-    {\section{#1}\begin{adjustwidth}{1em}{0pt}}
+    {\section{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
 
 \newenvironment{Spartie}[1]
-    {\subsection{#1}\begin{adjustwidth}{1em}{0pt}}
+    {\subsection{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
 
 \newenvironment{SSpartie}[1]
-    {\subsubsection{#1}\begin{adjustwidth}{1em}{0pt}}
+    {\subsubsection{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
 
 \newenvironment{SSSpartie}[1]
-    {\paragraph{#1}\begin{adjustwidth}{1em}{0pt}}
+    {\paragraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\today}
-\fancyhead[R]{Spé Mathématiques T\textsuperscript{le}}
-\fancyfoot[C]{\thepage}
+\ihead*{\today}
+\ohead*{Spé Mathématiques T\textsuperscript{le}}
+\cfoot*{\thepage}
 
 \setlength{\headheight}{15pt}
+
+\let\oldsqrt\sqrt
+
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.64pt\box2}}
