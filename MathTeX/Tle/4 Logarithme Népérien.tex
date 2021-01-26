@@ -1,0 +1,188 @@
+\documentclass{cours}
+
+\title{Fonction Logarithme Népérien}
+\author{Diego Van Overberghe}
+
+\begin{document}
+    \maketitle{4}
+
+    \begin{Gpartie}{Définition de la Fonction ln}
+        \begin{Spartie}{Théorème-Définition}
+            Pour tout réel $x$ strictement positif, il existe un unique réel tel que :
+            \[e^a=x\]
+            Le nombre $a$ est appelé logarithme népérien de $x$. La fonction qui à $x$ associe $a$ est appelée ``fonction logarithme népérien'' et se note $\ln$.
+
+            Ainsi,
+            \[e^a=x\iff a=\ln(x)\text{, \quad pour $x>0$}\]
+        \end{Spartie}
+        \begin{Spartie}{Démonstration}
+            La fonction exponentielle est continue et strictement croissante sur $\mathbb{R}$.
+
+            De plus, 
+            \[\lim_{x\to -\infty} e^x=0\quad\text{ et }\quad\lim_{x\to +\infty} e^x=+\infty\]
+
+            D'après le corollaire du Théorème des Valeurs Intermédiaires, pour tout nombre $k\in\big]0\,;+\infty\big]$, il existe un unique réel $a\in\mathbb{R}$ tel que $e^a=k\quad\square$
+        \end{Spartie}
+        \begin{Spartie}{Remarques}
+            La fonction $\ln$ est la fonction réciproque de $\exp$.
+
+            On déduit que : $\ln(1)=0\quad\ln(e)=1$
+        \end{Spartie}
+        \begin{Spartie}{Propriétés}
+            \[\forall x\in\big]0\,;+\infty\big[,\ e^{\ln(x)}=x\]
+            \[\forall x\in\mathbb{R},\ \ln\left(e^x\right)=x\]
+        \end{Spartie}
+    \end{Gpartie}
+    \pagebreak
+    \begin{Gpartie}{Étude de la Fonction ln}
+        \begin{Spartie}{Continuité, Dérivabilité}
+            \begin{SSpartie}{Propriété}
+                \begin{itemize}
+                    \item La fonction $\ln$ est continue sur $\big]0\,;+\infty\big]$
+                    \item La fonction $\ln$ est dérivable sur $\big]0\,;+\infty\big]$ et $\forall x\in\big]0\,;+\infty\big[$, $\ln'(x)=\frac{1}{x}$
+                    \item La fonction $\ln$ est strictement croissante sur $\big]0\,;+\infty\big[$
+                \end{itemize}
+                \begin{SSSpartie}{Démonstration (Facile)}
+                    Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$
+                    \[\big(e^{\ln(x)}\big)'=\ln'(x)\times e^{\ln(x)}=\ln'(x)\times x\]
+                    \[(x)'=1\]
+                    \[\ln'(x)\times x=1\iff\ln'(x)=\frac{1}{x}\]
+                    
+                \end{SSSpartie}
+                \begin{SSSpartie}{Démonstration (Complète)} 
+                    On étudie le taux d'accroissement, en admettant que $\ln$ est continue :
+                    \[\frac{\ln(x+h)-\ln(x)}{h}\]
+
+                    Posons :
+                    \[\begin{cases}
+                        u=\ln(x+h)\qquad\text{donc}\qquad x+h=e^u \\ v=\ln(x)\phantom{+h)}\text{\qquad donc\qquad} x=e^v
+                    \end{cases}\qquad\text{et}\qquad k=u-v\]
+
+                    \[\begin{aligned}[t]
+                        \frac{\ln(x+h)-\ln(x)}{h}&=\frac{k}{e^u-e^v}\qquad\text{or}\qquad\lim_{h\to0}k=0 \\
+                        &=\frac{1}{\frac{e^{v+h}-e^v}{k}}
+                    \end{aligned}\]
+
+                    Or, $\lim_{h\to0}\frac{e^{v+h}-e^v}{h}$ est l'équation de la dérivée de $e$. La dérivée de $e^v$ est $e^v$.
+                    \[\frac{1}{e^v}=\frac{1}{e^{\ln(x)}}=\frac{1}{x}\quad\square\]
+
+                \end{SSSpartie}
+            \end{SSpartie}
+            \begin{SSpartie}{Propriété}
+                Soit $u$, une fonction dérivable et strictement positive sur $I$
+
+                Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $f'=\frac{u'}{u}$
+                \begin{SSSpartie}{Exemple}
+                    Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln(x^2+1)$
+
+                    $f$ est dérivable en $\mathbb{R}$ et $f'(x)=\frac{2x}{x^2+1}$
+                \end{SSSpartie}
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Limites}
+            \[\lim_{x\to+\infty}\ln(x)=+\infty\text{\qquad et \qquad}\lim_{x\to 0}\ln(x)=-\infty\]
+
+        \end{Spartie}
+        \begin{Spartie}{Représentation Graphique}
+            \begin{center}
+                % \begin{tikzpicture}
+                    \includegraphics[width=7cm]{example-image}
+                    \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de la Fonction ln}}
+                % \end{tikzpicture}
+            \end{center}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Propriétés Algébriques de la Fonction ln}
+        \begin{Spartie}{Propriété Fondamentale}
+            Quels que soient les réels $a$ et $b$, strictement positifs, 
+            \[\ln(a\times b=\ln(a)+\ln(b)\]
+            \begin{SSpartie}{Démonstration}
+                Rappel : \[X=Y\iff e^X=e^Y\]
+                \[e^{\ln(ab)}=ab\]
+                \[e^{\ln(a)+\ln(b)}=e^{\ln(a)}\times e^{\ln(b)}=a\times b\]
+
+                Donc : \[e^{\ln(ab)}=e^{\ln(a)+\ln(b)}\iff\ln(ab)=\ln(a)+\ln(b)\]
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Conséquences}
+            \begin{itemize} 
+                \item Quels que soient les réels $a$ et $b$, strictement positifs, 
+                \[\ln\left(\frac{a}{b}\right)=\ln(a)-\ln(b)\text{\quad et \quad}\ln\left(\frac{1}{b}\right)=-\ln(b)\]
+                \item Quels que soient les réels $a_1, a_2,\dotsc, a_n$, strictement positifs, 
+                \[\ln(a_1a_2\dotsb a_n)=\ln(a_1)+\ln(a_2)+\dotsb+\ln(a_n)\]
+                \begin{SSpartie}{Démonstration par Récurrence}
+                    \begin{SSSpartie}{Initialisation}
+                        \[\ln(a_1)=\ln(a_1)\]
+                    \end{SSSpartie}
+                    \begin{SSSpartie}{Hérédité}
+                        Supposons que, pour $n$ nombres strictement positifs,
+                        \[\ln(a_1a_2\dotsb a_n)=\ln(a_1)+\ln(a_2)+\dotsb+\ln(a_n)\]
+                        Alors :
+                        \[\begin{aligned}[t]
+                            \ln(a_1a_2\dotsb a_na_{n+1})&=\ln(a_1a_2\dotsb a_n)+\ln(a_{n+1})\quad\text{Propriété Fond.} \\
+                            &=\ln(a_1)+\ln(a_2)+\dotsb+\ln(a_n)+\ln(a_{n+1})\quad\square
+                        \end{aligned}\]
+                    \end{SSSpartie}
+                \end{SSpartie}
+                \item De plus, 
+                \[\forall a\in\big]0\,;+\infty\big[,\ \forall n\in\mathbb{Z},\ \ln(a^n)=n\ln(a)\]
+                \begin{SSpartie}{Démonstration}
+                    \begin{itemize}
+                        \item Dans le cas où $n$ est positif, c'est le cas particulier :
+                        \[\ln(a_1a_2\dotsb a_n)=\ln(a_1)+\ln(a_2)+\dotsb+\ln(a_n)\]
+                        \[a_1=a_2=\dotsb=a_n=a\]
+                        \[\ln(a^n)=\ln(a)+\ln(a)+\dotsb+\ln(a)=n\ln(a)\quad\square\]
+                        \item Dans le cas où $n$ est négatif, on prend $m=-n$
+                        \[\ln(a^n)=\ln(a^{-m})=\ln\left(\frac{1}{a^m}\right)=-\ln(a^m)=-m\ln(a)=n\ln(a)\quad\square\]
+                    \end{itemize}
+                \end{SSpartie}
+                \item Finalement, 
+                \[\forall a,\ a>0,\quad\ln\left(\sqrt{a}\right)=\frac{1}{2}\ln(a)\]
+                \begin{SSpartie}{Démonstration}
+                    \[\ln(a)=\ln\left(\sqrt{a^2}\right)=2\ln\left(\sqrt{a}\right)\]
+                    \[\ln\left(\sqrt{a}\right)=\frac{1}{2}\ln(a)\quad\square\]
+
+                \end{SSpartie}
+            \end{itemize}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Résolution d'Inéquations du type $a^n>M$}
+        \begin{Spartie}{Exemple}
+            On sait que : \[\lim_{n\to+\infty}3^n=+\infty\]
+            On cherche le plus petit entier $n$ tel que $3^n>1\,000$ :
+            \[\begin{aligned}[t]
+                &\quad\ln(3^n)>\ln(1\,000) \\
+                \iff&\quad n\ln(3)>\ln(1\,000) \\
+                \iff&\quad n>\frac{\ln(1000)}{\ln(3)}\approx 6{,}3
+            \end{aligned}\]
+
+            On trouve $n\geq 7$, $7$ est le plus petit entier $n$ tel que $3^n>1\,000$
+        \end{Spartie}
+        \begin{Spartie}{Exemple}
+            On sait que : \[\lim_{n\to+\infty}\left(\frac{1}{2}\right)^n=0\text{\qquad \big(car $0<\tfrac{1}{2}<1$\big)}\]
+            
+            On veut résoudre : $\left(\frac{1}{2}\right)^n\leq 0{,}0001$
+            \[\begin{aligned}[t]
+                \iff&\quad\ln\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln(0{,}0001)\text{\qquad $\ln$ strictement croissante} \\
+                \iff&\quad n\ln\big(\tfrac{1}{2}\big)\leq\ln(0{,}0001) \\
+                \iff&\quad n\geq\frac{\ln(0{,}0001)}{\ln\left(\frac{1}{2}\right)}\approx13{,}3
+            \end{aligned}\]
+
+            Donc, $n\geq 14$
+        \end{Spartie}
+    \end{Gpartie}
+    \pagebreak
+    \begin{Gpartie}{Logarithme Décimal} 
+        \begin{Spartie}{Définition} 
+            La fonction logarithme décimal, notée $\log$, est définie sur $\big]0\,;+\infty\big[$, par :
+            \[\log(x)=\frac{\ln(x)}{\ln(10)}\]
+
+        \end{Spartie}
+        \begin{Spartie}{Propriétés} 
+            De part de sa définition, la fonction $\log$ a les mêmes propriétés algébriques et analytiques que la fonction $\ln$ (dérivable, strictement croissante) 
+        \end{Spartie}
+        \begin{Spartie}{Remarque} 
+            La fonction $\log$ est la fonction réciproque de $f:x\mapsto 10^x$
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}

@@ -41,12 +41,16 @@
 \setkomafont{subsection}{\normalsize\normalfont\scshape\uline}
 \renewcommand*{\thesubsection}{\Roman{section}.\arabic{subsection}}
 \RedeclareSectionCommand[
-    beforeskip=.5\baselineskip,
+    beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{subsection}
 
 \setkomafont{subsubsection}{\normalsize\normalfont\scshape\uline}
 \renewcommand*{\thesubsubsection}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}
+\RedeclareSectionCommand[
+    beforeskip=0pt,
+    afterskip=.5\baselineskip
+]{subsubsection}
 
 \setkomafont{paragraph}{\normalsize\normalfont\scshape\uline}
 \renewcommand*{\theparagraph}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}.\roman{paragraph}}
@@ -97,4 +101,4 @@
 \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
 \advance\dimen0-0.2\ht0
 \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.64pt\box2}}
+{\box0\lower0.63pt\box2}}
