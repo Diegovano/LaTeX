@@ -8,8 +8,8 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage[french]{babel}
-\RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[upright]{fourier}
 \RequirePackage{caption}
 \RequirePackage[headsepline, plainheadsepline, automark]{scrlayer-scrpage}
@@ -22,6 +22,7 @@
 \setcounter{secnumdepth}{4}
 
 \setlength{\parindent}{0pt}
+\def\arraystretch{1.5}
 
 \setkomafont{pagehead}{\normalfont}
 \setkomafont{pagefoot}{\normalfont}

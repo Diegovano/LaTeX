@@ -1,0 +1,192 @@
+\documentclass{cours}
+
+\title{Équations Différentielles \\ et Primitives}
+
+\begin{document}
+    \maketitle{6}
+
+    \begin{Gpartie}{Notion d'Équation Différentielle} 
+        \begin{Spartie}{Définition} 
+            Une équation liant une fonction et ses dérivées est appelée une équation différentielle. En général, on note $y$ la fonction, $y'$ sa dérivée, $y''$ sa dérivée seconde.
+        \end{Spartie}
+        \begin{Spartie}{Exemples} 
+            \begin{itemize}
+                \item $y'=2x$ est une équation différentielle définie sur $\mathbb{R}$ dont \textit{une} solution est $y=x^2$.
+                \item $y'=y$ est une équation différentielle définie sur $\mathbb{R}$ dont une solution est $\exp$.
+            \end{itemize}
+            \begin{SSpartie}{Remarque} 
+                Ce ne sont pas les seules solutions !
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Primitives d'une Fonction Continue \big(Solutions de $y'=f(x)$\big)} 
+        \begin{Spartie}{Définition} 
+            Soit $f$ une fonction continue sur un intervalle $I$. Une primitive de $f$ sur $I$ est une fonction $F$ telle que :
+            \[F'=f\]
+        \end{Spartie}
+        \begin{Spartie}{Exemple} 
+            La fonction $F:x\mapsto\frac{1}{x}$ est une primitive de $f:x\mapsto\frac{-1}{x^2}$, sur $\mathbb{R^{+*}}$.
+        \end{Spartie}
+        \begin{Spartie}{Théorème} 
+            (Démontré dans le Chapitre sur l'Intégration)
+
+            Toute fonction continue sur un intervalle $I$ admet une primitive sur $I$
+        \end{Spartie}
+        \begin{Spartie}{Remarque} 
+            Il arrive qu'on ne puisse pas exprimer cette primitive avec les fonctions classiques.
+            \begin{SSpartie}{Exemple} 
+                $f:x\mapsto e^{x^2}$
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Théorème} 
+            Soit $f$ une fonction continue sur un intervalle $I$ et $F$ est une primitive de $f$ sur $I$.
+
+            Alors, $f$ admet une infinité de primitives sur $I$\textsuperscript{\raisebox{.5pt}{\textcircled{\raisebox{-.9pt}{1}}}} et toute primitive $G$ de $f$ sur $I$ est définie par $G(x)=F(x)+k$\textsuperscript{\raisebox{.5pt}{\textcircled{\raisebox{-.9pt}{2}}}} où $k$ est une constante réelle.
+
+            \begin{SSpartie}{Démonstration} 
+                \begin{enumerate}
+                    \item Si $F$ est une primitive de $f$, quel que soit le réel $k$, la fonction $G:x\mapsto F(x)+k$ est une primitive de $f$. En effet, $G'(x)=F'(x)=f(x)$, donc, il y a une infinité de primitives.
+                    \item Si $F$ et $G$ sont deux primitives d'une même fonction $f$, alors :
+                    \[(F-G)'(x)=F'(x)-G'(x)=f(x)-f(x)=0\]
+    
+                    La dérivée de $F-G$ est nulle, donc $F-G$ est une constante.
+    
+                    Donc, 
+                    $\begin{aligned}[t]
+                        \forall x\in I,\ F(x)-G(x)&=k \\
+                        F(x)&=G(x)+k\quad\square
+                    \end{aligned}$
+    
+                    On a montré que deux primitives d'une même fonction sont différents d'une constante.
+                \end{enumerate}
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \pagebreak
+    \begin{Gpartie}{Calcul des Primitives} 
+        \begin{Spartie}{Primitives des Fonctions usuelles} 
+            \begin{center}\begin{tabular}[c]{ |c|c|c| } \hline
+                Fonction $f:x\mapsto$                       & Primitive $F:x\mapsto$                                            & Intervalle  \\ \hline\hline
+                $k$ (constante)                             & $kx$                                                              & $\mathbb{R}$ \\ \hline
+                $x^n$ ($n\in\mathbb{N}$)                    & $\frac{x^{n+1}}{n+1}$                                             & $\mathbb{R}$ \\ \hline
+                $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]-\infty\,;0\big[$ ou $\big]0\,;+\infty\big[$ \\ \hline
+                $\frac{1}{x}$                               & $\ln(x)$                                                          & $\mathbb{R^{+*}}$ \\ \hline
+                $\frac{1}{\sqrt{x}}$                        & $2\sqrt{x}$                                                       & $\mathbb{R^{+*}}$ \\ \hline
+                $e^x$                                       & $e^x$                                                             & $\mathbb{R}$ \\ \hline
+                $\sin(x)$                                   & $-\cos(x)$                                                        & $\mathbb{R}$ \\ \hline
+                $\cos(x)$                                   & $\sin(x)$                                                         & $\mathbb{R}$ \\ \hline
+            \end{tabular}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Primitives des Fonctions Usuelles}}
+        \end{Spartie}
+        \begin{Spartie}{Primitives de Fonctions Composées}
+            Les primitives se déduisent des formules de dérivation. $u$ désigne une fonction continue sur $I$ \vspace{2ex}
+            \begin{center}\begin{tabular}[c]{ |c|c|c| } \hline
+                Fonction $f$ du type                                    & Primitive $F$                                                             & Conditions  \\ \hline\hline
+                $u'u^n$ ($n\in\mathbb{N}$)                              & $\frac{1}{n+1}\times u^{n+1}$                                             & \---\\ \hline
+                $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N},$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,\ u(x)\neq0$ \\ \hline
+                $\frac{u'}{u}$                                          & $\ln(u)$                                                                  & $\forall x\in I,\ u(x)>0$ \\ \hline
+                $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,\ u(x)>0$ \\ \hline
+                $u'e^u$                                                 & $e^u$                                                                     & \---\\ \hline
+                $u'\sin(u)$                                             & $-\cos(u)$                                                                & \---\\ \hline
+                $u'\cos(u)$                                             & $\sin(u)$                                                                 & \---\\ \hline
+            \end{tabular}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Primitives de Fonctions Composées}}
+        \end{Spartie}
+        \pagebreak
+        \begin{Spartie}{Primitives et Opérations sur les Fonctions} 
+            \begin{SSpartie}{Théorème} 
+                Si $F$ et $G$ sont des primitives respectivement des fonctions $f$ et $g$ et si $k$ est une constante réelle, $F+G$ est une primitive de $f+g$ et $kF$ est une primitive de $kf$
+            \end{SSpartie}
+            \begin{SSpartie}{Propriété} 
+                Si $f$ est une fonction continue sur un intervalle tel que $ax+b\in I$, et $F$ est une primitive de $f$, alors : $g:x\mapsto g(x)=f(ax+b)$ admet une primitive :
+                \[G(x)=\frac{1}{a}F(ax+b)\]
+                \begin{SSSpartie}{Exemple} 
+                    $f(x)=(3x-2)^4\qquad
+                    \begin{aligned}[t]
+                        F(x)&=\tfrac{1}{3}\times\tfrac{1}{5}(3x-2)^5 \\
+                        &=\tfrac{1}{15}(3x-2)^5
+                    \end{aligned}$
+                \end{SSSpartie}
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Équation Différentielle $y'-ay=0$} 
+        \begin{Spartie}{Théorème} 
+            Posons $(E) : y'=ay$
+
+            Soit $a\in\mathbb{R}$, les solutions sur $\mathbb{R}$ de l'équation différentielle $(E)$ sont les fonctions définies sur $\mathbb{R}$ par $f(x)=Ce^{ax}$, où $C$ est une constante réelle.
+            \[y'-ay=0\qquad \mathcal{S}=\big\{x\mapsto Ce^{ax},\ C\in\mathbb{R}\big\}\]
+
+            \begin{SSpartie}{Démonstration} 
+                \begin{itemize}
+                    \item Toute fonction $f:x\mapsto f(x)=Ce^{ax}$ vérifie $f'(x)=aCe^{ax}=a\times f(x)$. $f$ est donc solution de $(E)$.
+                    \item Montrons que toute solution de $(E)$ est sous la forme $x\mapsto Ce^{ax}$ \\
+                    Soit $g$, une solution de $(E)$. On a $g'=ag$, or $f:x\mapsto f(x)=e^{ax}$ est solution de $(E)$. \\
+                    $f$ ne s'annulant pas, on peut définir $h:x\mapsto \frac{g(x)}{f(x)}=\frac{g(x)}{e^{ax}}$ \\
+                    On peut écrire $h(x)=g(x)e^{-ax}$
+                    \[\begin{aligned}[t]
+                        h'(x)&=g'(x)e^{-ax}-ae^{-ax}g(x) \\
+                        &=e^{-ax}\big(g'(x)-ag(x)\big)\qquad\text{or}\qquad g'(x)=ag(x) \\
+                        &=e^{-ax}\times 0 \\
+                        &=0
+                    \end{aligned}\]
+
+                    Donc, $h$ est une fonction constante, $\exists C,\ h(x)=C=\frac{g(x)}{e^{ax}}$
+                    \[g(x)=Ce^{ax},\ C\in\mathbb{R}\quad\square\]
+                \end{itemize}
+            \end{SSpartie}
+            \begin{Spartie}{Exemple} 
+                Soit l'équation $y'+5y=0\iff y'=-5y$
+
+                Les solutions de l'équation sont les fonctions $f$ définies par $f(x)=Ce^{-5x},\ C\in\mathbb{R}$
+            \end{Spartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Équations Différentielles $y'-ay=k(x)$, $k$ étant Continue} 
+        \begin{Spartie}{Méthode} 
+            Supposons qu'on a deux fonctions $f$ et $g$, solutions de l'équation $(E): y'-ay=k(x)$.
+
+            Alors la fonction $h(x)$, définie par $h(x)=g(x)-f(x)$ est solution de l'équation $y'-ay=0$.
+            \begin{SSpartie}{Vérification} 
+                \[\begin{aligned}[t]
+                    h'(x)-ah(x)&=g'(x)-f'(x)-a\big(g(x)-f(x)\big) \\
+                    &=g'(x)-ag(x)-\big(f'(x)-af(x)\big) \\
+                    &=k(x)-k(x) \\
+                    &=0
+                \end{aligned}\]
+                Ainsi, pour tout $x$ (sur un ensemble de définition que l'on n’a pas étudié)
+                \[h(x)=Ce^{ax},\ C\in\mathbb{R}\qquad\text{(d'après \textsection IV)}\]
+                Donc, si l'on trouve une solution particulière $f$ de l'équation $(E)$ toute solution s'écrit sous la forme
+                \[g(x)=f(x)+Ce^{ax},\ C\in\mathbb{R}\]
+                \[\text{car}\quad g(x)-f(x)=h(x)=Ce^{ax}\] 
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Exemple} 
+            Soit l'équation différentielle $y'+y=\frac{x-1}{x^2}\quad(E)$
+            \begin{enumerate}
+                \item Vérifier que la fonction inverse est solution de $(E)$.
+                \item En déduire toutes les solutions de $(E)$
+            \end{enumerate}
+            \begin{enumerate}
+                \item Soit $f_0:x\mapsto\frac{1}{x}\qquad\text{alors}\qquad f_0'=\frac{-1}{x^2}$ \\
+                $f_0'+f_0=\frac{-1}{x^2}+\frac{1}{x}=\frac{x-1}{x^2}$, la fonction inverse est solution de $(E)$ sur $\mathbb{R^{+*}}$.
+                \item D'après la démonstration précédente, toute solution $f$ de $(E)$ est de la forme $f:x\mapsto f_0(x)+Ce^{ax},\ C\in\mathbb{R}$. \\
+                On résout $y'+u=0$ : ici $a=-1$. \\
+                Ainsi, les solutions sont :
+                \[\mathcal{S}=\Big\{x\mapsto\tfrac{1}{x}+Ce^{ax},\ C\in\mathbb{R}\Big\}\]
+            \end{enumerate}
+        \end{Spartie}
+        \begin{Spartie}{Exemple} 
+            Soit l'équation $y'-2y=5\quad(E)$
+            \begin{enumerate}
+                \item Trouvons une fonction constante solution $(E)$. \\
+                La fonction $x\mapsto\frac{-5}{2}$ convient.
+                \item On résout $y'-2y=0$ :
+                \[\Big\{x\mapsto Ce^{2x},\ C\in\mathbb{R}\Big\}\]
+            \end{enumerate}
+
+            Les solutions de $(E)$ sont les fonctions du type :
+            \[\mathcal{S}=\Big\{x\mapsto\tfrac{-5}{2}+Ce^{2x},\ C\in\mathbb{R}\Big\}\]
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
