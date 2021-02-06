@@ -1,0 +1,57 @@
+\documentclass{scrartcl}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage{changepage}
+\usepackage[upright]{fourier}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\title{Correction Bac 2021 Sujet 0}
+\author{N. Sibert}
+\begin{document}
+    \maketitle
+
+    \section*{Exercice 1}
+    \begin{adjustwidth}{2em}{0pt}
+        \begin{enumerate}
+            \item b.\quad C'est le théorème des gendarmes. Comme $0<\frac{1}{4}<1,\quad\lim\limits_{n\to +\infty}\left(\frac{1}{4}\right)^n=0$
+            \item c.\quad $f'(x)=e^{x^2}+x\times 2xe^{x^2}=\left(1+2x^2\right)e^{x^2}$
+            \item c.\quad $f(x)=\dfrac{1-\frac{1}{x^2}}{2-\frac{2}{x}+\frac{1}{x^2}}$
+            \item c.\quad C'est le théorème des valeurs intermédiaires (cas général, on n'a pas d'information sur la monotonie de $h$)
+            \item c.\quad $g'$ est croissante sur $\big[1\,;2\big]$ donc $g$ convexe sur $\big[1\,;2\big]$
+        \end{enumerate}
+    \end{adjustwidth}
+    \section*{Exercice 2}
+    \begin{adjustwidth}{2em}{0pt}
+        \begin{enumerate}
+            \item \begin{enumerate}[label=\alph*)]
+                \item   $I\left(\frac{1}{2}\,;0\,;1\right)\quad$et$\quad J\left(2\,;0\,;1\right)$
+                \item   $D\left(0\,;1\,;1\right)\quad$donc$\quad\overrightarrow{DJ}\begin{psmallmatrix}2 \\ -1 \\ 1\end{psmallmatrix}\qquad B\left(1\,;0\,;0\right)\quad\overrightarrow{BI}\begin{psmallmatrix}-\frac{1}{2} \\ 0 \\ 1\end{psmallmatrix}\quad$et$\quad\overrightarrow{BG}\begin{psmallmatrix}0 \\ 1 \\ 1\end{psmallmatrix}$
+                \item   $\overrightarrow{BI}$ et $\overrightarrow{BG}$ sont deux vecteurs \textbf{non colinéaires} de $(BGI)$ \\ $\overrightarrow{DJ}\cdot\overrightarrow{BI}=2\times\left(-\frac{1}{2}\right)+\left(-1\right)\times 0+1\times 1=0\quad$donc$\quad\overrightarrow{DJ}\perp\overrightarrow{BI}$ \\ $\overrightarrow{DJ}\cdot\overrightarrow{BG}=2\times 0+(-1)\times 1+1\times 1=0\quad$donc$\quad \overrightarrow{DJ}\perp\overrightarrow{BG}$ \\ donc, $\overrightarrow{DJ}\perp(BGI),\ \overrightarrow{DJ}$ vecteur normal à $(BGI)$
+                \item   $\overrightarrow{DJ}$ étant un vecteur normal de $(BGI)$, tout point $M(x\,;y\,;z)\in(BGI)$ vérifie \linebreak $\overrightarrow{BM}\cdot\overrightarrow{DJ}=0\quad$où$\quad\overrightarrow{BM}\begin{psmallmatrix}x-1 \\ y \\ z\end{psmallmatrix}\quad$donc$\quad 2(x-1)-y+z=0$ \\ $(BGI):2x-y+z-2=0$ 
+            \end{enumerate}
+            \item \begin{enumerate}[label=\alph*)]
+                \item   $d$ passe par $F(1\,;0\,;1)$ et admet $\overrightarrow{DJ}$ comme vecteur directeur. Donc : \[d:\begin{cases}
+                    x=1+2t \\ y=-t \\ z=1+t
+                \end{cases} (t\in{\mathbb{R}})\]
+                \item On peut vérifier que $L\in d$ et $L\in(BGI)$, ou trouver $L$ dont les coordonnées vérifient 1d) et 2a), on peut trouver $t$ tel que : \[2(1+2t)-(-t)+1+t-2=0\iff t=-\frac{1}{6}\]  \[\text{et :}\begin{cases}
+                    x=1-\frac{2}{6}=\frac{2}{3} \\ y=\frac{1}{6} \\ z=1-\frac{1}{6}=\frac{5}{6}
+                \end{cases}\] \\
+                On retrouve $L\left(\frac{2}{3}\,;\frac{1}{6}\,;\frac{5}{6}\right)$, qui est bien $d\cap(BGI)$
+            \end{enumerate}
+            \item \begin{enumerate}[label=\alph*)]
+                \item On prend pour base $FBG$ et pour hauteur $FI$. \[V=\frac{1}{3}\times\frac{1\times 1}{2}\times\frac{1}{2}=\frac{1}{12}\]
+                \item Si on prend pour base $BGI$, la hauteur est alors $FL$ car $L$ est le projeté orthogonal de $F$ sur $(BGI)$ et : \[FL=\sqrt{\left(\frac{2}{3}-1\right)^2+\left(\frac{1}{6}-0\right)^2+\left(\frac{5}{6}-1\right)^2}=\sqrt{\frac{1}{9}+\frac{1}{36}+\frac{1}{36}}=\frac{\sqrt{6}}{6}\] \[\text{Donc, }\frac{1}{12}=V=\frac{1}{3}\times\mathcal{A}_{BGI}\times\frac{\sqrt{6}}{6},\quad\text{d'où}\quad\mathcal{A}_{BGI}=\frac{\sqrt{6}}{4}\]
+            \end{enumerate}
+        \end{enumerate}
+    \end{adjustwidth}
+    \section*{Exercice 3}
+    \begin{adjustwidth}{2em}{0pt}
+        
+    \end{adjustwidth}
+    \section*{Exercice A}
+    \begin{adjustwidth}{2em}{0pt}
+        
+    \end{adjustwidth}
+    \section*{Exercice B}
+\end{document}
