@@ -100,15 +100,14 @@
     \begin{enumerate}[label=\protect\circled{\arabic*}]
         \item   \begin{enumerate}[label=\alph*.]
                 \item   $z_M=10i+x\quad x\in\mathbb{R}$
-                \item   $z_{M'}=\frac{10}{x-10i}=\frac{10(x+10i)}{(x-10i)(x+10i)}=\frac{10x}{x^2+100}+\frac{100i}{x^2+100}$
-
-                        $z_{M'}-\frac{1}{2}i=\frac{10x}{x^2+100}+\frac{200i-x^2i-100i}{2(x^2+100)}=\frac{10x}{x^2+100}+\frac{(100-x^2)i}{2(x^2+100)}$
+                \item   $z_{M'}=\frac{10}{x-10i}=\frac{10(x+10i)}{(x-10i)(x+10i)}=\frac{10x}{x^2+100}+\frac{100}{x^2+100}i$ \\
+                        $z_{M'}-\frac{1}{2}i=\frac{10x}{x^2+100}+\frac{200-x^2-100}{2(x^2+100)}i=\frac{10x}{x^2+100}+\frac{(100-x^2)}{2(x^2+100)}i$
                         \vspace{0.25cm}
 
                         Posons $z_A=\frac{1}{2}i$.
 
                         $\begin{aligned}[t]
-                            \abs{AM'}&=\abs{\frac{10x}{x^2+100}+\frac{(100-x^2)i}{2(x^2+100)}}=\sqrt{\left(\frac{10x}{x^2+100}\right)^2+\left(\frac{(100-x^2)}{2(x^2+100)}\right)^2} &\\
+                            \abs{AM'}&=\abs{\frac{10x}{x^2+100}+\frac{100-x^2}{2(x^2+100)}i}=\sqrt{\left(\frac{10x}{x^2+100}\right)^2+\left(\frac{(100-x^2)}{2(x^2+100)}\right)^2} &\\
                             &=\sqrt{\frac{400x^2+(100-x^2)^2}{4(x^2+100)^2}}=\frac{1}{2}\sqrt{\frac{x^4+200x^2+10\ 000}{x^4+200x^2+10\ 000}} \\
                             &=\frac{1}{2}
                         \end{aligned}$
@@ -118,7 +117,7 @@
         \item   \begin{enumerate}[label=\alph*.]
                     \item $\begin{aligned}[t]
                                 \abs{AM'}^2&=\abs{\frac{10}{\overline{z_{M}}}-\frac{1}{2}i}^2=\abs{\frac{20-\overline{z_{M}}i}{2\overline{z_{M}}}}^2=\abs{\frac{20z_{M}-(Im(z_{M})^2+Re(z_{M})^2)i}{2(Im(z_{M})^2+Re(z_{M})^2)}}^2 \\
-                                &=\abs{\frac{20z_{M}}{2\abs{z_{M}}^2}-\frac{1}{2}i}^2=\abs{\frac{20Re(z_{M})}{2\abs{z_{M}}^2}+\frac{20Im(z_{M})-\abs{z_{M}}^2}{2\abs{z_{M}}^2}i}^2 \\
+                                &=\abs{\frac{20Re(z_{M})}{2\abs{z_{M}}^2}+\frac{20Im(z_{M})-\abs{z_{M}}^2}{2\abs{z_{M}}^2}i}^2 \\
                                 &=\frac{400Re(z_{M})^2+400Im(z_{M})^2-40Im(z_{M})\abs{z_{M}}^2+\abs{z_{M}}^4}{4\abs{z_{M}}^4} \\
                                 &=\frac{100-10Im(z_{M})}{\abs{z_{M}}^2}+\frac{1}{4}
                             \end{aligned}$
