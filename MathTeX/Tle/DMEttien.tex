@@ -1,0 +1,139 @@
+\documentclass{scrartcl}
+\usepackage{amsmath,amssymb}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usepackage[french]{babel}
+\usepackage[TS1,T1]{fontenc}
+\usepackage{newpxtext}
+\usepackage{lastpage}
+\usepackage[headsepline,plainheadsepline,footsepline,plainfootsepline,automark]{scrlayer-scrpage}
+\usepackage{changepage}
+\usepackage{fancybox}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usetikzlibrary{arrows}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+
+\ihead*{Math-TS-Experte}
+\chead*{\textbf{DM Mathématiques Expertes}}
+\cfoot*{\thepage /\pageref{LastPage}}
+\ofoot*{\textit{\copyright\ D. R. VAN OVERBERGHE}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\setlength{\parindent}{0pt}
+
+\title{Devoir Maison de Mathématiques Expertes}
+\author{Diego Van Overberghe}
+
+\begin{document}
+    \maketitle
+    \begin{center}
+        \shadowbox{
+            \begin{minipage}{\dimexpr\textwidth-\marginparsep-\shadowsize}
+                \textit{\underline{\textbf{Partie A et B}}}
+            \end{minipage} }
+    \end{center}
+        
+    À partir des informations de l'énoncé, nous avons, dans GéoGébra, pu conjecturer l'ensemble $\mathcal{E}$ comme étant le cercle centré sur le point d'affixe $0{,}5i$ de rayon $0{,}5$.
+    \vspace{0.5cm}
+    \begin{center}\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=5.0cm,y=5.0cm]
+        \begin{axis}[
+        x=5cm,y=5cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        minor x tick num=1,
+        minor y tick num=1,
+        xmin=-1.25,
+        xmax=1.25,
+        ymin=-0.25,
+        ymax=1.25,
+        xtick={-1.2,-1.0,...,1.2},
+        ytick={-0.2,0.0,...,0.8,1.2},
+        extra y ticks={1.0},
+        extra y tick labels=\empty ,]
+            \clip(-1.25,-0.5) rectangle (1,1.25);
+            \draw [line width=2pt] (0,0.5) circle (0.5);
+            \begin{scriptsize}
+                \draw [fill=xdxdff] (0,10) circle (2.5pt);
+                \draw [fill=uuuuuu] (0,1) circle (2pt);
+                \draw[color=uuuuuu] (0.1,1.05) node {$M'$};
+                \draw[color=uuuuuu] (0.55,0.5) node {$\mathcal{E}$};
+                \draw (-0.09,1.05) node {$1.0$};
+                \draw (0.069,-0.069) node {$0$};
+            \end{scriptsize}
+        \end{axis}
+    \end{tikzpicture}\end{center}
+    \parbox{\linewidth}{\captionof{figure}{Conjecture de la Représentation Graphique de l'Ensemble $\mathcal{E}$}}
+
+    \pagebreak
+
+    \begin{center}
+        \shadowbox{
+            \begin{minipage}{\dimexpr\textwidth-\marginparsep-\shadowsize}
+                \textit{\underline{\textbf{Partie C}}}
+            \end{minipage} }
+    \end{center}
+
+    \begin{enumerate}[label=\protect\circled{\arabic*}]
+        \item   \begin{enumerate}[label=\alph*.]
+                \item   $z_M=10i+x\quad x\in\mathbb{R}$
+                \item   $z_{M'}=\frac{10}{x-10i}=\frac{10(x+10i)}{(x-10i)(x+10i)}=\frac{10x}{x^2+100}+\frac{100i}{x^2+100}$
+
+                        $z_{M'}-\frac{1}{2}i=\frac{10x}{x^2+100}+\frac{200i-x^2i-100i}{2(x^2+100)}=\frac{10x}{x^2+100}+\frac{(100-x^2)i}{2(x^2+100)}$
+                        \vspace{0.25cm}
+
+                        Posons $z_A=\frac{1}{2}i$.
+
+                        $\begin{aligned}[t]
+                            \abs{AM'}&=\abs{\frac{10x}{x^2+100}+\frac{(100-x^2)i}{2(x^2+100)}}=\sqrt{\left(\frac{10x}{x^2+100}\right)^2+\left(\frac{(100-x^2)}{2(x^2+100)}\right)^2} &\\
+                            &=\sqrt{\frac{400x^2+(100-x^2)^2}{4(x^2+100)^2}}=\frac{1}{2}\sqrt{\frac{x^4+200x^2+10\ 000}{x^4+200x^2+10\ 000}} \\
+                            &=\frac{1}{2}
+                        \end{aligned}$
+                        \vspace{0.25cm}
+                    \item Vu que le module est une constante, l'ensemble est un cercle de rayon $\frac{1}{2}$ et de centre $A$ \\ Donc, $M\in d\implies M'\in\mathcal{E}$ \vspace{0.5cm}
+                \end{enumerate}
+        \item   \begin{enumerate}[label=\alph*.]
+                    \item $\begin{aligned}[t]
+                                \abs{AM'}^2&=\abs{\frac{10}{\overline{z_{M}}}-\frac{1}{2}i}^2=\abs{\frac{20-\overline{z_{M}}i}{2\overline{z_{M}}}}^2=\abs{\frac{20z_{M}-(Im(z_{M})^2+Re(z_{M})^2)i}{2(Im(z_{M})^2+Re(z_{M})^2)}}^2 \\
+                                &=\abs{\frac{20z_{M}}{2\abs{z_{M}}^2}-\frac{1}{2}i}^2=\abs{\frac{20Re(z_{M})}{2\abs{z_{M}}^2}+\frac{20Im(z_{M})-\abs{z_{M}}^2i}{2\abs{z_{M}}^2}}^2 \\
+                                &=\frac{400Re(z_{M})^2+400Im(z_{M})^2-40Im(z_{M})\abs{z_{M}}^2+\abs{z_{M}}^4}{4\abs{z_{M}}^4} \\
+                                &=\frac{100-10Im(z_{M})}{\abs{z_{M}}^2}+\frac{1}{4}
+                            \end{aligned}$
+                            \vspace{0.25cm}\\
+                    Donc,\quad$Im(z_{M})=10\iff M\in d$\quad validant notre calcul.
+                    \item   $\begin{aligned}[t]
+                                \abs{z_{N'}-\frac{1}{2}i}=\frac{1}{2}&\iff\abs{\frac{10}{\overline{z_N}}-\frac{1}{2}i}^2=\frac{1}{4} \\
+                                &\iff \abs{\frac{20Re(z_{N})}{2\abs{z_N}^2}+\frac{20Im(z_{N})-\abs{z_N}^2i}{2\abs{z_N}^2}}^2=\frac{1}{4} \\
+                                &\iff \frac{400\abs{z_{N}}^2-40Im(z_N)\abs{z_N}^2+\abs{z_N}^4}{4\abs{z_N}^4}=\frac{1}{4} \\
+                                &\iff Im(z_N)=10
+                            \end{aligned}$ 
+                            \vspace{0.25cm}\\
+                    \item   On a montré que\quad$N'\in\mathcal{E}\implies N\in d$
+                    \item   Finalement,\quad$M\in d\iff M'\in\mathcal{E}$
+                \end{enumerate}
+    \end{enumerate}
+
+\end{document}
