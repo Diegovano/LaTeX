@@ -58,7 +58,7 @@
                 \item   $d$ passe par $F(1\,;0\,;1)$ et admet $\overrightarrow{DJ}$ comme vecteur directeur. Donc : \[\boxed{d:\begin{cases}
                     x=1+2t \\ y=-t \\ z=1+t
                 \end{cases} (t\in{\mathbb{R}})}\]
-                \item On peut vérifier que $L\in d$ et $L\in(BGI)$, donc trouver $L$ dont les coordonnées vérifient 1d) et 2a), on peut trouver $t$ tel que : \[2(1+2t)-(-t)+1+t-2=0\iff t=-\frac{1}{6}\]  \[\text{et :}\begin{cases}
+                \item On peut vérifier que $L\in d$ et $L\in(BGI)$, donc trouver $L$ dont les coordonnées vérifient 1d) et 2a). \\ Ou on peut trouver les coordonnées de $L$ en cherchant le réel $t$ tel que : \[2(1+2t)-(-t)+1+t-2=0\iff t=-\frac{1}{6}\]  \[\text{et :}\begin{cases}
                     x=1-\frac{2}{6}=\frac{2}{3} \\ y=\frac{1}{6} \\ z=1-\frac{1}{6}=\frac{5}{6}
                 \end{cases}\] \\
                 On retrouve $\boxed{L\left(\frac{2}{3}\,;\frac{1}{6}\,;\frac{5}{6}\right)}$ c'est bien $d\cap(BGI)$
@@ -139,16 +139,17 @@
                                 En moyenne, il faut donc $1{,}7$ essais pour réussir son permis.
                     \end{enumerate}
             \item   \begin{enumerate}[label=\alph*)]
-                        \item   On note $Y$ la variable aléatoire qui, à toute personne choisie au hasard dans le groupe, associe le nombre de personnes ayant réussi avant le 3\textsuperscript{e} essai.
-                        \[1-\left(\frac{5}{6}\right)^n=1-P(Y=0)=\boxed{P(Y\geq 1)}\] 
-                        Donc, c'est la probabilité qu'au moins une personne parmi les $n$ a eu son permis à la 3\textsuperscript{e} tentative. Ici, $Y\sim\mathcal{B}\left(n\,;\frac{1}{6}\right)$ (tirage avec remise)
+                        \item   Soit $Y$ la variable aléatoire donnant le nombre de personnes ayant eu besoin de 3 essais pour réussir leur permis (sur un échantillon de $n$ personnes).
+                        \[1-\left(1-\frac{1}{6}\right)^n=1-P(Y=0)=\boxed{P(Y\geq 1)}\] 
+                        Donc, c'est la probabilité que sur les $n$ personnes, au moins une a eu son permis à la 3\textsuperscript{e} tentative. \\ Ici, comme on nous dit qu'on assimile la situation à un tirage avec remise (c'est-à-dire une succession de $n$ épreuves identiques et indépendantes à 2 issues). Ainsi, $Y$ suit la loi binomiale suivante :
+                        \[Y\sim\mathcal{B}\left(n\,;\frac{1}{6}\right)\]
 
                         \item   \[\begin{aligned}[t]
                                     1-\left(\frac{5}{6}\right)^n>0{,}9&\iff\left(\frac{5}{6}\right)^n<0{,}1 \\
                                     &\iff n>\frac{\ln\left(0{,}1\right)}{\ln\left(\tfrac{5}{6}\right)}\approx 12{,}6
                                 \end{aligned}\]
                                 \fbox{L'algorithme renvoie 13} \par
-                                Donc, à partir du moment où la taille de l'échantillon est de 13 personnes, la probabilité qu'au moins une soit passée 3 fois est supérieur à $90\%$.
+                                Dans un échantillon de 13 personnes ou plus, la probabilité qu'au moins l'une d'entre elles  a eu besoin de 3 essais pour réussir son permis est supérieure à $90\%$.
                     \end{enumerate}
         \end{enumerate}
     \end{adjustwidth}
@@ -156,9 +157,12 @@
     \begin{adjustwidth}{2em}{0pt}
         \subsection*{Partie I}
         \begin{enumerate}
-            \item	$f'(\frac{1}{e})=0$ (tangente horizontale en $A$) \\ $f'(1)=-1$ (coéfficient directeur de la tangente $B$)
+            \item	$f'\left(\frac{1}{e}\right)=0$ (tangente horizontale en $A$) \\ $f'(1)=-1$ (coéfficient directeur de la tangente $B$)
             \item   $T_B:y=-x+p$ où $p$ est un réel et $T_B$ passe par $(0\,;3)$ \\ D'où : \[\boxed{T_B:y=-x+3} \qquad \text{on peut aussi faire }y=f'(1)(x-1)+f(1)\]
         \end{enumerate}
+
+        \pagebreak
+
         \subsection*{Partie II}
         \begin{enumerate}
             \item	$f\left(\frac{1}{e}\right)=\dfrac{2+\ln\left(\frac{1}{e}\right)}{\frac{1}{e}}=2e+e\ln\left(\frac{1}{e}\right)=e(2-1)=e$ \qquad \fbox{$C_f$ passe par $A\ \left(\frac{1}{e}\,;e\right)$} \par
@@ -177,7 +181,7 @@
                     \[f(x)=\frac{2}{x}+\frac{\ln(x)}{x}\quad\text{et}\quad\lim\limits_{x\to +\infty}\frac{2}{x}=0\quad\text{et}\quad\lim\limits_{x\to +\infty}\frac{\ln(x)}{x}=0\qquad\text{(théorème)}\] \vspace{1em}
                     Donc, par somme, $\lim\limits_{x\to +\infty}f(x)=0$.
 
-            \item   $\forall x\in\big]0\,;+\infty\big[,\ f'(x)=\dfrac{\tfrac{1}{x}\times x-\big(2+\ln(x)\big)}{x^2}=\dfrac{1-2-\ln(x)}{x^2}$ \[\boxed{f'(x)=\frac{-1-ln(x)}{x^2}}\]
+            \item   $\forall x\in\big]0\,;+\infty\big[,\ f'(x)=\dfrac{\tfrac{1}{x}\times x-\big(2+\ln(x)\big)}{x^2}=\dfrac{1-2-\ln(x)}{x^2}$ \[\boxed{f'(x)=\frac{-1-\ln(x)}{x^2}}\]
                     \pagebreak
             \item   \[\begin{aligned}[t]
                         -1-\ln(x)\geq 0&\iff-1\geq\ln(x) \\
@@ -194,4 +198,44 @@
         \end{enumerate}
     \end{adjustwidth}
     \section*{Exercice B}
+    \begin{adjustwidth}{2em}{0pt}
+        \begin{enumerate}
+            \item	\begin{enumerate}[label=\alph*)]
+                        \item	$f(0)=225$
+                        \item   Cherchons d'abord la solution particulière (constante) :
+                                \[\big\{f:t\mapsto 25\big\}\]
+                                Et maintenant résolvons l'équation sans second membre :
+                                \[y'+6y=0\]
+                                \[\big\{f:t\mapsto Ce^{-6t},\ C\in\mathbb{R}\big\}\]
+                                Ainsi, les solutions sont :
+                                \[\boxed{\big\{f:t\mapsto 25+Ce^{-6t},\ C\in\mathbb{R}\big\}}\]
+                        \item   On a $f(0)=225\quad\text{et}\quad f(0)=25+C\quad\text{d'où}\quad C=200\quad$ et : \[\boxed{f(t)=200e^{-6t}+25}\]
+                    \end{enumerate}
+                    \pagebreak
+            \item   \begin{enumerate}[label=\alph*)]
+                        \item	$\begin{aligned}[t]
+                                    \text{On a }f'(t)=-1\ 200e^{-6t}<0\quad&\boxed{f\text{ est strictement décroissante}} \\
+                                    \text{et }\lim\limits_{t\to +\infty}e^{-6t}=0\quad\text{donc}\quad&\boxed{\lim\limits_{t\to +\infty}f(t)=25}
+                                \end{aligned}$
+                                \vspace{1em}
+                                \begin{center}
+                                    \fbox{$f$ fournit donc bien un modèle adéquat}
+                                \end{center}
+                    \end{enumerate}
+            \item   On a $f$ continue et strictement décroissante sur $\big[0\,;+\infty\big[$. \\ $f(0)=225>40\quad\text{et}\quad\lim\limits_{t\to +\infty}f(t)=25<40$ \par D'après le corollaire du Théorème des Valeurs Intermédiaires, \\ \fbox{l'équation $f(t)=40$ admet une unique solution dans $\big[0\,;+\infty\big[$}
+            \item   $T_0\approx 0{,}43\ \text{h}\qquad\boxed{T_0\approx 26\ \text{min}}$
+            \item   \begin{enumerate}[label=\alph*)]
+                        \item	$D_0=f(0)-f\left(\frac{1}{60}\right)=225-\left(200e^{-\frac{1}{10}}+25\right)\approx 19{,}03$ \par
+                                \fbox{\parbox{\linewidth-2em}{Donc, après la première minute, la température de la baguette aura diminué de $19^{\circ}$C.}}
+                        \item   $\begin{aligned}[t]
+                                    D_n=200e^{-\frac{n}{10}}+25-\left(200e^{-\frac{n+1}{10}}+25\right)&=200e^{-\frac{n}{10}}-200e^{\frac{-n-1}{10}} \\
+                                    \Aboxed{D_n&=200e^{-\frac{n}{10}}\left(1-e^{-\frac{1}{10}}\right)}
+                                \end{aligned}$ \par \vspace{1em}
+                                Posons $D_n=g(n)$, où $g:t\mapsto 200e^{-\frac{t}{10}}\left(1-e^{-\frac{1}{10}}\right)$ \par
+                                $g$ est strictement décroissante, donc $D_n$ est décroissante. \par
+                                $\lim\limits_{n\to +\infty}e^{-\frac{n}{10}}=0\quad\text{donc}\quad\lim\limits_{n\to +\infty}D_n=0$ \par
+                                \fbox{\parbox{\linewidth-2em}{Oui, une fois que la baguette atteint le niveau de temperature ambient, il n'y a plus d'échange d'énergie thérmique.}}
+                    \end{enumerate}
+        \end{enumerate}
+    \end{adjustwidth}
 \end{document}
