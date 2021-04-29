@@ -1,0 +1,157 @@
+\documentclass{cours}
+
+\setlength{\arraycolsep}{1cm}
+
+\title{Limites de Suites}
+
+\begin{document}
+    \maketitle{7}
+
+    \begin{Gpartie}{Suites Majorées, Minorées et Bornées} 
+        \begin{Spartie}{Définitions} 
+            \begin{itemize}
+                \item Une suite ($u_n$) est majorée s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},\ u_n\leq M$
+                \item Une suite ($u_n$) est minorée s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},\ u_n\geq m$
+                \item Une suite est bornée si elle est majorée et bornée
+            \end{itemize}
+        \end{Spartie}
+        \begin{Spartie}{Exemple} 
+            La suite $\left(\frac{1}{n}\right)_{n\geq 1}$ est minorée par 0, mais aussi par tout nombre négatif. 
+            
+            Elle est majorée par 1 (qui est aussi son maximum) et par tout nombre superieur à 1. Elle est donc bornée.
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Définitions} 
+        \begin{Spartie}{Limite Infinie}
+            \begin{SSpartie}{Définition} 
+                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]M\,;+\infty\big[$ contient tous les termes de la suite à partir d'un certain rang.
+
+                Autrement dit, pour tout réel $M$, on peut trouver un rang $n$ tel que : \[\forall n\geq N,\quad u_n>M\]
+                (A partir du rang $N$, tous les termes sont supérieurs à $M$)
+
+                On note $\lim\limits_{n\to +\infty} u_n=+\infty$,\quad On peut dire que la suite diverge vers $+\infty$
+
+                H.P. : $\forall M\in\mathbb{R},\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ (n\geq N\implies u_n>M)$
+            \end{SSpartie}
+            \begin{SSpartie}{Définition} 
+                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]-\infty\,;m\big[$ contient tous les termes de le suite à partir d'un certain rang.
+
+                Autrement dit, pour tout réel $m$, on peut trouver un rang $N$ tel que : \[\forall n\geq N,\quad u_n<m\]
+                (A partir du rang $N$, tous les termes sont inférieurs à $m$)
+
+                On note $\lim\limits_{n\to +\infty} u_n=-\infty$,\quad On peut dire que la suite diverge vers $-\infty$
+
+                H.P. : $\forall m\in\mathbb{R},\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ (n\geq N\implies u_n<m)$
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème}
+                \begin{center}$\begin{array}{cc}
+                    \lim\limits_{n\to +\infty} n^2=+\infty & \lim\limits_{n\to +\infty} \sqrt{n}=+\infty \\
+    
+                    \lim\limits_{n\to +\infty} \ln(n)=+\infty & p\in\mathbb{N^*},\ \lim\limits_{n\to +\infty} n^p=+\infty \\
+                    \lim\limits+{n\to +\infty} -n^2=-\infty & \lim\limits_{n\to +\infty} \ln\left(\frac{1}{n}\right)=-\infty
+                \end{array}$\end{center}
+            \end{SSpartie}
+            \begin{SSpartie}{Rappels} 
+                $\forall n\in\mathbb{N},\ u_{n+1}-u_n=\dotsc$ signe
+
+                $\forall n\in\mathbb{N},\ u_n>0\quad\frac{u_{n+1}}{u_n}$ on compare à 1
+
+                Cas où $u_n=f(n)$, par exemple : $u_n=\sqrt{n^2+n-3}$, on étudie $f$.
+                \begin{SSSpartie}{Arithmétique} 
+                    $u_{n+1}=u_n+r$\quad alors\quad $u_n=u_0+nr$\quad\big($u_n=u_p+(n-p)r$\big)
+
+                    $S=u_0+u_1+\dotsb+u_n=\frac{u_0+u_n}{2}\times(n+1)$
+                \end{SSSpartie}
+                \begin{SSSpartie}{Géométrique} 
+                    $u_{n+1}=qu_n$\quad alors\quad $u_n=u_0\times q^n$\quad\big($u_n=u_p\times q^{n-p}$\big)
+
+                    $S=u_0+u_1+\dotsb+u_n=u_0\times\frac{1-q^{n+1}}{1-q}$
+                \end{SSSpartie}
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Limites Finies / Suites Convergentes} 
+            \begin{SSpartie}{Définition} 
+                Une suite ($u_n$) converge vers un réel $l$ si tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
+
+                Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $l$.
+
+                On dit que $l$ est la limite de la suite ($u_n$) et que la suite est convergente.
+
+                On note $\lim\limits_{n\to +\infty} u_n=l$
+
+                H.P. : $\lim\limits_{n\to +\infty} u_n=l\iff\forall\epsilon >0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]l-\epsilon\,;l+\epsilon\big[\Big)$
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème} 
+                \begin{center}$\begin{array}{cc}
+                    \lim\limits_{n\to +\infty}\frac{1}{n}=0 & p\in\mathbb{N^*},\ \lim\limits_{n\to +\infty}\frac{1}{n^p}=0 \\
+                    \lim\limits_{n\to +\infty}e^{-n}=0 & \lim\limits_{n\to +\infty}\frac{1}{\sqrt{n}}=0
+                \end{array}$\end{center}
+            \end{SSpartie}
+            \begin{SSpartie}{Définition} 
+                Une suite qui n'est pas convergente est divergente
+            \end{SSpartie}
+            \begin{SSpartie}{Exemple} 
+                La suite ($u_n$) définie par $u_n=(-1)^n$ est divergente.
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Propriétés sur les Limites} 
+        \begin{Spartie}{Théorèmes de Comparaison} 
+            \begin{SSpartie}{Théorème} 
+                Soient $(u_n)$ et $(v_n)$ deux suites telles qu'à partir d'un certain rang $u_n\leq v_n$
+                \begin{itemize}
+                    \setlength\itemsep{0.5em}
+                    \item Si $\lim\limits_{n\to +\infty}u_n=+\infty$\quad alors\quad $\lim\limits_{n\to +\infty}v_n=+\infty$
+                    \item Si $\lim\limits_{n\to +\infty}v_n=-\infty$\quad alors\quad $\lim\limits_{n\to +\infty}u_n=-\infty$
+                \end{itemize}
+            \end{SSpartie}
+            \begin{SSpartie}{Démonstration} 
+                On suppose que $\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                Soit $M>0$, il existe un rang $N$, à partir duquel si $n\geq N_1$, alors $u_n\geq M$
+
+                Or, il existe un rang $N_2$, à partir duquel $n>N_2,\ v_n\geq u_n$
+
+                Donc, il existe un rang $N=\max(N_1\,;N_2)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème dit des Gendarmes (Théorème d'Encadrement)}
+                Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang $u_n\leq v_n\leq w_n$
+
+                Si $\lim\limits_{n\to +\infty}u_n=l$ et $\lim\limits_{n\to +\infty}w_n=l$ où $l$ est un réel alors :
+                \[\lim\limits_{n\to +\infty}v_n=l\]
+            \end{SSpartie}
+            \begin{SSpartie}{Exemple} 
+                Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$
+
+                $\begin{aligned}[t]
+                    \forall n\in\mathbb{N},&\quad-1\leq (-1)^n\leq 1 \\
+                    \iff&\quad\frac{-1}{n}\leq\frac{(-1)^n}{n}\leq\frac{1}{n}
+                \end{aligned}$ \\[2ex]
+                Or, $\lim\limits_{n\to +\infty}\frac{-1}{n}=0,\ \lim\limits_{n\to +\infty}\frac{1}{n}=0$
+
+                D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Convergence Monotone} 
+            \begin{SSpartie}{Théorème Admis} 
+                Toute suite croissante et majorée converge vers une limite finie.
+
+                Toute suite décroissante et minorée converge vers une limite finie.
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème} 
+                Soit une suite $(u_n)$ croissante et qui converge vers un réel $l$, alors $(u_n)$ est majorée par $l$.
+            \end{SSpartie}
+            \begin{SSpartie}{Démonstration par l'Absurde} 
+                On suppose que $(u_n)$ est croissante.
+                \begin{SSSpartie}{Lemme} 
+                    Si $(u_n)$ est croissante, si $p$ et $n$ sont deux entiers naturels tels que $p\leq n$
+
+                    Alors, $u_p\leq u_n$
+                \end{SSSpartie}
+                \begin{SSSparite}{Démonstration par Récurrence} 
+                    
+                \end{SSSparite}
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
