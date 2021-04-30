@@ -17,26 +17,22 @@
 
     \section*{Question 1}
 
-    Afin de réduire les pertes de puissance électrique lors du transport, on utilise un réseau de transportation à tension variées.
+    D'après le document 1, il semble que l'on perd moins de puissance par effet Joule lorsque l'on transporte l'électricité à haute tension. L'effet Joule transforme l'énergie électrique en énergie thermique qui est ensuite dissipée et donc perdue.
 
-    Pour le transport à longue distance, il est avantageux d'utiliser une tension élevée. Ceci reduit la perte de puissance par l'effet Joule, effet qui transforme l'énergie électrique en énergie thermique. Cette transformation est due à l'intensité du courrant électrique, couplé avec la résistance du dipole ohmique, dans ce cas, le cable.
-
-    La question qui se pose est, comment augmenter la tension sans augmenter la puissance ?
+    La question qui se pose est, comment augmenter la tension sans changer la puissance ?
 
     On a la formule de la puissance : \[P=U\times V\]
-    On voit qu'il est possible de conserver la meme puissance, tout en elevant la tension en réduisant l'intensité. C'est d'ailleurs la réduction de l'intensité qui permet de reduire les pertes énergétiques pusique l'effet Joule se modélise par $P_{perdue}=R\times I^2$
+    On voit qu'il est possible de modifier la tension sans changer la puissance. On augmente la tension en réduisant l'intensité. C'est d'ailleurs la réduction de l'intensité qui permet de réduire les pertes énergétiques puisque l'effet Joule se modélise par $P_{f}=R\times I^2$
 
-    Donc, on se demande, quels choix technologiques doivent etre faits pour facilement changer la tension d'un courrant ? (On arrive finalement à la question posée !)
+    Le changement de tension est aisé avec le régime de courant alternatif, promu par Nikola Tesla et Georges Westinghouse. Il suffit d'utiliser deux bobines qui utilisent le phénomène d'induction électromagnétique, afin de changer la tension avec un rendement quasiment parfait (proche de 100\%)
 
-    Le changement de tension est aisé avec le régime de courrant alternatif, promu par Nikola Tesla et Georges Westinghouse. Il suffit d'utiliser deux bobines qui utilisent le phénomène d'induction électromagnétique, afin de changer la tension avec un rendement quasiment parfait (proche de 100\%)
+    Finalement, l'utilisation de câbles à résistance très faible est la dernière partie de notre quête à limiter les pertes lors du transport électrique.
 
-    Finalement, l'utilisation de cables à résistance très faible est la dernière partie de notre quete à limiter les pertes lors du transport électrique.
-
-    En synthétisant, voici les choix technologiques à éffectuer :
+    En synthétisant, voici les choix technologiques à effectuer :
     \begin{itemize}
         \item Utiliser un réseau à haute tension (il faudra réduire la tension pour assurer le fonctionnement des machines domestiques, ainsi que protéger les utilisateurs)
-        \item Utiliser un réseau au courrant altérnatif.
-        \item Utiliser des materiaux à résistance faible pour transporter l'électricité.
+        \item Utiliser un réseau au courant alternatif afin de pouvoir aisément changer la tension.
+        \item Utiliser des matériaux à résistance faible pour transporter l'électricité.
     \end{itemize}
 
     \section*{Question 2}
@@ -46,29 +42,32 @@
                 (B.base) node{B};
         \draw   (2,0) node [transformer](A){}
                 (A.base) node{A};
-        \draw   (B.A2) -- (-5, |-B.A2) to[V,v>=$\SI{200000}{\volt}$,i=$i$] (-5, |-B.A1) -- (B.A1) ;
-        \draw   (B.B1) to[R,v<=$\SI{4}{\ohm}$,i=$i$] (A.A1) (A.A2) to[R,v<=$\SI{4}{\ohm}$] (B.B2);
-        \draw   (A.B2) -- (5, |-A.B2) to[V,v_<=Usine,i=$i$] (5, |-A.B1) -- (A.B1);
+        \draw   (B.A2) -- (-5, |-B.A2) to[V,v>=$U_1$,l=Barrage,i=$i$] (-5, |-B.A1) -- (B.A1) ;
+        \draw   (B.B1) to[R,l=$\SI{4}{\ohm}$,v<=$U$,i=$i$] (A.A1) (A.A2) to[R,l=$\SI{4}{\ohm}$,v<=$U$] (B.B2);
+        \draw   (A.B2) -- (5, |-A.B2) to[V,v_<=$\SI{600}{V}$,l=Usine,i=$i$] (5, |-A.B1) -- (A.B1);
     \end{circuitikz}\end{center}
     \parbox{\linewidth}{\captionof{figure}{Schéma du Réseau Électrique}}
 
     \section*{Question 3}
 
-    Enoncons l'expression de la puissance thermique développée par un dipole ohmique : \[P_{Th}=R\times I^2\]
+    Pour un dipôle ohmique on a : \[U=R\times I\] On sait que : \[P_{f}=U\times I\] D'où \[P_f=R\times I^2\]
     Entre A et B nous avons une résistance de $\SI{8}{\ohm}$ pour faire le trajet complet. 
 
     On a : \[P=U\times I=\text{constante}\iff I=\frac{\text{constante}}{U}\]
-    La puissance développée par le barrage (la constante) vaut \\ $P=\num{200000}\times 0{,}15=\SI{3,0e4}{W}$
+    La puissance développée par le barrage (la constante) vaut \\ $P=\num{200000}\times 0{,}15=\SI{3,0e4}{W}$ 
+    On va calculer pour chaque tension : \[P_f=R\times\left(\frac{\text{constante}}{U}\right)^2\]
 
     \begin{itemize}
-        \item Pour $U_2=\SI{400000}{V}$, \quad $I=\frac{\SI{3,0e4}{}}{\num{400000}}=\SI{7.5e-2}{A}$ \\ $P_{Th}=\SI{4.5e-2}{W}$
-        \item Pour $U_2=\SI{10000}{V}$, \quad $I=\frac{\SI{3,0e4}{}}{\num{10000}}=\SI{4.0}{A}$ \\ $P_{Th}=\SI{1.3e1}{W}$
-        \item Pour $U_2=\SI{230}{V}$, \quad $I=\frac{\SI{3,0e4}{}}{\num{230}}=\SI{1.3e1}{A}$ \\ $P_{Th}=\SI{1.4e5}{W}$
+        \setlength{\itemsep}{1em}
+
+        \item Pour $U_2=\SI{400000}{V}$, \quad $P_f=8\times\left(\frac{\num{3.0e4}}{\num{4e5}}\right)^2=\SI{4.5e-2}{W}$
+        \item Pour $U_2=\SI{10000}{V}$, \quad $P_f=8\times\left(\frac{\num{3.0e4}}{\num{1.0e4}}\right)^2=\SI{7.2e1}{W}$
+        \item Pour $U_2=\SI{230}{V}$, \quad $P_f=8\times\left(\frac{\num{3.0e4}}{\num{2.3e2}}\right)^2=\SI{1.4e5}{W}$
     \end{itemize}
 
     \section*{Question 4}
 
-    On observe donc que si on utilise une tension elevée, on peut transporter la meme quantité d'énergie, en minisant les pertes dues à l'effeet joule.
+    On observe donc que si on utilise une tension élevée, on peut transporter la même quantité d'énergie, en minimisant les pertes dues à l'effet Joule. Ceci est cohérent avec la formule $P_f=R\times I^2$, car on observe non seulement que c'est uniquement la résistance et l'intensité qui sont responsables de la puissance perdue, mais que l'énergie perdue croît avec le carré de l'intensité !
 
     \section*{Question 5}
 
@@ -76,5 +75,5 @@
 
     \section*{Question 6}
 
-    $E=P\times\Delta t=R\times I^2\times\Delta t$
+    $E_{diss}=P_f\times\Delta t=R\times I^2\times\Delta t$
 \end{document}
