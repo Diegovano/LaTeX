@@ -19,7 +19,7 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{microtype}
 
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{5}
 
 \setlength{\parindent}{0pt}
 \def\arraystretch{1.5}
@@ -40,25 +40,32 @@
 ]{section}
 
 \setkomafont{subsection}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\thesubsection}{\Roman{section}.\arabic{subsection}}
+\renewcommand*{\thesubsection}{\Roman{section}.\alph{subsection}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{subsection}
 
 \setkomafont{subsubsection}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\thesubsubsection}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}
+\renewcommand*{\thesubsubsection}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{subsubsection}
 
 \setkomafont{paragraph}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\theparagraph}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}.\roman{paragraph}}
+\renewcommand*{\theparagraph}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{paragraph}
+
+\setkomafont{subparagraph}{\normalsize\normalfont\scshape\uline}
+\renewcommand*{\thesubparagraph}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+\RedeclareSectionCommand[
+    beforeskip=0pt,
+    afterskip=.5\baselineskip
+]{subparagraph}
 
 \renewcommand{\ULdepth}{4pt}
 
@@ -87,6 +94,10 @@
 
 \newenvironment{SSSpartie}[1]
     {\paragraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
+    {\end{adjustwidth}}
+
+\newenvironment{SSSSpartie}[1]
+    {\subparagraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
 
 \ihead*{\today}

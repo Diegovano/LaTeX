@@ -18,7 +18,7 @@
         \begin{Spartie}{Exemple} 
             La suite $\left(\frac{1}{n}\right)_{n\geq 1}$ est minorée par 0, mais aussi par tout nombre négatif. 
             
-            Elle est majorée par 1 (qui est aussi son maximum) et par tout nombre superieur à 1. Elle est donc bornée.
+            Elle est majorée par 1 (qui est aussi son maximum) et par tout nombre supérieur à 1. Elle est donc bornée.
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Définitions} 
@@ -148,9 +148,83 @@
 
                     Alors, $u_p\leq u_n$
                 \end{SSSpartie}
-                \begin{SSSparite}{Démonstration par Récurrence} 
-                    
-                \end{SSSparite}
+                \begin{SSSpartie}{Démonstration par Récurrence}
+                    \begin{SSSSpartie}{Initialisation}
+                        On fixe $p$ donc $u_p\leq u_{p+1}$
+                    \end{SSSSpartie}
+                    \begin{SSSSpartie}{Hérédité}
+                        On suppose que $k\geq 1,\ u_p\leq u_{p+k}$
+                        $u_p\leq u_{p+k}\implies u_p\leq u_{p+k}\leq u_{p+k+1}\quad\square$
+                    \end{SSSSpartie}    
+                \end{SSSpartie}
+                On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>l$
+
+                Or tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
+
+                Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $l<b<u_{n_0}$
+
+                Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,;b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
+
+                Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la lemme, $p>n_0\implies u_p\geq u_{n_0}$
+
+                C'est absurde, donc, $\forall n\in\mathbb{N},\ u_n\leq l\quad\square$
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème} 
+                Toute suite croissante et non-majorée diverge vers $+\infty$
+
+                Toute suite décroissante et non-minorée diverge vers $-\infty$
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Rappel : Limite de $\left(q^n\right)$ où $q\in\mathbb{R}$} 
+            \begin{SSpartie}{Théorème} 
+                \begin{itemize}
+                    \setlength\itemsep{0.5em}
+                    \item Si $q>1,\ \lim\limits_{n\to +\infty}q^n=+\infty$
+                    \item Si $q=1,\ \lim\limits_{n\to +\infty}q^n=1$
+                    \item Si $-1<q<1,\ \lim\limits_{n\to +\infty}q^n=0$
+                    \item Si $q<-1$, la suite diverge.
+                \end{itemize}
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Opérations sur les Limites} 
+        On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
+        \begin{Spartie}{Somme}
+            \begin{center}\begin{tabular}[c]{ |c||c|c|c| } \hline
+                $\lim$          & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
+                $l'$ un réel    & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
+                $+\infty$       & $+\infty$     & $+\infty$ & F.I.\footnote[1]{Forme Indéterminée : Il faut faire un calcul pour lever l'indétermination} \\ \hline
+                $-\infty$       & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
+            \end{tabular}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites, de Limites Données}}
+            \begin{SSpartie}{Exemple} 
+                
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Produit} 
+            \begin{SSpartie}{Exemple} 
+                
+            \end{SSpartie}
+            \begin{SSpartie}{Exemple 2} 
+
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Quotient} 
+            \begin{SSpartie}{Exemple} 
+                
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Limite de Suite et Continuité} 
+        \begin{Spartie}{Théorème} 
+            
+            \begin{SSpartie}{Exemple} 
+                
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Théorème} 
+            \begin{SSpartie}{Démonstration} 
+                
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
