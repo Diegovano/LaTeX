@@ -1,4 +1,6 @@
 \documentclass{cours}
+\usepackage{array}
+\usepackage{diagbox}
 
 \setlength{\arraycolsep}{1cm}
 
@@ -69,6 +71,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Limites Finies / Suites Convergentes} 
             \begin{SSpartie}{Définition} 
                 Une suite ($u_n$) converge vers un réel $l$ si tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
@@ -95,6 +98,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Propriétés sur les Limites} 
         \begin{Spartie}{Théorèmes de Comparaison} 
             \begin{SSpartie}{Théorème} 
@@ -132,6 +136,7 @@
                 D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Convergence Monotone} 
             \begin{SSpartie}{Théorème Admis} 
                 Toute suite croissante et majorée converge vers une limite finie.
@@ -190,41 +195,83 @@
     \begin{Gpartie}{Opérations sur les Limites} 
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
         \begin{Spartie}{Somme}
-            \begin{center}\begin{tabular}[c]{ |c||c|c|c| } \hline
-                $\lim$          & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
-                $l'$ un réel    & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
-                $+\infty$       & $+\infty$     & $+\infty$ & F.I.\footnote[1]{Forme Indéterminée : Il faut faire un calcul pour lever l'indétermination} \\ \hline
-                $-\infty$       & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
+            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.1\textwidth}|w{c}{0.1\textwidth}|w{c}{0.1\textwidth}| } \hline
+                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
+                $l'$ un réel                                        & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
+                $+\infty$                                           & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
+                $-\infty$                                           & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
             \end{tabular}\end{center}
-            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites, de Limites Données}}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites, de Limites Données}} \\[2ex]
+            F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination
+            \pagebreak
             \begin{SSpartie}{Exemple} 
-                
+                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\leftarrow\text{F.I.} \\ &=n(n-1)\leftarrow\text{On a levé l'indétermination}\end{aligned}$
+
+                $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
+                \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
+
+                Donc, par produit, $\lim\limits_{n\to +\infty}n(n+1)=+\infty$ \\ et donc, $\lim\limits_{n\to +\infty}u_n=+\infty$
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Produit} 
+        \begin{Spartie}{Produit}
+            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
+                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $l'\neq 0$                                          & $l\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
+                0                                                   & 0 & 0 & F.I. & F.I. \\ \hline
+                $+\infty$                                           & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
+                $-\infty$                                           & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
+            \end{tabular}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Produits de Suites, de Limites Données}}
             \begin{SSpartie}{Exemple} 
-                
+                Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                Soit $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{\sqrt{n}}\quad\lim\limits_{n\to +\infty}v_n=0$
+
+                $u_n\times v_n=n\times\frac{1}{\sqrt{n}}=\sqrt{n}\quad\text{or}\quad\lim\limits_{n\to +\infty}\sqrt{n}=+\infty$
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=+\infty$
             \end{SSpartie}
             \begin{SSpartie}{Exemple 2} 
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n^2\quad\lim\limits_{n\to +\infty}u_n=+\infty$
 
+                $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{n}-4\quad\lim\limits_{n\to +\infty}v_n=-4$ (Somme)
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Quotient} 
+        \pagebreak
+        \begin{Spartie}{Quotient}
+            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
+                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $l'\neq 0$                                          & $\frac{l}{l'}$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
+                0                                                   & $\pm\infty\text{\tiny{ selon signe }}l\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
+                $+\infty$                                           & 0 & 0 & F.I. & F.I. \\ \hline
+                $-\infty$                                           & 0 & 0 & F.I. & F.I. \\ \hline
+            \end{tabular}\end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Quotients de Suites, de Limites Données}} 
+            \\[2ex]
             \begin{SSpartie}{Exemple} 
-                
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
+
+                Donc, par quotient, $\lim\limits_{n\to +\infty}u_n=0$
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Limite de Suite et Continuité} 
         \begin{Spartie}{Théorème} 
-            
+            Soit $f$ une fonction continue sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $l$, tel que $\forall n\in\mathbb{N},\ u_n\leq I,\ l\in I$, alors $f(u_n)$ converge vers $f(l)$.
             \begin{SSpartie}{Exemple} 
+                Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$
                 
+                Donc, la suite $(v_n)$, définie par $v_n=\sqrt{u_n}$ converge vers $\sqrt{4}=2$.
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Théorème} 
+        \begin{Spartie}{Théorème}
+            Soit $f$ une fonction continue sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
+            
+            Si la suite $(u_n)$ converge vers un réel $l$, alors $l$ est solution de l'équation $f(x)=x$ (On peut dire que $l$ est un point fixe de $f$).
             \begin{SSpartie}{Démonstration} 
-                
+                $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(l)$
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}

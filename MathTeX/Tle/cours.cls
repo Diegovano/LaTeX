@@ -40,32 +40,44 @@
 ]{section}
 
 \setkomafont{subsection}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\thesubsection}{\Roman{section}.\alph{subsection}}
+% \renewcommand*{\thesubsection}{\Roman{section}.\Alph{subsection}}
+\renewcommand*{\thesubsection}{\Alph{subsection}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{subsection}
 
 \setkomafont{subsubsection}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\thesubsubsection}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}}
+% \renewcommand*{\thesubsubsection}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}}
+\renewcommand*{\thesubsubsection}{\arabic{subsubsection}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{subsubsection}
 
 \setkomafont{paragraph}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\theparagraph}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+% \renewcommand*{\theparagraph}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+\renewcommand*{\theparagraph}{\alph{paragraph}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=.5\baselineskip
 ]{paragraph}
 
 \setkomafont{subparagraph}{\normalsize\normalfont\scshape\uline}
-\renewcommand*{\thesubparagraph}{\Roman{section}.\alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+% \renewcommand*{\thesubparagraph}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+\renewcommand*{\thesubparagraph}{\arabic{subparagraph}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
-    afterskip=.5\baselineskip
+    afterskip=.5\baselineskip,
+    indent=0pt
 ]{subparagraph}
+
+% \makeatletter
+% \renewcommand\subparagraph{%
+%     \@startsection {subparagraph}{5}{\z@ }{3.25ex \@plus 1ex
+%     \@minus .2ex}{-1em}{\normalsize\normalfont\scshape\uline}}%
+% \makeatother
+
 
 \renewcommand{\ULdepth}{4pt}
 
