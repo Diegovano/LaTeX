@@ -145,39 +145,53 @@
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 Soit une suite $(u_n)$ croissante et qui converge vers un réel $l$, alors $(u_n)$ est majorée par $l$.
-            \end{SSpartie}
-            \begin{SSpartie}{Démonstration par l'Absurde} 
-                On suppose que $(u_n)$ est croissante.
-                \begin{SSSpartie}{Lemme} 
-                    Si $(u_n)$ est croissante, si $p$ et $n$ sont deux entiers naturels tels que $p\leq n$
+                \begin{SSSpartie}{Démonstration par l'Absurde} 
+                    On suppose que $(u_n)$ est croissante.
+                    \begin{SSSSpartie}{Lemme} 
+                        Si $(u_n)$ est croissante, si $p$ et $n$ sont deux entiers naturels tels que $p\leq n$
 
-                    Alors, $u_p\leq u_n$
-                \end{SSSpartie}
-                \begin{SSSpartie}{Démonstration par Récurrence}
-                    \begin{SSSSpartie}{Initialisation}
-                        On fixe $p$ donc $u_p\leq u_{p+1}$
+                        Alors, $u_p\leq u_n$
                     \end{SSSSpartie}
-                    \begin{SSSSpartie}{Hérédité}
-                        On suppose que $k\geq 1,\ u_p\leq u_{p+k}$
-                        $u_p\leq u_{p+k}\implies u_p\leq u_{p+k}\leq u_{p+k+1}\quad\square$
-                    \end{SSSSpartie}    
+                    \begin{SSSSpartie}{Démonstration de la Lemme par Récurrence}
+                        \vspace{-1em}
+                        \begin{itemize}
+                            \item Initialisation : On fixe $p$ donc $u_p\leq u_{p+1}$
+                            \item Hérédité : On suppose que $k\geq 1,\ u_p\leq u_{p+k}$ \\
+                            \phantom{Hérédité : }$u_p\leq u_{p+k}\implies u_p\leq u_{p+k}\leq u_{p+k+1}\quad\square$
+                        \end{itemize}   
+                    \end{SSSSpartie}
+                    On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>l$
+
+                    Or tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
+
+                    Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $l<b<u_{n_0}$
+
+                    Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,;b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
+
+                    Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la lemme, $p>n_0\implies u_p\geq u_{n_0}$
+
+                    C'est absurde, donc, $\forall n\in\mathbb{N},\ u_n\leq l\quad\square$
                 \end{SSSpartie}
-                On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>l$
-
-                Or tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
-
-                Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $l<b<u_{n_0}$
-
-                Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,;b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
-
-                Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la lemme, $p>n_0\implies u_p\geq u_{n_0}$
-
-                C'est absurde, donc, $\forall n\in\mathbb{N},\ u_n\leq l\quad\square$
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Théorème} 
                 Toute suite croissante et non-majorée diverge vers $+\infty$
 
                 Toute suite décroissante et non-minorée diverge vers $-\infty$
+
+                \begin{SSSpartie}{Démonstration} 
+                    Soit $M$ un réel, et $(u_n)_{n\in\mathbb{N}}$, une suite croissante, non-majorée.
+
+                    Il existe un rang $N$ tel que $u_N>M$
+
+                    Donc, $(u_n)$ diverge vers $+\infty$
+                    \begin{itemize}
+                        \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance, 
+                        \[\lim\limits_{n\to +\infty}u_n=l\implies\forall n\in\mathbb{N},\ u_n\leq l\] \\ $(u_n)$ est majorée par $l$, c'est une contradiction.$\quad\square$
+                        \\[2ex]
+                        \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme : $(u_n)$ croissante, $p,\ n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$ \\ $\forall n\geq n_0,\ u_n\geq u_{n_0}>M$ \\ Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où \[\lim\limits_{n\to +\infty}u_n=+\infty\]
+                    \end{itemize}
+                \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Rappel : Limite de $\left(q^n\right)$ où $q\in\mathbb{R}$} 
@@ -192,6 +206,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Opérations sur les Limites} 
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
         \begin{Spartie}{Somme}
@@ -202,8 +217,7 @@
                 $-\infty$                                           & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
             \end{tabular}\end{center}
             \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites, de Limites Données}} \\[2ex]
-            F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination
-            \pagebreak
+            \begin{center}F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination\end{center}
             \begin{SSpartie}{Exemple} 
                 $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\leftarrow\text{F.I.} \\ &=n(n-1)\leftarrow\text{On a levé l'indétermination}\end{aligned}$
 
@@ -239,7 +253,6 @@
                 Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Quotient}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
                 \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
@@ -257,6 +270,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Limite de Suite et Continuité} 
         \begin{Spartie}{Théorème} 
             Soit $f$ une fonction continue sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $l$, tel que $\forall n\in\mathbb{N},\ u_n\leq I,\ l\in I$, alors $f(u_n)$ converge vers $f(l)$.

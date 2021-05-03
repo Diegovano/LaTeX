@@ -18,6 +18,7 @@
 \RequirePackage{graphicx}
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{microtype}
+\RequirePackage{mathtools}
 
 \setcounter{secnumdepth}{5}
 
@@ -111,10 +112,11 @@
 \newenvironment{SSSSpartie}[1]
     {\subparagraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
     {\end{adjustwidth}}
-
-\ihead*{\today}
+\makeatletter
+\ihead*{Chapitre \Roman{chapter} : \@title}
 \ohead*{Spé Mathématiques T\textsuperscript{le}}
 \cfoot*{\thepage}
+\makeatother
 
 \setlength{\headheight}{15pt}
 
