@@ -63,15 +63,16 @@
                         &=\frac{1}{\frac{e^{v+h}-e^v}{k}}
                     \end{aligned}\]
 
-                    Or, $\lim\limits_{h\to0}\frac{e^{v+h}-e^v}{h}$ est l'équation de la dérivée de $e$. La dérivée de $e^v$ est $e^v$.
-                    \[\frac{1}{e^v}=\frac{1}{e^{\ln(x)}}=\frac{1}{x}\quad\square\]
+                    Or, $\lim\limits_{h\to0}\frac{e^{v+h}-e^v}{h}$ est l'expression de la dérivée de $e$. La dérivée de $e^v$ est $e^v$.
+                    \[\frac{1}{e^v}=\frac{1}{e^{\ln(x)}}=\frac{1}{x}\]
+                    \[\lim\limits_{h\to 0}\frac{\ln(x+h)-\ln(x)}{h}=\frac{1}{x}\quad\square\]
 
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété}
                 Soit $u$, une fonction dérivable et strictement positive sur $I$
 
-                Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $f'=\frac{u'}{u}$
+                Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $f':x\mapsto\frac{u'}{u}$
                 \begin{SSSpartie}{Exemple}
                     Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln(x^2+1)$
 
@@ -81,7 +82,15 @@
         \end{Spartie}
         \begin{Spartie}{Limites}
             \[\lim_{x\to+\infty}\ln(x)=+\infty\text{\qquad et \qquad}\lim_{x\to 0}\ln(x)=-\infty\]
-
+            \begin{SSpartie}{Démonstration} 
+                Soit $M>0$, en posant $A=e^M,\ \exists A>0$ tel que :
+                \[\forall x\in\big]0\,;+\infty\big[,\ x>A\implies\ln(x)>M\]
+                En effet, $x>A\iff x>e^M$ \\ Comme $\ln$ est strictement croissante :
+                \[\begin{aligned}[t]
+                    \ln(x)&>\ln\big(e^M\big) \\
+                    \ln(x)&>M\quad\square
+                \end{aligned}\]
+            \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Représentation Graphique}
             \begin{center}
@@ -92,6 +101,7 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Propriétés Algébriques de la Fonction ln}
         \begin{Spartie}{Propriété Fondamentale}
             Quels que soient les réels $a$ et $b$, strictement positifs, 
@@ -171,7 +181,6 @@
             Donc, $n\geq 14$
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Logarithme Décimal} 
         \begin{Spartie}{Définition} 
             La fonction logarithme décimal, notée $\log$, est définie sur $\big]0\,;+\infty\big[$, par :

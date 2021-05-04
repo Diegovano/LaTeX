@@ -211,10 +211,10 @@
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
         \begin{Spartie}{Somme}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.1\textwidth}|w{c}{0.1\textwidth}|w{c}{0.1\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
-                $l'$ un réel                                        & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
-                $+\infty$                                           & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
-                $-\infty$                                           & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
+                $l'$ un réel                                                & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
+                $+\infty$                                                   & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
+                $-\infty$                                                   & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
             \end{tabular}\end{center}
             \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites, de Limites Données}} \\[2ex]
             \begin{center}F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination\end{center}
@@ -229,11 +229,11 @@
         \end{Spartie}
         \begin{Spartie}{Produit}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $l'\neq 0$                                          & $l\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
-                0                                                   & 0 & 0 & F.I. & F.I. \\ \hline
-                $+\infty$                                           & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
-                $-\infty$                                           & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $l'\neq 0$                                                  & $l\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
+            0                                                               & 0 & 0 & F.I. & F.I. \\ \hline
+            $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
+                $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
             \end{tabular}\end{center}
             \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Produits de Suites, de Limites Données}}
             \begin{SSpartie}{Exemple} 
@@ -255,11 +255,11 @@
         \end{Spartie}
         \begin{Spartie}{Quotient}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$v_n$}{$u_n$}   & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $l'\neq 0$                                          & $\frac{l}{l'}$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
-                0                                                   & $\pm\infty\text{\tiny{ selon signe }}l\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
-                $+\infty$                                           & 0 & 0 & F.I. & F.I. \\ \hline
-                $-\infty$                                           & 0 & 0 & F.I. & F.I. \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $l'\neq 0$                                                  & $\frac{l}{l'}$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
+                0                                                           & $\pm\infty\text{\tiny{ selon signe }}l\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
+                $+\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
+                $-\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
             \end{tabular}\end{center}
             \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Quotients de Suites, de Limites Données}} 
             \\[2ex]
@@ -286,6 +286,16 @@
             Si la suite $(u_n)$ converge vers un réel $l$, alors $l$ est solution de l'équation $f(x)=x$ (On peut dire que $l$ est un point fixe de $f$).
             \begin{SSpartie}{Démonstration} 
                 $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(l)$
+            \end{SSpartie}
+            \begin{SSpartie}{Remarque} 
+                Graphiquement, les termes de la suite se rapprochent du point d'intersection $\mathcal{C}_f$ et la droite d'équation $y=x$. Uniquement si la suite converge !
+                \begin{center}
+                    % \begin{tikzpicture}
+                        \includegraphics[width=8cm]{example-image}
+                    % \end{tikzpicture}
+                    \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de la Convergence d'une Suite}} \\[2ex]
+                    Ici, lorsque $u_0$ est supérieur au deuxième point fixe de $f$, le suite diverge.
+                \end{center}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
