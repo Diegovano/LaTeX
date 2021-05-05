@@ -7,6 +7,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
+\RequirePackage{array}
 \RequirePackage[french]{babel}
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
