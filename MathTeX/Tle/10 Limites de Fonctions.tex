@@ -1,0 +1,91 @@
+\documentclass{cours}
+
+\title{Limites de Fonctions}
+
+\begin{document}
+    \maketitle{10}
+
+    \begin{Gpartie}{Limites d'une Fonction en l'Infini} 
+        \begin{Spartie}{Limite en $+\infty$} 
+            \begin{SSpartie}{Définitions} 
+                Soit une fonction $f$ définie au moins sur $\big[a~;+\infty\big[$, où $a$ est un réel.
+
+                \begin{itemize}
+                    \item   On dit que $f$ a pour limite $+\infty$ en $+\infty$ si pour tout réel $M$ positif, il existe un réel $A$, tel que $x>A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi grand que l'on veut.
+                    
+                    On note : \[\lim\limits_{x\to +\infty}f(x)=+\infty\] 
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $+\infty$}}
+                    \end{center}
+                    \vspace*{2ex}
+                    \item   On dit que $f$ a pour limite $-\infty$ en $+\infty$ si pout tout réel $m$ négatif, il existe un réel $A$, tel que $x>A$, $f(x)\leq m$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ est négatif et peut être aussi grand que l'on veut en valeur absolue.
+                    
+                    On note : \[\lim\limits_{x\to +\infty}f(x)=-\infty\]
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $+\infty$}}
+                    \end{center}
+                    \vspace*{2ex}
+                    \item   On dit que $f$ a pour limite $l$ en $+\infty$ où $l$ est un réel si pour tout intervalle ouvert $I$ contenant $l$, il existe un réel $A$ tel que $x>A$ implique $f(x)\in I$ \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi près de $l$ que l'on veut.
+                    
+                    On note : \[\lim\limits_{x\to +\infty}f(x)=l\]
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $l$ en $+\infty$}}
+                    \end{center}
+                    \vspace*{2ex}
+                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x>A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x>A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
+                \end{itemize}
+            \end{SSpartie}
+            \begin{SSpartie}{Définition} 
+                Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=l$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=l$.
+            \end{SSpartie}
+            \begin{SSpartie}{Remarque} 
+                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions $\sin$ et $\cos$ sont bornées et n'admettent pas de limites en l'infini.
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Limite en $-\infty$} 
+            \begin{SSpartie}{Définitions}
+                Soit $f$ une fonction définie au moins sur $\big]-\infty~;a\big[$, où $a$ est un réel.
+                \begin{itemize}
+                    \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$ \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
+                    
+                    On note : \[\lim\limits_{x\to-\infty}f(x)=+\infty\]
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $-\infty$}}
+                    \end{center}
+                    \vspace*{2ex}
+                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$ \\ On note : \[\lim\limits_{x\to-\infty}f(x)=-\infty\]
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $-\infty$}}
+                    \end{center}
+                    \item   On dit que $f$ a pour limite $l$ en $-\infty$ où $l$ est un réel, si pour tout intervalle ouvert $I$ contenant $l$, on peut trouver un réel $A$ tel que si $x\leq A$, $f(x)$ appartient à $I$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives, de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi près de $l$ que l'on veut.
+                    \begin{center}
+                        % \begin{tikzpicture}
+                            \includegraphics[width=5cm]{example-image}
+                        % \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{Représentation Graphique d'une Fonction qui Semble Tendre vers $l$ en $+\infty$}}
+                    \end{center}
+                    \vspace*{2ex}
+                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
+                \end{itemize}
+            \end{SSpartie}
+            \begin{SSpartie}{Définition} 
+                Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère. $\lim\limits_{x\to-\infty}f(x)=l$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $-\infty$ d'équation $y=l$.
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
