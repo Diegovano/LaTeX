@@ -21,6 +21,8 @@
 \RequirePackage{microtype}
 \RequirePackage{mathtools}
 
+\newcommand{\me}{\mathrm{e}}
+
 \setcounter{secnumdepth}{5}
 
 \setlength{\parindent}{0pt}

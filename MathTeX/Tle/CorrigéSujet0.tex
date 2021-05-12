@@ -12,6 +12,8 @@
 \usepackage{array}
 \usetikzlibrary{trees}
 
+\newcommand{\me}{\mathrm{e}}
+
 \setenumerate{itemsep=1em}
 
 % \DeclareUnicodeCharacter{1D49}{ᵉ}
@@ -29,7 +31,7 @@
             \item \fbox{Réponse b)}\par 
             On a $u_n\leq w_n\leq v_n$,\quad$\lim\limits_{n\to +\infty}u_n=1$\quad et \quad$\lim\limits_{n\to +\infty}v_n=1$\quad car $0<\frac{1}{4}<1$ \\ Donc, d'après le théorème des gendarmes, $w_n$ converge vers $1$.            
             \item \fbox{Réponse c)}\par
-            $f'(x)=e^{x^2}+x\times 2xe^{x^2}=\left(1+2x^2\right)e^{x^2}$
+            $f'(x)=\exp\left(x^2\right)+x\times 2x\exp\left(x^2\right)=\left(1+2x^2\right)\exp\left(x^2\right)$
             \item \fbox{Réponse c)}\par
             $\dfrac{x^2-1}{2x^2-2x+1}=\dfrac{1-\frac{1}{x^2}}{2-\frac{2}{x}+\frac{1}{x^2}}$\quad la limite vaut donc $\frac{1}{2}$
             \item \fbox{Réponse c)}\par
@@ -165,16 +167,16 @@
 
         \subsection*{Partie II}
         \begin{enumerate}
-            \item	$f\left(\frac{1}{e}\right)=\dfrac{2+\ln\left(\frac{1}{e}\right)}{\frac{1}{e}}=2e+e\ln\left(\frac{1}{e}\right)=e(2-1)=e$ \qquad \fbox{$C_f$ passe par $A\ \left(\frac{1}{e}\,;e\right)$} \par
+            \item	$f\left(\frac{1}{\me}\right)=\dfrac{2+\ln\left(\frac{1}{\me}\right)}{\frac{1}{\me}}=2\me+\me\ln\left(\frac{1}{\me}\right)=\me(2-1)=\me$ \qquad \fbox{$C_f$ passe par $A\ \left(\frac{1}{\me}\,;e\right)$} \par
                     $f(1)=\dfrac{2+\ln(1)}{1}=2$ \qquad \fbox{$C_f$ passe par $B\ \left(1\,;2\right)$} \par
                     \vspace{1em}
                     $\begin{aligned}[t]
                         f(x)=0&\iff \frac{2+\ln(x)}{x}=0 \\
                         &\iff 2+\ln(x)=0\quad\text{(et $x\neq 0$)} \\
                         &\iff \ln(x)=-2 \\
-                        &\iff x=e^{-2}
+                        &\iff x=\me^{-2}
                     \end{aligned}$ \par\vspace{1em}
-                    \fbox{$C_f$ coupe l'axe des abscisses en $\left(e^{-2}\,;0\right)$} (point unique)
+                    \fbox{$C_f$ coupe l'axe des abscisses en $\left(\me^{-2}\,;0\right)$} (point unique)
             \item   Etudions la limite lorsque $x$ tend vers $0$ par valeurs supérieures : \vspace{1em}
                     \[\begin{drcases}\lim\limits_{\substack{x\to 0\\x>0}}2+\ln(x)=-\infty\quad \\ \lim\limits_{\substack{x\to 0\\x>0}}x=0^+\end{drcases}\quad\text{par quotient,}\quad\boxed{\lim\limits_{\substack{x\to 0\\x>0}}f(x)=-\infty}\] \\ \vspace{1em}
                     Etudions la limite lorsque $x$ tend vers $+\infty$ :
@@ -185,16 +187,16 @@
                     \pagebreak
             \item   \[\begin{aligned}[t]
                         -1-\ln(x)\geq 0&\iff-1\geq\ln(x) \\
-                        &\iff e^{-1}\geq x\quad\text{et}\quad x^2>0\quad\text{sur}\quad\big]0\,;+\infty\big[
+                        &\iff \me^{-1}\geq x\quad\text{et}\quad x^2>0\quad\text{sur}\quad\big]0\,;+\infty\big[
                     \end{aligned}\]\vspace{1em}
                     \begin{center}\begin{tikzpicture}
                         \tkzTabInit{$x$ / 1, $f'(x)$ / 1, $f$ / 2}{$0$, $\frac{1}{2}$, $+\infty$}
                         \tkzTabLine{ ,$+$,z,$-$, }
-                        \tkzTabVar{-/$-\infty$, +/$e$, -/$0$}
+                        \tkzTabVar{-/$-\infty$, +/$\me$, -/$0$}
                     \end{tikzpicture}\end{center}
                     \parbox{\linewidth}{\captionof{figure}{Tableau de Signes $f'(x)$ et de Variations de $f$}}
 
-            \item   $f$ est convexe si et seulement si $f''(x)\geq 0$ \\ $1+2\ln(x)\geq 0\iff x\geq e^{-\frac{1}{2}}$ \par \fbox{$f$ convexe sur $\big[e^{-\frac{1}{2}}\,;+\infty\big[$}
+            \item   $f$ est convexe si et seulement si $f''(x)\geq 0$ \\ $1+2\ln(x)\geq 0\iff x\geq \me^{-\frac{1}{2}}$ \par \fbox{$f$ convexe sur $\big[\me^{-\frac{1}{2}}\,;+\infty\big[$}
         \end{enumerate}
     \end{adjustwidth}
     \section*{Exercice B}
@@ -206,16 +208,16 @@
                                 \[\big\{f:t\mapsto 25\big\}\]
                                 Et maintenant résolvons l'équation sans second membre :
                                 \[y'+6y=0\]
-                                \[\big\{f:t\mapsto Ce^{-6t},\ C\in\mathbb{R}\big\}\]
+                                \[\big\{f:t\mapsto C\me^{-6t},\ C\in\mathbb{R}\big\}\]
                                 Ainsi, les solutions sont :
-                                \[\boxed{\big\{f:t\mapsto 25+Ce^{-6t},\ C\in\mathbb{R}\big\}}\]
-                        \item   On a $f(0)=225\quad\text{et}\quad f(0)=25+C\quad\text{d'où}\quad C=200\quad$ et : \[\boxed{f(t)=200e^{-6t}+25}\]
+                                \[\boxed{\big\{f:t\mapsto 25+C\me^{-6t},\ C\in\mathbb{R}\big\}}\]
+                        \item   On a $f(0)=225\quad\text{et}\quad f(0)=25+C\quad\text{d'où}\quad C=200\quad$ et : \[\boxed{f(t)=200\me^{-6t}+25}\]
                     \end{enumerate}
                     \pagebreak
             \item   \begin{enumerate}[label=\alph*)]
                         \item	$\begin{aligned}[t]
-                                    \text{On a }f'(t)=-1\ 200e^{-6t}<0\quad&\boxed{f\text{ est strictement décroissante}} \\
-                                    \text{et }\lim\limits_{t\to +\infty}e^{-6t}=0\quad\text{donc}\quad&\boxed{\lim\limits_{t\to +\infty}f(t)=25}
+                                    \text{On a }f'(t)=-1\ 200\me^{-6t}<0\quad&\boxed{f\text{ est strictement décroissante}} \\
+                                    \text{et }\lim\limits_{t\to +\infty}\me^{-6t}=0\quad\text{donc}\quad&\boxed{\lim\limits_{t\to +\infty}f(t)=25}
                                 \end{aligned}$
                                 \vspace{1em}
                                 \begin{center}
@@ -225,15 +227,15 @@
             \item   On a $f$ continue et strictement décroissante sur $\big[0\,;+\infty\big[$. \\ $f(0)=225>40\quad\text{et}\quad\lim\limits_{t\to +\infty}f(t)=25<40$ \par D'après le corollaire du Théorème des Valeurs Intermédiaires, \\ \fbox{l'équation $f(t)=40$ admet une unique solution dans $\big[0\,;+\infty\big[$}
             \item   $T_0\approx 0{,}43\ \text{h}\qquad\boxed{T_0\approx 26\ \text{min}}$
             \item   \begin{enumerate}[label=\alph*)]
-                        \item	$D_0=f(0)-f\left(\frac{1}{60}\right)=225-\left(200e^{-\frac{1}{10}}+25\right)\approx 19{,}03$ \par
+                        \item	$D_0=f(0)-f\left(\frac{1}{60}\right)=225-\left(200\me^{-\frac{1}{10}}+25\right)\approx 19{,}03$ \par
                                 \fbox{\parbox{\linewidth-2em}{Donc, après la première minute, la température de la baguette aura diminué de $19^{\circ}$C.}}
                         \item   $\begin{aligned}[t]
-                                    D_n=200e^{-\frac{n}{10}}+25-\left(200e^{-\frac{n+1}{10}}+25\right)&=200e^{-\frac{n}{10}}-200e^{\frac{-n-1}{10}} \\
-                                    \Aboxed{D_n&=200e^{-\frac{n}{10}}\left(1-e^{-\frac{1}{10}}\right)}
+                                    D_n=200\me^{-\frac{n}{10}}+25-\left(200\me^{-\frac{n+1}{10}}+25\right)&=200\me^{-\frac{n}{10}}-200\me^{\frac{-n-1}{10}} \\
+                                    \Aboxed{D_n&=200\me^{-\frac{n}{10}}\left(1-\me^{-\frac{1}{10}}\right)}
                                 \end{aligned}$ \par \vspace{1em}
-                                Posons $D_n=g(n)$, où $g:t\mapsto 200e^{-\frac{t}{10}}\left(1-e^{-\frac{1}{10}}\right)$ \par
+                                Posons $D_n=g(n)$, où $g:t\mapsto 200\me^{-\frac{t}{10}}\left(1-\me^{-\frac{1}{10}}\right)$ \par
                                 $g$ est strictement décroissante, donc $D_n$ est décroissante. \par
-                                $\lim\limits_{n\to +\infty}e^{-\frac{n}{10}}=0\quad\text{donc}\quad\lim\limits_{n\to +\infty}D_n=0$ \par
+                                $\lim\limits_{n\to +\infty}\me^{-\frac{n}{10}}=0\quad\text{donc}\quad\lim\limits_{n\to +\infty}D_n=0$ \par
                                 \fbox{\parbox{\linewidth-2em}{Oui, une fois que la baguette atteint le niveau de temperature ambient, il n'y a plus d'échange d'énergie thérmique.}}
                     \end{enumerate}
         \end{enumerate}

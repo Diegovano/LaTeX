@@ -35,7 +35,7 @@
         \begin{Spartie}{Remarque} 
             Il arrive qu'on ne puisse pas exprimer cette primitive avec les fonctions classiques.
             \begin{SSpartie}{Exemple} 
-                $f:x\mapsto e^{x^2}$
+                $f:x\mapsto \me^{x^2}$
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Théorème} 
@@ -72,7 +72,7 @@
                 $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]-\infty\,;0\big[$ ou $\big]0\,;+\infty\big[$ \\ \hline
                 $\frac{1}{x}$                               & $\ln(x)$                                                          & $\mathbb{R^{+*}}$ \\ \hline
                 $\frac{1}{\sqrt{x}}$                        & $2\sqrt{x}$                                                       & $\mathbb{R^{+*}}$ \\ \hline
-                $e^x$                                       & $e^x$                                                             & $\mathbb{R}$ \\ \hline
+                $\me^x$                                       & $\me^x$                                                             & $\mathbb{R}$ \\ \hline
                 $\sin(x)$                                   & $-\cos(x)$                                                        & $\mathbb{R}$ \\ \hline
                 $\cos(x)$                                   & $\sin(x)$                                                         & $\mathbb{R}$ \\ \hline
             \end{tabular}\end{center}
@@ -86,7 +86,7 @@
                 $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N},$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,\ u(x)\neq0$ \\ \hline
                 $\frac{u'}{u}$                                          & $\ln(u)$                                                                  & $\forall x\in I,\ u(x)>0$ \\ \hline
                 $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,\ u(x)>0$ \\ \hline
-                $u'e^u$                                                 & $e^u$                                                                     & \---\\ \hline
+                $u'\me^u$                                                 & $\me^u$                                                                     & \---\\ \hline
                 $u'\sin(u)$                                             & $-\cos(u)$                                                                & \---\\ \hline
                 $u'\cos(u)$                                             & $\sin(u)$                                                                 & \---\\ \hline
             \end{tabular}\end{center}
@@ -114,31 +114,31 @@
         \begin{Spartie}{Théorème} 
             Posons $(E) : y'=ay$
 
-            Soit $a\in\mathbb{R}$, les solutions sur $\mathbb{R}$ de l'équation différentielle $(E)$ sont les fonctions définies sur $\mathbb{R}$ par $f(x)=Ce^{ax}$, où $C$ est une constante réelle.
-            \[y'-ay=0\qquad \mathcal{S}=\big\{x\mapsto Ce^{ax},\ C\in\mathbb{R}\big\}\]
+            Soit $a\in\mathbb{R}$, les solutions sur $\mathbb{R}$ de l'équation différentielle $(E)$ sont les fonctions définies sur $\mathbb{R}$ par $f(x)=C\me^{ax}$, où $C$ est une constante réelle.
+            \[y'-ay=0\qquad \mathcal{S}=\big\{x\mapsto C\me^{ax},\ C\in\mathbb{R}\big\}\]
 
             \begin{SSpartie}{Démonstration} 
                 \begin{itemize}
-                    \item Toute fonction $f:x\mapsto f(x)=Ce^{ax}$ vérifie $f'(x)=aCe^{ax}=a\times f(x)$. $f$ est donc solution de $(E)$.
-                    \item Montrons que toute solution de $(E)$ est sous la forme $x\mapsto Ce^{ax}$ \\
-                    Soit $g$, une solution de $(E)$. On a $g'=ag$, or $f:x\mapsto f(x)=e^{ax}$ est solution de $(E)$. \\
-                    $f$ ne s'annulant pas, on peut définir $h:x\mapsto \frac{g(x)}{f(x)}=\frac{g(x)}{e^{ax}}$ \\
-                    On peut écrire $h(x)=g(x)e^{-ax}$
+                    \item Toute fonction $f:x\mapsto f(x)=C\me^{ax}$ vérifie $f'(x)=aC\me^{ax}=a\times f(x)$. $f$ est donc solution de $(E)$.
+                    \item Montrons que toute solution de $(E)$ est sous la forme $x\mapsto C\me^{ax}$ \\
+                    Soit $g$, une solution de $(E)$. On a $g'=ag$, or $f:x\mapsto f(x)=\me^{ax}$ est solution de $(E)$. \\
+                    $f$ ne s'annulant pas, on peut définir $h:x\mapsto \frac{g(x)}{f(x)}=\frac{g(x)}{\me^{ax}}$ \\
+                    On peut écrire $h(x)=g(x)\me^{-ax}$
                     \[\begin{aligned}[t]
-                        h'(x)&=g'(x)e^{-ax}-ae^{-ax}g(x) \\
-                        &=e^{-ax}\big(g'(x)-ag(x)\big)\qquad\text{or}\qquad g'(x)=ag(x) \\
-                        &=e^{-ax}\times 0 \\
+                        h'(x)&=g'(x)\me^{-ax}-a\me^{-ax}g(x) \\
+                        &=\me^{-ax}\big(g'(x)-ag(x)\big)\qquad\text{or}\qquad g'(x)=ag(x) \\
+                        &=\me^{-ax}\times 0 \\
                         &=0
                     \end{aligned}\]
 
-                    Donc, $h$ est une fonction constante, $\exists C,\ h(x)=C=\frac{g(x)}{e^{ax}}$
-                    \[g(x)=Ce^{ax},\ C\in\mathbb{R}\quad\square\]
+                    Donc, $h$ est une fonction constante, $\exists C,\ h(x)=C=\frac{g(x)}{\me^{ax}}$
+                    \[g(x)=C\me^{ax},\ C\in\mathbb{R}\quad\square\]
                 \end{itemize}
             \end{SSpartie}
             \begin{Spartie}{Exemple} 
                 Soit l'équation $y'+5y=0\iff y'=-5y$
 
-                Les solutions de l'équation sont les fonctions $f$ définies par $f(x)=Ce^{-5x},\ C\in\mathbb{R}$
+                Les solutions de l'équation sont les fonctions $f$ définies par $f(x)=C\me^{-5x},\ C\in\mathbb{R}$
             \end{Spartie}
         \end{Spartie}
     \end{Gpartie}
@@ -155,10 +155,10 @@
                     &=0
                 \end{aligned}\]
                 Ainsi, pour tout $x$ (sur un ensemble de définition que l'on n’a pas étudié)
-                \[h(x)=Ce^{ax},\ C\in\mathbb{R}\qquad\text{(d'après \textsection IV)}\]
+                \[h(x)=C\me^{ax},\ C\in\mathbb{R}\qquad\text{(d'après \textsection IV)}\]
                 Donc, si l'on trouve une solution particulière $f$ de l'équation $(E)$ toute solution s'écrit sous la forme
-                \[g(x)=f(x)+Ce^{ax},\ C\in\mathbb{R}\]
-                \[\text{car}\quad g(x)-f(x)=h(x)=Ce^{ax}\] 
+                \[g(x)=f(x)+C\me^{ax},\ C\in\mathbb{R}\]
+                \[\text{car}\quad g(x)-f(x)=h(x)=C\me^{ax}\] 
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Exemple} 
@@ -170,10 +170,10 @@
             \begin{enumerate}
                 \item Soit $f_0:x\mapsto\frac{1}{x}\qquad\text{alors}\qquad f_0'=\frac{-1}{x^2}$ \\
                 $f_0'+f_0=\frac{-1}{x^2}+\frac{1}{x}=\frac{x-1}{x^2}$, la fonction inverse est solution de $(E)$ sur $\mathbb{R^{+*}}$.
-                \item D'après la démonstration précédente, toute solution $f$ de $(E)$ est de la forme $f:x\mapsto f_0(x)+Ce^{ax},\ C\in\mathbb{R}$. \\
+                \item D'après la démonstration précédente, toute solution $f$ de $(E)$ est de la forme $f:x\mapsto f_0(x)+C\me^{ax},\ C\in\mathbb{R}$. \\
                 On résout $y'+u=0$ : ici $a=-1$. \\
                 Ainsi, les solutions sont :
-                \[\mathcal{S}=\Big\{x\mapsto\tfrac{1}{x}+Ce^{ax},\ C\in\mathbb{R}\Big\}\]
+                \[\mathcal{S}=\Big\{x\mapsto\tfrac{1}{x}+C\me^{ax},\ C\in\mathbb{R}\Big\}\]
             \end{enumerate}
         \end{Spartie}
         \begin{Spartie}{Exemple} 
@@ -182,11 +182,11 @@
                 \item Trouvons une fonction constante solution $(E)$. \\
                 La fonction $x\mapsto\frac{-5}{2}$ convient.
                 \item On résout $y'-2y=0$ :
-                \[\Big\{x\mapsto Ce^{2x},\ C\in\mathbb{R}\Big\}\]
+                \[\Big\{x\mapsto C\me^{2x},\ C\in\mathbb{R}\Big\}\]
             \end{enumerate}
 
             Les solutions de $(E)$ sont les fonctions du type :
-            \[\mathcal{S}=\Big\{x\mapsto\tfrac{-5}{2}+Ce^{2x},\ C\in\mathbb{R}\Big\}\]
+            \[\mathcal{S}=\Big\{x\mapsto\tfrac{-5}{2}+C\me^{2x},\ C\in\mathbb{R}\Big\}\]
         \end{Spartie}
     \end{Gpartie}
 \end{document}
