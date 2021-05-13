@@ -4,30 +4,30 @@
 \usepackage{newpxmath}
 \setlength{\parskip}{0.5em}
 
-\title{\vspace{-3cm}Préparation Grand Oral : Comment Approximer Toute Fonction par un Polynome ?}
+\title{\vspace{-3cm}Préparation Grand Oral : Comment Approximer Toute Fonction par un Polynôme ?}
 \author{Diego Van Overberghe}
 
 \begin{document}
     \maketitle
-    \section*{Pourquoi avons nous besoin d'approximer les fonctions par des polynomes ?}
-    L'exemple en physique : approximation des fonctions trigonométriques $\sin$ et $\tan$, par le polynome $x$.
+    \section*{Pourquoi avons nous besoin d'approximer les fonctions par des polynômes ?}
+    L'exemple en physique : approximation des fonctions trigonométriques $\sin$ et $\tan$, par le polynômes $x$.
     \begin{center}
         ``Si $\uptheta<15^{\circ}$ On peut dire que $\tan(\uptheta)\approx\uptheta$'' -- p. 467 Manuel Physique-Chimie
     \end{center}
-    L'effet de remplacer les $\tan(\uptheta)$ par des $\uptheta$ permet d'alleger grandement la notation, et de plus facilite l'analyse, telle que le calcul de fonction dérivée, par exemple. 
+    L'effet de remplacer les $\tan(\uptheta)$ par des $\uptheta$ permet d'alléger grandement la notation, et de plus facilite l'analyse, telle que le calcul de fonction dérivée, par exemple. 
 
-    $\mathrm{N}\mathrm{B}$ : Il ne s'agit pas de simplement remplacer les fonctions approximées par le polynome simplifié, car l'approximation n'est pas valable sur un intervalle large. On peut donc utiliser ces apprxoimations uniquement si l'on analyse l'évolution d'un variable sur un domaine restreint.
+    $\mathrm{N}\mathrm{B}$ : Il ne s'agit pas de simplement remplacer les fonctions approximées par le polynômes simplifié, car l'approximation n'est pas valable sur un intervalle large. On peut donc utiliser ces approximations uniquement si l'on analyse l'évolution d'un variable sur un domaine restreint.
 
-    Ceci mene naturellement à la question de pourquoi et comment developpe-t-on des polynomes qui se rapprochent d'une fonction donnée, et pourquoi cette approximation n'est elle valable que sur un petit intervalle ?
+    Ceci mène naturellement à la question de pourquoi et comment développe-t-on des polynômes qui se rapprochent d'une fonction donnée, et pourquoi cette approximation n'est elle valable que sur un petit intervalle ?
 
     \section*{La série de Taylor}
-    Si l'on s'imagine une courbe quelconque, et que l'on souhaite l'approximer, il semble logique de commencer en creant une fonction dont l'image en l'abscisse de notre point de référence est égal à l'image de ce meme abscisse par notre fonction mystere.
+    Si l'on s'imagine une courbe quelconque, et que l'on souhaite l'approximer, il semble logique de commencer en créant une fonction dont l'image en l'abscisse de notre point de référence est égal à l'image de ce même abscisse par notre fonction mystère.
     \[\sin(0)=0\text{ donc, on cherche }f:0\mapsto 0\]
-    Plusieurs candidats existent : $g:x\mapsto 0$ (la fonction constante) ou $h:x\mapsto x$, voire meme $j:x\mapsto x^2+x$
+    Plusieurs candidats existent : $g:x\mapsto 0$ (la fonction constante) ou $h:x\mapsto x$, voire même $j:x\mapsto x^2+x$
     
-    Pour décider quelle fonction est supérieure comme approximante, on évalue les dérivées en ce meme abscisse. On cherche la fonction dont le nombre dérivé se rapproche le plus de $\sin'(0)=1$. Ici, $\forall x\in\varmathbb{R},\ g'(x)=0$, $\forall x\in\varmathbb{R},\ h'(x)=1$, et $\forall x\in\varmathbb{R},\ j'(x)=1$
+    Pour décider quelle fonction est supérieure comme approximante, on évalue les dérivées en ce même abscisse. On cherche la fonction dont le nombre dérivé se rapproche le plus de $\sin'(0)=1$. Ici, $\forall x\in\varmathbb{R},\ g'(x)=0$, $\forall x\in\varmathbb{R},\ h'(x)=1$, et $\forall x\in\varmathbb{R},\ j'(x)=1$
 
-    Nous avons donc éliminé la fonction constante. On va répeter ce processus, en cherchant une fonction dont la dérivée seconde $\forall x\in\varmathbb{R},\ f''(x)=sin''(x)=-sin(x)=0$. $\forall x\in\varmathbb{R},\ h''(x)=0$, et $\forall x\in\varmathbb{R},\ j''(x)=2$
+    Nous avons donc éliminé la fonction constante. On va répéter ce processus, en cherchant une fonction dont la dérivée seconde $\forall x\in\varmathbb{R},\ f''(x)=\sin''(x)=-\sin(x)=0$. $\forall x\in\varmathbb{R},\ h''(x)=0$, et $\forall x\in\varmathbb{R},\ j''(x)=2$
 
-    Nous voyons donc qu'ici que $g:x\mapsto x$ semble etre une bonne approximation de $\sin(x)$.
+    Nous voyons donc qu'ici que $g:x\mapsto x$ semble être une bonne approximation de $\sin(x)$.
 \end{document}

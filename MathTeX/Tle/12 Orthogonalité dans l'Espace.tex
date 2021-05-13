@@ -1,0 +1,57 @@
+\documentclass{cours}
+
+\title{Orthogonalité dans l'Espace}
+
+\begin{document}
+    \maketitle{12}
+
+    \begin{Gpartie}{Différentes Expressions du Produit Scalaire} 
+        \begin{Spartie}{Définitions} 
+            $\vec{u}$ et $\vec{v}$ étant deux vecteurs de l'espace, soit un point $A$ de l'espace, et les points $B$ et $C$ tels que $\overrightarrow{AB}=\vec{u}$ et $\overrightarrow{AC}=\vec{v}$.
+
+            Alors, $\vec{u}\cdot\vec{v}=\overrightarrow{AB}\cdot\overrightarrow{AC}$\quad(Produit Scalaire de deux vecteurs dans le plan (ABC))
+
+            Ainsi, toutes les définitions et propriétés du produit scalaire dans le plan sont conservées dans l'espace.
+
+            Les trois définitions suivantes sont équivalentes :
+            \begin{SSpartie}{Définition avec le Projeté Orthogonal} 
+                $\vec{u}$ et $\vec{v}$ étant deux vecteurs de l'espace, soit un point $A$ de l'espace, et les points $B$ et $C$ tels que $\overrightarrow{AB}=\vec{u}$ et $\overrightarrow{AC}=\vec{v}$.
+
+                Soit $H$ le projeté orthogonal de $C$ sur $(AB)$,
+
+                $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de même sens. \\
+                $\overrightarrow{AB}\cdot\overrightarrow{AC}=-AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de sens contraire.
+                \begin{center}
+                    % \begin{tikzpicture}
+                        \includegraphics[width=10cm]{example-image}
+                    % \end{tikzpicture}
+                    \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
+                \end{center}
+            \end{SSpartie}
+            \begin{SSpartie}{Définitions avec les Normes} 
+                $\vec{u}\cdot\vec{v}=\dfrac{1}{2}\left(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2\right)=\dfrac{1}{2}\left(\lvert\lvert\vec{u}\rvert\rvert^2+\lvert\lvert\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2\right)$
+
+                Ainsi, $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}\left(AB^2+AC^2-CB^2\right)$
+            \end{SSpartie}
+            \begin{SSpartie}{Définition avec l'Angle} 
+                $\vec{u}\cdot\vec{v}=\lvert\lvert\vec{u}\rvert\rvert\times\lvert\lvert\vec{v}\rvert\rvert\times\cos\left(\vec{u}~,\vec{v}\right)$
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Propriétés} 
+            Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symmétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
+        \end{Spartie}
+        \begin{Spartie}{Expressions Analytique du Produit Scalaire} 
+            Dans un repère orthonormé de l'espace, $\vec{u}~(x~;y~;z)$ et $\vec{v}~(x'~;y'~;~z')$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
+            \begin{SSpartie}{Démonstration} 
+                On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$
+
+                $\begin{aligned}[t]
+                    \vec{u}\cdot\vec{v}&=\dfrac{1}{2}\left(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2\right) \\
+                    &=\frac{1}{2}\left(\left(x+x'\right)^2+\left(y+y'\right)^2+\left(z+z'\right)^2-\left(x^2+y^2+z^2\right)-\left(x'^2+y'^2+z'^2\right)\right) \\
+                    &=\frac{1}{2}\left(2xx'+2yy'+2zz'\right) \\
+                    &=xx'+y y'+z z'
+                \end{aligned}$
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
