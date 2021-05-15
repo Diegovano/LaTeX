@@ -1,0 +1,99 @@
+\documentclass{cours}
+
+\title{Convexité}
+
+\begin{document}
+    \maketitle{14}
+
+    \begin{Gpartie}{Fonction Convexe et Fonction Concave} 
+        \begin{Spartie}{Définitions} 
+            Soit $f$ une fonction dérivable sur un intervalle $I$ et $\mathcal{C}$ sa courbe représentative dans un repère.
+
+            $f$ est convexe sur $I$ si quels que soient les points $A$ et $B$ de la courbe $\mathcal{C}$ sur $I$, le segment $\big[AB\big]$ est au dessus de $\mathcal{C}$ entre $A$ et $B$.
+
+            $f$ est concave sur $I$ si quels que soient les points $A$ et $B$ de la courbe $\mathcal{C}$ sur $I$, le segment $\big[AB\big]$ est en dessous de $\mathcal{C}$ entre $A$ et $B$.
+
+            \begin{center}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
+            \end{center}
+        \end{Spartie}
+        \begin{Spartie}{Propriété} 
+            Si $f$ est convexe sur $I$, pour tous réels $a$ et $b$ de $I$, $f\left(\frac{a+b}{2}\right)\leq\frac{f(a)+f(b)}{2}$.
+
+            Si $f$ est concave sur $I$, pour tous réels $a$ et $b$ de $I$, $f\left(\frac{a+b}{2}\right)\geq\frac{f(a)+f(b)}{2}$.
+            \begin{SSpartie}{Démonstration} 
+                Supposons $f$ convexe.
+
+                Soit $A~\left(~a~;~f(a)~\right)$ et $B~\left(~b~;~f(b)~\right)$ deux points de $\mathcal{C}$, alors $\big[AB\big]$ est au dessus de $\mathcal{C}$, en particulier, le milieu de $\big[AB\big]$ d'abscisse $\frac{a+b}{2}$ et d'ordonnée $\frac{f(a)+f(b)}{2}$ est au dessus de l'image de $\frac{a+b}{2}$ par $f$.
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Propriété (admise)} 
+            $f$ est convexe sur $I$ si et seulement si $\mathcal{C}$ est située au dessus de chacune de ses tangentes sur $I$
+
+            $f$ est concave sur $I$ si et seulement si $\mathcal{C}$ est située en dessous de chacune de ses tangentes sur $I$
+
+            \begin{center}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
+            \end{center}
+        \end{Spartie}
+        \begin{Spartie}{Définition} 
+            $A$ est un point d'inflexion de $\mathcal{C}$ si au point $A$, la courbe traverse sa tangente.
+
+            \begin{center}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                \parbox{\linewidth}{\captionof{figure}{\centering Exemple d'un Point d'Inflexion}}
+            \end{center}
+        \end{Spartie}
+        \begin{Spartie}{Remarque} 
+            Lorsque $f$ change de convexité, sa courbe $\mathcal{C}$ admet un point d'inflexion.
+        \end{Spartie}
+    \end{Gpartie}
+    \pagebreak
+    \begin{Gpartie}{Lien avec la Dérivée} 
+        \begin{Spartie}{Définition} 
+            Soit $f$ une fonction dérivable sur $I$ dont la fonction dérivée $f'$ est dérivable sur $I$. La dérivée de $f'$ se nomme la dérivée seconde de $f$ et se note $f''$.
+        \end{Spartie}
+        \begin{Spartie}{Propriété} 
+            Soit $f$ une fonction dérivable deux fois sur un intervalle $I$.
+
+            $f$ est convexe sur $I$ si et seulement si :
+            \begin{itemize}
+                \item $f'$ est croissante sur $I$
+                \item $f''$ est positive sur $I$
+                \item La courbe représentative est située au dessus de ses tangentes sur $I$
+            \end{itemize}
+        \end{Spartie}
+        \begin{Spartie}{Propriété} 
+            $f$ est concave sur $I$ si et seulement si :
+            \begin{itemize}
+                \item $f'$ est décroissante sur $I$
+                \item $f''$ est négative sur $I$
+                \item La courbe représentative est située en dessous de ses tangentes sur $I$
+            \end{itemize}
+        \end{Spartie}
+        \begin{Spartie}{Propriété} 
+            Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère, $\mathcal{C}$ admet un point d'inflexion au point d'abscisse $a$ si et seulement si $f''$ s'annule et change de signe en $a$.
+
+            \begin{center}
+                % \begin{tikzpicture}
+                    \includegraphics[width=5cm]{example-image}
+                % \end{tikzpicture}
+                \parbox{\linewidth}{\captionof{figure}{\centering Illustration de l'Évolution de la Convexité en Fonction de la Dérivée Seconde}}
+            \end{center}
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}

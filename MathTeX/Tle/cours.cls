@@ -20,6 +20,8 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage{microtype}
 \RequirePackage{mathtools}
+\RequirePackage[shortlabels]{enumitem}
+
 
 \newcommand{\me}{\mathrm{e}}
 

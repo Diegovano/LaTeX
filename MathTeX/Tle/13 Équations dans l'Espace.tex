@@ -1,0 +1,89 @@
+\documentclass{cours}
+
+\title{Équations dans l'Espace}
+
+\begin{document}
+    \maketitle{13}
+
+    \begin{Gpartie}{Représentation Paramétrique d'une Droite} 
+        Dans un repère $\left(~O~;~\vec{\imath}~,~\vec{\jmath}~,~\vec{k}~\right)$, soit $(d)$ la droite passant par un point $A~\left(~x_A~;~y_A~;~z_A~\right)$ et de vecteur directeur $\vec{u}~\big(~a~;~b~;~c~\big)$
+
+        Un point $M~\left(~x~;~y~;~z~\right)$ appartient à $(d)$ si et seulement si il existe un réel $t$ tel que $\overrightarrow{AM}=t\vec{u}$
+
+        C'est-à-dire : $(S)\begin{cases} x=x_A+ta \\ y=y_A+tb \\ z=z_A+tc \end{cases}\left(t\in\mathbb{R}\right)$
+
+        \begin{Spartie}{Définition} 
+            Le système $(S)$ est une représentation paramétrique de la droite $(d)$. $t$ est le paramètre de cette représentation.
+            \begin{SSpartie}{Démonstration}
+                Reprenons la situation précédente. 
+                
+                $\overrightarrow{AM}~\begin{psmallmatrix} x_M-x_A &=\ x-x_A \\ y_M-y_A &=\ y-y_A \\ z_M-z_A &=\ z-z_A \end{psmallmatrix}$
+
+                $\begin{aligned}[t]
+                    M\in(d)&\iff\overrightarrow{AM}=t\vec{u} \\
+                    &\iff\begin{pmatrix} x-x_A \\ y-y_A \\ z-z_a \end{pmatrix}=t\begin{pmatrix} a \\ b \\ c \end{pmatrix} \\
+                    &\iff\begin{cases}x-x_A=ta \\ y-y_A=tb \\ z-z_A= t c \end{cases} \\ %spaces to supress spellchecker
+                    &\iff\begin{cases}x=x_A+ta \\ y=y_A+tb \\ z=z_A+ t c \end{cases}
+                \end{aligned}$
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Exemple} 
+            La droite $(d)$ passant par $A~\left(~2~;0~;-1~\right)$ et de vecteur directeur $\vec{u}~\begin{psmallmatrix}1 \\ -3 \\ 2\end{psmallmatrix}$ a pour représentation paramétrique : \[(d)\begin{cases} x=2+t \\ y=-3t \\ z=-1+2t
+            \end{cases}\left(t\in\mathbb{R}\right)\]
+
+            Les points $M~\left(~0~;~6~;~-5~\right)$ et $N~\left(~1~;~3~;~2~\right)$ appartiennent-ils à $(d)$ ?
+            \begin{itemize}
+                \item $M$ : $\begin{cases} 0=2+t \\ 6=-3t \\ -5=-1+2t \end{cases}M\in(d)$, car $-2$ est solution du système.
+                \item $N$ : $\begin{cases} 1=2+t \\ 3=-3t \\ 2=-1+2t \end{cases}N\notin(d)$, car $-1$ est solution de $(1)$ et $(2)$ mais pas $(3)$.
+            \end{itemize}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Équation Cartésienne de Plan} 
+        \begin{Spartie}{Rappel} 
+            La plan $\mathcal{P}$ qui passe par un point $A$ et de vecteur normal $\vec{n}$ est l'ensemble des points $M$ tels que $\overrightarrow{AM}\cdot\vec{n}=0$
+        \end{Spartie}
+        \begin{Spartie}{Théorème} 
+            \begin{enumerate}[(1)]
+                \item   L'ensemble des points $M~\left(~x~;~y~;~z~\right)$ tels que $ax+by+cz+d=0$, où $a$, $b$, $c$ et $d$ sont quatre réels tels que $a$, $b$ et $c$ sont non nuls, est un plan de vecteur normal $\vec{n}~\left(~a~,~b~,~c~\right)$.
+                
+                \item   Réciproquement : si $\vec{n}~\left(~a~,~b~,~c~\right)$ est un vecteur normal d'un plan $\mathcal{P}$, une équation cartésienne de ce plan est $ax+by+cz+d=0$ où $d$ est un réel.
+                
+                Autrement dit, pour tout point $M~\left(~x~;~y~;~z~\right)$ de $\mathcal{P}$ vérifie $ax+by+cz+d=0$
+            \end{enumerate}
+            \pagebreak
+            \begin{SSpartie}{Démonstration} 
+                \begin{enumerate}[(1)]
+                    \item   Appelons $\mathcal{E}$ l'ensemble des points $M~\left(~x~;~y~;~z~\right)$ tels que $ax+by+cz+d=0$ (on ne sait pas que c'est un plan) \\ Soit le vecteur $\vec{n}~\left(~a~,~b~,~c~\right)$
+                    
+                    Supposons $a\neq 0$, prenons le point $A~\left(\frac{-d}{a}~;~0~;~0~\right)$
+
+                    Vérifions que $A\in\mathcal{E}$ :
+
+                    $\begin{aligned}[t]
+                        A\in\mathcal{E}&\iff a\times\tfrac{-d}{a}+b\times0+c\times0+\left(-a\times\tfrac{-d}{a}-b\times0-c\times0\right)=0 \\
+                        &\iff a\times\tfrac{-d}{a}-a\times\tfrac{-d}{a}=0
+                    \end{aligned}$
+
+                    C'est identique pour les points $\left(~0~;~\frac{-d}{b}~;~0~\right)$ ou $\left(~0~;~0~;~\frac{-d}{c}~\right)$
+                    
+                    Quel que soit 
+                    $\begin{aligned}[t]
+                        M~\left(~x~;~y~;~z~\right)\in\mathcal{E},~\overrightarrow{AM}\cdot\vec{n}=0&\iff\begin{psmallmatrix} x-\frac{-d}{a} \\ y \\ z\end{psmallmatrix}\cdot \begin{psmallmatrix}a \\ b \\ c\end{psmallmatrix} \\ &\iff a x+by+cz+d=0 %supress spellcheck
+                    \end{aligned}$
+
+                    Donc, tout point $M$ de $\mathcal{E}$ vérifie $\overrightarrow{AM}\cdot\vec{n}=0$, donc appartient au plan passant par $A$ et de vecteur normal $\vec{n}$. (c'est la caractérisation d'un plan) $\quad\square$
+
+                    Ainsi, $\mathcal{E}\subset\mathcal{P}$
+
+                    \item   Soit $A~\left(~x_A~;~y_A~;~z_A~\right)\in\mathcal{P}$. Pour tout point $M~\left(~x~;~y~;~z~\right)$ du plan $\mathcal{P}$ on calcule le produit scalaire $\overrightarrow{AM}\cdot\vec{n}$ qui est nul par définition (voir le rappel) d'un plan de vecteur normal $\vec{n}~\left(~a~;~b~;~c~\right)$.
+                    
+                    On trouve $a\left(x-x_A\right)+b\left(y-y_A\right)+c\left(z-z_A\right)=0$ et donc $ax+by+cz+d=0$, où $d=-ax_A-by_A-cz_A\quad\square$
+
+                    Ainsi $\mathcal{P}\subset\mathcal{E}$
+                \end{enumerate}
+                \vspace*{2ex}
+                Comme $\mathcal{E}\subset\mathcal{P}$ et $\mathcal{P}\subset\mathcal{E}$, $\mathcal{P}=\mathcal{E}$
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
