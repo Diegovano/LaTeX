@@ -9,6 +9,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{array}
 \RequirePackage[french]{babel}
+\DecimalMathComma
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[upright]{fourier}
@@ -21,9 +22,13 @@
 \RequirePackage{microtype}
 \RequirePackage{mathtools}
 \RequirePackage[shortlabels]{enumitem}
+\DecimalMathComma
 
 
-\newcommand{\me}{\mathrm{e}}
+\newcommand{\me}{\mathrm{e}} % exp
+\newcommand{\Pde}{\mathrm{P}} % P de ... P(X=5)
+\newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\dx}{\,\mathrm{d}x}
 
 \setcounter{secnumdepth}{5}
 

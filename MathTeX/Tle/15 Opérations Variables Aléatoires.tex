@@ -45,7 +45,7 @@
             L'écart-type de la variable aléatoire $X$ est le réel : \[\sigma=\sqrt{V(X)}\]
         \end{Spartie}
         \begin{Spartie}{Théorème} 
-            \[V(X)=\sum_{i=1}^nx^2P(X=x_i)-\left(E(X)\right)^2=E\left(X^2\right)-\left(E(X)\right)^2\]
+            \[V(X)=\sum_{i=1}^nx_i^2P(X=x_i)-\left(E(X)\right)^2=E\left(X^2\right)-\left(E(X)\right)^2\]
             La variance est aussi la moyenne des valeurs au carré moins la moyenne au carré.
             \begin{SSpartie}{Démonstration} 
                 $\begin{aligned}[t]
@@ -101,6 +101,86 @@
                 La variable aléatoire $X+Y$ prend tous les valeurs $a_i+b_j$ possibles (où $1\leq i\leq n$ et $q\leq j\leq m$)
 
                 Pour toute valeur de $w$, $P(X+Y=w)=\sum_{a_i+b_j=w}P\left(\{X=a_i\}\cap\{Y=b_j\}\right)$ c'est-à-dire la somme des probabilités $P\left(\{X=a_i\}\cap\{Y=b_j\}\right)$ telles que $a_i+b_j=w$ (toutes les sommes égales à $w$).
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème (admis)} 
+                \[E(X+Y)=E(X)+E(Y)\]
+            \end{SSpartie}
+            \begin{SSpartie}{Rappel} 
+                $A$ et $B$ sont deux événements indépendants si et seulement si $P\left(A\cap B\right)=P(A)\times P(B)$.
+            \end{SSpartie}
+            \begin{SSpartie}{Définition} 
+                Deux variables aléatoires sont indépendantes si elles donnent des résultats de deux expériences aléatoires indépendantes.
+            \end{SSpartie}
+            \begin{SSpartie}{Propriété} 
+                Si $X$ et $Y$ indépendantes : \[P\left(\{X=a_i\}\cap\{Y=b_j\}\right)=P(X=a_i)\times P(Y=b_j)\]
+            \end{SSpartie}
+            \begin{SSpartie}{Théorème (admis)} 
+                Si $X$ et $Y$ sont deux variables aléatoires indépendantes définies sur un meme univers : \[V(X+Y)=V(X)+V(Y)\]
+            \end{SSpartie}
+        \end{Spartie}
+    \end{Gpartie}
+    \begin{Gpartie}{Applications} 
+        \begin{Spartie}{Loi Binomiale} 
+            \begin{SSpartie}{Propriété} 
+                Si $X$ est une variable aléatoire qui suit la loi binomiale $\mathcal{B}~\left(~n~;~p~\right)$ : \[E(X)=np\qquad V(X)=np\left(1-p\right)\qquad\sigma(X)=\sqrt{np\left(1-p\right)}\]
+                \begin{SSSpartie}{Démonstration} 
+                    $X$ est la somme de $n$ variables aléatoires indépendantes $X_1~,~X_2~,\dotsc,~X_n~$, suivant la loi de Bernoulli.
+
+                    Pour tout $i$, $1\leq i\leq n,~E\left(X_i\right)=p$ et $V\left(X_i\right)=p\left(1-p\right)$.
+
+                    Ainsi, $E(X)=E\left(X_1\right)+E\left(X_2\right)+\dotsb+E\left(X_n\right)=np$ et idem pour $V(X)$. \\
+                    Enfin, $\sigma(X)=\sqrt{V(X)}$
+                \end{SSSpartie}
+            \end{SSpartie}
+        \end{Spartie}
+        \begin{Spartie}{Somme et Moyenne d'un Échantillon (généralisation)} 
+            \begin{SSpartie}{Définition} 
+                Un échantillon de taille $n$ d'une loi de probabilité est une liste $\big\{~X_1~,~X_2~,~\dotsc~,~X_n~\big\}$ de $n$ variables aléatoires identiques et indépendantes qui suivent toutes cette loi.
+            \end{SSpartie}
+            \begin{SSpartie}{Propriété} 
+                Si on note $X$ une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og somme \fg{} de cet échantillon $S_n=X_1+X_2+\dotsb+X_n$ vérifie : \[(1)~E\left(S_n\right)=nE(X)\qquad(2)~V\left(S_n\right)=nV(X)\qquad(3)~\sigma\left(S_n\right)=\sqrt{n}\sigma(X)\]
+                \begin{SSSpartie}{Démonstration} 
+                    \begin{enumerate}[(1)]
+                        \item $\begin{aligned}[t]
+                            E\left(S_n\right)&=E\left(X_1+X_2+\dotsb+X_n\right) \\
+                            &=E(X_1)+E(X_2)+\dotsb+E(X_n) \\
+                            &=nE(X)\quad\text{Car les variables sont identiques}
+                        \end{aligned}$
+                        \item $\begin{aligned}[t]
+                            V\left(S_n\right)&=V(X_1+X_2+\dotsb+X_n) \\
+                            &=V(X_1)+V(X_2)+\dotsb+V(X_n) \\
+                            &=nV(X)
+                        \end{aligned}$
+                        \item $\begin{aligned}[t]
+                            \sigma(S_n)&=\sqrt{V(S_n)} \\
+                            &=\sqrt{nV(X)} \\
+                            &=\sqrt{n}\sigma(X)
+                        \end{aligned}$
+                    \end{enumerate}
+                \end{SSSpartie}
+            \end{SSpartie}
+            \begin{SSpartie}{Propriété} 
+                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$ vérifie : \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\]
+                \begin{SSSpartie}{Démonstration} 
+                    \begin{enumerate}[(1)]
+                        \item $\begin{aligned}[t]
+                            E(M_n)&=E\left(\frac{S_n}{n}\right) \\
+                            &=nE\left(\frac{X}{n}\right) \\
+                            &=\frac{1}{n}\times nE(X)\qquad\text{changement affine de $\tfrac{1}{n}$}\\
+                            &=E(X)
+                        \end{aligned}$
+                        \item $\begin{aligned}[t]
+                            V(M_n)&=V\left(\frac{S_n}{n}\right) \\
+                            &=nV\left(\frac{X}{n}\right) \\
+                            &=\frac{1}{n^2}\times nV(X) \\
+                            &=\frac{V(X)}{n}
+                        \end{aligned}$
+                        \item $\begin{aligned}[t]
+                            \sigma(M_n)&=\sqrt{V(M_n)} \\
+                            &=\frac{\sigma(X)}{\sqrt{n}}
+                        \end{aligned}$
+                    \end{enumerate}
+                \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}

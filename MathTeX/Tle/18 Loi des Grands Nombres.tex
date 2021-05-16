@@ -1,0 +1,40 @@
+\documentclass{cours}
+
+\title{Loi des Grands Nombres}
+
+\begin{document}
+    \maketitle{18}
+
+    \begin{Gpartie}{Inégalités Probabilitstes} 
+        \begin{Spartie}{Inégalité de Markov} 
+            Pour toute variable aléatoire $X$ à valeurs positives, et pour tout nombre réel $\delta$ strictement positif : \[\Pde(X\geq\delta)\leq\frac{E(X)}{\delta}\]
+        \end{Spartie}
+        \begin{Spartie}{Inégalité de Bienaymé-Tchebychev} 
+            Pour toute variable aléatoire $X$, et pour tout nombre réel $\delta$ strictement positif : \[\Pde\big(\lvert X-E(X)\rvert\geq\delta\big)\leq\frac{V(X)}{\delta^2}\]
+        \end{Spartie}
+        \begin{Spartie}{Remarque} 
+            Souvent, on prendre $\delta=\sigma$ ou $k\sigma$ car l'écart type $\sigma$ d'une variable aléatoire $X$ est l'unité naturelle pour étudier la dispersion de $X$ autour de sons espérance.
+
+            L'inégalité de Bienaymé-Tchebychev montre notamment que des écarts de $X$ à $E(X)$ de quelques $\sigma$ deviennent improbables.
+        \end{Spartie}
+        \begin{Spartie}{Remarque} 
+            L'Inégalité de Bienaymé-Tchebychev est loin de donner le meilleur majorant.
+
+            Si $X$ est une variable aléatoire suivant la loi binomiale $\mathcal{B}\left(~n~;~p~\right)$, on a $\Pde\left(\vert X-E(X)\rvert\geq 2\sigma\right)\approx 0,05$ ce qui est bien meilleur que le $0,25$ obtenu avec l'inégalité.
+
+            En effet, si $\delta=2\sigma$ et $X\sim\mathcal{B}(~n~;~p~)$ : \[\frac{V(X)}{\delta^2}=\frac{np(1-p)}{4\sqrt{np(1-p)}^2}=\frac{1}{4}\]
+        \end{Spartie}
+    \end{Gpartie}
+    \pagebreak
+    \begin{Gpartie}{Loi des Grands Nombres} 
+        \begin{Spartie}{Propriété} 
+            Soit une variable aléatoire $X$ associée à un échantillon $\left(~X_1~,~X_2~,\dotsc,~X_n~\right)$, c'est-à-dire que $\left(~X_1~,~X_2~,\dotsc,~X_n~\right)$ est un échantillon de $n$ variables aléatoires identiques et indépendantes qui suivent toutes la loi de probabilité suivie par $X$. On note $M_n$ la moyenne de cet échantillon. 
+            
+            Alors, pour tout réel $\delta>0$ : \[\Pde\left(\lvert M_n-E(X)\rvert\geq\delta\right)\leq\frac{V(X)}{n\delta^2}\quad\text{(c'est l'inégalité de concentration)}\]
+
+            Et : \[\lim\limits_{n\to +\infty}\Pde\left(\lvert M_n-E(X)\rvert\geq\delta\right)=0\quad\text{(c'est la loi des grands nombres)}\]
+
+            Autrement dit, plus la taille $n$ d'un échantillon d'une variable aléatoire $X$ est grande, plus l'écart entre la moyenne de cet échantillon et l'espérance de $X$ est faible.
+        \end{Spartie}
+    \end{Gpartie}
+\end{document}
