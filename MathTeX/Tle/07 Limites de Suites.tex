@@ -74,15 +74,15 @@
         \pagebreak
         \begin{Spartie}{Limites Finies / Suites Convergentes} 
             \begin{SSpartie}{Définition} 
-                Une suite ($u_n$) converge vers un réel $l$ si tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
+                Une suite ($u_n$) converge vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
                 Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $l$.
 
                 On dit que $l$ est la limite de la suite ($u_n$) et que la suite est convergente.
 
-                On note $\lim\limits_{n\to +\infty} u_n=l$
+                On note $\lim\limits_{n\to +\infty} u_n=\ell$
 
-                H.P. : $\lim\limits_{n\to +\infty} u_n=l\iff\forall\epsilon >0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]l-\epsilon\,;l+\epsilon\big[\Big)$
+                H.P. : $\lim\limits_{n\to +\infty} u_n=\ell\iff\forall\epsilon >0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\Big)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 \begin{center}$\begin{array}{cc}
@@ -121,8 +121,8 @@
             \begin{SSpartie}{Théorème dit des Gendarmes (Théorème d'Encadrement)}
                 Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang $u_n\leq v_n\leq w_n$
 
-                Si $\lim\limits_{n\to +\infty}u_n=l$ et $\lim\limits_{n\to +\infty}w_n=l$ où $l$ est un réel alors :
-                \[\lim\limits_{n\to +\infty}v_n=l\]
+                Si $\lim\limits_{n\to +\infty}u_n=\ell$ et $\lim\limits_{n\to +\infty}w_n=\ell$ où $\ell$ est un réel alors :
+                \[\lim\limits_{n\to +\infty}v_n=\ell\]
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
                 Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$
@@ -144,7 +144,7 @@
                 Toute suite décroissante et minorée converge vers une limite finie.
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Soit une suite $(u_n)$ croissante et qui converge vers un réel $l$, alors $(u_n)$ est majorée par $l$.
+                Soit une suite $(u_n)$ croissante et qui converge vers un réel $\ell$, alors $(u_n)$ est majorée par $\ell$.
                 \begin{SSSpartie}{Démonstration par l'Absurde} 
                     On suppose que $(u_n)$ est croissante.
                     \begin{SSSSpartie}{Lemme} 
@@ -160,17 +160,17 @@
                             \phantom{Hérédité : }$u_p\leq u_{p+k}\implies u_p\leq u_{p+k}\leq u_{p+k+1}\quad\square$
                         \end{itemize}   
                     \end{SSSSpartie}
-                    On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>l$
+                    On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>\ell$
 
                     Or tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
 
-                    Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $l<b<u_{n_0}$
+                    Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $\ell<b<u_{n_0}$
 
                     Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,;b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
 
                     Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la lemme, $p>n_0\implies u_p\geq u_{n_0}$
 
-                    C'est absurde, donc, $\forall n\in\mathbb{N},\ u_n\leq l\quad\square$
+                    C'est absurde, donc, $\forall n\in\mathbb{N},~u_n\leq\ell\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
             \pagebreak
@@ -187,7 +187,7 @@
                     Donc, $(u_n)$ diverge vers $+\infty$
                     \begin{itemize}
                         \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance, 
-                        \[\lim\limits_{n\to +\infty}u_n=l\implies\forall n\in\mathbb{N},\ u_n\leq l\] \\ $(u_n)$ est majorée par $l$, c'est une contradiction.$\quad\square$
+                        \[\lim\limits_{n\to +\infty}u_n=\ell\implies\forall n\in\mathbb{N},\ u_n\leq\ell\] \\ $(u_n)$ est majorée par $l$, c'est une contradiction.$\quad\square$
                         \\[2ex]
                         \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme : $(u_n)$ croissante, $p,\ n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$ \\ $\forall n\geq n_0,\ u_n\geq u_{n_0}>M$ \\ Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où \[\lim\limits_{n\to +\infty}u_n=+\infty\]
                     \end{itemize}
@@ -211,8 +211,8 @@
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
         \begin{Spartie}{Somme}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.1\textwidth}|w{c}{0.1\textwidth}|w{c}{0.1\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l$ un réel   & $+\infty$ & $-\infty$ \\ \hline \hline
-                $l'$ un réel                                                & $l+l'$        & $+\infty$ & $-\infty$ \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell$ un réel& $+\infty$ & $-\infty$ \\ \hline \hline
+                $\ell'$ un réel                                             & $\ell+\ell'$  & $+\infty$ & $-\infty$ \\ \hline
                 $+\infty$                                                   & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
                 $-\infty$                                                   & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
             \end{tabular}\end{center}
@@ -229,11 +229,11 @@
         \end{Spartie}
         \begin{Spartie}{Produit}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $l'\neq 0$                                                  & $l\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $\ell'\neq 0$                                               & $\ell\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
             0                                                               & 0 & 0 & F.I. & F.I. \\ \hline
-            $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
-                $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}l$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
+            $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
+                $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
             \end{tabular}\end{center}
             \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Produits de Suites}}
             \begin{SSpartie}{Exemple} 
@@ -255,9 +255,9 @@
         \end{Spartie}
         \begin{Spartie}{Quotient}
             \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $l\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $l'\neq 0$                                                  & $\frac{l}{l'}$ & 0 & $\pm\infty\text{\tiny{ selon signe }}l'$ & $\pm\infty\text{\tiny{ selon signe }}l'$ \\ \hline
-                0                                                           & $\pm\infty\text{\tiny{ selon signe }}l\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
+                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$          & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                $\ell'\neq 0$                                               & $\frac{\ell}{\ell'}$  & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
+                0                                                           & $\pm\infty\text{\tiny{ selon signe }}\ell\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
                 $+\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
                 $-\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
             \end{tabular}\end{center}
@@ -273,7 +273,7 @@
     \pagebreak
     \begin{Gpartie}{Limite de Suite et Continuité} 
         \begin{Spartie}{Théorème} 
-            Soit $f$ une fonction continue sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $l$, tel que $\forall n\in\mathbb{N},\ u_n\leq I,\ l\in I$, alors $f(u_n)$ converge vers $f(l)$.
+            Soit $f$ une fonction continue sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, tel que $\forall n\in\mathbb{N},\ u_n\leq I,~\ell\in I$, alors $f(u_n)$ converge vers $f(\ell)$.
             \begin{SSpartie}{Exemple} 
                 Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$
                 
@@ -283,9 +283,9 @@
         \begin{Spartie}{Théorème}
             Soit $f$ une fonction continue sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
             
-            Si la suite $(u_n)$ converge vers un réel $l$, alors $l$ est solution de l'équation $f(x)=x$ (On peut dire que $l$ est un point fixe de $f$).
+            Si la suite $(u_n)$ converge vers un réel $\ell$, alors $l$ est solution de l'équation $f(x)=x$ (On peut dire que $\ell$ est un point fixe de $f$).
             \begin{SSpartie}{Démonstration} 
-                $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(l)$
+                $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(\ell)$
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 Graphiquement, les termes de la suite se rapprochent du point d'intersection $\mathcal{C}_f$ et la droite d'équation $y=x$. Uniquement si la suite converge !

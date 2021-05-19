@@ -74,9 +74,9 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $-\infty$}}
                     \end{center}
                     \pagebreak
-                    \item   On dit que $f$ a pour limite $l$ en $-\infty$ où $l$ est un réel, si pour tout intervalle ouvert $I$ contenant $l$, on peut trouver un réel $A$ tel que si $x\leq A$, $f(x)$ appartient à $I$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives, de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi près de $l$ que l'on veut.
+                    \item   On dit que $f$ a pour limite $\ell$ en $-\infty$ où $\ell$ est un réel, si pour tout intervalle ouvert $I$ contenant $l$, on peut trouver un réel $A$ tel que si $x\leq A$, $f(x)$ appartient à $I$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives, de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi près de $\ell$ que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to-\infty}f(x)=l\]
+                    On note : \[\lim\limits_{x\to-\infty}f(x)=\ell\]
                     \begin{center}
                         % \begin{tikzpicture}
                             \includegraphics[width=5cm]{example-image}
@@ -84,11 +84,11 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $l$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
-                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
+                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon~;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère. $\lim\limits_{x\to-\infty}f(x)=l$ alors $\mathcal{C}$ admet une asymptote horizontale en $-\infty$ d'équation $y=l$.
+                Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère. $\lim\limits_{x\to-\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une asymptote horizontale en $-\infty$ d'équation $y=\ell$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
@@ -121,7 +121,7 @@
                 \vspace*{2ex}
                 \item $f(x)$ est aussi proche que l'on veut d'un réel $l$, on dit que $f$ a pour limite $l$ en $a$.
                 
-                On note : \[\lim\limits_{x\to a}f(x)=l\]
+                On note : \[\lim\limits_{x\to a}f(x)=\ell\]
             \end{itemize}
             \begin{SSpartie}{Remarque} 
                 Si $f$ est continue en $a$, $l=f(a)$.
@@ -216,38 +216,38 @@
     \end{Gpartie}
     \begin{Gpartie}{Opérations sur les Limites} 
         \begin{Spartie}{Limites de Somme, Produit et Quotient} 
-            Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $l$ et $l'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
+            Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $\ell$ et $\ell'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
             N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$.
             \begin{SSpartie}{Limite de Somme} 
                 \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
-                    Si $\lim f$     & $l$   & $l$       & $l$       & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
-                    Si $\lim g$     & $l'$  & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\\hline
-                    $\lim (f+g)$    & $l+l'$& $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.      \\\hline
+                    Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
+                    Si $\lim g$     & $\ell'$       & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\\hline
+                    $\lim (f+g)$    & $\ell+\ell'$  & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.      \\\hline
                 \end{tabular}\end{center}
                 \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites de Sommes de Fonctions}}
             \end{SSpartie}
             \begin{SSpartie}{Limite d'un Produit} 
-                \begin{center}\begin{tabular}{ |m{0.13\linewidth}||*{9}{>{\centering\arraybackslash}m{0.06\linewidth}| }} \hline
-                    Si $\lim f$         & $l$           & $l>0$     & $l>0$     & $l<0$     & $l<0$     & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
-                    Si $\lim g$         & $l'$          & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
-                    $\lim (f\times g)$  & $l\times l'$  & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
+                \begin{center}\begin{tabular}{ |m{0.12\linewidth}||*{9}{>{\centering\arraybackslash}m{0.061\linewidth}| }} \hline
+                    Si $\lim f$         & $\ell$            & $\ell>0$  & $\ell>0$  & $\ell<0$  & $\ell<0$  & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
+                    Si $\lim g$         & $\ell'$           & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
+                    $\lim (fg)$  & $\ell\times\ell'$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
                 \end{tabular}\end{center}
                 \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Produits de Fonctions}}
             \end{SSpartie}
             \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ n'est pas nulle} 
                 \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
-                    Si $\lim f$     & $l$           & $l$           & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
-                    Si $\lim g$     & $l'\neq0$     & $\pm\infty$   & $l'>0$    & $l'<0$    & $l'>0$    & $l'<0$    & $\pm\infty$ \\\hline
-                    $\lim (f/g)$    & $\frac{l}{l'}$& $0$           & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & F.I. \\\hline
+                    Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
+                    Si $\lim g$     & $\ell'\neq0$          & $\pm\infty$   & $\ell'>0$ & $\ell'<0$ & $\ell'>0$ & $\ell'<0$ & $\pm\infty$ \\\hline
+                    $\lim (f/g)$    & $\frac{\ell}{\ell'}$  & $0$           & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & F.I. \\\hline
                 \end{tabular}\end{center}
                 \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ n'est pas nulle}}
             \end{SSpartie}
             \pagebreak
             \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ est nulle} 
                 \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{5}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
-                    Si $\lim f$ & $l>0$ ou $+\infty$    & $l>0$ ou $+\infty$    & $l<0$ ou $-\infty$    & $l<0$ ou $-\infty$    & $0$ \\\hline
-                    Si $\lim g$ & $0^+$                 & $0^-$                 & $0^+$                 & $0^-$                   & $0$ \\\hline
-                    $\lim (f/g)$& $+\infty$           & $-\infty$           & $-\infty$           & $+\infty$               & F.I. \\\hline
+                    Si $\lim f$ & $\ell>0$ ou $+\infty$ & $\ell>0$ ou $+\infty$ & $\ell<0$ ou $-\infty$ & $\ell<0$ ou $-\infty$ & $0$ \\\hline
+                    Si $\lim g$ & $0^+$                 & $0^-$                 & $0^+$                 & $0^-$                 & $0$ \\\hline
+                    $\lim (f/g)$& $+\infty$             & $-\infty$             & $-\infty$             & $+\infty$             & F.I. \\\hline
                 \end{tabular}\end{center}
                 \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ est nulle}}
             \end{SSpartie}
@@ -294,7 +294,7 @@
             \begin{SSpartie}{Théorème} 
                 Soient $f$, $g$ et $h$ trois fonctions telles que pour tout $x$ voisin de $a$, $g(x)\leq f(x)\leq h(x)$
 
-                Si $\lim\limits_{x\to a}g(x)=l\quad$ et $\quad\lim\limits_{x\to a}h(x)=l\quad$ où $l$ est un réel, alors $\quad\lim\limits_{x\to a}f(x)=l$
+                Si $\lim\limits_{x\to a}g(x)=\ell\quad$ et $\quad\lim\limits_{x\to a}h(x)=\ell\quad$ où $\ell$ est un réel, alors $\quad\lim\limits_{x\to a}f(x)=\ell$
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}

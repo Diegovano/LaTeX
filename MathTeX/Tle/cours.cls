@@ -30,6 +30,12 @@
 \newcommand{\dt}{\,\mathrm{d}t}
 \newcommand{\dx}{\,\mathrm{d}x}
 
+\let\oldgeq\geq
+\let\oldleq\leq
+
+\let\geq\geqslant
+\let\leq\leqslant
+
 \setcounter{secnumdepth}{5}
 
 \setlength{\parindent}{0pt}
