@@ -19,11 +19,29 @@
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
 \RequirePackage[l2tabu, orthodox]{nag}
-\RequirePackage{microtype}
+\RequirePackage[babel=true, kerning=true]{microtype}
 \RequirePackage{mathtools}
 \RequirePackage[shortlabels]{enumitem}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\RequirePackage{mathrsfs}
 \DecimalMathComma
 
+\definecolor{qqwuqq}{rgb}{0,0.4,0}
+
+\pgfplotsset{
+    every axis/.style={
+        xticklabel style = {fill=white},
+        yticklabel style = {fill=white},
+        axis equal image,
+        axis lines=center,
+        grid=major,
+        xlabel=$x$,
+        ylabel=$y$,
+    }
+}
 
 \newcommand{\me}{\mathrm{e}} % exp
 \newcommand{\Pde}{\mathrm{P}} % P de ... P(X=5)
