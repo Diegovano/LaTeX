@@ -23,6 +23,7 @@
 \RequirePackage{mathtools}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage{tikz}
+\usetikzlibrary{intersections}
 \usetikzlibrary{arrows}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.15}
@@ -40,6 +41,17 @@
         grid=major,
         xlabel=$x$,
         ylabel=$y$,
+    }
+}
+
+\tikzset{
+    dot/.style={
+        draw=black,
+        fill=darkgray,
+        circle,
+        minimum size=2pt,
+        inner sep=0pt,
+        solid,
     }
 }
 
