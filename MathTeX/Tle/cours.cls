@@ -15,12 +15,13 @@
 \RequirePackage[upright]{fourier}
 \RequirePackage{caption}
 \RequirePackage[headsepline, plainheadsepline, automark]{scrlayer-scrpage}
-\RequirePackage{ulem}
+\RequirePackage[normalem]{ulem}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage[babel=true, kerning=true]{microtype}
 \RequirePackage{mathtools}
+\RequirePackage{diagbox}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage{tikz}
 \usetikzlibrary{intersections}

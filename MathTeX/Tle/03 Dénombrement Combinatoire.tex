@@ -1,5 +1,6 @@
 \documentclass{cours}
 
+
 \title{Dénombrement et Combinatoire}
 \author{Diego Van Overberghe}
 
@@ -8,42 +9,42 @@
 
     \begin{Gpartie}{Parties d'un Ensemble}
         \begin{Spartie}{Définition}
-            $E$ étant un ensemble, la notation $\subset$ signifie ``Inclus Dans''.
+            $E$ étant un ensemble, la notation $\subset$ signifie \og inclus dans \fg{}.
             \[A\subset E\]
             C'est-à-dire que tout élément de $A$ appartient à $E$. \\
             On dit alors que $A$ est une partie, ou sous-ensemble de $E$. \\
-            L'Ensemble vide, noté $\varnothing$ est une partie de tout ensemble. \\
+            L'Ensemble vide, noté $\varnothing$ est une \emph{partie} de tout ensemble. \\
             L'Ensemble des parties de $E$ est noté $\mathcal{P}(E)$.
             \begin{SSpartie}{Exemple}
-                Si $E=\big\{x\,;y\big\}$ est un ensemble de deux éléments :
-                \[\mathcal{P}(E)=\Big\{\varnothing\,,\big\{x\big\}\,,\big\{y\big\}\,,\big\{x\,;y\big\}\Big\}\]
+                Si $E=\big\{\,x~;\,y~\big\}$ est un ensemble de deux éléments :
+                \[\mathcal{P}(E)=\Big\{\,\varnothing~,\,\big\{\,x~\big\}~,\,\big\{\,y~\big\}~,\,\big\{\,x~;\,y~\big\}~\Big\}\]
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Définition}
             Un ensemble fini est un ensemble dont le nombre d'éléments est fini.
         \end{Spartie}
         \begin{Spartie}{Définition}
-            On appelle cardinal, noté ``Card'', le nombre d'éléments d'un ensemble fini ou d'une partie / sous-ensemble.
+            On appelle cardinal, noté \og Card \fg{}, le nombre d'éléments d'un ensemble fini d'une partie (ou sous-ensemble).
             \begin{SSpartie}{Exemple}
-                Si un ensemble $E$ possède $n$ éléments, alors on peut noter $\text{Card}(E)=n$. \\
-                Pour toute partie $A\subset E$, $\text{Card}(A)\leq\text{Card}(E)$.
+                Si un ensemble $E$ possède $n$ éléments, alors on peut noter $\mathrm{Card}\,(E)=n$. \\
+                Pour toute partie $A\subset E$, $\mathrm{Card}\,(A)\leq\mathrm{Card}\,(E)$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété (Principe Additif)}
-            Si $A$ et $B$ sont deux parties quelconques d'un ensemble fini, $E$, alors :
-            \[\text{Card}(A\cup B)=\text{Card}(A)+\text{Card}(B)-\text{Card}(A\cap B)\]
-            De plus, si $A_1, A_2,\dotsc, A_p$ sont $p$ parties deux à deux disjointes d'un ensemble fini, alors :
-            \[\text{Card}(A_1\cup A_2\cup\dotsb\cup A_p)=\text{Card}(A_1)+\text{Card}(A_2)+\dotsb+\text{Card}(A_p)\]
+            Si $A$ et $B$ sont deux parties quelconques d'un ensemble fini $E$, alors :
+            \[\mathrm{Card}\,(A\cup B)=\mathrm{Card}\,(A)+\mathrm{Card}\,(B)-\mathrm{Card}\,(A\cap B)\]
+            De plus, si $A_1~,~A_2~,\dotsc,~A_p$ sont $p$ parties \emph{deux à deux disjointes} d'un ensemble~fini,~alors :
+            \[\mathrm{Card}\,\left(A_1\cup A_2\cup\dotsb\cup A_p\right)=\mathrm{Card}\,(A_1)+\mathrm{Card}\,(A_2)+\dotsb+\mathrm{Card}\,\left(A_p\right)\]
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Soit $n\in\mathbb{N}$, et $E$ un ensemble tel que $\text{Card}(E)=n$. Alors, $E$ possède $2^n$ parties. Autrement dit :
-            \[\text{Card}(\mathcal{P}(E))=2^n\]
+            Soit $n\in\mathbb{N}$, et $E$ un ensemble tel que $\mathrm{Card}\,(E)=n$. Alors, $E$ possède $2^n$ parties. Autrement dit :
+            \[\mathrm{Card}\,\big(\mathcal{P}(E)\big)=2^n\]
             \begin{SSpartie}{Démonstration par Récurrence}
                 \begin{SSSpartie}{Initialisation}
                     Pour $n=0$, $E=\varnothing$, donc la seule partie de $E$ est $\big\{\varnothing\big\}$ et $1=2^0$.
                 \end{SSSpartie}
                 \begin{SSSpartie}{Hérédité}
-                    Supposons que tout ensemble à $k$ élément, où $k$ est un certain entier naturel, admet $2^k$ parties.
+                    Supposons que tout ensemble à $k$ éléments, où $k$ est un certain entier naturel, admet $2^k$ parties.
 
                     Alors, soit $E$, un ensemble à $k+1$ éléments.
 
@@ -64,12 +65,12 @@
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
-                \item $E$ et $F$ étant deux ensembles, le produit cartésien $E\times F$ est l'ensemble de couples $(a\,;b)$, où $a\in E$ et $b\in F$.
-                \item $E$, $F$ et $G$ étant trois ensembles, le produit cartésien $E\times F\times G$ est l'ensemble des triplets $(a\,;b\,;c)$ où $a\in E$, $b\in F$ et $c\in G$.
+                \item $E$ et $F$ étant deux ensembles, le \emph{produit cartésien} $E\times F$ est l'ensemble de couples $(\,a~;\,b~)$, où $a\in E$ et $b\in F$.
+                \item $E$, $F$ et $G$ étant trois ensembles, le \emph{produit cartésien} $E\times F\times G$ est l'ensemble des triplets $(\,a~;\,b~;\,c~)$ où $a\in E$, $b\in F$ et $c\in G$.
             \end{itemize}
             \begin{SSpartie}{Cas Général}
                 \begin{itemize}
-                    \item Le produit cartésien $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1,\,E_2,\,\dotsc,\,E_n$ est l'ensemble des n-uplets $(a_1\,;a_2\,;\dotsc\,;a_n)$ où $a_1\in E_1,\,a_2\in E_2,\,\dotsc,\,a_n\in E_n$.
+                    \item Le \emph{produit cartésien} $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1,\,E_2,\,\dotsc,\,E_n$ est l'ensemble des \emph{n-uplets} $(\,a_1~;\,a_2~;\dotsc;\,a_n~)$ où $a_1\in E_1,\,a_2\in E_2,\,\dotsc,\,a_n\in E_n$.
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
@@ -77,26 +78,26 @@
             $E\times E$ se note $E^2$, $\overbrace{E\times E\times\dotsb\times E}^\text{$k$ fois}$ se note $E^k$.
         \end{Spartie}
         \begin{Spartie}{Exemples}
-            Soit $E=\big\{a\,;b\,;c\big\}$ et $F=\big\{1\,;2\big\}$
+            Soit $E=\big\{\,a~;\,b~;\,c~\big\}$ et $F=\big\{\,1~;\,2~\big\}$
             \begin{itemize}
-                \item $E\times F=\big\{(a\,;1)\,;(a\,;2)\,;(b\,;1)\,;(b\,;2)\,;(c\,;1)\,;(c\,;2)\big\}$
-                \item $F\times F=\big\{(1\,;1)\,;(1\,;2)\,;(2\,;1)\,;(2\,;2)\big\}$
-                \item $(a\,;b\,;b\,;a\,;c)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$
+                \item $E\times F=\big\{\,(\,a~;\,1~)~;\,(\,a~;\,2~)~;\,(\,b~;\,1~)~;\,(\,b~;\,2~)~;\,(\,c~;\,1~)~;\,(\,c~;\,2~)~\big\}$
+                \item $F\times F=\big\{\,(\,1~;\,1~)~;\,(\,1~;\,2~)~;\,(\,2~;\,1~)~;\,(\,2~;\,2~)~\big\}$
+                \item $(\,a~;\,b~;\,b~;\,a~;\,c~)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété}
             Si $E_1,\,E_2,\,\dotsc,\,E_n$ sont $n$ ensembles finis :
-            \[\text{Card}(E_1\times E_2\times\dotsb\times E_n)=\text{Card}(E_1)\times\text{Card}(E_2)\times\dotsb\times\text{Card}(E_n)\]
+            \[\mathrm{Card}\,(E_1\times E_2\times\dotsb\times E_n)=\mathrm{Card}\,(E_1)\times\mathrm{Card}\,(E_2)\times\dotsb\times\mathrm{Card}\,(E_n)\]
             \begin{SSpartie}{Cas Particulier}
                 Si $E$ est un ensemble fini, pour tout $k\in\mathbb{N^*}$ :
-                \[\text{Card}(E^k)=\big(\text{Card}(E)\big)^k\]
+                \[\mathrm{Card}\,\left(E^k\right)=\big(\mathrm{Card}\,(E)\big)^k\]
             \end{SSpartie}
             \pagebreak
             \begin{SSpartie}{Exemples}
                 Dans les exemples précédents :
                 \begin{itemize}
-                    \item $\text{Card}(E\times F)=6=\text{Card}(E)\times\text{Card}(F)$
-                    \item $\text{Card}(F^2)=4=2^2=\big(\text{Card}(F)\big)^2$
+                    \item $\mathrm{Card}\,(E\times F)=6=\mathrm{Card}\,(E)\times\mathrm{Card}\,(F)$
+                    \item $\mathrm{Card}\,\left(F^2\right)=4=2^2=\big(\mathrm{Card}\,(F)\big)^2$
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
@@ -104,12 +105,12 @@
     \pagebreak[3]
     \begin{Gpartie}{Permutations}
         \begin{Spartie}{Définition}
-            Soit $E$, un ensemble à $n$ éléments, une permutation est un n-uplet d'éléments distincts de $E$.
+            Soit $E$, un ensemble à $n$ éléments, une \emph{permutation} est un n-uplet d'éléments distincts de $E$.
 
             Autrement dit, une permutation est une façon d'ordonner les $n$ éléments de $E$.
             \begin{SSpartie}{Exemple}
-                On considère l'ensemble $G=\big\{a\,;b\,;c\big\}$ \\ Ses permutations sont :
-                \[(a\,;b\,;c),\,(a\,;c\,;b),\,(b\,;a\,;c),\,(b\,;c\,;a),\,(c\,;a\,;b),\,(c\,;b\,;a)\]
+                On considère l'ensemble $G=\big\{\,a~;\,b~;\,c~\big\}$. \\ Ses permutations sont :
+                \[(\,a~;\,b~;\,c~)~,\,(\,a~;\,c~;\,b~),\,(\,b~;\,a~;\,c~)~,\,(\,b~;\,c~;\,a~)~,\,(\,c~;\,a~;\,b~)~,\,(\,c~;\,b~;\,a)~\]
                 $G$ admet donc 6 permutations.
             \end{SSpartie}
         \end{Spartie}
@@ -129,7 +130,7 @@
                     Un ensemble à un élément admet une permutation, et $1! =1$.
                 \end{SSSpartie}
                 \begin{SSSpartie}{Hérédité}
-                    Supposons que tout ensemble à $n$ élément ($n$ fixé) admette $n!$ permutations.
+                    Supposons que tout ensemble à $n$ élément ($n$ fixe) admette $n!$~permutations.
 
                     Soit $E$, un ensemble à $n+1$ éléments. \\
                     On choisit un élément $x$ de $E$. \\
@@ -153,7 +154,7 @@
             Le nombre de combinaisons à $p$ éléments de $E$ est égal à $\binom{n}{p}$, où :
             \[\binom{n}{p}=\dfrac{n!}{p!(n-p)!}\]
             \[\binom{n}{p}=\dfrac{n(n-1)\times\dotsb\times(n-p+1)}{p!}\]
-            $\dbinom{n}{p}$ est appelé coefficient binomial et il se lit ``$p$ parmi $n$''.
+            $\dbinom{n}{p}$ est appelé \emph{coefficient binomial} et il se lit \og $p$ parmi $n$ \fg{}.
             \begin{SSpartie}{Explication}
                 Lorsqu'on choisit $p$ éléments dans un ensemble à $n$ éléments, on a $n$ choix pour le premier, $n-1$ choix pour le deuxième, etc.\ mais ainsi, les $p$ éléments sont ordonnés.
 
@@ -180,7 +181,7 @@
 
                 Soit $x$ un élément de $E$.
 
-                Alors il y a deux ``familles'' de parties : celles qui contiennent $x$ et celles qui ne le contiennent pas.
+                Alors il y a deux \og familles \fg{} de parties : celles qui contiennent $x$ et celles qui ne le contiennent pas.
 
                 Or $E\setminus\big\{x\big\}$ contient $n$ éléments.
 
@@ -188,15 +189,22 @@
 
                 En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent $x$.
 
-                Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).
+                Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).$\quad\square$
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Triangle de Pascal}
             \begin{center}
-                % \begin{tikzpicture}
-                    \includegraphics{example-image}
-                    \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de Pascal}}
-                % \end{tikzpicture}
+                \begin{tabular}{ >{\centering\arraybackslash}m{12pt} | *{7}{>{\centering\arraybackslash}m{12pt}}}
+                    \diagbox[innerwidth=12pt, height=1.5\line, font=\footnotesize]{\raisebox{-3pt}{n}}{\raisebox{8pt}{p}}  & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\hline
+                    0 & 1 &   &   &   &   &   &   \\
+                    1 & 1 & 1 &   &   &   &   &   \\
+                    2 & 1 & 2 & 1 &   &   &   &   \\
+                    3 & 1 & 3 & 3 & 1 &   &   &   \\
+                    4 & 1 & 4 & 6 & 4 & 1 &   &   \\
+                    5 & 1 & 5 & 10& 10& 5 & 1 &   \\
+                    6 & 1 & 6 & 15& 20& 15& 6 & 1 \\
+                \end{tabular}
+                \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de Pascal}}
             \end{center}
         \end{Spartie}
         \begin{Spartie}{Propriété}

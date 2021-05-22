@@ -11,7 +11,7 @@
 
     \begin{Gpartie}{Définition}
         Soit $f$, définie sur un intervalle $I$, et soit $a$, un réel de $I$.
-        La fonction $f$ est continue si et seulement si : \[\boxed{\lim_{x \to a} f(x)=f(a)}\]
+        La fonction $f$ est \emph{continue} si et seulement si : \[\boxed{\lim_{x \to a} f(x)=f(a)}\]
         $f$ est continue sur l'intervalle $I$, si et seulement si, quel que soit le réel $x\in I$, $f$ est continue en $x$.
 
         H.P.: $\quad\forall\epsilon >0,~\exists\alpha >0,~\forall x\in\big]~a-\alpha~;~a+\alpha~\big[,~f(x)\in\big]~f(a)-\epsilon~;~f(a)+\epsilon~\big[$
@@ -51,12 +51,12 @@
 
     \begin{Gpartie}{Théorème des Valeurs Intermédiaires}
         \begin{Spartie}{Théorème}
-            Si une fonction $f$ est continue sur un intervalle $\big[a\,~;~b\,\big]$ alors, pour tout réel $k\in\Big[\mathrm{min}\,\big(f(a)\,~;~f(b)\,\big)\,~;~\mathrm{max}\,\big(f(a)\,~;~f(b)\,\big)\Big]$, il existe au moins un réel $c\in\big[a\,~;~b\,\big]$, tel~que $f(c)=k$.
+            Si une fonction $f$ est continue sur un intervalle $\big[a\,~;~b\,\big]$ alors, pour tout réel $k\in\Big[\mathrm{min}\,\big(f(a)\,~;~f(b)\,\big)\,~;~\mathrm{max}\,\big(f(a)\,~;~f(b)\,\big)\Big]$, il existe \emph{au moins} un réel $c\in\big[a\,~;~b\,\big]$, tel~que $f(c)=k$.
 
             C'est-à-dire, pour tout réel $k$, compris entre $f(a)$ et $f(b)$, il existe un réel $c\in\big[a\,~;~b\,\big]$, tel que $f(c)=k$.
             \begin{center}
                 \begin{tikzpicture}[
-                    scale=0.9,
+                    scale=1.5,
                     % dot/.style={
                     %     draw=black,
                     %     fill=darkgray,
@@ -89,10 +89,11 @@
             \end{center}
             Pour tout $k$ appartenant à $\big[f(b)\,~;~f(a)\,\big]$, il existe au moins un réel $c\in\big[a\,~;~b\,\big]$, tel que $f(c)=k$.
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Corollaire}
-            Si une fonction $f$ est continue et strictement monotone sur un intervalle $\big[a\,~;~b\,\big]$, alors, pour tout $k\in\Big[\mathrm{min}\,\big(f(a)\,~;~f(b)\,\big)\,~;~\mathrm{max}\,\big(f(a)\,~;~f(b)\,\big)\Big]$, il existe un \textit{unique} réel $c\in\big[a\,~;~b\,\big]$, tel que $f(c)=k$. 
+            Si une fonction $f$ est \textit{continue} et \textit{strictement monotone} sur un intervalle $\big[a\,~;~b\,\big]$, alors, pour tout $k\in\Big[\mathrm{min}\,\big(f(a)\,~;~f(b)\,\big)\,~;~\mathrm{max}\,\big(f(a)\,~;~f(b)\,\big)\Big]$, il existe un \textit{unique} réel $c\in\big[a\,~;~b\,\big]$, tel que $f(c)=k$. 
             \begin{center}
-                \begin{tikzpicture}
+                \begin{tikzpicture}[scale=1.5]
                     \begin{axis}[
                         xmin=-0.5,  xmax=1.5,
                         ymin=-0.5,  ymax=2.5,
@@ -107,7 +108,7 @@
 
                         \draw[dashed, black, thick]
                             (0,0.21) node [label={[label distance=-2pt]180:$f(a)$}] {} -- (0.2,0.21) node [dot] {} -- (0.21,0) node [label={[label distance=-2pt]270:$a$}] {}
-                            (0,2) node [label={[label distance=-2pt]180:$f(b)$}] {} -- (1,2) node [dot] {} -- (1,0) node [label={[label distance=-5pt]270:$b$}] {};
+                            (0,2) node [label={[label distance=-2pt]180:$f(b)$}] {} -- (1,2) node [dot] {} -- (1,0) node [label={[label distance=-4.5pt]270:$b$}] {};
                     \end{axis}
                 \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Corollaire du Théorème \linebreak des Valeurs Intermédiaires}}
