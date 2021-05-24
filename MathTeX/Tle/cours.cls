@@ -29,9 +29,16 @@
 \usetikzlibrary{intersections}
 \usetikzlibrary{arrows}
 \RequirePackage{pgfplots}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.18}
 \RequirePackage{mathrsfs}
+\RequirePackage{float}
 \DecimalMathComma
+
+\def\frenchtablename{Tableau}
+
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
 
 \definecolor{qqwuqq}{rgb}{0,0.4,0}
 
@@ -134,6 +141,7 @@
 
 \renewcommand{\ULdepth}{4pt}
 
+\makeatletter
 \renewcommand{\maketitle}[1]{\raggedright
     \setcounter{chapter}{#1}
     \chapter*{Chapitre \Roman{chapter}}
@@ -144,26 +152,48 @@
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{17pt}
 }
+\makeatother
 
 \newenvironment{Gpartie}[1]
-    {\section{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
-    {\end{adjustwidth}}
+    {\section{#1}
+        \begin{adjustwidth}{2em}{0pt}
+    \nointerlineskip\leavevmode\!}
+    {
+        \end{adjustwidth}
+    }
 
 \newenvironment{Spartie}[1]
-    {\subsection{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
-    {\end{adjustwidth}}
+    {\subsection{#1}
+        \begin{adjustwidth}{2em}{0pt}
+    \nointerlineskip\leavevmode\!}
+    {
+        \end{adjustwidth}
+    }
 
 \newenvironment{SSpartie}[1]
-    {\subsubsection{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
-    {\end{adjustwidth}}
+    {\subsubsection{#1}
+        \begin{adjustwidth}{2em}{0pt}
+    \nointerlineskip\leavevmode\!}
+    {
+        \end{adjustwidth}
+    }
 
 \newenvironment{SSSpartie}[1]
-    {\paragraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
-    {\end{adjustwidth}}
+    {\paragraph{#1}
+        \begin{adjustwidth}{2em}{0pt}
+    \nointerlineskip\leavevmode\!}
+    {
+        \end{adjustwidth}
+    }
 
 \newenvironment{SSSSpartie}[1]
-    {\subparagraph{#1}\begin{adjustwidth}{2em}{0pt}\nointerlineskip\leavevmode\!}
-    {\end{adjustwidth}}
+    {\subparagraph{#1}
+        \begin{adjustwidth}{2em}{0pt}
+    \nointerlineskip\leavevmode\!}
+    {
+        \end{adjustwidth}
+    }
+
 \makeatletter
 \ihead*{Chapitre \Roman{chapter} : \@title}
 \ohead*{Spé Mathématiques T\textsuperscript{le}}

@@ -14,11 +14,21 @@
                 \begin{itemize}
                     \item   On dit que $f$ a pour limite $+\infty$ en $+\infty$ si pour tout réel $M$ positif, il existe un réel $A$, tel que $x>A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi grand que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to +\infty}f(x)=+\infty\] 
+                    On note : \[\boxed{\lim\limits_{x\to +\infty}f(x)=+\infty}\] 
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \begin{tikzpicture}[scale=0.8]
+                            \begin{axis}[
+                                xmin=-2, xmax=4,
+                                ymin=-1, ymax=6,
+                                xtick=\empty,
+                                ytick=\empty
+                            ]
+                                \addplot[blue, very thick, samples=50]{e^(x-1.5)};
+                                \addplot[black]{5};
+                                \draw (0,5) node[anchor=north east] {M};
+                                \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (3.1,5);
+                            \end{axis}
+                        \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
@@ -34,7 +44,7 @@
                     \vspace*{2ex}
                     \item   On dit que $f$ a pour limite $l$ en $+\infty$ où $l$ est un réel si pour tout intervalle ouvert $I$ contenant $l$, il existe un réel $A$ tel que $x>A$ implique $f(x)\in I$ \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi près de $l$ que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to +\infty}f(x)=l\]
+                    On note : \[\lim\limits_{x\to +\infty}f(x)=\ell\]
                     \begin{center}
                         % \begin{tikzpicture}
                             \includegraphics[width=5cm]{example-image}
