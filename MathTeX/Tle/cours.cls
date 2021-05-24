@@ -18,6 +18,8 @@
 \RequirePackage[normalem]{ulem}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage[babel=true, kerning=true]{microtype}
 \RequirePackage{mathtools}
@@ -55,6 +57,9 @@
         solid,
     }
 }
+
+\newcolumntype{M}{>{\centering\arraybackslash}{m}}
+\newcolumntype{C}{>{\centering\arraybackslash}{c}}
 
 \newcommand{\me}{\mathrm{e}} % exp
 \newcommand{\Pde}{\mathrm{P}} % P de ... P(X=5)

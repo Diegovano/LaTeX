@@ -7,40 +7,41 @@
     \maketitle{5}
 
     \begin{Gpartie}{Définiton} 
-        Soient $u$ une fonction définie sur un intervalle $I$ et $f$ une fonction définie sur un intervalle $J$, $I$ étant tel que pour tout réel $x$ de $I$, $u(x)\in J$
+        Soient $u$ une fonction définie sur un intervalle $I$ et $f$ une fonction définie sur un intervalle $J$, $I$ étant tel que pour tout réel $x$ de $I$, $u(x)\in J$.
 
-        La fonction composée de $u$ par $f$, notée $f\circ u$ est la fonction définie sur $I$ par :
-        \[(f\circ u)(x)=f\big(u(x)\big)\]
+        La fonction \emph{composée} de $u$ par $f$, notée $f\circ u$ est la fonction définie sur $I$ par :
+        \[\boxed{(f\circ u)(x)=f\big(u(x)\big)}\]
 
-        Schéma : \qquad
-        $\begin{aligned}[t]
-            \text{Intervalles}  &:  &I  &\rightarrow    &J      &\rightarrow    &\mathbb{R} \\
-            \text{Variables}    &:  &x  &\rightarrow    &u(x)   &\rightarrow    &f\big(u(x)\big)
-        \end{aligned}$
-        \vspace{2ex}
+        \begin{center}\begin{tabular}{ p{0.15\linewidth} *{2}{M{0.05\linewidth} M{0.025\linewidth} } M{0.1\linewidth} }
+            \multicolumn{2}{c}{}& $u$           &       & $f$           &                   \\
+            Intervalles :& $I$   & $\rightarrow$ & $J$   & $\rightarrow$ & $\mathbb{R}$      \\
+            Variables :  & $x$   & $\rightarrow$ & $u(x)$& $\rightarrow$ & $f\big(u(x)\big)$ \\
+        \end{tabular}\end{center}
+        \parbox{\linewidth}{\captionof{figure}{\centering Schéma de la Fonction Composée}}
         \begin{Spartie}{Exemples} 
-            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln(x)$ est définie sur $\big]0\,;+\infty\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},\ u(x)\in\big]0\,;+\infty\big[$, et $(f\circ u)(x)=\ln(x^2+1)$.
+            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln\,(x)$ est définie sur $\big]\,0~;~+\infty\,\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},~u(x)\in\big]\,0~;~+\infty\,\big[$, et $(f\circ u)(x)=\ln\,\left(x^2+1\right)$.
 
-            La fonction $g:x\mapsto g(x)=\sqrt{5x-3}$ est la fonction composée de la fonction affine $x\mapsto 5x-3$ et de la fonction racine carrée. Elle est définie sur $\Big[\frac{3}{5}\,;+\infty\Big]$, intervalle sur lequel $5x-3\in\mathbb{R^{+}}$
+            La fonction $g:x\mapsto g(x)=\sqrt{5x-3}$ est la fonction composée de la fonction affine $x\mapsto 5x-3$ et de la fonction racine carrée. Elle est définie sur $\Big[\frac{3}{5}\,;+\infty\Big]$, intervalle sur lequel $5x-3\in\mathbb{R^{+}}$.
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Dérivée d'une Fonction Composée} 
         \begin{Spartie}{Théorème} 
-            Si $u$ est dérivable en un réel $a$ et $f$ est dérivable en $u(a)$ alors $f\circ u$ est dérivable en $a$ et $(f\circ u)'(a)=u'(a)\times f'\big(u(a)\big)$
+            Si $u$ est dérivable en un réel $a$ et $f$ est dérivable en $u(a)$ alors $f\circ u$ est dérivable en~$a$ et $(f\circ u)'(a)=u'(a)\times f'\big(u(a)\big)$.
 
-            Si $u$ est dérivable sur $I$ et $f$ est dérivable sur $J$, $I$ étant tel que, pour tout réel $x$ de $I$, $u(x)\in J$ alors $f\circ u$ est dérivable sur $I$, et pour tout réel $x\in I$ : \[(f\circ u)'(x)=u'(x)\times f'\big(u(x)\big)\] 
+            Si $u$ est dérivable sur $I$ et $f$ est dérivable sur $J$, $I$ étant tel que, pour tout réel $x$ de $I$, $u(x)\in J$ alors $f\circ u$ est dérivable sur $I$, et pour tout réel $x\in I$ : \[\boxed{(f\circ u)'(x)=u'(x)\times f'\big(u(x)\big)}\] 
         \end{Spartie}
         \begin{Spartie}{Exemples} 
-            Si on appelle $h$ la fonction par $h:x\mapsto h(x)=\ln(x^2+1)$, alors $h$ est dérivable sur $\mathbb{R}$, et pour tout réel $x$, $h'(x)=\frac{2x}{x^2+1}$
+            Si on appelle $h$ la fonction par $h:x\mapsto h(x)=\ln(x^2+1)$, alors $h$ est dérivable sur $\mathbb{R}$, et pour tout réel $x$, $h'(x)=\frac{2x}{x^2+1}$.
 
-            La fonction $g$ ci-dessus, définie par $g:x\mapsto g(x)=\sqrt{5x-3}$, est dérivable sur $\Big]\frac{3}{5}\,;+\infty\Big[$, et pour tout $x\in\Big]\frac{3}{5}\,;+\infty\Big[$, $g'(x)=\frac{5}{2\sqrt{5x-3}}$
+            La fonction $g$ ci-dessus, définie par $g:x\mapsto g(x)=\sqrt{5x-3}$, est dérivable sur~$\Big]\frac{3}{5}\,;+\infty\Big[$, et pour tout $x\in\Big]\frac{3}{5}\,;+\infty\Big[$, $g'(x)=\frac{5}{2\sqrt{5x-3}}$.
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Limites d'une Fonction Composée} 
         \begin{Spartie}{Théorème} 
             Soient $a$, $b$ et $c$ sont trois réels, ou $\pm\infty$
 
-            Si \qquad$\lim\limits_{x\to a}u(x)=b$\qquad et \qquad $\lim\limits_{X\to b}f(X)=c$ \qquad alors, \qquad $\lim\limits_{x\to a}f\big(u(x)\big)=c$
+            Si \qquad$\lim\limits_{x\to a}u(x)=\boldsymbol{b}$\qquad et \qquad $\lim\limits_{X\to \boldsymbol{b}}f(X)=c$ \qquad alors, \qquad $\boxed{\lim\limits_{x\to a}f\big(u(x)\big)=c}$
         \end{Spartie}
         \begin{Spartie}{Exemple} 
             Soit $g:x\mapsto g(x)=\me^{-x^2}$

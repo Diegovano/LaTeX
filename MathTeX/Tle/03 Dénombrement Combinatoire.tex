@@ -56,7 +56,7 @@
 
                     En adjoignant $x$ à toutes ces parties, on obtient toutes les parties qui contiennent $x$, donc il y en a également $2^k$.
                     
-                    Ainsi, le nombre de parties de $E$ est de $2^k+2^k=2^{k+1}\quad\square$
+                    Ainsi, le nombre de parties de $E$ est de $2^k+2^k=2^{k+1}$.$\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
@@ -78,7 +78,7 @@
             $E\times E$ se note $E^2$, $\overbrace{E\times E\times\dotsb\times E}^\text{$k$ fois}$ se note $E^k$.
         \end{Spartie}
         \begin{Spartie}{Exemples}
-            Soit $E=\big\{\,a~;\,b~;\,c~\big\}$ et $F=\big\{\,1~;\,2~\big\}$
+            Soit $E=\big\{\,a~;\,b~;\,c~\big\}$ et $F=\big\{\,1~;\,2~\big\}$.
             \begin{itemize}
                 \item $E\times F=\big\{\,(\,a~;\,1~)~;\,(\,a~;\,2~)~;\,(\,b~;\,1~)~;\,(\,b~;\,2~)~;\,(\,c~;\,1~)~;\,(\,c~;\,2~)~\big\}$
                 \item $F\times F=\big\{\,(\,1~;\,1~)~;\,(\,1~;\,2~)~;\,(\,2~;\,1~)~;\,(\,2~;\,2~)~\big\}$
@@ -136,18 +136,18 @@
                     On choisit un élément $x$ de $E$. \\
                     Dans chacune des permutations des $n$ éléments restants, il y $n+1$ positions où insérer $x$.
 
-                    Ainsi, le nombre de permutations de $E$ est $(n+1)\times n! =(n+1)!\quad\square$
+                    Ainsi, le nombre de permutations de $E$ est $(n+1)\times n! =(n+1)!$.$\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
     \pagebreak[3]
     \begin{Gpartie}{Combinaisons}
-        Dans tout ce sous-chapitre, $E$ est un ensemble à $n$ éléments et p est un entier naturel tel que $p\leq n$.
+        Dans tout ce sous-chapitre, $E$ est un ensemble à $n$ éléments et $p$ est un entier naturel tel~que~$p\leq n$.
         \begin{Spartie}{Définition}
             Une combinaison de $p$ éléments de $E$ est une partie de $E$ possédant $p$ éléments.
             \begin{SSpartie}{Remarque}
-                L'Ordre des éléments n'a pas d'importance, les éléments sont distincts.
+                L'ordre des éléments n'a pas d'importance, les éléments sont distincts.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété}
@@ -158,7 +158,7 @@
             \begin{SSpartie}{Explication}
                 Lorsqu'on choisit $p$ éléments dans un ensemble à $n$ éléments, on a $n$ choix pour le premier, $n-1$ choix pour le deuxième, etc.\ mais ainsi, les $p$ éléments sont ordonnés.
 
-                On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$
+                On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$.
             \end{SSpartie}
             \begin{SSpartie}{Cas Particuliers}
                 $\dbinom{n}{0}=1\quad$ La seule partie de $E$ à $0$ élément est $\varnothing$.
@@ -194,8 +194,9 @@
         \end{Spartie}
         \begin{Spartie}{Triangle de Pascal}
             \begin{center}
-                \begin{tabular}{ >{\centering\arraybackslash}m{12pt} | *{7}{>{\centering\arraybackslash}m{12pt}}}
-                    \diagbox[innerwidth=12pt, height=1.5\line, font=\footnotesize]{\raisebox{-3pt}{n}}{\raisebox{8pt}{p}}  & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\hline
+                \begin{tabular}{ M{12pt} | *{7}{M{12pt}}}
+                    \diagbox[innerwidth=12pt, height=1.5\line, font=\footnotesize]{\raisebox{-3pt}{n}}{\raisebox{8pt}{p}}  
+                      & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\hline
                     0 & 1 &   &   &   &   &   &   \\
                     1 & 1 & 1 &   &   &   &   &   \\
                     2 & 1 & 2 & 1 &   &   &   &   \\

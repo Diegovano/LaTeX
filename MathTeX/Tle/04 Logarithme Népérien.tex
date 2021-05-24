@@ -45,7 +45,7 @@
                     \item La fonction $\ln$ est \emph{strictement croissante} sur $\big]\,0~;\,+\infty~\big[$
                 \end{enumerate}
                 \begin{SSSpartie}{Démonstration (2) (Facile)}
-                    Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$
+                    Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$.
                     \[\big(\me^{\ln\,(x)}\big)'=\ln'(x)\times \me^{\ln(x)}=\ln'(x)\times x\]
                     \[(x)'=1\]
                     \[\ln'(x)\times x=1\iff\ln'(x)=\frac{1}{x}\quad\square\]
@@ -65,20 +65,20 @@
                         &=\frac{1}{\frac{\me^{v+h}-\me^v}{k}}
                     \end{aligned}\]
 
-                    Or, $\lim\limits_{h\to0}\frac{\me^{v+h}-\me^v}{h}$ est l'expression de la dérivée de $\me$. La dérivée de $\me^v$ est $\me^v$.
+                    Or, $\lim\limits_{h\to0}\frac{\me^{v+h}-\me^v}{h}$ est l'expression de la dérivée de $\me$. La dérivée de $\me^v$ est $\me^v$ :
                     \[\frac{1}{\me^v}=\frac{1}{\me^{\ln(x)}}=\frac{1}{x}\]
                     \[\lim\limits_{h\to 0}\frac{\ln\,(x+h)-\ln\,(x)}{h}=\frac{1}{x}\quad\square\]
 
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété}
-                Soit $u$, une fonction dérivable et strictement positive sur $I$
+                Soit $u$, une fonction dérivable et strictement positive sur $I$.
 
-                Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $\boxed{f':x\mapsto\frac{u'}{u}}$
+                Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $\boxed{f':x\mapsto\frac{u'}{u}}$.
                 \begin{SSSpartie}{Exemple}
-                    Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln(x^2+1)$
+                    Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln(x^2+1)$.
 
-                    $f$ est dérivable en $\mathbb{R}$ et $f'(x)=\frac{2x}{x^2+1}$
+                    $f$ est dérivable en $\mathbb{R}$ et $f'(x)=\frac{2x}{x^2+1}$.
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
@@ -87,7 +87,7 @@
             \begin{SSpartie}{Démonstration} 
                 Soit $M>0$, en posant $A=\me^M,~\exists A>0$ tel que :
                 \[\forall x\in\big]\,0~;\,+\infty~\big[,~x>A\implies\ln\,(x)>M\]
-                En effet, $x>A\iff x>\me^M$ \\ Comme $\ln$ est strictement croissante :
+                En effet, $x>A\iff x>\me^M$. \\ Comme $\ln$ est strictement croissante :
                 \[\begin{aligned}[t]
                     \ln\,(x)&>\ln\,\left(\me^M\right) \\
                     \ln\,(x)&>M\quad\square
@@ -98,9 +98,11 @@
             \begin{center}
                 \begin{tikzpicture}
                     \begin{axis}[
-                        xmin=-0.5,  xmax=5,
+                        xmin=-0.5,  xmax=8.5,
                         ymin=-2.5,  ymax=2.5,
-                        domain=-0.1:5
+                        domain=-0.1:11,
+                        xtick={1,2,3,4,5,6,7,8},
+                        ytick={-2,-1,1,2}
                     ]
                         \addplot[color=blue, very thick, samples=100]{ln(x)};
                         \draw[red, dashed, thick]
@@ -184,13 +186,13 @@
                 \iff&\quad n>\frac{\ln\,(1000)}{\ln\,(3)}\approx 6{,}3
             \end{aligned}\]
 
-            On trouve $n\geq 7$, $7$ est le plus petit entier $n$ tel que $3^n>1\,000$
+            On trouve $n\geq 7$, $7$ est le plus petit entier $n$ tel que $3^n>1\,000$.
         \end{Spartie}
         \vspace{-2ex}
         \begin{Spartie}{Exemple}
             On sait que : \[\lim_{n\to+\infty}\left(\frac{1}{2}\right)^n=0\text{\qquad \big(car $0<\tfrac{1}{2}<1$\big)}\]
             
-            On veut résoudre : $\left(\frac{1}{2}\right)^n\leq 0{,}0001$
+            On veut résoudre $\left(\frac{1}{2}\right)^n\leq 0{,}0001$ :
             \[\begin{aligned}[t]
                 \iff&\quad\ln\,\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln\,(0{,}0001)\text{\qquad $\ln$ strictement croissante} \\
                 \iff&\quad n\ln\,\big(\tfrac{1}{2}\big)\leq\ln\,(0{,}0001) \\
@@ -209,10 +211,10 @@
         \end{Spartie}
         \vspace{-4ex}
         \begin{Spartie}{Propriétés} 
-            De part de sa définition, la fonction $\log$ a les mêmes propriétés algébriques et analytiques que la fonction $\ln$ (dérivable, strictement croissante) 
+            De part de sa définition, la fonction $\log$ a les mêmes propriétés algébriques et analytiques que la fonction $\ln$ (dérivable, strictement croissante).
         \end{Spartie}
         \begin{Spartie}{Remarque} 
-            La fonction $\log$ est la fonction réciproque de $f:x\mapsto 10^x$
+            La fonction $\log$ est la fonction réciproque de $f:x\mapsto 10^x$.
         \end{Spartie}
     \end{Gpartie}
 \end{document}

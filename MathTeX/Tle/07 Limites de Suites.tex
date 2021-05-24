@@ -12,38 +12,39 @@
     \begin{Gpartie}{Suites Majorées, Minorées et Bornées} 
         \begin{Spartie}{Définitions} 
             \begin{itemize}
-                \item Une suite ($u_n$) est majorée s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},\ u_n\leq M$
-                \item Une suite ($u_n$) est minorée s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},\ u_n\geq m$
-                \item Une suite est bornée si elle est majorée et bornée
+                \item Une suite ($u_n$) est \emph{majorée} s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},~u_n\leq M$
+                \item Une suite ($u_n$) est \emph{minorée} s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},~u_n\geq m$
+                \item Une suite est \emph{bornée} si elle est majorée \emph{et} bornée
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Exemple} 
             La suite $\left(\frac{1}{n}\right)_{n\geq 1}$ est minorée par 0, mais aussi par tout nombre négatif. 
             
-            Elle est majorée par 1 (qui est aussi son maximum) et par tout nombre supérieur à 1. Elle est donc bornée.
+            Elle est majorée par 1 (qui est aussi son maximum) et par tout nombre supérieur~à~1. Elle est donc bornée.
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Définitions} 
         \begin{Spartie}{Limite Infinie}
+            \vspace*{-2ex}
             \begin{SSpartie}{Définition} 
-                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]M\,;+\infty\big[$ contient tous les termes de la suite à partir d'un certain rang.
+                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]\,M~;~+\infty\,\big[$ contient tous les termes de la suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $M$, on peut trouver un rang $n$ tel que : \[\forall n\geq N,\quad u_n>M\]
-                (A partir du rang $N$, tous les termes sont supérieurs à $M$)
+                A partir du rang $N$, tous les termes sont supérieurs à $M$.
 
-                On note $\lim\limits_{n\to +\infty} u_n=+\infty$,\quad On peut dire que la suite diverge vers $+\infty$
+                On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=+\infty}\] On peut dire que la suite diverge vers $+\infty$.
 
-                H.P. : $\forall M\in\mathbb{R},\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ (n\geq N\implies u_n>M)$
+                H.P. : $\forall M\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n>M)$
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]-\infty\,;m\big[$ contient tous les termes de le suite à partir d'un certain rang.
+                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]\,-\infty~;~m\,\big[$ contient tous les termes de le suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $m$, on peut trouver un rang $N$ tel que : \[\forall n\geq N,\quad u_n<m\]
-                (A partir du rang $N$, tous les termes sont inférieurs à $m$)
+                A partir du rang $N$, tous les termes sont inférieurs à $m$.
 
-                On note $\lim\limits_{n\to +\infty} u_n=-\infty$,\quad On peut dire que la suite diverge vers $-\infty$
+                On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=-\infty}\] On peut dire que la suite diverge vers $-\infty$.
 
-                H.P. : $\forall m\in\mathbb{R},\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ (n\geq N\implies u_n<m)$
+                H.P. : $\forall m\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n<m)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème}
                 \begin{center}$\begin{array}{cc}
@@ -54,11 +55,11 @@
                 \end{array}$\end{center}
             \end{SSpartie}
             \begin{SSpartie}{Rappels} 
-                $\forall n\in\mathbb{N},\ u_{n+1}-u_n=\dotsc$ signe
+                $\forall n\in\mathbb{N},\ u_{n+1}-u_n=\dotsc$\quad signe
 
-                $\forall n\in\mathbb{N},\ u_n>0\quad\frac{u_{n+1}}{u_n}$ on compare à 1
+                $\forall n\in\mathbb{N},\ u_n>0\quad\frac{u_{n+1}}{u_n}$\quad on compare à 1
 
-                Cas où $u_n=f(n)$, par exemple : $u_n=\sqrt{n^2+n-3}$, on étudie $f$.
+                Cas où $u_n=f(n)$, par exemple : $u_n=\sqrt{n^2+n-3}$\quad on étudie $f$.
                 \begin{SSSpartie}{Arithmétique} 
                     $u_{n+1}=u_n+r$\quad alors\quad $u_n=u_0+nr$\quad\big($u_n=u_p+(n-p)r$\big)
 
@@ -74,15 +75,15 @@
         \pagebreak
         \begin{Spartie}{Limites Finies / Suites Convergentes} 
             \begin{SSpartie}{Définition} 
-                Une suite ($u_n$) converge vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
+                Une suite ($u_n$) \emph{converge} vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
                 Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $l$.
 
-                On dit que $l$ est la limite de la suite ($u_n$) et que la suite est convergente.
+                On dit que $l$ est la \emph{limite} de la suite ($u_n$) et que la suite est \emph{convergente}.
 
-                On note $\lim\limits_{n\to +\infty} u_n=\ell$
+                On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=\ell}\]
 
-                H.P. : $\lim\limits_{n\to +\infty} u_n=\ell\iff\forall\epsilon >0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\Big)$
+                H.P. : $\forall\epsilon >0,~\exists N\in\mathbb{N},~\forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\,\ell-\epsilon~;~\ell+\epsilon\,\big[\Big)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 \begin{center}$\begin{array}{cc}
@@ -91,7 +92,7 @@
                 \end{array}$\end{center}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Une suite qui n'est pas convergente est divergente
+                Une suite qui n'est pas convergente est \emph{divergente}.
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
                 La suite ($u_n$) définie par $u_n=(-1)^n$ est divergente.
@@ -102,7 +103,7 @@
     \begin{Gpartie}{Propriétés sur les Limites} 
         \begin{Spartie}{Théorèmes de Comparaison} 
             \begin{SSpartie}{Théorème} 
-                Soient $(u_n)$ et $(v_n)$ deux suites telles qu'à partir d'un certain rang $u_n\leq v_n$
+                Soient $(u_n)$ et $(v_n)$ deux suites telles qu'à partir d'un certain rang $u_n\leq v_n$ :
                 \begin{itemize}
                     \setlength\itemsep{0.5em}
                     \item Si $\lim\limits_{n\to +\infty}u_n=+\infty$\quad alors\quad $\lim\limits_{n\to +\infty}v_n=+\infty$
@@ -110,16 +111,16 @@
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Démonstration} 
-                On suppose que $\lim\limits_{n\to +\infty}u_n=+\infty$
+                On suppose que $\lim\limits_{n\to +\infty}u_n=+\infty$.
 
-                Soit $M>0$, il existe un rang $N$, à partir duquel si $n\geq N_1$, alors $u_n\geq M$
+                Soit $M>0$, il existe un rang $N$, à partir duquel si $n\geq N_1$, alors $u_n\geq M$.
 
-                Or, il existe un rang $N_2$, à partir duquel $n>N_2,\ v_n\geq u_n$
+                Or, il existe un rang $N_2$, à partir duquel $n>N_2,\ v_n\geq u_n$.
 
-                Donc, il existe un rang $N=\max(N_1\,;N_2)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
+                Donc, il existe un rang $N=\max\,(\,N_1~;~N_2\,)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
             \end{SSpartie}
-            \begin{SSpartie}{Théorème dit des Gendarmes (Théorème d'Encadrement)}
-                Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang $u_n\leq v_n\leq w_n$
+            \begin{SSpartie}{Théorème dit \og des Gendarmes \fg{} (Théorème d'Encadrement)}
+                Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang~$u_n\leq v_n\leq w_n$ :
 
                 Si $\lim\limits_{n\to +\infty}u_n=\ell$ et $\lim\limits_{n\to +\infty}w_n=\ell$ où $\ell$ est un réel alors :
                 \[\lim\limits_{n\to +\infty}v_n=\ell\]
@@ -148,29 +149,29 @@
                 \begin{SSSpartie}{Démonstration par l'Absurde} 
                     On suppose que $(u_n)$ est croissante.
                     \begin{SSSSpartie}{Lemme} 
-                        Si $(u_n)$ est croissante, si $p$ et $n$ sont deux entiers naturels tels que $p\leq n$
+                        Si $(u_n)$ est croissante, si $p$ et $n$ sont deux entiers naturels tels que $p\leq n$.
 
-                        Alors, $u_p\leq u_n$
+                        Alors, $u_p\leq u_n$.
                     \end{SSSSpartie}
                     \begin{SSSSpartie}{Démonstration de la Lemme par Récurrence}
                         \vspace{-1em}
                         \begin{itemize}
-                            \item Initialisation : On fixe $p$ donc $u_p\leq u_{p+1}$
-                            \item Hérédité : On suppose que $k\geq 1,\ u_p\leq u_{p+k}$ \\
+                            \item Initialisation : On fixe $p$ donc $u_p\leq u_{p+1}$.
+                            \item Hérédité : On suppose que $k\geq 1,\ u_p\leq u_{p+k}$. \\
                             \phantom{Hérédité : }$u_p\leq u_{p+k}\implies u_p\leq u_{p+k}\leq u_{p+k+1}\quad\square$
                         \end{itemize}   
                     \end{SSSSpartie}
-                    On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>\ell$
+                    On suppose $\exists n_0\in\mathbb{N},\ u_{n_0}>\ell$.
 
-                    Or tout intervalle ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang.
+                    Or tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
-                    Prenons l'intervalle ouvert $\big]a\,;b\big[$ tel que $\ell<b<u_{n_0}$
+                    Prenons l'intervalle ouvert $\big]\,a~;~b\,\big[$ tel que $\ell<b<u_{n_0}$.
 
-                    Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,;b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
+                    Il existe un indice $p>n_0$ tel que $u_p\in\big]\,a~;~b\,\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
 
-                    Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la lemme, $p>n_0\implies u_p\geq u_{n_0}$
+                    Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la~lemme,~$p>n_0\implies u_p\geq u_{n_0}$.
 
-                    C'est absurde, donc, $\forall n\in\mathbb{N},~u_n\leq\ell\quad\square$
+                    C'est absurde, donc, $\forall n\in\mathbb{N},~u_n\leq\ell$.$\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
             \pagebreak
@@ -198,9 +199,9 @@
             \begin{SSpartie}{Théorème} 
                 \begin{itemize}
                     \setlength\itemsep{0.5em}
-                    \item Si $q>1,\ \lim\limits_{n\to +\infty}q^n=+\infty$
-                    \item Si $q=1,\ \lim\limits_{n\to +\infty}q^n=1$
-                    \item Si $-1<q<1,\ \lim\limits_{n\to +\infty}q^n=0$
+                    \item Si $q>1,~\lim\limits_{n\to+\infty}q^n=+\infty$
+                    \item Si $q=1,~\lim\limits_{n\to+\infty}q^n=1$
+                    \item Si $-1<q<1,~\lim\limits_{n\to+\infty}q^n=0$
                     \item Si $q<-1$, la suite diverge.
                 \end{itemize}
             \end{SSpartie}
@@ -210,16 +211,23 @@
     \begin{Gpartie}{Opérations sur les Limites} 
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies.
         \begin{Spartie}{Somme}
-            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.1\textwidth}|w{c}{0.1\textwidth}|w{c}{0.1\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell$ un réel& $+\infty$ & $-\infty$ \\ \hline \hline
-                $\ell'$ un réel                                             & $\ell+\ell'$  & $+\infty$ & $-\infty$ \\ \hline
-                $+\infty$                                                   & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
-                $-\infty$                                                   & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
-            \end{tabular}\end{center}
-            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Sommes de Suites}} \\[2ex]
+            \begin{center}
+            \vspace*{-1ex}
+            \resizebox{0.75\linewidth}{!}{
+                \begin{tabular}{ p{0.15\linewidth} *{3}{M{0.15\linewidth} }} \toprule
+                \multirow{2}{*}{$\lim v_n$}  & \multicolumn{3}{c}{$\lim u_n$}        \\
+                \cmidrule(r l){2-4}
+                            & $\ell'$       & $+\infty$ & $-\infty$ \\ \midrule
+                $\ell'$     & $\ell+\ell'$  & $+\infty$ & $-\infty$ \\ 
+                $+\infty$   & $+\infty$     & $+\infty$ & F.I.      \\
+                $-\infty$   & $-\infty$     & F.I.      & $-\infty$ \\ \bottomrule
+            \end{tabular}
+            }
+            \end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites de Sommes de Suites}} \\[2ex]
             \begin{center}F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination\end{center}
             \begin{SSpartie}{Exemple} 
-                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\leftarrow\text{F.I.} \\ &=n(n-1)\leftarrow\text{On a levé l'indétermination}\end{aligned}$
+                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
 
                 $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
                 \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
@@ -228,14 +236,27 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Produit}
-            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $\ell'\neq 0$                                               & $\ell\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
-            0                                                               & 0 & 0 & F.I. & F.I. \\ \hline
-            $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
-                $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
-            \end{tabular}\end{center}
-            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Produits de Suites}}
+            \begin{center}
+                % \begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
+                %     \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$ & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                %     $\ell'\neq 0$                                               & $\ell\times l'$ & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
+                % 0                                                               & 0 & 0 & F.I. & F.I. \\ \hline
+                % $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
+                %     $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
+                % \end{tabular}
+                \resizebox{0.85\linewidth}{!}{
+                \begin{tabular}{ p{0.15\linewidth} *{4}{M{0.17\linewidth} }} \toprule
+                    \multirow{2}{*}{$\lim v_n$} & \multicolumn{4}{c}{$\lim u_n$} \\
+                    \cmidrule(r l){2-5}
+                        & $\ell\neq0$ & $0$ & $+\infty$ & $-\infty$ \\ \midrule
+                    $\ell'\neq0$ & $\ell\times\ell'$ & $0$ & $\pm\infty~\text{\tiny{selon signe}}~\ell'$ & $\pm\infty~\text{\tiny{selon signe}}~\ell'$ \\
+                    $0$ & $0$ & $0$ & F.I. & F.I. \\
+                    $+\infty$ & $\pm\infty~\text{\tiny{selon signe}}~\ell$ & F.I. & $+\infty$ & $-\infty$ \\
+                    $-\infty$ & $\pm\infty~\text{\tiny{selon signe}}~\ell$ & F.I. & $-\infty$ & $+\infty$ \\ \bottomrule
+                \end{tabular}
+                }
+            \end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites de Produits de Suites}}
             \begin{SSpartie}{Exemple} 
                 Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
 
@@ -254,14 +275,27 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Quotient}
-            \begin{center}\begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
-                \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$          & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
-                $\ell'\neq 0$                                               & $\frac{\ell}{\ell'}$  & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
-                0                                                           & $\pm\infty\text{\tiny{ selon signe }}\ell\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
-                $+\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
-                $-\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
-            \end{tabular}\end{center}
-            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites des Quotients de Suites}} 
+            \begin{center}
+                % \begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
+                %     \diagbox[innerwidth=0.15\textwidth]{$\lim v_n$}{$\lim u_n$} & $\ell\neq 0$          & 0 & $+\infty$ & $-\infty$ \\ \hline\hline
+                %     $\ell'\neq 0$                                               & $\frac{\ell}{\ell'}$  & 0 & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ \hline
+                %     0                                                           & $\pm\infty\text{\tiny{ selon signe }}\ell\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\ \hline
+                %     $+\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
+                %     $-\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
+                % \end{tabular}
+                \resizebox{0.85\linewidth}{!}{
+                \begin{tabular}{ p{0.15\linewidth} *{4}{M{0.17\linewidth} }} \toprule
+                    \multirow{2}{*}{$\lim v_n$} & \multicolumn{4}{c}{$\lim u_n$} \\ 
+                    \cmidrule(l r){2-5}
+                        & $\ell\neq0$ & $0$ & $+\infty$ & $-\infty$ \\ \midrule
+                    $\ell'\neq 0$                                               & $\frac{\ell}{\ell'}$  & $0$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ & $\pm\infty\text{\tiny{ selon signe }}\ell'$ \\ 
+                    $0$                                                           & $\pm\infty\text{\tiny{ selon signe }}\ell\text{\tiny{ et }}0$ & F.I. & $\pm\infty\text{\tiny{ selon signe }}0$ & $\pm\infty\text{\tiny{ selon signe }}0$ \\
+                    $+\infty$                                                   & $0$ & $0$ & F.I. & F.I. \\ 
+                    $-\infty$                                                   & $0$ & $0$ & F.I. & F.I. \\ \bottomrule
+                \end{tabular}
+                }
+            \end{center}
+            \parbox{\linewidth}{\captionof{figure}{Tableau des Limites de Quotients de Suites}} 
             \\[2ex]
             \begin{SSpartie}{Exemple} 
                 $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
@@ -273,7 +307,7 @@
     \pagebreak
     \begin{Gpartie}{Limite de Suite et Continuité} 
         \begin{Spartie}{Théorème} 
-            Soit $f$ une fonction continue sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, tel que $\forall n\in\mathbb{N},\ u_n\leq I,~\ell\in I$, alors $f(u_n)$ converge vers $f(\ell)$.
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, telle que $\forall n\in\mathbb{N},\ u_n\in I,~\ell\in I$, alors, la suite $\big(f(u_n)\big)$ converge~vers~$f(\ell)$.
             \begin{SSpartie}{Exemple} 
                 Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$
                 
@@ -281,18 +315,59 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Théorème}
-            Soit $f$ une fonction continue sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
             
-            Si la suite $(u_n)$ converge vers un réel $\ell$, alors $l$ est solution de l'équation $f(x)=x$ (On peut dire que $\ell$ est un point fixe de $f$).
+            Si la suite $(u_n)$ \emph{converge vers un réel} $\ell$, alors $l$ est solution de l'équation $f(x)=x$ \\ On peut dire que $\ell$ est un point fixe de $f$.
             \begin{SSpartie}{Démonstration} 
                 $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(\ell)$
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 Graphiquement, les termes de la suite se rapprochent du point d'intersection $\mathcal{C}_f$ et la droite d'équation $y=x$. Uniquement si la suite converge !
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=8cm]{example-image}
-                    % \end{tikzpicture}
+                    \begin{tikzpicture}[scale=0.9]
+                        \begin{axis}[
+                            xmin=-4, xmax=8,
+                            ymin=-3, ymax=10,
+                            domain=-4.2:8.2,
+                            xtick=\empty,
+                            ytick=\empty
+                        ]
+                            \addplot[red, thick]{x};
+                            \addplot[blue, very thick, smooth]{(x^2)/4};
+
+                            \draw 
+                                (4,4) node [dot, label={[label distance=-2pt]0:$\scriptscriptstyle  f(x)=x$}] {}
+                                (0,0) node [dot, label={[label distance=-2pt]315:$\scriptscriptstyle  f(x)=x$}] {}
+                                (-1,-1) node [label={[label distance=-2pt]180:$\scriptscriptstyle y=x$}] {}
+                                (-1.5,1) node [label={[label distance=-2pt]200:$\scriptscriptstyle y=f(x)$}] {};
+
+                            \draw[-{stealth[scale=0.5]}, black!60!green] 
+                                (3.1,3.1) edge (3.1,2.3)
+                                (3.1,2.3) edge (2.3,2.3) 
+                                (2.3,2.3) edge (2.3,1.4)
+                                (2.3,1.4) edge (1.4,1.4)
+                                (1.4,1.4) edge (1.4,0.5)
+                                (1.4,0.5) -- (0.5,0.5);
+
+                            \draw[dashed, black!60!green]
+                                (0,3.1) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_0$}] {} -- (3.1,3.1)
+                                (0,2.3) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_1$}] {} -- (2.3,2.3)
+                                (0,1.4) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_2$}] {} -- (1.4,1.4)
+                                (0,0.5) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_3$}] {} -- (0.5,0.5);
+
+                            \draw[-{stealth[scale=0.5]}, orange]
+                                (4.5,4.5) edge (4.5,5.1)
+                                (4.5,5.1) edge (5.1,5.1)
+                                (5.1,5.1) edge (5.1,6.4)
+                                (5.1,6.4) edge (6.4,6.4)
+                                (6.4,6.4) -- (6.4,10.2);
+
+                            \draw[dashed, orange]
+                                (0,4.5) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_0$}] {} -- (4.5,4.5)
+                                (0,5.1) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_1$}] {} -- (5.1,5.1)
+                                (0,6.4) node [label={[label distance=-6pt]180:$\scriptscriptstyle u_2$}] {} -- (6.4,6.4);
+                        \end{axis}
+                    \end{tikzpicture}
                     \parbox{\linewidth}{\captionof{figure}{Représentation Graphique de la Convergence d'une Suite}} \\[2ex]
                     Ici, lorsque $u_0$ est supérieur au deuxième point fixe de $f$, le suite diverge.
                 \end{center}
