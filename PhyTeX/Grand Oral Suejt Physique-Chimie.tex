@@ -1,0 +1,38 @@
+\documentclass[DIV=12]{scrartcl}
+\usepackage[french]{babel}
+\usepackage{newpxtext}
+\usepackage{siunitx}
+\selectlanguage{french}
+\usepackage[varbb,frenchmath]{newpxmath}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+\title{Pourquoi Certains Écrans Tactiles Fonctionnent-ils avec des Gants et d'Autres~Non~?}
+\author{Diego Van Overberghe}
+
+\begin{document}
+    \maketitle
+   \section{L'histoire des Écrans Tactiles}
+   Deux Types de Technologies :
+   \begin{itemize} 
+       \item Capteurs Tactiles Résistifs, développés en 1971  par Sam Hurst aux États-Unis.
+       \item Capteurs Tactiles Capacitifs, développés dans les années 1970 au CERN, iPhone multi-touch en 2007.
+   \end{itemize}
+   \section{Fonctionnement}
+   \begin{itemize}
+        \item Les capteurs de type résistifs sont composés de deux plaques conductrices, transparentes, séparées les unes des autres par un isolant tel qu'une couche d'air.
+        Lorsqu'un utilisateur met de la pression sur l'écran, les deux plaques se rapprochent, et la distance séparant les conducteurs diminue. La résistance est inversement proportionnelle à la distance donc, la résistance diminue. : \[R\propto\frac{1}{\ell}\qquad\begin{cases}~R\text{ Résistance en }\Omega\\~\ell\text{ La distance qui sépare les plaques en m}\end{cases}\]
+        D'après la loi d'Ohm, un changement de résistance provoque soit un changement de tension entre les deux plaques, soit un changement de courant.
+       
+        Cette modification est captée et un micro-contrôleur localise l'emplacement du rapprochement.
+        \item Un condensateur est un composant électronique constitué de deux plaques (des armatures) qui sont séparées par un isolant.
+        
+        Pour une tension donnée, un condensateur peut stocker une certaine charge. La grandeur qui relie la charge portée par un condensateur pour une tension donnée est nommée capacité, se note : \[q=C\cdot u\qquad\begin{cases}~q\text{ charge en C}\\~C\text{ capacité électrique en F}\\~u\text{ tension en Volt}\end{cases}\]
+        
+        Lorsque le doigt de l'utilisateur se rapproche de l'écran, une charge s'accumule sur la surface de l'écran au niveau du doigt.
+        
+        Un microcontrolleur détecte cette accumulation de charge afin de déduire la position du doigt.
+   \end{itemize}
+\end{document}
