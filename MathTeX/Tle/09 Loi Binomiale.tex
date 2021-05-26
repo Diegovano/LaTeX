@@ -70,9 +70,9 @@
 
             Un client prend au hasard une entrée, un plat, et un dessert.
 
-            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où $\Omega_1=\big\{e_1\,; e_2\big\},\ \Omega_2=\big\{p_1\,; p_2\,; p_3\big\},\text{ et }\Omega_3=\big\{d\big\}$
+            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où $\Omega_1=\big\{e_1\,; e_2\big\},\ \Omega_2=\big\{p_1\,; p_2\,; p_3\big\},\text{ et }\Omega_3=\big\{d\big\}$.
 
-            Ainsi, $\Omega=\bigg\{\big(e_1\,, p_1\,, d\big)\,;\big(e_1\,, p_2\,, d\big)\,;\dotsc\bigg\}$
+            Ainsi, $\Omega=\bigg\{\big(e_1\,, p_1\,, d\big)\,;\big(e_1\,, p_2\,, d\big)\,;\dotsc\bigg\}$.
 
             On peut aussi représenter la situation par un arbre :
             \begin{center}
@@ -116,7 +116,7 @@
     \begin{Gpartie}{Loi Binomiale} 
         \begin{Spartie}{Épreuve de Bernoulli} 
             \begin{SSpartie}{Définition} 
-                Une \emph{épreuve de Bernoulli} est un expérience aléatoire possédant deux issues qu'on appelle généralement \og succès \fg{} et \og échec \fg{}. La probabilité du succès $p$ est appelée paramètre de la loi de Bernoulli.
+                Une \emph{épreuve de} \textsc{Bernoulli} est un expérience aléatoire possédant deux issues qu'on appelle généralement \og succès \fg{} et \og échec \fg{}. La probabilité du succès $p$ est appelée paramètre de la loi de \textsc{Bernoulli}.
                 \begin{center}
                     \begin{tabular}{  | p{0.1\textwidth} || *{2}{w{c}{0.1\textwidth} | }  } \hline
                         $k_i$           & $0$ & $1$ \\ \hline
@@ -124,15 +124,15 @@
                     \end{tabular}
                     \parbox{\linewidth}{\captionof{figure}{Loi de la Variable Aléatoire X}}
                 \end{center}
-                $X$ est une variable aléatoire donnant le nombre de succès (il n'y a que deux possibilités : 0 ou 1). On dit que $X$ suit la loi de Bernoulli. \\ Penser à un jeu de pile ou face.
+                $X$ est une variable aléatoire donnant le nombre de succès (il n'y a que deux possibilités : 0 ou 1). On dit que $X$ suit la loi de \textsc{Bernoulli}. \\ Penser à un jeu de pile ou face.
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire suivant la loi de Bernoulli de paramètre $p$, alors, l'espérance de $X$ est $E(X)=p$ et sa variance est $V(X)=p(1-p)$.
+                Si $X$ est une variable aléatoire suivant la loi de \textsc{Bernoulli} de paramètre $p$, alors, l'espérance de $X$ est $E(X)=p$ et sa variance est $V(X)=p(1-p)$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Schéma de Bernoulli} 
             \begin{SSpartie}{Définition} 
-                Un \emph{schéma de Bernoulli} est une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues ($n$ épreuves de Bernoulli).
+                Un \emph{schéma de} \textsc{Bernoulli} est une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues ($n$ épreuves de \textsc{Bernoulli}).
 
                 Une issue de cette expérience aléatoire est un élément ($n$-uplet) de $\Omega=\big\{S\,;\overline{S}\big\}^n$.
             \end{SSpartie}
@@ -147,7 +147,7 @@
         \pagebreak
         \begin{Spartie}{Loi Binomiale} 
             \begin{SSpartie}{Définition} 
-                On considère une expérience aléatoire qui suit un schéma de Bernoulli, autrement dit, une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues (succès et échec) dont la probabilité de succès est $p$.
+                On considère une expérience aléatoire qui suit un schéma de \textsc{Bernoulli}, autrement dit, une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues (succès et échec) dont la probabilité de succès est $p$.
 
                 La variable aléatoire donnant le nombre de succès suit la \emph{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}(n\,, p)$. Cette loi est aussi parfois appelée loi du nombre de succès.
             \end{SSpartie}

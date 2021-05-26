@@ -79,7 +79,7 @@
                 Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions $\sin$ et $\cos$ sont bornées et n'admettent pas de limites en l'infini.
+                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions sinus et cosinus sont bornées et n'admettent pas de limites en l'infini.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Limite en $-\infty$} 
@@ -142,7 +142,7 @@
                             \end{axis}
                         \end{tikzpicture}
 
-                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $+\infty$}}
+                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $2$ en $-\infty$}}
                     \end{center}
                     \vspace*{2ex}
                     H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon~;\ell+\epsilon\big[\bigg)$
@@ -173,7 +173,7 @@
                             \addplot[blue, very thick, samples=200]{\x*(x-2)^(-2)*1/(20)};
                         \end{axis}
                     \end{tikzpicture}
-                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $a$}}
+                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $2$}}
                 \end{center}
                 \vspace*{2ex}
                 \item $f(x)$ est négatif et aussi grand que l'on veut en valeur absolue, on dit que $f$ a pour limite $-\infty$ en $a$.
@@ -213,22 +213,22 @@
                 $\lim\limits_{x\to+\infty}\sqrt{x}=+\infty$ et $\lim\limits_{x\to0}\sqrt{x}=0$ (la fonction racine carrée est continue en $0$)
             \end{SSpartie}
             \begin{SSpartie}{Fonction Inverse} 
-                $\lim\limits_{x\to+\infty}\frac{1}{x}=0,\quad\lim\limits_{\substack{x\to a \\ x>a}}\frac{1}{x}=+\infty,\quad\lim\limits_{\substack{x\to a \\ x<a}}\frac{1}{x}=-\infty,\quad\lim\limits_{x\to-\infty}\frac{1}{x}=0$
+                $\lim\limits_{x\to+\infty}\frac{1}{x}=0,\quad\lim\limits_{\substack{x\to 0 \\ x>0}}\frac{1}{x}=+\infty,\quad\lim\limits_{\substack{x\to 0 \\ x<0}}\frac{1}{x}=-\infty,\quad\lim\limits_{x\to-\infty}\frac{1}{x}=0$
             \end{SSpartie}
             \begin{SSpartie}{Fonctions Puissances} 
-                Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}x^p=+\infty$
+                Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}x^p=+\infty$.
 
-                Si $p$ est pair, $\lim\limits_{x\to-\infty}x^p=+\infty$ et si $p$ est impair, $\lim\limits_{x\to-\infty}=-\infty$
+                Si $p$ est pair, $\lim\limits_{x\to-\infty}x^p=+\infty$ et si $p$ est impair, $\lim\limits_{x\to-\infty}x^p=-\infty$.
                 
-                \vspace*{2ex}Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}\frac{1}{x^p}=0$, et $\lim\limits_{x\to-\infty}\frac{1}{x^p}=0$
+                \vspace*{2ex}Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}\frac{1}{x^p}=0$, et $\lim\limits_{x\to-\infty}\frac{1}{x^p}=0$.
 
-                Si $p$ est pair, $\lim\limits_{x\to0}\frac{1}{x^p}=+\infty$ et si $p$ est impair, $\lim\limits_{\substack{x\to0 \\ x>0}}\frac{1}{x^p}=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x<0}}\frac{1}{x^p}=-\infty$
+                Si $p$ est pair, $\lim\limits_{x\to0}\frac{1}{x^p}=+\infty$ et si $p$ est impair, $\lim\limits_{\substack{x\to0 \\ x>0}}\frac{1}{x^p}=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x<0}}\frac{1}{x^p}=-\infty$.
             \end{SSpartie}
             \begin{SSpartie}{Fonction Exponentielle} 
                 $\lim\limits_{x\to+\infty}\me^x=+\infty,\quad\lim\limits_{x\to-\infty}\me^x=0$
             \end{SSpartie}
             \begin{SSpartie}{Fontion Logarithme Népérien} 
-                $\lim\limits_{x\to+\infty}\ln(x)=+\infty,\quad\lim\limits_{\substack{x\to0 \\ x>0}}\ln(x)=-\infty$
+                $\lim\limits_{x\to+\infty}\ln\,(x)=+\infty,\quad\lim\limits_{\substack{x\to0 \\ x>0}}\ln\,(x)=-\infty$
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Théorèmes de Croissance Comparée} 
@@ -243,7 +243,7 @@
 
                     $f''(x)=\me^x-1\quad\text{et}\quad \me^x-1>0\iff \me^x>1\iff x>0$
 
-                    Donc, $f''(x)$ est strictement positive pour $x>0$
+                    Donc, $f''(x)$ est strictement positive pour $x>0$.
 
                     Ainsi on a $f'(x)$ strictement croissante sur $\big]0~;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0~;+\infty\big[$ :
                     \begin{center}                        
@@ -254,7 +254,7 @@
                             \tkzTabVar{-/$1$,+/}
                             \tkzTabVar{-/$1$,+/}
                         \end{tikzpicture}
-                        \parbox{\linewidth}{\captionof{figure}{\centering Tableau de Variation de $f$}}
+                        \parbox{\linewidth}{\captionof{figure}{\centering Tableau de Variation de $f$ et $f'$}}
                         \vspace*{2ex}
                     \end{center}
                     Donc, pour tout $x\in\big]0~;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$ \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
@@ -269,9 +269,9 @@
             Quel que soit l'entier $n>0$ : \[\lim\limits_{x\to_\infty}\frac{\me^x}{x^n}=+\infty\quad\text{et}\quad\lim\limits_{x\to-\infty}x^n\me^x=0\]
         \end{Spartie}
         \begin{Spartie}{Théorèmes de Croissance Comparée (bis)} 
-            \[\lim\limits_{x\to+\infty}\frac{\ln(x)}{x}=0\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}x\ln(x)=0\]
+            \[\lim\limits_{x\to+\infty}\frac{\ln\,(x)}{x}=0\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}x\ln\,(x)=0\]
             \begin{SSpartie}{Démonstration} 
-                On pose le changement de variable $X=\ln(x)$ et donc $x=\me^X$. On a alors $\lim\limits_{x\to+\infty}X=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty$.
+                On pose le changement de variable $X=\ln\,(x)$ et donc $x=\me^X$. On a alors $\lim\limits_{x\to+\infty}X=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
@@ -306,24 +306,24 @@
                 %     $\lim (fg)$  & $\ell\times\ell'$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
                 % \end{tabular}\end{center}
                 % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Produits de Fonctions}}
-                \begin{figure}[H]
+                \begin{table}[H]
                     \centering \captionabove{Tableau des Limites des Produits de Fonctions}
                     \resizebox{0.85\linewidth}{!}{
                         \begin{tabular}{ p{0.15\linewidth} *{6}{M{0.1\linewidth}}  } \toprule
                             {} & \multicolumn{5}{c}{$\lim f$} \\ \cmidrule(l r){2-7}
                             $\lim g$    & $\ell$        & $\ell>0$      & $\ell<0$      & $+\infty$ & $-\infty$ & $0$       \\ \midrule
-                            $\ell'$     & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $+\infty$ & $-\infty$ & $\ell'$   \\
+                            $\ell'$     & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $+\infty$ & $-\infty$ & $0$       \\
                             $\ell'>0$   & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $+\infty$ & $-\infty$ & $0$       \\
-                            $\ell'>0$   & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $-\infty$ & $+\infty$ & $0$       \\
+                            $\ell'<0$   & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $-\infty$ & $+\infty$ & $0$       \\
                             $+\infty$   & $+\infty$     & $+\infty$     & $-\infty$     & $+\infty$ & $-\infty$ & F.I.      \\
                             $-\infty$   & $-\infty$     & $-\infty$     & $+\infty$     & $-\infty$ & $+\infty$ & F.I.      \\
                             $0$         & $0$           & $0$           & $0$           & F.I.          & F.I.  & $0$       \\ \bottomrule
                             
                         \end{tabular}
                     }
-                \end{figure}
+                \end{table}
             \end{SSpartie}
-            \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ n'est pas nulle} 
+            \begin{SSpartie}{Limite d'un Quotient $f/g$} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
                 %     Si $\lim g$     & $\ell'\neq0$          & $\pm\infty$   & $\ell'>0$ & $\ell'<0$ & $\ell'>0$ & $\ell'<0$ & $\pm\infty$ \\\hline
@@ -360,7 +360,7 @@
                 \begin{SSSpartie}{Produit} 
                     $\lim\limits_{x\to0}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=-\infty$\qquad En effet, $\lim\limits_{x\to0}-3+x=-3$ et $\lim\limits_{x\to0}1+\frac{1}{x^2}=+\infty$
     
-                    Par contre, remarquons que $\lim\limits_{x\to+\infty}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=+\infty$
+                    Par contre, remarquons que $\lim\limits_{x\to+\infty}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=+\infty$.
                 \end{SSSpartie}
                 \begin{SSSpartie}{Quotient} 
                     $\lim\limits_{x\to0}\dfrac{1+x}{\sqrt{x}}=+\infty$
@@ -372,7 +372,7 @@
             \begin{SSpartie}{Rappel} 
                 On note $g\circ f$ la composée de la fonction $f$ suivie de $g$.
 
-                $\forall x\in\mathcal{D}_f$ tel que $f(x)\in\mathcal{D}_g,~(g\circ f)(x)=g\big(f(x)\big)$
+                $\forall x\in\mathcal{D}_f$ tel que $f(x)\in\mathcal{D}_g,~(g\circ f)(x)=g\big(f(x)\big)$.
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 Soient $a$, $b$ et $c$ trois réels ou $+\infty$ ou $-\infty$. Soient $f$ et $g$ deux fonctions, définies au bon endroit. 
@@ -381,7 +381,7 @@
                 Attention aux limites !
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
-                $\lim\limits_{x\to+\infty}\me^{-x^2-3}=0\quad$ car $\quad\lim\limits_{x\to+\infty}-x^2-3=-\infty\quad$ et $\quad\lim\limits_{X\to-\infty}\me^X=0$
+                $\lim\limits_{x\to+\infty}\me^{-x^2-3}=0\quad$ car $\quad\lim\limits_{x\to+\infty}-x^2-3=-\infty\quad$ et $\quad\lim\limits_{X\to-\infty}\me^X=0$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Comparaison} 
@@ -389,14 +389,14 @@
             \begin{SSpartie}{Théorème} 
                 Si $f$ et $g$ sont deux fonctions telles que pour tout $x$ voisin de $a$, $f(x)\leq g(x)$
                 \begin{itemize}
-                    \item Si $\lim\limits_{x\to a}f(x)=+\infty\quad$ alors $\quad\lim\limits_{x\to a}g(x)=+\infty$
-                    \item Si $\lim\limits_{x\to a}g(x)=-\infty\quad$ alors $\quad\lim\limits_{x\to a}f(x)=-\infty$
+                    \item Si $\lim\limits_{x\to a}f(x)=+\infty\quad$ alors $\quad\lim\limits_{x\to a}g(x)=+\infty$.
+                    \item Si $\lim\limits_{x\to a}g(x)=-\infty\quad$ alors $\quad\lim\limits_{x\to a}f(x)=-\infty$.
                 \end{itemize}
             \end{SSpartie}
-            \begin{SSpartie}{Théorème} 
-                Soient $f$, $g$ et $h$ trois fonctions telles que pour tout $x$ voisin de $a$, $g(x)\leq f(x)\leq h(x)$
+            \begin{SSpartie}{Théorème dit \og des Gendarmes \fg{}} 
+                Soient $f$, $g$ et $h$ trois fonctions telles que pour tout $x$ voisin de $a$, $g(x)\leq f(x)\leq h(x)$.
 
-                Si $\lim\limits_{x\to a}g(x)=\ell\quad$ et $\quad\lim\limits_{x\to a}h(x)=\ell\quad$ où $\ell$ est un réel, alors $\quad\lim\limits_{x\to a}f(x)=\ell$
+                Si $\lim\limits_{x\to a}g(x)=\ell\quad$ et $\quad\lim\limits_{x\to a}h(x)=\ell\quad$ où $\ell$ est un réel, alors $\quad\lim\limits_{x\to a}f(x)=\ell$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}

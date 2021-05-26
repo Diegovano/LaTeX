@@ -46,7 +46,7 @@
                 \end{enumerate}
                 \begin{SSSpartie}{Démonstration (2) (Facile)}
                     Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$.
-                    \[\big(\me^{\ln\,(x)}\big)'=\ln'(x)\times \me^{\ln(x)}=\ln'(x)\times x\]
+                    \[\big(\me^{\ln\,(x)}\big)'=\ln'(x)\times \me^{\ln\,(x)}=\ln'(x)\times x\]
                     \[(x)'=1\]
                     \[\ln'(x)\times x=1\iff\ln'(x)=\frac{1}{x}\quad\square\]
                     
@@ -66,7 +66,7 @@
                     \end{aligned}\]
 
                     Or, $\lim\limits_{h\to0}\frac{\me^{v+h}-\me^v}{h}$ est l'expression de la dérivée de $\me$. La dérivée de $\me^v$ est $\me^v$ :
-                    \[\frac{1}{\me^v}=\frac{1}{\me^{\ln(x)}}=\frac{1}{x}\]
+                    \[\frac{1}{\me^v}=\frac{1}{\me^{\ln\,(x)}}=\frac{1}{x}\]
                     \[\lim\limits_{h\to 0}\frac{\ln\,(x+h)-\ln\,(x)}{h}=\frac{1}{x}\quad\square\]
 
                 \end{SSSpartie}
@@ -76,14 +76,14 @@
 
                 Alors, la fonction $f:x\mapsto\ln\big(u(x)\big)$ et $\boxed{f':x\mapsto\frac{u'}{u}}$.
                 \begin{SSSpartie}{Exemple}
-                    Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln(x^2+1)$.
+                    Soit $f$ définie sur $\mathbb{R}$, par $f(x)=\ln\,(x^2+1)$.
 
                     $f$ est dérivable en $\mathbb{R}$ et $f'(x)=\frac{2x}{x^2+1}$.
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Limites}
-            \[\boxed{\lim_{x\to+\infty}\ln(x)=+\infty\quad\text{et}\quad\lim_{x\to 0}\ln(x)=-\infty}\]
+            \[\boxed{\lim_{x\to+\infty}\ln\,(x)=+\infty\quad\text{et}\quad\lim_{x\to 0}\ln\,(x)=-\infty}\]
             \begin{SSpartie}{Démonstration} 
                 Soit $M>0$, en posant $A=\me^M,~\exists A>0$ tel que :
                 \[\forall x\in\big]\,0~;\,+\infty~\big[,~x>A\implies\ln\,(x)>M\]

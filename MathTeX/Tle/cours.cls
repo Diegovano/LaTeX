@@ -26,7 +26,7 @@
 \RequirePackage{diagbox}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage{tikz}
-\usetikzlibrary{intersections, arrows, patterns, angles}
+\usetikzlibrary{intersections, arrows, patterns, quotes, angles}
 \RequirePackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
 \pgfplotsset{compat=1.18}

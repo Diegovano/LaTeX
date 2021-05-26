@@ -22,20 +22,34 @@
                 $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de même sens. \\
                 $\overrightarrow{AB}\cdot\overrightarrow{AC}=-AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de sens contraire.
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
-                    \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
+                    \begin{tikzpicture}[scale=3]
+                        \coordinate (A) at (-0.5,0);
+                        \coordinate (B) at (1,0);
+                        \coordinate (C) at (0,1);
+                        \coordinate (H) at (0,0);
+                        \draw[thick]  (A) node[label=below left:$A$] {} -- (H) -- (B) node[label=below right:$B$] {} --  (C) node[label=above:$C$] {} -- cycle;
+                        \draw[thick, dashed] (C) -- (H) node[label=below:$H$] {};
+                    \end{tikzpicture}\hspace{2cm}
+                    \begin{tikzpicture}[scale=3]
+                        \coordinate (A) at (0.5,0);
+                        \coordinate (B) at (1.5,0);
+                        \coordinate (C) at (0,1);
+                        \coordinate (H) at (0,0);
+                        \draw[thick] (A) node[label=below:$A$] {} -- (B) node[label=below right:$B$] {} -- (C) -- cycle;
+                        \draw[dashed, thick] (C) node[label=above:$C$] {} -- (H) node[label=below:$H$] {} -- (A);
+                    \end{tikzpicture}
+                    \[\overrightarrow{AB}\cdot\overrightarrow{AC}=\overrightarrow{AB}\cdot\overrightarrow{AH}\]\[=AB\times AH\qquad\text{ou}\qquad=-AB\times AH\]
+                    \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Produit Scalaire par Projeté Orthogonal}}
                 \end{center}
             \end{SSpartie}
             \pagebreak
             \begin{SSpartie}{Définitions avec les Normes} 
                 $\vec{u}\cdot\vec{v}=\dfrac{1}{2}\left(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2\right)=\dfrac{1}{2}\left(\lvert\lvert\vec{u}\rvert\rvert^2+\lvert\lvert\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2\right)$
 
-                Ainsi, $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}\left(AB^2+AC^2-CB^2\right)$
+                Ainsi, $\overrightarrow{AB}\cdot\overrightarrow{AC}=\dfrac{1}{2}\left(AB^2+AC^2-CB^2\right)$.
             \end{SSpartie}
             \begin{SSpartie}{Définition avec l'Angle} 
-                $\vec{u}\cdot\vec{v}=\lvert\lvert\vec{u}\rvert\rvert\times\lvert\lvert\vec{v}\rvert\rvert\times\cos\left(\vec{u}~,\vec{v}\right)$
+                $\vec{u}\cdot\vec{v}=\lvert\lvert\vec{u}\rvert\rvert\times\lvert\lvert\vec{v}\rvert\rvert\times\cos\,\left(\vec{u}~,\vec{v}\right)$
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriétés} 
@@ -44,7 +58,7 @@
         \begin{Spartie}{Expressions Analytique du Produit Scalaire} 
             Dans un repère orthonormé de l'espace, $\vec{u}~\left(~x~;~y~;~z~\right)$ et $\vec{v}~\left(~x'~;y'~;~z'~\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
             \begin{SSpartie}{Démonstration} 
-                On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$
+                On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$ :
 
                 $\begin{aligned}[t]
                     \vec{u}\cdot\vec{v}&=\dfrac{1}{2}\left(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2\right) \\
@@ -67,9 +81,8 @@
                     $\vec{u}$ et $\vec{v}$ sont orthogonaux.
 
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                            \includegraphics[width=5cm]{rsc/12fig2.png}
+                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DC}\quad\text{sont orthogonaux.}\]
                         \parbox{\linewidth}{\captionof{figure}{\centering Illustration de deux Vecteurs Orthogonaux}}
                     \end{center}
                 \end{SSSpartie}
@@ -84,24 +97,20 @@
         \pagebreak
         \begin{Spartie}{Vecteur Normal à un Plan} 
             \begin{SSpartie}{Définition} 
-                Un vecteur normal à un plan est un vecteur directeur d'une droite orthogonale à un plan.
+                Un vecteur \emph{normal} à un plan est un vecteur directeur d'une droite orthogonale à un plan.
     
-                Un vecteur normal est par définition non nul.
+                Un vecteur normal est par définition \emph{non nul}.
     
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
+                        \includegraphics[width=5cm]{rsc/12fig3.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
                 \end{center}
             \end{SSpartie}
             \begin{SSpartie}{Caractérisation d'un Plan} 
-                Un plan est caractérisé par un point et un vecteur normal.
+                Un plan est caractérisé par \emph{un point} et un \emph{vecteur normal}.
 
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
+                    \includegraphics[width=5cm]{rsc/12fig4.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Caractérisation d'un Plan}}
                 \end{center}
                 
@@ -112,13 +121,12 @@
                     On peut aussi définir un plan par trois points non alignés, ou par deux droites sécantes (c'est-à-dire un point et deux vecteurs directeurs), ou, beaucoup plus rare, par deux droites parallèles non confondues.
                 \end{SSSpartie}
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Théorème} 
                 Le plan $\mathcal{P}$ qui passe par un point $A$ et de vecteur normal $\vec{n}$ est l'ensemble des point $M$ tels que $\overrightarrow{AM}\cdot\vec{n}=0$.\quad (admis ou définition d'un plan)
 
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
+                    \includegraphics[width=5cm]{rsc/12fig5.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Théorème}}
                 \end{center}
             \end{SSpartie}
@@ -133,11 +141,9 @@
                     Ainsi $\left(~A~;~\vec{u_1}~,~\vec{u_2}~\right)$ est un repère du plan $\mathcal{P}$, car $\vec{u_1}$ et $\vec{u_2}$ ne sont pas colinéaires.
 
                     Notons $\vec{n}$ un vecteur directeur de $(d)$. (on trace ci-dessous uniquement les vecteurs directeurs)
-
+                    \vspace{-0.2ex}
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \includegraphics[width=5cm]{rsc/12fig6.png}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation de la Situation}}
                     \end{center}
     
@@ -157,14 +163,11 @@
             Deux plans $\mathcal{P}_1$ et $\mathcal{P}_2$ admettant pour vecteurs normaux respectivement $\vec{n_1}$ et $\vec{n_2}$ sont perpendiculaires si et seulement si $\vec{n_1}\cdot\vec{n_2}=0$.
 
             \begin{center}
-                % \begin{tikzpicture}
-                    \includegraphics[width=5cm]{example-image}
-                % \end{tikzpicture}
+                \includegraphics[width=5cm]{rsc/12fig7.png}
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration de deux Plans Perpendiculaires}}
             \end{center}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Projection Orthogonale d'un Point} 
         \begin{Spartie}{Projeté Orthogonal d'un Point sur un Plan} 
             \begin{SSSpartie}{Définition} 
@@ -177,9 +180,7 @@
                 Si $H$ est le projeté orthogonal du point $A$ sur le plan $\mathcal{P}$, le point $H$ est le point de $\mathcal{P}$ le plus proche de $A$. On l'appelle distance du point $A$ au plan $\mathcal{P}$.
                 
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
+                    \includegraphics[width=5cm]{rsc/12fig8.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
                 \end{center}
 
@@ -189,9 +190,7 @@
                     Donc, pour tout point $M$ du plan, $AH\leq AM$.
 
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \includegraphics[width=5cm]{rsc/12fig9.png}
                         \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Démonstration}}
                     \end{center}    
                 \end{SSSSpartie}
@@ -199,20 +198,13 @@
             \begin{SSSpartie}{Propriété} 
                 Pour tout point $M$ du plan $\mathcal{P}$ : \[AH=\frac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=d~\left(~A~,~\mathcal{P}~\right)\]
                 \begin{SSSSpartie}{Démonstration} 
-                    $AH=AM\times\cos\left(~\widehat{MAH}~\right)$\quad (triangle rectangle AMH)
+                    $AH=AM\times\cos\,\left(~\widehat{MAH}~\right)$\quad (triangle rectangle AMH)
 
-                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\left(~\overrightarrow{AM}~,~\vec{n}~\right)$
+                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)$
 
-                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\left(~\overrightarrow{AM}~,~\vec{n}~\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\left(~\widehat{MAH}~\right)$
+                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\widehat{MAH}~\right)$
 
                     Et donc, $\dfrac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=AH$
-
-                    \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
-                        \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Démonstration}}
-                    \end{center}    
                 \end{SSSSpartie}
             \end{SSSpartie}
         \end{Spartie}
