@@ -8,11 +8,11 @@
     \begin{Gpartie}{Rappels} 
         Soit $\Omega$ l'univers d'une experience aléatoire.
 
-        Une variable aléatoire $X$ est une fonction qui à tout élément de $\Omega$ associe un nombre réel.
+        Une variable aléatoire $X$ est une fonction qui à tout élément de $\Omega$ associe un nombre~réel.
         \begin{Spartie}{Exemple} 
-            On tire deux fois une pièce. $\Omega=\big\{~PP~,~PF~,~FP~,~FF~\big\}$
+            On tire deux fois une pièce : $\Omega=\big\{~PP~,~PF~,~FP~,~FF~\big\}$.
 
-            Soit $X$ la variable aléatoire définie sur $\Omega$ qui donne le nombre de \og pile \fg obtenus.
+            Soit $X$ la variable aléatoire définie sur $\Omega$ qui donne le nombre de \og pile \fg{} obtenus.
 
             Soit $G$ la variable aléatoire égale au gain suivant :
             \begin{itemize}
@@ -35,11 +35,11 @@
             L'espérance de la variable aléatoire $X$ est le réel : \[E(X)=\sum_{i=1}^nx_iP\left(X=x_i\right)\]
             L'espérance est une moyenne, les probabilités jouent le role de fréquences.
 
-            Dans notre exemple, $E(X)=1$ et $E(G)=0$
+            Dans notre exemple, $E(X)=1$ et $E(G)=0$.
         \end{Spartie}
         \begin{Spartie}{Définition} 
             La variance de la variable aléatoire $X$ est le réel : \[V(X)=\sum_{i=1}^n\left(x_i-E(X)\right)^2P(X=x_i)\]
-            C'est la moyenne des écarts au carré
+            C'est la moyenne des écarts au carré.
         \end{Spartie}
         \begin{Spartie}{Définition} 
             L'écart-type de la variable aléatoire $X$ est le réel : \[\sigma=\sqrt{V(X)}\]
@@ -92,13 +92,13 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
-                Dans le jeu précédent (deux tirages de pièce), si $X'$ est la variable aléatoire qui donne le triple de nombre de \og pile \fg , $X'=3X$ et donc $E\left(X'\right)=3E(X)=3$
+                Dans le jeu précédent (deux tirages de pièce), si $X'$ est la variable aléatoire qui donne le triple de nombre de \og pile \fg , $X'=3X$ et donc $E\left(X'\right)=3E(X)=3$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Somme de Variables Aléatoires} 
             Dans cette sous-partie, $X$ et $Y$ sont deux variables aléatoires prenant respectivement les valeurs $\big\{~a_1~,~a_2~,~\dotsc~,~a_n~\big\}$ et $\big\{~b_1~,~b_2~,~\dotsc~,~b_m~\big\}$, où $n$ et $m$ sont des entiers naturels non nuls.
             \begin{SSpartie}{Définition} 
-                La variable aléatoire $X+Y$ prend tous les valeurs $a_i+b_j$ possibles (où $1\leq i\leq n$ et $q\leq j\leq m$)
+                La variable aléatoire $X+Y$ prend tous les valeurs $a_i+b_j$ possibles (où $1\leq i\leq n$ et $q\leq j\leq m$).
 
                 Pour toute valeur de $w$, $P(X+Y=w)=\sum_{a_i+b_j=w}P\left(\{X=a_i\}\cap\{Y=b_j\}\right)$ c'est-à-dire la somme des probabilités $P\left(\{X=a_i\}\cap\{Y=b_j\}\right)$ telles que $a_i+b_j=w$ (toutes les sommes égales à $w$).
             \end{SSpartie}
@@ -115,14 +115,15 @@
                 Si $X$ et $Y$ indépendantes : \[P\left(\{X=a_i\}\cap\{Y=b_j\}\right)=P(X=a_i)\times P(Y=b_j)\]
             \end{SSpartie}
             \begin{SSpartie}{Théorème (admis)} 
-                Si $X$ et $Y$ sont deux variables aléatoires indépendantes définies sur un meme univers : \[V(X+Y)=V(X)+V(Y)\]
+                Si $X$ et $Y$ sont deux variables aléatoires indépendantes définies sur un même~univers : \[V(X+Y)=V(X)+V(Y)\]
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Applications} 
         \begin{Spartie}{Loi Binomiale} 
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire qui suit la loi binomiale $\mathcal{B}~\left(~n~;~p~\right)$ : \[E(X)=np\qquad V(X)=np\left(1-p\right)\qquad\sigma(X)=\sqrt{np\left(1-p\right)}\]
+                Si $X$ est une variable aléatoire qui suit la loi binomiale $\mathcal{B}\left(n~;p\right)$ : \[E(X)=np\qquad V(X)=np\left(1-p\right)\qquad\sigma(X)=\sqrt{np\left(1-p\right)}\]
                 \begin{SSSpartie}{Démonstration} 
                     $X$ est la somme de $n$ variables aléatoires indépendantes $X_1~,~X_2~,\dotsc,~X_n~$, suivant la loi de Bernoulli.
 
@@ -160,7 +161,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$ vérifie : \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\]
+                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$~vérifie~: \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\]
                 \begin{SSSpartie}{Démonstration} 
                     \begin{enumerate}[(1)]
                         \item $\begin{aligned}[t]

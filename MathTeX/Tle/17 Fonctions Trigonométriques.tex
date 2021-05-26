@@ -8,35 +8,40 @@
 
     \begin{Gpartie}{Définition et Propriétés} 
         \begin{Spartie}{Rappel} 
-            Soit un réel $x$ et $M$ le point correspondant sur le cercle trigonométrique dans une repère orthonormé $\left(~O~;~\vec{\imath}~,~\vec{\jmath}~\right)$
+            Soit un réel $x$ et $M$ le point correspondant sur le cercle trigonométrique dans une repère orthonormé $\left(O~;\vec{\imath}~,\vec{\jmath}\right)$
 
-            Le cosinus de $x$ est noté $\cos(x)$, où $\cos(x)$ est l'abscisse du point $M$. \\
-            Le sinus de $x$ est noté $\sin(x)$, où $\sin(x)$ est l'ordonnée du point $M$.
+            Le cosinus de $x$ est noté $\cos\,(x)$, où $\cos\,(x)$ est l'abscisse du point $M$. \\
+            Le sinus de $x$ est noté $\sin\,(x)$, où $\sin\,(x)$ est l'ordonnée du point $M$.
             
             \begin{center}
-                % \begin{tikzpicture}
-                    \includegraphics[width=10cm]{example-image}
-                % \end{tikzpicture}
+                \begin{tikzpicture}[scale=2]
+                    \draw (0,-1.25) -- (0,1.25);
+                    \draw (-1.25,0) -- (1.25,0);
+                    \draw[very thick] (0,0) circle (1);
+                    \draw[-stealth, red, thick] (0,0) -- (0.54,0.84) node[dot,label={[label distance=-2pt]above right:$M$}] {};
+
+                    \draw[angle radius=11mm, angle eccentricity=1.2] (0.11,0.17) -- (0.2,0) arc (0:45,1cm);
+                \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{\centering Cercle Trigonométrique}}
             \end{center}
         \end{Spartie}
         \begin{Spartie}{Définitions} 
-            La fonction qui à tout réel $x$ associe le nombre $\cos(x)$ est appelée fonction cosinus. \\
-            La fonction qui à tout réel $x$ associe le nombre $\sin(x)$ est appelée fonction sinus.
+            La fonction qui à tout réel $x$ associe le nombre $\cos\,(x)$ est appelée fonction cosinus. \\
+            La fonction qui à tout réel $x$ associe le nombre $\sin\,(x)$ est appelée fonction sinus.
         \end{Spartie}
         \begin{Spartie}{Propriété} 
-            Quel que soit le réel $x$, $\cos(-x)=\cos(x)$, la fonction est donc paire. \\
-            Quel que soit le réel $x$, $\sin(-x)=-\sin(x)$, la fonction est donc impaire.
+            Quel que soit le réel $x$, $\cos\,(-x)=\cos\,(x)$, la fonction est donc paire. \\
+            Quel que soit le réel $x$, $\sin\,(-x)=-\sin\,(x)$, la fonction est donc impaire.
         \end{Spartie}
         \begin{Spartie}{Propriété (Periodicité)} 
-            Pour tout réel $x$, $\cos(x+2\pi)=\cos(x)$ et $\sin(x+2\pi)=\sin(x)$
+            Pour tout réel $x$, $\cos\,(x+2\pi)=\cos\,(x)$ et $\sin\,(x+2\pi)=\sin\,(x)$
 
             Les fonctions cosinus et sinus sont donc périodiques de période $2\pi$ ($2\pi$-périodiques)
         \end{Spartie}
         \begin{Spartie}{Remarque} 
-            Ces deux propriétés permettent de réduire l'intervalle d'étude des fonctions cosinus et sinus à $\big[~0~;~\pi~\big]$
+            Ces deux propriétés permettent de réduire l'intervalle d'étude des fonctions cosinus et sinus à $\big[0~;\pi\big]$
 
-            Par parité, on peut déduire $\big[~-\pi~;~0~\big]$, donc $\big[~-\pi~;~\pi~\big]$.
+            Par parité, on peut déduire $\big[-\pi~;0\big]$, donc $\big[-\pi~;\pi\big]$.
             
             Par périodicité on peut déduire les résultats sur $\mathbb{R}$
         \end{Spartie}
@@ -44,7 +49,7 @@
     \begin{Gpartie}{Dérivabilité} 
         \begin{Spartie}{Étude des Fonctions Sinus et Cosinus} 
             \begin{SSpartie}{Théorème} 
-                Les fonctions sinus et cosinus sont dérivables sur $\mathbb{R}$, et pour tout réel $x$ : \[\sin'(x)=\cos(x)\quad\text{et}\quad\cos'(x)=-\sin(x)\]
+                Les fonctions sinus et cosinus sont dérivables sur $\mathbb{R}$, et pour tout réel $x$ : \[\sin'(x)=\cos\,(x)\quad\text{et}\quad\cos'(x)=-\sin\,(x)\]
             \end{SSpartie}
             \begin{SSpartie}{Tableaux de Variation} 
                 \begin{center}
@@ -62,20 +67,34 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Tableaux de Variation des Fonctions cosinus et sinus}}
                 \end{center}
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Courbes Représentatives} 
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=10cm]{example-image}
-                    % \end{tikzpicture}
+                    \begin{tikzpicture}
+                        \begin{axis}[scale=1.5,
+                            % height=0.3\linewidth, width=0.49\linewidth,
+                            xmin=-2*pi, xmax=2*pi,
+                            ymin=-1.5, ymax=1.5,
+                            domain=-2*pi:2*pi,
+                            xtick={-2*pi,-pi,0,pi,2*pi},
+                            xticklabels={$-2\pi$,$-\pi$,$0$,$\pi$,$2\pi$},
+                            legend style={at={(0.5,-0.1)},anchor=north}
+                        ]
+                            \addplot[smooth, blue, very thick]{cos(deg(\x))};
+                            \addlegendentry{$\cos\,(x)$};
+                            \addplot[smooth, red, very thick]{sin(deg(\x))};
+                            \addlegendentry{$\sin\,(x)$};
+                        \end{axis}
+                    \end{tikzpicture}
                     \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique des Fonctions cosinus et sinus}}
                 \end{center}
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Complément} 
             \begin{SSpartie}{Théorème} 
-                \[\lim\limits_{x\to0}\frac{\sin(x)}{x}=1\] \[\lim\limits_{x\to0}\frac{\cos(x)-1}{x}=0\]
+                \[\lim\limits_{x\to0}\frac{\sin\,(x)}{x}=1\] \[\lim\limits_{x\to0}\frac{\cos\,(x)-1}{x}=0\]
                 \begin{SSSpartie}{Démonstration} 
-                    La fonction sinus est continue et dérivable en $0$ : \[\lim\limits_{h\to0}\frac{\sin(0+h)-\sin(0)}{h}=\sin'(0)=\cos(0)=1\] \[\lim\limits_{h\to0}\frac{\cos(0+h)-\cos(0)}{h}=\cos'(0)=-\sin(0)=0\]
+                    La fonction sinus est continue et dérivable en $0$ : \[\lim\limits_{h\to0}\frac{\sin(0+h)-\sin(0)}{h}=\sin'(0)=\cos\,(0)=1\] \[\lim\limits_{h\to0}\frac{\cos\,(0+h)-\cos(0)}{h}=\cos'(0)=-\sin\,(0)=0\]
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}

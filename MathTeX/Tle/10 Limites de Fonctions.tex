@@ -23,40 +23,60 @@
                                 xtick=\empty,
                                 ytick=\empty
                             ]
-                                \addplot[blue, very thick, samples=50]{e^(x-1.5)};
                                 \addplot[black]{5};
                                 \draw (0,5) node[anchor=north east] {M};
                                 \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (3.1,5);
+                                \addplot[blue, very thick, samples=50]{e^(x-1.5)};
                             \end{axis}
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $+\infty$}}
                     \end{center}
-                    \vspace*{2ex}
+                    \pagebreak
+                    \vspace{2ex}
                     \item   On dit que $f$ a pour limite $-\infty$ en $+\infty$ si pout tout réel $m$ négatif, il existe un réel $A$, tel que $x>A$, $f(x)\leq m$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ est négatif et peut être aussi grand que l'on veut en valeur absolue.
                     
-                    On note : \[\lim\limits_{x\to +\infty}f(x)=-\infty\]
+                    On note : \[\boxed{\lim\limits_{x\to +\infty}f(x)=-\infty}\]
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \begin{tikzpicture}[scale=0.8]
+                            \begin{axis}[
+                                xmin=-2, xmax=4,
+                                ymin=-6, ymax=1,
+                                xtick=\empty,
+                                ytick=\empty
+                            ]
+                                \draw (0,-5) node[anchor=north east] {m};
+                                \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (3.1,-5);
+                                \addplot[black]{-5};
+                                \addplot[blue, very thick, samples=50]{-e^(x-1.5)};
+                            \end{axis}
+                        \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
-                    \item   On dit que $f$ a pour limite $l$ en $+\infty$ où $l$ est un réel si pour tout intervalle ouvert $I$ contenant $l$, il existe un réel $A$ tel que $x>A$ implique $f(x)\in I$ \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi près de $l$ que l'on veut.
+                    \item   On dit que $f$ a pour limite $\ell$ en $+\infty$ où $\ell$ est un réel si pour tout intervalle ouvert $I$ contenant $\ell$, il existe un réel $A$ tel que $x>A$ implique $f(x)\in I$ \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi près de $\ell$ que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to +\infty}f(x)=\ell\]
+                    On note : \[\boxed{\lim\limits_{x\to +\infty}f(x)=\ell}\]
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
-                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $l$ en $+\infty$}}
+                        \begin{tikzpicture}[scale=0.8]
+                            \begin{axis}[
+                                xmin=-0.5, xmax=3.5,
+                                ymin=-1, ymax=2.5,
+                                xtick=\empty,
+                                ytick=\empty,
+                                domain=0.18:4
+                            ]
+                            \draw[thin, dashed] (0,1) node[label={[label distance=-2pt]left:$\ell$}] {} -- (3.5,1);
+                                \addplot[blue, very thick, samples=100]{0.7*\x^(-1)-1/5*\x^(-2)+1};
+                            \end{axis}
+                        \end{tikzpicture}
+                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
                     H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x>A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x>A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=l$ alors $\mathcal{C}$ admet une asymptote horizontale en $+\infty$ \\ d'équation $y=l$.
+                Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions $\sin$ et $\cos$ sont bornées et n'admettent pas de limites en l'infini.
@@ -68,37 +88,68 @@
                 \begin{itemize}
                     \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$ \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to-\infty}f(x)=+\infty\]
+                    On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=+\infty}\]
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \begin{tikzpicture}[scale=0.8]
+                            \begin{axis}[
+                                xmin=-4, xmax=2,
+                                ymin=-1, ymax=6,
+                                xtick=\empty,
+                                ytick=\empty,
+                                domain=-4:1.75
+                            ]
+                                \addplot[black]{5};
+                                \draw (0,5) node[anchor=north west] {M};
+                                \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (-3.1,5);
+                                \addplot[blue, very thick, samples=50]{e^(-x-1.5)};
+                            \end{axis}
+                        \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $-\infty$}}
                     \end{center}
-                    \vspace*{2ex}
-                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$ \\ On note : \[\lim\limits_{x\to-\infty}f(x)=-\infty\]
+                    \pagebreak
+                    % \vspace*{2ex}
+                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$ \\ On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=-\infty}\]
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
+                        \begin{tikzpicture}[scale=0.7]
+                            \begin{axis}[
+                                xmin=-4, xmax=2,
+                                ymin=-6, ymax=1,
+                                xtick=\empty,
+                                ytick=\empty
+                            ]
+                                \draw (0,-5) node[anchor=north east] {m};
+                                \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (-3.1,-5);
+                                \addplot[black]{-5};
+                                \addplot[blue, very thick, samples=50]{-e^(-x-1.5)};
+                            \end{axis}
+                        \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $-\infty$}}
                     \end{center}
-                    \pagebreak
-                    \item   On dit que $f$ a pour limite $\ell$ en $-\infty$ où $\ell$ est un réel, si pour tout intervalle ouvert $I$ contenant $l$, on peut trouver un réel $A$ tel que si $x\leq A$, $f(x)$ appartient à $I$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives, de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi près de $\ell$ que l'on veut.
+                    \item   On dit que $f$ a pour limite $\ell$ en $-\infty$ où $\ell$ est un réel, si pour tout intervalle ouvert $I$ contenant $\ell$, on peut trouver un réel $A$ tel que si $x\leq A$, $f(x)$ appartient à $I$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives, de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi près de $\ell$ que l'on veut.
                     
-                    On note : \[\lim\limits_{x\to-\infty}f(x)=\ell\]
+                    On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=\ell}\]
                     \begin{center}
-                        % \begin{tikzpicture}
-                            \includegraphics[width=5cm]{example-image}
-                        % \end{tikzpicture}
-                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $l$ en $+\infty$}}
+                        \begin{tikzpicture}[scale=0.7]
+                            \begin{axis}[
+                                xmin=-3.5, xmax=0.5,
+                                ymin=-0.5, ymax=3,
+                                xtick=\empty,
+                                ytick=\empty,
+                                domain=-3.5:-0.1
+                            ]
+                                \draw[thin, dashed] (0,1) node[label={[label distance=-2pt]right:$\ell$}] {} -- (-3.5,1);
+                                \addplot[blue, very thick, samples=100]{-1/\x+1};
+                            \end{axis}
+                        \end{tikzpicture}
+
+                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
                     H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon~;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère. $\lim\limits_{x\to-\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une asymptote horizontale en $-\infty$ d'équation $y=\ell$.
+                Si $\mathcal{C}$ est la courbe représentative de $f$ dans un repère. $\lim\limits_{x\to-\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $-\infty$ d'équation $y=\ell$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
@@ -111,32 +162,32 @@
             \begin{itemize}
                 \item $f(x)$ est aussi grand que l'on veut, on dit que $f$ a pour limite $+\infty$ en $a$.
 
-                On note : \[\lim\limits_{x\to a}f(x)=+\infty\]
+                On note : \[\boxed{\lim\limits_{x\to a}f(x)=+\infty}\]
                 \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            xmin=-0.75, xmax=4.25,
+                            ymin=-0.75, ymax=4.25,
+                            restrict y to domain =-20:20
+                        ]
+                            \addplot[blue, very thick, samples=200]{\x*(x-2)^(-2)*1/(20)};
+                        \end{axis}
+                    \end{tikzpicture}
                     \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $a$}}
                 \end{center}
                 \vspace*{2ex}
                 \item $f(x)$ est négatif et aussi grand que l'on veut en valeur absolue, on dit que $f$ a pour limite $-\infty$ en $a$.
 
-                On note : \[\lim\limits_{x\to a}f(x)=-\infty\]
-                \begin{center}
-                    % \begin{tikzpicture}
-                        \includegraphics[width=5cm]{example-image}
-                    % \end{tikzpicture}
-                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $a$}}
-                \end{center}
-                \vspace*{2ex}
-                \item $f(x)$ est aussi proche que l'on veut d'un réel $l$, on dit que $f$ a pour limite $l$ en $a$.
+                On note : \[\boxed{\lim\limits_{x\to a}f(x)=-\infty}\]
+                \item $f(x)$ est aussi proche que l'on veut d'un réel $\ell$, on dit que $f$ a pour limite $\ell$ en $a$.
                 
-                On note : \[\lim\limits_{x\to a}f(x)=\ell\]
+                On note : \[\boxed{\lim\limits_{x\to a}f(x)=\ell}\]
             \end{itemize}
             \begin{SSpartie}{Remarque} 
-                Si $f$ est continue en $a$, $l=f(a)$.
+                Si $f$ est \emph{continue} en $a$, $\ell=f(a)$.
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Limite à Droite ou à Gauche d'une Fonction en un Réel} 
             \begin{SSpartie}{Exemple} 
                 La fonction $f:x\mapsto\frac{1}{x}$ n'a pas de limite en $0$ car lorsque $x$ tend vers $0$ par des valeurs positives, $\frac{1}{x}$ tend vers $+\infty$ et lorsque $x$ tend vers $0$ par valeurs négatives, $\frac{1}{x}$ tend vers $-\infty$.
@@ -229,38 +280,79 @@
             Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $\ell$ et $\ell'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
             N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$.
             \begin{SSpartie}{Limite de Somme} 
-                \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
-                    Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
-                    Si $\lim g$     & $\ell'$       & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\\hline
-                    $\lim (f+g)$    & $\ell+\ell'$  & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.      \\\hline
-                \end{tabular}\end{center}
-                \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites de Sommes de Fonctions}}
+                % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
+                %     Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
+                %     Si $\lim g$     & $\ell'$       & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\\hline
+                %     $\lim (f+g)$    & $\ell+\ell'$  & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.      \\\hline
+                % \end{tabular}\end{center}
+                % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites de Sommes de Fonctions}}
+                \begin{table}[H]
+                    \centering \captionabove{Tableau des Limites de Sommes de Fonctions}
+                    \resizebox{0.85\linewidth}{!}{
+                        \begin{tabular}{ p{0.15\linewidth} *{3}{M{0.17\linewidth}} } \toprule
+                            {} & \multicolumn{3}{c}{$\lim f$} \\ \cmidrule(l r){2-4}
+                            $\lim g$    & $\ell$        & $+\infty$ & $-\infty$ \\ \midrule
+                            $\ell'$     & $\ell+\ell'$  & $+\infty$ & $-\infty$ \\
+                            $+\infty$   & $+\infty$     & $+\infty$ & F.I.      \\
+                            $-\infty$   & $-\infty$     & F.I.      & $-\infty$ \\ \bottomrule
+                        \end{tabular}
+                    }
+                \end{table}
             \end{SSpartie}
             \begin{SSpartie}{Limite d'un Produit} 
-                \begin{center}\begin{tabular}{ |m{0.12\linewidth}||*{9}{>{\centering\arraybackslash}m{0.061\linewidth}| }} \hline
-                    Si $\lim f$         & $\ell$            & $\ell>0$  & $\ell>0$  & $\ell<0$  & $\ell<0$  & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
-                    Si $\lim g$         & $\ell'$           & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
-                    $\lim (fg)$  & $\ell\times\ell'$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
-                \end{tabular}\end{center}
-                \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Produits de Fonctions}}
+                % \begin{center}\begin{tabular}{ |m{0.12\linewidth}||*{9}{>{\centering\arraybackslash}m{0.061\linewidth}| }} \hline
+                %     Si $\lim f$         & $\ell$            & $\ell>0$  & $\ell>0$  & $\ell<0$  & $\ell<0$  & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
+                %     Si $\lim g$         & $\ell'$           & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
+                %     $\lim (fg)$  & $\ell\times\ell'$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
+                % \end{tabular}\end{center}
+                % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Produits de Fonctions}}
+                \begin{figure}[H]
+                    \centering \captionabove{Tableau des Limites des Produits de Fonctions}
+                    \resizebox{0.85\linewidth}{!}{
+                        \begin{tabular}{ p{0.15\linewidth} *{6}{M{0.1\linewidth}}  } \toprule
+                            {} & \multicolumn{5}{c}{$\lim f$} \\ \cmidrule(l r){2-7}
+                            $\lim g$    & $\ell$        & $\ell>0$      & $\ell<0$      & $+\infty$ & $-\infty$ & $0$       \\ \midrule
+                            $\ell'$     & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $+\infty$ & $-\infty$ & $\ell'$   \\
+                            $\ell'>0$   & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $+\infty$ & $-\infty$ & $0$       \\
+                            $\ell'>0$   & $\ell\ell'$   & $\ell\ell'$   & $\ell\ell'$   & $-\infty$ & $+\infty$ & $0$       \\
+                            $+\infty$   & $+\infty$     & $+\infty$     & $-\infty$     & $+\infty$ & $-\infty$ & F.I.      \\
+                            $-\infty$   & $-\infty$     & $-\infty$     & $+\infty$     & $-\infty$ & $+\infty$ & F.I.      \\
+                            $0$         & $0$           & $0$           & $0$           & F.I.          & F.I.  & $0$       \\ \bottomrule
+                            
+                        \end{tabular}
+                    }
+                \end{figure}
             \end{SSpartie}
             \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ n'est pas nulle} 
-                \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
-                    Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
-                    Si $\lim g$     & $\ell'\neq0$          & $\pm\infty$   & $\ell'>0$ & $\ell'<0$ & $\ell'>0$ & $\ell'<0$ & $\pm\infty$ \\\hline
-                    $\lim (f/g)$    & $\frac{\ell}{\ell'}$  & $0$           & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & F.I. \\\hline
-                \end{tabular}\end{center}
-                \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ n'est pas nulle}}
+                % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
+                %     Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
+                %     Si $\lim g$     & $\ell'\neq0$          & $\pm\infty$   & $\ell'>0$ & $\ell'<0$ & $\ell'>0$ & $\ell'<0$ & $\pm\infty$ \\\hline
+                %     $\lim (f/g)$    & $\frac{\ell}{\ell'}$  & $0$           & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & F.I. \\\hline
+                % \end{tabular}\end{center}
+                % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ n'est pas nulle}}
+                \begin{table}[H]
+                    \centering \captionabove{Tableau des Limites des Quotients de Fonctions}
+                    \begin{tabular}{ p{0.15\linewidth} *{6}{M{0.08\linewidth}} } \toprule
+                        {} & \multicolumn{5}{c}{$\lim f$} \\ \cmidrule(r l){2-7}
+                        $\lim g$ & $\ell$ & $\ell>0$ & $\ell<0$ & $+\infty$ & $-\infty$ & $0$\\ \midrule
+                        $\ell'\neq0$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $+\infty$ & $-\infty$ & $0$ \\
+                        $\ell'>0$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $+\infty$ & $-\infty$ & $0$ \\
+                        $\ell'<0$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $\frac{\ell}{\ell'}$ & $-\infty$ & $+\infty$ & $0$ \\
+                        $+\infty$ & $0$ & $0$ & $0$ & F.I. & F.I. & $0$ \\
+                        $-\infty$ & $0$ & $0$ & $0$ & F.I. & F.I. & $0$ \\
+                        $0^+$ & -- & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I. \\
+                        $0^-$ & -- & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & F.I. \\ \bottomrule
+                    \end{tabular}
+                \end{table}
             \end{SSpartie}
-            \pagebreak
-            \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ est nulle} 
-                \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{5}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
-                    Si $\lim f$ & $\ell>0$ ou $+\infty$ & $\ell>0$ ou $+\infty$ & $\ell<0$ ou $-\infty$ & $\ell<0$ ou $-\infty$ & $0$ \\\hline
-                    Si $\lim g$ & $0^+$                 & $0^-$                 & $0^+$                 & $0^-$                 & $0$ \\\hline
-                    $\lim (f/g)$& $+\infty$             & $-\infty$             & $-\infty$             & $+\infty$             & F.I. \\\hline
-                \end{tabular}\end{center}
-                \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ est nulle}}
-            \end{SSpartie}
+            % \begin{SSpartie}{Limite d'un Quotient $f/g$ dans le cas où la limite de $g$ est nulle} 
+            %     \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{5}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
+            %         Si $\lim f$ & $\ell>0$ ou $+\infty$ & $\ell>0$ ou $+\infty$ & $\ell<0$ ou $-\infty$ & $\ell<0$ ou $-\infty$ & $0$ \\\hline
+            %         Si $\lim g$ & $0^+$                 & $0^-$                 & $0^+$                 & $0^-$                 & $0$ \\\hline
+            %         $\lim (f/g)$& $+\infty$             & $-\infty$             & $-\infty$             & $+\infty$             & F.I. \\\hline
+            %     \end{tabular}\end{center}
+            %     \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ est nulle}}
+            % \end{SSpartie}
             \begin{SSpartie}{Exemples} 
                 \begin{SSSpartie}{Somme} 
                     $\lim\limits_{x\to+\infty}x+\dfrac{1}{x^2}-1=+\infty$\quad(remarquons qu'on a la même limite quand $x\to0$)
