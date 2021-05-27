@@ -1,6 +1,8 @@
 **/**.vscode
 build
 
+# MathTeX/Tle/book
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

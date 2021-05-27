@@ -1,8 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{cours}[2021/27/05]
+\ProvidesClass{coursbook}[2021/27/05]
 
-\LoadClass[12pt, a4paper, leqno, notitlepage]{scrreprt}
+\LoadClass[ 12pt,
+            a4paper, 
+            titlepage=firstiscover, 
+            toc=chapterentrywithdots,
+            open=right,
+            chapterprefix]{scrbook}
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -34,6 +39,8 @@
 \RequirePackage{float}
 \RequirePackage{tkz-tab}
 \DecimalMathComma
+
+\setcounter{tocdepth}{\sectiontocdepth}
 
 \def\frenchtablename{Tableau}
 
@@ -89,6 +96,7 @@
 \setkomafont{pagefoot}{\normalfont}
 
 \setkomafont{chapter}{\huge\normalfont\bfseries}
+\renewcommand*{\thechapter}{\arabic{chapter}}
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=2\baselineskip
@@ -104,7 +112,7 @@
 % \renewcommand*{\thesubsection}{\Roman{section}.\Alph{subsection}}
 \renewcommand*{\thesubsection}{\Alph{subsection}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=\baselineskip,
     afterskip=.5\baselineskip
 ]{subsection}
 
@@ -112,7 +120,7 @@
 % \renewcommand*{\thesubsubsection}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}}
 \renewcommand*{\thesubsubsection}{\arabic{subsubsection}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=.5\baselineskip,
     afterskip=.5\baselineskip
 ]{subsubsection}
 
@@ -120,7 +128,7 @@
 % \renewcommand*{\theparagraph}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
 \renewcommand*{\theparagraph}{\alph{paragraph}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=.5\baselineskip,
     afterskip=.5\baselineskip
 ]{paragraph}
 
@@ -142,18 +150,18 @@
 
 \renewcommand{\ULdepth}{4pt}
 
-\makeatletter
-\renewcommand{\maketitle}[1]{\raggedright
-    \setcounter{chapter}{#1}
-    \chapter*{Chapitre \Roman{chapter}}
+% \makeatletter
+% \renewcommand{\maketitle}[1]{\raggedright
+%     \setcounter{chapter}{#1}
+%     \chapter*{Chapitre \Roman{chapter}}
 
-    \setlength{\baselineskip}{20pt}
-    {\LARGE \bfseries {\uline{\@title}}} \\[4ex]
+%     \setlength{\baselineskip}{20pt}
+%     {\LARGE \bfseries {\uline{\@title}}} \\[4ex]
 
-    \setlength{\parskip}{0.5em}
-    \setlength{\baselineskip}{17pt}
-}
-\makeatother
+%     \setlength{\parskip}{0.5em}
+%     \setlength{\baselineskip}{17pt}
+% }
+% \makeatother
 
 \newenvironment{Gpartie}[1]
     {\section{#1}
@@ -196,9 +204,14 @@
     }
 
 \makeatletter
-\ihead*{Chapitre \Roman{chapter} : \@title}
-\ohead*{Spé Mathématiques T\textsuperscript{le}}
-\cfoot*{\thepage}
+% \ihead*{Chapitre \Roman{chapter} : \@chapter}
+% \ohead*{Mathématiques T\textsuperscript{le}}
+% \cfoot*{\thepage}
+
+\clearpairofpagestyles
+\ihead{\leftmark}
+% \ohead{\Ifstr{\leftmark}{\rightmark}{}{\rightmark}}
+\cfoot*{\pagemark}
 \makeatother
 
 \setlength{\headheight}{15pt}
