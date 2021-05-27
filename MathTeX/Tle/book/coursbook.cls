@@ -6,7 +6,7 @@
             a4paper, 
             titlepage=firstiscover, 
             toc=chapterentrywithdots,
-            open=right,
+            open=left,
             chapterprefix]{scrbook}
 
 \RequirePackage{amsmath}
@@ -19,8 +19,9 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[upright]{fourier}
 \RequirePackage{caption}
-\RequirePackage[headsepline, plainheadsepline, automark]{scrlayer-scrpage}
+\RequirePackage[plainheadsepline, automark]{scrlayer-scrpage}
 \RequirePackage[normalem]{ulem}
+\RequirePackage{eso-pic}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
@@ -34,7 +35,7 @@
 \usetikzlibrary{intersections, arrows, arrows.meta, patterns, quotes, angles}
 \RequirePackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
-\pgfplotsset{compat=1.18}
+\pgfplotsset{compat=1.17}
 \RequirePackage{mathrsfs}
 \RequirePackage{float}
 \RequirePackage{tkz-tab}
@@ -42,11 +43,16 @@
 
 \setcounter{tocdepth}{\sectiontocdepth}
 
+\setlength{\parskip}{0.5em}
+\setlength{\baselineskip}{17pt}
+
 \def\frenchtablename{Tableau}
 
 \makeatletter
 \g@addto@macro\@floatboxreset\centering
 \makeatother
+
+\renewcommand*{\chapterformat}{\chaptername~\thechapter}
 
 \definecolor{qqwuqq}{rgb}{0,0.4,0}
 
@@ -73,6 +79,22 @@
     }
 }
 
+
+\newcommand*\nowtitle{}
+
+\RedeclareSectionCommand[tocnumwidth=2em]{chapter}
+\RedeclareSectionCommand[tocindent=2em]{section}
+
+\let\oldchaptermark=\chaptermark
+\renewcommand*\chaptermark[1]{%
+  \renewcommand*\nowtitle{#1}%
+  \oldchaptermark{#1}}
+
+\pagestyle{scrheadings}
+\ihead{\chaptername~\thechapter}
+\ohead{\nowtitle}
+%\automark{chapter}
+
 \newcolumntype{M}{>{\centering\arraybackslash}{m}}
 \newcolumntype{C}{>{\centering\arraybackslash}{c}}
 
@@ -95,8 +117,11 @@
 \setkomafont{pagehead}{\normalfont}
 \setkomafont{pagefoot}{\normalfont}
 
-\setkomafont{chapter}{\huge\normalfont\bfseries}
+\setkomafont{chapter}{\normalfont\Huge\bfseries}
 \renewcommand*{\thechapter}{\arabic{chapter}}
+
+\setkomafont{title}{\normalfont\huge\bfseries}
+
 \RedeclareSectionCommand[
     beforeskip=0pt,
     afterskip=2\baselineskip
@@ -166,7 +191,7 @@
 \newenvironment{Gpartie}[1]
     {\section{#1}
         \begin{adjustwidth}{2em}{0pt}
-    \nointerlineskip\leavevmode\!}
+    \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
         \end{adjustwidth}
     }
@@ -174,7 +199,7 @@
 \newenvironment{Spartie}[1]
     {\subsection{#1}
         \begin{adjustwidth}{2em}{0pt}
-    \nointerlineskip\leavevmode\!}
+    \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
         \end{adjustwidth}
     }
@@ -182,7 +207,7 @@
 \newenvironment{SSpartie}[1]
     {\subsubsection{#1}
         \begin{adjustwidth}{2em}{0pt}
-    \nointerlineskip\leavevmode\!}
+    \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
         \end{adjustwidth}
     }
@@ -190,7 +215,7 @@
 \newenvironment{SSSpartie}[1]
     {\paragraph{#1}
         \begin{adjustwidth}{2em}{0pt}
-    \nointerlineskip\leavevmode\!}
+    \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
         \end{adjustwidth}
     }
@@ -198,7 +223,7 @@
 \newenvironment{SSSSpartie}[1]
     {\subparagraph{#1}
         \begin{adjustwidth}{2em}{0pt}
-    \nointerlineskip\leavevmode\!}
+    \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
         \end{adjustwidth}
     }
@@ -208,10 +233,13 @@
 % \ohead*{Mathématiques T\textsuperscript{le}}
 % \cfoot*{\thepage}
 
-\clearpairofpagestyles
-\ihead{\leftmark}
+%\renewcommand*{\chaptermarkformat}{\chapter}
+
+%\clearpairofpagestyles
+%\ohead{\leftmark}
+%\ihead{Chapitre \arabic{chapter}}
 % \ohead{\Ifstr{\leftmark}{\rightmark}{}{\rightmark}}
-\cfoot*{\pagemark}
+% \cfoot*{\pagemark}
 \makeatother
 
 \setlength{\headheight}{15pt}

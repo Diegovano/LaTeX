@@ -1,22 +1,28 @@
 \documentclass{coursbook}
 
 \begin{document}
-    \begin{titlepage} \centering
+    \KOMAoptions{open=right}
+    \begin{titlepage}
         \title{Cours de Spécialité Mathématique}
-        \subtitle{Terminale, Année 2021}
-        \author{\and Diego Van Overberghe}
+        \subtitle{Terminale,\quad Année 2021}
+        \author{Nathalie Sibert\and Diego Van Overberghe}
+        \AddToShipoutPicture*
+            {%
+            \put(100,100)%the specific point of the page with coordinates (x=100, y=100)
+             {\includegraphics[width=\linewidth]{rsc/title.jpg}}%
+            }
+        \maketitle
     \end{titlepage}
-
-    \maketitle
+    
+    \KOMAoptions{open=left}
     \tableofcontents
-
+    
     \chapter{Suites : La Démonstration par Récurrence}
 
     % \setlength{\baselineskip}{1.5em}
     \begin{Gpartie}{Exemple}
-        On considère la suite $\left(u_n\right)$, définie pour tout $n\in\mathbb{N}$, par $u_n=4^n-1$ :
-            \[\left(u_n\right)=\big\{~0~;~3~;~15~;63~;~255~;\dotsc~\big\}\]
-        On remarque que tous ces nombres sont des multiples de 3. On se demande si $\forall n\in\mathbb{N},~4^n-1$ est un multiple de 3.
+        On considère la suite $\left(u_n\right)$, définie pour tout $n\in\mathbb{N}$, par $u_n=4^n-1$ : \[\left(u_n\right)=\big\{~0~;~3~;~15~;63~;~255~;\dotsc~\big\}\]
+        On remarque que tous ces nombres sont des multiples de 3. On se demande si ${\forall n\in\mathbb{N},~4^n-1}$ est un multiple de 3.
     \end{Gpartie}
     \begin{Gpartie}{Axiome de Récurrence}
         Soit $\Pde(n)$, une propriété dépendante de l'entier naturel $n$.\\
@@ -32,8 +38,6 @@
         
         L'Hypothèse de récurrence est donc : \og $4^n-1$ est un multiple de 3 \fg{}. C'est-à-dire qu'il existe un entier $p$ tel que $\quad4^n-1=3p\quad$ et donc $\quad4^n=3p+1$.
         \[\begin{aligned}[t]
-            4^{k+1}-1&=4\times 4^k-1 &\\
-            &= 4\times\left(3p+1\right)-1 \quad \text{(Hypothèse de récurrence)} &\\
             &=12p+4-1 &\\
             &=12p+3 &\\
             &=3\left(4p+1\right) \quad \text{(Il s'agit bien d'un multiple de 3)}
@@ -78,7 +82,7 @@
         \end{Spartie}
         \begin{Spartie}{Propriété}
             La somme, le produit et la composée de deux fonctions continues est continue. \\
-            L'inverse d'une fonction continue est continue sur tout intervalle où elle ne s'annule pas.
+            L'inverse d'une fonction continue est continue sur tout intervalle où elle ne s'annule~pas.
             \[f : x\mapsto x^2\quad\text{continue}\] \[g : x\mapsto\dfrac{1}{x^2}\quad\text{Définie sur }\mathbb{R}^*\text{, continue sur }\big]-\infty\,~;~0\,\big[\text{ et }\big]\,0\,~;~+\infty\,\big]\]
         \end{Spartie}
     \end{Gpartie}
@@ -216,6 +220,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
@@ -266,7 +271,6 @@
                 $G$ admet donc 6 permutations.
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Propriété}
             Le nombre de permutations d'un ensemble à $n$ éléments est $n!$
             \begin{SSpartie}{Remarque}
@@ -281,6 +285,7 @@
                 \begin{SSSpartie}{Initialisation}
                     Un ensemble à un élément admet une permutation, et $1! =1$.
                 \end{SSSpartie}
+                \pagebreak
                 \begin{SSSpartie}{Hérédité}
                     Supposons que tout ensemble à $n$ élément ($n$ fixe) admette $n!$~permutations.
 
@@ -301,8 +306,6 @@
                 L'ordre des éléments n'a pas d'importance, les éléments sont distincts.
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
-
         \begin{Spartie}{Propriété}
             Le nombre de combinaisons à $p$ éléments de $E$ est égal à $\binom{n}{p}$, où :
             \[\binom{n}{p}=\dfrac{n!}{p!(n-p)!}\]
@@ -313,6 +316,7 @@
 
                 On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$.
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Cas Particuliers}
                 $\dbinom{n}{0}=1\quad$ La seule partie de $E$ à $0$ élément est $\varnothing$.
 
@@ -345,6 +349,7 @@
                 Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).$\quad\square$
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Triangle de Pascal}
             \begin{center}
                 \begin{tabular}{ M{12pt} | *{7}{M{12pt}}}
@@ -566,6 +571,7 @@
             Donc, $n\geq 14$
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Logarithme Décimal} 
         \begin{Spartie}{Définition} 
             La fonction logarithme décimal, notée $\log$, est définie sur $\big]\,0~;\,+\infty~\big[$, par :
@@ -1020,7 +1026,7 @@
         \begin{Spartie}{Rappel : Limite de $\left(q^n\right)$ où $q\in\mathbb{R}$} 
             \begin{SSpartie}{Théorème} 
                 \begin{itemize}
-                    \setlength\itemsep{0.5em}
+                    \setlength\itemsep{0.3em}
                     \item Si $q>1,~\lim\limits_{n\to+\infty}q^n=+\infty$
                     \item Si $q=1,~\lim\limits_{n\to+\infty}q^n=1$
                     \item Si $-1<q<1,~\lim\limits_{n\to+\infty}q^n=0$
@@ -1029,8 +1035,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
-    \begin{Gpartie}{Opérations sur les Limites} 
+    \begin{Gpartie}{Opérations sur les Limites}
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies. \\ F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination
         \begin{Spartie}{Somme}
             \begin{table}[H] \centering \captionabove{Tableau des Limites de Sommes de Suites} 
@@ -1050,7 +1055,7 @@
                         $-\infty$   & $-\infty$     & F.I.      & $-\infty$ \\ \bottomrule
                     \end{tabular}
                 }
-            \end{table}
+            \end{table}\pagebreak
             \begin{SSpartie}{Exemple} 
                 $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
 
@@ -1097,7 +1102,7 @@
 
                 Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
             \end{SSpartie}
-        \end{Spartie}
+        \end{Spartie}\pagebreak
         \begin{Spartie}{Quotient}
             \begin{table}[H]% en commentaire : tableau alternatif, avec barres verticales.
                 \centering \captionabove{Tableau des Limites de Quotients de Suites}
@@ -1146,7 +1151,7 @@
             \begin{SSpartie}{Remarque} 
                 Graphiquement, les termes de la suite se rapprochent du point d'intersection $\mathcal{C}_f$ et la droite d'équation $y=x$. Uniquement si la suite converge !
                 \begin{center}
-                    \begin{tikzpicture}[scale=0.9]
+                    \begin{tikzpicture}[scale=1]
                         \begin{axis}[
                             xmin=-4, xmax=8,
                             ymin=-3, ymax=10,
@@ -1848,7 +1853,8 @@
                     Donc, $f''(x)$ est strictement positive pour $x>0$.
 
                     Ainsi on a $f'(x)$ strictement croissante sur $\big]0~;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0~;+\infty\big[$ :
-                    \begin{center}                        
+                    
+                    \begin{center}
                         \begin{tikzpicture}
                             \tkzTabInit{$x$ /1, $f''(x)$ /1, $f'(x)$ /1, $f(x)$ /1}{$0$, $+\infty$}
                             \tkzTabLine{z,+,}
@@ -1856,7 +1862,8 @@
                             \tkzTabVar{-/$1$,+/}
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Tableau de Variation de $f$ et $f'$}}
-                    \end{center}
+                    \end{center} 
+                    
                     Donc, pour tout $x\in\big]0~;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$ \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
                     \item On pose $X=-x$ et alors, $\lim\limits_{x\to-\infty}X=+\infty$ et $x\me^x=-X\me^{x}=-\frac{X}{\me^X}$
                     
@@ -1878,7 +1885,7 @@
     \begin{Gpartie}{Opérations sur les Limites} 
         \begin{Spartie}{Limites de Somme, Produit et Quotient} 
             Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $\ell$ et $\ell'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
-            N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$.
+            N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$. \pagebreak
             \begin{SSpartie}{Limite de Somme} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
@@ -1899,7 +1906,6 @@
                     }
                 \end{table}
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Limite d'un Produit} 
                 % \begin{center}\begin{tabular}{ |m{0.12\linewidth}||*{9}{>{\centering\arraybackslash}m{0.061\linewidth}| }} \hline
                 %     Si $\lim f$         & $\ell$            & $\ell>0$  & $\ell>0$  & $\ell<0$  & $\ell<0$  & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
@@ -1923,7 +1929,7 @@
                         \end{tabular}
                     }
                 \end{table}
-            \end{SSpartie}
+            \end{SSpartie}\pagebreak
             \begin{SSpartie}{Limite d'un Quotient $f/g$} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
@@ -2019,7 +2025,7 @@
                     \includegraphics[width=5cm]{rsc/11fig1c.png} \\
                     Plans sécants
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration des Positions Relatives de Deux Plans}}
-            \end{center}
+            \end{center} \pagebreak
             \begin{SSpartie}{Propriété} 
                 Deux plans sont parallèles si et seulement si \emph{deux} droites \emph{sécantes} incluses dans le premier sont parallèles à deux droites sécantes dans le deuxième.
                 \begin{center}
@@ -2041,7 +2047,7 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Théorème}}
                 \end{center}
             \end{SSpartie}
-        \end{Spartie}
+        \end{Spartie} \pagebreak
         \begin{Spartie}{Positions Relatives d'une Droite et un Plan} 
             Une droite non parallèle à un plan est sécante à ce plan. Leur intersection est un~\emph{point}.
             \begin{center}
@@ -2136,9 +2142,9 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriétés} 
-            Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symmétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
+            Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
         \end{Spartie}
-        \begin{Spartie}{Expressions Analytique du Produit Scalaire} 
+        \begin{Spartie}{Expression Analytique du Produit Scalaire} 
             Dans un repère orthonormé de l'espace, $\vec{u}~\left(x~;y~;z\right)$ et $\vec{v}~\left(x'~;y'~;z'\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
             \begin{SSpartie}{Démonstration} 
                 On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$ :
@@ -2151,20 +2157,19 @@
                 \end{aligned}$
             \end{SSpartie}
         \end{Spartie}
-    \end{Gpartie}
+    \end{Gpartie} \pagebreak
     \begin{Gpartie}{Orthogonalité} 
         \begin{Spartie}{Vecteurs Orthogonaux} 
             \begin{SSpartie}{Définition} 
                 Deux vecteurs de l'espace non nuls sont orthogonaux si deux droites qu'ils dirigent sont orthogonales.
 
                 Par convention le vecteur nul est orthogonal à tout vecteur.
-                \pagebreak
                 \begin{SSSpartie}{Exemple} 
                     $\vec{u}$ et $\vec{v}$ sont orthogonaux.
 
                     \begin{center}
                             \includegraphics[width=5cm]{rsc/12fig2.png}
-                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DC}\quad\text{sont orthogonaux.}\]
+                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DH}\quad\text{sont orthogonaux.}\]
                         \parbox{\linewidth}{\captionof{figure}{\centering Illustration de deux Vecteurs Orthogonaux}}
                     \end{center}
                 \end{SSSpartie}
@@ -2175,7 +2180,7 @@
             \begin{SSpartie}{Théorème} 
                 Dans un repère orthonormé, deux vecteurs $\vec{u}~\left(x~;y~;z\right)$ et $\vec{v}~\left(x'~;y'~;z'\right)$ sont orthogonaux si et seulement si $xx'+yy'+zz'=0$ (par définition analytique)
             \end{SSpartie}
-        \end{Spartie}
+        \end{Spartie} \pagebreak
         \begin{Spartie}{Vecteur Normal à un Plan} 
             \begin{SSpartie}{Définition} 
                 Un vecteur \emph{normal} à un plan est un vecteur directeur d'une droite orthogonale à un plan.
@@ -2187,9 +2192,8 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
                 \end{center}
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Caractérisation d'un Plan}
-                Un plan est caractérisé par \emph{un point} et un \emph{vecteur normal}.
+                Un plan est caractérisé par \emph{un point} et \emph{un vecteur normal}.
 
                 \begin{center}
                     \includegraphics[width=5cm]{rsc/12fig4.png}
@@ -2239,7 +2243,7 @@
                     Ainsi, $\vec{n}$ est orthogonal à $\vec{u}$, et donc $(d)$ est orthogonale à toute droite du plan~$\mathcal{P}$.\quad$\square$
                 \end{itemize}
             \end{SSpartie}
-        \end{Spartie}
+        \end{Spartie} \pagebreak
         \begin{Spartie}{Plans Perpendiculaires} 
             Deux plans $\mathcal{P}_1$ et $\mathcal{P}_2$ admettant pour vecteurs normaux respectivement $\vec{n_1}$ et $\vec{n_2}$ sont perpendiculaires si et seulement si $\vec{n_1}\cdot\vec{n_2}=0$.
 
@@ -2249,7 +2253,6 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
-    \vfill\pagebreak
     \begin{Gpartie}{Projection Orthogonale d'un Point} 
         \begin{Spartie}{Projeté Orthogonal d'un Point sur un Plan} 
             \begin{SSSpartie}{Définition} 
@@ -2451,7 +2454,7 @@
             $f$ est concave sur $I$ si et seulement si $\mathcal{C}$ est située en dessous de chacune de ses tangentes sur $I$
 
             \begin{center}
-                \begin{tikzpicture}[scale=0.9]
+                \begin{tikzpicture}
                     \begin{axis}[
                         xmin=-2, xmax=2,
                         ymin=-2, ymax=2,
@@ -2467,7 +2470,7 @@
                     \end{axis}
                 \end{tikzpicture}
                 \hspace{1cm}
-                \begin{tikzpicture}[scale=0.9]
+                \begin{tikzpicture}
                     \begin{axis}[
                         xmin=-2, xmax=2,
                         ymin=-2, ymax=2,
@@ -2483,7 +2486,7 @@
                 \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
             \end{center}
-        \end{Spartie}
+        \end{Spartie} \pagebreak
         \begin{Spartie}{Définition} 
             $A$ est un point d'inflexion de $\mathcal{C}$ si au point $A$, la courbe traverse sa tangente.
 
@@ -2506,7 +2509,6 @@
             Lorsque $f$ change de convexité, sa courbe $\mathcal{C}$ admet un point d'inflexion.
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Lien avec la Dérivée} 
         \begin{Spartie}{Définition} 
             Soit $f$ une fonction dérivable sur $I$ dont la fonction dérivée $f'$ est dérivable sur $I$. La dérivée de $f'$ se nomme la dérivée seconde de $f$ et se note $f''$.
@@ -2710,7 +2712,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$~vérifie~: \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\]
+                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$~vérifie~: \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\] \pagebreak
                 \begin{SSSpartie}{Démonstration} 
                     \begin{enumerate}[(1)]
                         \item $\begin{aligned}[t]
@@ -2763,7 +2765,7 @@
 
                 Par convention, on compte positivement les aires lorsque $\mathcal{C}$ est au dessus de l'axe des abscisses et négativement lorsqu'elle est en dessous.
             \end{SSpartie}
-        \end{Spartie}
+        \end{Spartie} \pagebreak
         \begin{Spartie}{Dérivabilité de la Fonction Aire} 
             \begin{SSpartie}{Théorème} 
                 Soit $f$ une fonction continue et positive sur $\big[a~;b\big]~\left(a\leq b\right)$
@@ -2855,7 +2857,7 @@
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
-    \end{Gpartie}
+    \end{Gpartie} \pagebreak
     \begin{Gpartie}{Intégrale d'une Fonction Continue} 
         \begin{Spartie}{Extension de la Notion d'Intégrale} 
             On a défini l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\big[a~;b\big]~\left(a\leq b\right)$, et on a vu que si $F$ est une primitive de $f$ sur $\big[a~;b\big]$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
@@ -2968,7 +2970,6 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Valeur Moyenne d'une Fonction Continue} 
         \begin{Spartie}{Valeur Moyenne} 
             \begin{SSpartie}{Définition} 
@@ -3037,8 +3038,8 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Remarques} 
-                Interprétation en cas d'une fonction positive : L'aire de la courbe $\mathcal{C}_f$ est comprise entre les aires des rectangles de longueur $b-a$ et de hauteurs respectives $m$ et $M$.
-                
+                Interprétation en cas d'une fonction positive : l'aire de la courbe $\mathcal{C}_f$ est comprise entre les aires des rectangles de longueur $b-a$ et de hauteurs respectives $m$ et $M$.
+                \pagebreak
                 Encadrement de la valeur moyenne :
 
                 $\begin{aligned}[t]
@@ -3049,7 +3050,6 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \vfill\pagebreak
     \begin{Gpartie}{Intégration par Parties} 
         \begin{Spartie}{Propriété} 
             Soient $u$ et $v$ deux fonction dérivables telles que leurs dérivées $u'$ et $v'$ sont continues sur un intervalle $\big[a~;b\big]$. Alors : \[\int_a^b u(x)v'(x)\dx=\big[u(x)v(x)\big]_a^b-\int_a^b u'(x)v(x)\]
@@ -3145,7 +3145,7 @@
                     \end{tikzpicture}
                     \parbox{\linewidth}{\captionof{figure}{\centering Tableaux de Variation des Fonctions cosinus et sinus}}
                 \end{center}
-            \end{SSpartie}
+            \end{SSpartie} \pagebreak
             \begin{SSpartie}{Courbes Représentatives} 
                 \begin{center}
                     \begin{tikzpicture}
@@ -3168,7 +3168,6 @@
                 \end{center}
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Complément} 
             \begin{SSpartie}{Théorème} 
                 \[\lim\limits_{x\to0}\frac{\sin\,(x)}{x}=1\] \[\lim\limits_{x\to0}\frac{\cos\,(x)-1}{x}=0\]
@@ -3210,7 +3209,7 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Remarque} 
-            Souvent, on prendre $\delta=\sigma$ ou $k\sigma$ car l'écart type $\sigma$ d'une variable aléatoire $X$ est l'unité naturelle pour étudier la dispersion de $X$ autour de sons espérance.
+            Souvent, on prend $\delta=\sigma$ ou $k\sigma$ car l'écart type $\sigma$ d'une variable aléatoire $X$ est l'unité naturelle pour étudier la dispersion de $X$ autour de sons espérance.
 
             L'inégalité de \textsc{Bienaymé-Tchebychev} montre notamment que des écarts de $X$ à $E(X)$ de quelques $\sigma$ deviennent improbables.
         \end{Spartie}
@@ -3232,7 +3231,7 @@
             
             Alors, pour tout réel $\delta>0$ : \[\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)\leq\frac{V(X)}{n\delta^2}\quad\text{(c'est l'inégalité de concentration)}\]\[\boxed{\lim\limits_{n\to +\infty}\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)=0}\quad\text{(c'est la loi des grands nombres)}\]
 
-            Autrement dit, plus la taille $n$ d'un échantillon d'une variable aléatoire $X$ est grande, plus l'écart entre la moyenne de cet échantillon et l'espérance de $X$ est faible.
+            Autrement dit, plus la taille $n$ d'un échantillon d'une variable aléatoire $X$ est grande, plus l'écart entre la moyenne de cet échantillon et l'espérance de $X$ est faible. \pagebreak
             \begin{SSpartie}{Démonstration} 
                 \vspace*{-2ex}
                 \begin{SSSpartie}{Rappels} 
@@ -3277,7 +3276,7 @@
         \end{aligned}$
     \end{Gpartie}
 
-    \begin{Gpartie}{Formules d'Addition et Duplication} 
+    \begin{Gpartie}{Formules d'Addition et de Duplication} 
         \begin{Spartie}{Formule d'Addition} 
             \begin{center}
                 \begin{tikzpicture}[scale=2]
@@ -3386,7 +3385,7 @@
 
                 \item $\mathrm{OIT}$ :
                 
-                On utilise le théorème de Thalès dans les triangles $\mathrm{OHM}$ et $\mathrm{OIT}$ : 
+                On utilise le théorème de \textsc{Thalès} dans les triangles $\mathrm{OHM}$ et $\mathrm{OIT}$ : 
                 \[\begin{aligned}[t]
                     \frac{HM}{IT} &= \frac{OH}{OI} \\[1.5ex]
                     \frac{\sin\,(x)}{IT} &=\frac{\cos\,(x)}{1} \\[1.5ex]
@@ -3447,6 +3446,10 @@
         \end{Spartie}
     \end{Gpartie}
 	
-	\chapter{Un Tout Grand Merci}
-	J'espère que ce petit livret peut vous servir comme un souvenir de cette année. J'espère que nos chemins se croiseront dans le futur proche !
+	\chapter{Remerciements}
+	J'espère que ce petit livret peut vous servir comme un souvenir de cette année et que nos chemins se croiseront dans le futur proche !
+	
+	Merci a vous, a Florian et Valentin qui m'ont aidé dans la relecture (faite \textit{très} rapidement), ainsi qu'à la classe entière pour l'atmosphère excellent tout au long de l'année.
+	
+	À bientôt !
 \end{document}
