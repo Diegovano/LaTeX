@@ -13,8 +13,10 @@
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[upright]{fourier}
+% \RequirePackage{newpxtext}
+% \RequirePackage{newpxmath}
 \RequirePackage{caption}
-\RequirePackage[headsepline, plainheadsepline, automark]{scrlayer-scrpage}
+\RequirePackage[automark]{scrlayer-scrpage}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{changepage}
 \RequirePackage{graphicx}
@@ -104,7 +106,7 @@
 % \renewcommand*{\thesubsection}{\Roman{section}.\Alph{subsection}}
 \renewcommand*{\thesubsection}{\Alph{subsection}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=\baselineskip,
     afterskip=.5\baselineskip
 ]{subsection}
 
@@ -112,7 +114,7 @@
 % \renewcommand*{\thesubsubsection}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}}
 \renewcommand*{\thesubsubsection}{\arabic{subsubsection}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=.5\baselineskip,
     afterskip=.5\baselineskip
 ]{subsubsection}
 
@@ -120,7 +122,7 @@
 % \renewcommand*{\theparagraph}{\Roman{section}.\Alph{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
 \renewcommand*{\theparagraph}{\alph{paragraph}}
 \RedeclareSectionCommand[
-    beforeskip=0pt,
+    beforeskip=.5\baselineskip,
     afterskip=.5\baselineskip
 ]{paragraph}
 
@@ -148,7 +150,7 @@
     \chapter*{Chapitre \Roman{chapter}}
 
     \setlength{\baselineskip}{20pt}
-    {\LARGE \bfseries {\uline{\@title}}} \\[4ex]
+    {\LARGE \bfseries {{\@title}}} \\[4ex]
 
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{17pt}
@@ -195,10 +197,16 @@
         \end{adjustwidth}
     }
 
+% \makeatletter
+% \ihead*{Chapitre \Roman{chapter} : \@title}
+% \ohead*{Spé Mathématiques T\textsuperscript{le}}
+% \cfoot*{\thepage}
+% \makeatother
+
 \makeatletter
-\ihead*{Chapitre \Roman{chapter} : \@title}
-\ohead*{Spé Mathématiques T\textsuperscript{le}}
-\cfoot*{\thepage}
+\pagestyle{scrheadings}
+\ohead{\chaptername~\thechapter}
+\ihead{\@title}
 \makeatother
 
 \setlength{\headheight}{15pt}

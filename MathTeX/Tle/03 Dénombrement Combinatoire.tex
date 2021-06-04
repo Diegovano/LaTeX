@@ -15,7 +15,7 @@
             L'Ensemble vide, noté $\varnothing$ est une \emph{partie} de tout ensemble. \\
             L'Ensemble des parties de $E$ est noté $\mathcal{P}(E)$.
             \begin{SSpartie}{Exemple}
-                Si $E=\big\{\,x~;\,y~\big\}$ est un ensemble de deux éléments :
+                Si $E=\big\{x\,;y\big\}$ est un ensemble de deux éléments :
                 \[\mathcal{P}(E)=\Big\{\,\varnothing~,\,\big\{\,x~\big\}~,\,\big\{\,y~\big\}~,\,\big\{\,x~;\,y~\big\}~\Big\}\]
             \end{SSpartie}
         \end{Spartie}
@@ -32,7 +32,7 @@
         \begin{Spartie}{Propriété (Principe Additif)}
             Si $A$ et $B$ sont deux parties quelconques d'un ensemble fini $E$, alors :
             \[\mathrm{Card}\,(A\cup B)=\mathrm{Card}\,(A)+\mathrm{Card}\,(B)-\mathrm{Card}\,(A\cap B)\]
-            De plus, si $A_1~,~A_2~,\dotsc,~A_p$ sont $p$ parties \emph{deux à deux disjointes} d'un ensemble~fini,~alors :
+            De plus, si $A_1~,~A_2~,\dotsc,~A_p$ sont $p$ parties \emph{deux à deux disjointes} d'un ensemble~fini,~alors~:
             \[\mathrm{Card}\,\left(A_1\cup A_2\cup\dotsb\cup A_p\right)=\mathrm{Card}\,(A_1)+\mathrm{Card}\,(A_2)+\dotsb+\mathrm{Card}\,\left(A_p\right)\]
         \end{Spartie}
         \begin{Spartie}{Propriété}
@@ -60,7 +60,6 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
@@ -91,7 +90,6 @@
                 Si $E$ est un ensemble fini, pour tout $k\in\mathbb{N^*}$ :
                 \[\mathrm{Card}\,\left(E^k\right)=\big(\mathrm{Card}\,(E)\big)^k\]
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Exemples}
                 Dans les exemples précédents :
                 \begin{itemize}
@@ -101,7 +99,6 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak[3]
     \begin{Gpartie}{Permutations}
         \begin{Spartie}{Définition}
             Soit $E$, un ensemble à $n$ éléments, une \emph{permutation} est un n-uplet d'éléments distincts de $E$.
@@ -114,16 +111,15 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Le nombre de permutations d'un ensemble à $n$ éléments est $n!$
+            Le nombre de permutations d'un ensemble à $n$ éléments est $n!$~.
             \begin{SSpartie}{Remarque}
                 $n! =n\times(n-1)\times\dotsb\times 2\times 1$ \\
                 $n!$ est le produit de tous les entiers de $1$ à $n$. \\
-                $n!$ se lit ``factorielle de $n$''.
+                $n!$ se lit \og factorielle de $n$ \fg{}.
             \end{SSpartie}
             \begin{SSpartie}{Explication}
                 On peut considérer que faire une permutation c'est faire un tirage sans remise des $n$ éléments de $E$. Il y $n$ choix pour le premier élément, $n-1$ pour le deuxième et ainsi de suite.
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Démonstration par Récurrence}
                 \begin{SSSpartie}{Initialisation}
                     Un ensemble à un élément admet une permutation, et $1! =1$.
@@ -135,12 +131,11 @@
                     On choisit un élément $x$ de $E$. \\
                     Dans chacune des permutations des $n$ éléments restants, il y a $n+1$ positions où insérer $x$.
 
-                    Ainsi, le nombre de permutations de $E$ est $(n+1)\times n! =(n+1)!$.$\quad\square$
+                    Ainsi, le nombre de permutations de $E$ est $(n+1)\times n! =(n+1)!$~.$\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak[3]
     \begin{Gpartie}{Combinaisons}
         Dans tout ce sous-chapitre, $E$ est un ensemble à $n$ éléments et $p$ est un entier naturel tel~que~$p\leq n$.
         \begin{Spartie}{Définition}
@@ -157,7 +152,7 @@
             \begin{SSpartie}{Explication}
                 Lorsqu'on choisit $p$ éléments dans un ensemble à $n$ éléments, on a $n$ choix pour le premier, $n-1$ choix pour le deuxième, etc.\ mais ainsi, les $p$ éléments sont ordonnés.
 
-                On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$.
+                On divise donc par le nombre de permutations de $p$ éléments, c'est-à-dire $p!$~.
             \end{SSpartie}
             \begin{SSpartie}{Cas Particuliers}
                 $\dbinom{n}{0}=1\quad$ La seule partie de $E$ à $0$ élément est $\varnothing$.
@@ -186,7 +181,7 @@
 
                 Donc il y a $\binom{n}{p}$ à $p$ éléments de $E\setminus\big\{x\big\}$.
 
-                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent $x$.
+                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent~$x$.
 
                 Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).$\quad\square$
             \end{SSpartie}

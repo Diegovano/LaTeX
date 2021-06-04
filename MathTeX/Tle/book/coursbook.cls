@@ -20,6 +20,7 @@
 \RequirePackage[upright]{fourier}
 \RequirePackage{caption}
 \RequirePackage[plainheadsepline, automark]{scrlayer-scrpage}
+\RequirePackage{scrhack}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{eso-pic}
 \RequirePackage{changepage}
@@ -43,7 +44,7 @@
 
 \setcounter{tocdepth}{\sectiontocdepth}
 
-\setlength{\parskip}{0.5em}
+\setlength{\parskip}{0.5\baselineskip}
 \setlength{\baselineskip}{17pt}
 
 \def\frenchtablename{Tableau}
@@ -190,42 +191,42 @@
 
 \newenvironment{Gpartie}[1]
     {\section{#1}
-        \begin{adjustwidth}{2em}{0pt}
+        \nopagebreak\begin{adjustwidth}{2em}{0pt}
     \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
-        \end{adjustwidth}
+        \end{adjustwidth}\pagebreak[3]
     }
 
 \newenvironment{Spartie}[1]
     {\subsection{#1}
-        \begin{adjustwidth}{2em}{0pt}
+        \nopagebreak\begin{adjustwidth}{2em}{0pt}
     \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
-        \end{adjustwidth}
+        \end{adjustwidth}\pagebreak[2]
     }
 
 \newenvironment{SSpartie}[1]
     {\subsubsection{#1}
-        \begin{adjustwidth}{2em}{0pt}
+        \nopagebreak\begin{adjustwidth}{2em}{0pt}
     \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
-        \end{adjustwidth}
+        \end{adjustwidth}\pagebreak[2]
     }
 
 \newenvironment{SSSpartie}[1]
     {\paragraph{#1}
-        \begin{adjustwidth}{2em}{0pt}
+        \nopagebreak\begin{adjustwidth}{2em}{0pt}
     \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
-        \end{adjustwidth}
+        \end{adjustwidth}\pagebreak[1]
     }
 
 \newenvironment{SSSSpartie}[1]
     {\subparagraph{#1}
-        \begin{adjustwidth}{2em}{0pt}
+        \nopagebreak\begin{adjustwidth}{2em}{0pt}
     \nointerlineskip\leavevmode\hspace*{-0.5ex}}
     {
-        \end{adjustwidth}
+        \end{adjustwidth}\pagebreak[1]
     }
 
 \makeatletter
