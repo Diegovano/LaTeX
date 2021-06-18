@@ -39,16 +39,16 @@
         \begin{Spartie}{Remarque} 
             L'Inégalité de Bienaymé-Tchebychev est loin de donner le meilleur majorant.
 
-            Si $X$ est une variable aléatoire suivant la loi binomiale $\mathcal{B}\left(n~;p\right)$, on a $\Pde\big(\vert X-E(X)\rvert\geq 2\sigma\big)\approx 0,05$ ce qui est bien meilleur que le $0,25$ obtenu avec l'inégalité.
+            Si $X$ est une variable aléatoire suivant la loi binomiale $\mathcal{B}\,\left(n\,; p\right)$, on a $\Pde\big(\vert X-E(X)\rvert\geq 2\sigma\big)\approx 0{,}05$ ce qui est bien meilleur que le $0{,}25$ obtenu avec l'inégalité.
 
-            En effet, si $\delta=2\sigma$ et $X\sim\mathcal{B}(~n~;~p~)$ : \[\frac{V(X)}{\delta^2}=\frac{np(1-p)}{\left(4\sqrt{np(1-p)}\right)^2}=\frac{1}{4}\]
+            En effet, si $\delta=2\sigma$ et $X\sim\mathcal{B}\,(n\,; p)$ : \[\frac{V(X)}{\delta^2}=\frac{np(1-p)}{\left(2\sqrt{np(1-p)}\right)^2}=\frac{1}{4}\]
         \end{Spartie}
     \end{Gpartie}
     \pagebreak
     \begin{Gpartie}{Loi des Grands Nombres}
         \vspace*{-2ex}
         \begin{Spartie}{Propriété} 
-            Soit une variable aléatoire $X$ associée à un échantillon $\big(~X_1~,~X_2~,\dotsc,~X_n~\big)$, c'est-à-dire que $\big(~X_1~,~X_2~,\dotsc,~X_n~\big)$ est un échantillon de $n$ variables aléatoires identiques et indépendantes qui suivent toutes la loi de probabilité suivie par $X$. \ \\ On note $M_n$ la moyenne de cet échantillon. 
+            Soit une variable aléatoire $X$ associée à un échantillon $\big(X_1\,, X_2\,,\dotsc\,, X_n\big)$, c'est-à-dire que $\big(X_1\,, X_2\,,\dotsc\,, X_n\big)$ est un échantillon de $n$ variables aléatoires identiques et indépendantes qui suivent toutes la loi de probabilité suivie par $X$. \ \\ On note $M_n$ la moyenne de cet échantillon. 
             
             Alors, pour tout réel $\delta>0$ : \[\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)\leq\frac{V(X)}{n\delta^2}\quad\text{(c'est l'inégalité de concentration)}\]\[\boxed{\lim\limits_{n\to +\infty}\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)=0}\quad\text{(c'est la loi des grands nombres)}\]
 
@@ -62,7 +62,7 @@
                         \item $E(X+Y)=E(X)+E(Y)\quad\text{et, si $X$ et $Y$ indépendantes}\quad \mbox{V(X+Y)=V(X)+V(Y)}$
                     \end{itemize}
 
-                    Pour un échantillon $\big\{~X_1~;X_2~;\dotsb;X_n ~\big\}$ où $X_i$ sont indépendantes, et suivent une loi $X$ :
+                    Pour un échantillon $\big\{\,X_1\,; X_2\,;\dotso\,; X_n\,\big\}$ où $X_i$ sont indépendantes, et suivent une loi $X$ :
                     \begin{itemize}
                         \item $S_n=X_1+X_2+\dotsb+X_n$\quad$E\left(S_n\right)=nE(X)$\quad$V\left(S_n\right)=nV(X)$
                         \item $M_n=\frac{S_n}{n}$\quad$E\left(M_n\right)=E(X)$\quad$V\left(M_n\right)=\frac{V(X)}{n}$

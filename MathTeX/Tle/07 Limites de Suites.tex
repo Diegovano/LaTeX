@@ -10,9 +10,9 @@
     \begin{Gpartie}{Suites Majorées, Minorées et Bornées} 
         \begin{Spartie}{Définitions} 
             \begin{itemize}
-                \item Une suite ($u_n$) est \emph{majorée} s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},~u_n\leq M$
-                \item Une suite ($u_n$) est \emph{minorée} s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},~u_n\geq m$
-                \item Une suite est \emph{bornée} si elle est majorée \emph{et} bornée
+                \item Une suite ($u_n$) est \emph{majorée} s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},~u_n\leq M$.
+                \item Une suite ($u_n$) est \emph{minorée} s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},~u_n\geq m$.
+                \item Une suite est \emph{bornée} si elle est majorée \emph{et} bornée.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Exemple} 
@@ -25,7 +25,7 @@
         \begin{Spartie}{Limite Infinie}
             \vspace*{-2ex}
             \begin{SSpartie}{Définition} 
-                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]\,M~;~+\infty\,\big[$ contient tous les termes de la suite à partir d'un certain rang.
+                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]M\,;+\infty\big[$ contient tous les termes de la suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $M$, on peut trouver un rang $n$ tel que : \[\forall n\geq N,\quad u_n>M\]
                 A partir du rang $N$, tous les termes sont supérieurs à $M$.
@@ -35,7 +35,7 @@
                 H.P. : $\forall M\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n>M)$
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]\,-\infty~;~m\,\big[$ contient tous les termes de le suite à partir d'un certain rang.
+                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]-\infty\,;m\big[$ contient tous les termes de le suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $m$, on peut trouver un rang $N$ tel que : \[\forall n\geq N,\quad u_n<m\]
                 A partir du rang $N$, tous les termes sont inférieurs à $m$.
@@ -70,18 +70,17 @@
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Limites Finies / Suites Convergentes} 
             \begin{SSpartie}{Définition} 
                 Une suite ($u_n$) \emph{converge} vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
-                Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $l$.
+                Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $\ell$.
 
-                On dit que $l$ est la \emph{limite} de la suite ($u_n$) et que la suite est \emph{convergente}.
+                On dit que $\ell$ est la \emph{limite} de la suite ($u_n$) et que la suite est \emph{convergente}.
 
                 On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=\ell}\]
 
-                H.P. : $\forall\epsilon >0,~\exists N\in\mathbb{N},~\forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\,\ell-\epsilon~;~\ell+\epsilon\,\big[\Big)$
+                H.P. : $\quad\forall\epsilon >0,~\exists N\in\mathbb{N},~\forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\ell-\epsilon\,; \ell+\epsilon\big[\Big)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 \begin{center}$\begin{array}{cc}
@@ -115,24 +114,24 @@
 
                 Or, il existe un rang $N_2$, à partir duquel $n>N_2,\ v_n\geq u_n$.
 
-                Donc, il existe un rang $N=\max\,(\,N_1~;~N_2\,)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
+                Donc, il existe un rang $N=\max\,(N_1\,; N_2)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
             \end{SSpartie}
             \begin{SSpartie}{Théorème dit \og des Gendarmes \fg{} (Théorème d'Encadrement)}
-                Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang~$u_n\leq v_n\leq w_n$ :
+                Soient $(u_n),~(v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain \\ rang~${u_n\leq v_n\leq w_n}$ :
 
                 Si $\lim\limits_{n\to +\infty}u_n=\ell$ et $\lim\limits_{n\to +\infty}w_n=\ell$ où $\ell$ est un réel alors :
                 \[\lim\limits_{n\to +\infty}v_n=\ell\]
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
-                Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$
+                Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$.
 
                 $\begin{aligned}[t]
                     \forall n\in\mathbb{N},&\quad-1\leq (-1)^n\leq 1 \\
                     \iff&\quad\frac{-1}{n}\leq\frac{(-1)^n}{n}\leq\frac{1}{n}
                 \end{aligned}$ \\[2ex]
-                Or, $\lim\limits_{n\to +\infty}\frac{-1}{n}=0,\ \lim\limits_{n\to +\infty}\frac{1}{n}=0$
+                Or, $\lim\limits_{n\to +\infty}\frac{-1}{n}=0,\ \lim\limits_{n\to +\infty}\frac{1}{n}=0$.
 
-                D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$
+                D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$.
             \end{SSpartie}
         \end{Spartie}
         \pagebreak
@@ -163,9 +162,9 @@
 
                     Or tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
-                    Prenons l'intervalle ouvert $\big]\,a~;~b\,\big[$ tel que $\ell<b<u_{n_0}$.
+                    Prenons l'intervalle ouvert $\big]a\,; b\big[$ tel que $\ell<b<u_{n_0}$.
 
-                    Il existe un indice $p>n_0$ tel que $u_p\in\big]\,a~;~b\,\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
+                    Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,; b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
 
                     Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la~lemme,~$p>n_0\implies u_p\geq u_{n_0}$.
 
@@ -174,21 +173,21 @@
             \end{SSpartie}
             \pagebreak
             \begin{SSpartie}{Théorème} 
-                Toute suite croissante et non-majorée diverge vers $+\infty$
+                Toute suite croissante et non-majorée diverge vers $+\infty$.
 
-                Toute suite décroissante et non-minorée diverge vers $-\infty$
+                Toute suite décroissante et non-minorée diverge vers $-\infty$.
 
                 \begin{SSSpartie}{Démonstration} 
                     Soit $M$ un réel, et $(u_n)_{n\in\mathbb{N}}$, une suite croissante, non-majorée.
 
-                    Il existe un rang $N$ tel que $u_N>M$
+                    Il existe un rang $N$ tel que $u_N>M$.
 
-                    Donc, $(u_n)$ diverge vers $+\infty$
+                    Donc, $(u_n)$ diverge vers $+\infty$.
                     \begin{itemize}
-                        \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance, 
+                        \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance :
                         \[\lim\limits_{n\to +\infty}u_n=\ell\implies\forall n\in\mathbb{N},\ u_n\leq\ell\] \\ $(u_n)$ est majorée par $\ell$, c'est une contradiction.$\quad\square$
                         \\[2ex]
-                        \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme : $(u_n)$ croissante, $p,\ n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$ \\ $\forall n\geq n_0,\ u_n\geq u_{n_0}>M$ \\ Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où : \[\lim\limits_{n\to +\infty}u_n=+\infty\]
+                        \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme, pour $(u_n)$ croissante : $p,~n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$. \\ Ainsi : \[\forall n\geq n_0,\ u_n\geq u_{n_0}>M\] Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où : \[\lim\limits_{n\to +\infty}u_n=+\infty\]
                     \end{itemize}
                 \end{SSSpartie}
             \end{SSpartie}
@@ -227,14 +226,6 @@
                     \end{tabular}
                 }
             \end{table}
-            \begin{SSpartie}{Exemple} 
-                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
-
-                $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
-                \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
-
-                Donc, par produit, $\lim\limits_{n\to +\infty}n(n+1)=+\infty$ \\ et donc, $\lim\limits_{n\to +\infty}u_n=+\infty$
-            \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Produit}
             \begin{table}[H] \centering \captionabove{Tableau des Limites de Produits de Suites}
@@ -257,23 +248,8 @@
                     \end{tabular}
                 }
             \end{table}
-            \begin{SSpartie}{Exemple} 
-                Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
-
-                Soit $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{\sqrt{n}}\quad\lim\limits_{n\to +\infty}v_n=0$
-
-                $u_n\times v_n=n\times\frac{1}{\sqrt{n}}=\sqrt{n}\quad\text{or}\quad\lim\limits_{n\to +\infty}\sqrt{n}=+\infty$
-
-                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=+\infty$
-            \end{SSpartie}
-            \begin{SSpartie}{Exemple 2} 
-                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n^2\quad\lim\limits_{n\to +\infty}u_n=+\infty$
-
-                $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{n}-4\quad\lim\limits_{n\to +\infty}v_n=-4$ (Somme)
-
-                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
-            \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Quotient}
             \begin{table}[H]% en commentaire : tableau alternatif, avec barres verticales.
                 \centering \captionabove{Tableau des Limites de Quotients de Suites}
@@ -295,34 +271,62 @@
                     \end{tabular}
                 }
             \end{table}
-            \begin{SSpartie}{Exemple} 
-                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
+        \end{Spartie}
+        \begin{Spartie}{Exemples} 
+            \begin{SSpartie}{Somme} 
+                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
 
-                Donc, par quotient, $\lim\limits_{n\to +\infty}u_n=0$
+                $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
+                \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
+
+                Donc, par produit, $\lim\limits_{n\to +\infty}n(n+1)=+\infty$ \\ et donc, $\lim\limits_{n\to +\infty}u_n=+\infty$
+            \end{SSpartie}
+            \begin{SSpartie}{Produit} 
+                Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                Soit $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{\sqrt{n}}\quad\lim\limits_{n\to +\infty}v_n=0$
+
+                $u_n\times v_n=n\times\frac{1}{\sqrt{n}}=\sqrt{n}\quad\text{or}\quad\lim\limits_{n\to +\infty}\sqrt{n}=+\infty$
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=+\infty$
+                
+                \vspace{2ex}Autre Exemple :
+
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n^2\quad\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{n}-4\quad\lim\limits_{n\to +\infty}v_n=-4$ (Somme)
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
+            \end{SSpartie}
+            \begin{SSpartie}{Quotient} 
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
+                
+                Donc, par quotient, $\lim\limits_{n\to +\infty}u_n=0$.
             \end{SSpartie}
         \end{Spartie}
+
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Limite de Suite et Continuité} 
         \begin{Spartie}{Théorème} 
-            Soit $f$ une fonction \emph{continue} sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, telle que $\forall n\in\mathbb{N},\ u_n\in I,~\ell\in I$, alors, la suite $\big(f(u_n)\big)$ converge~vers~$f(\ell)$.
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, telle que $\forall n\in\mathbb{N},\ u_n\in I,~\ell\in I$, alors, la suite $\big(f(u_n)\big)$ converge vers~$f(\ell)$.
             \begin{SSpartie}{Exemple} 
-                Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$
+                Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$.
                 
                 Donc, la suite $(v_n)$, définie par $v_n=\sqrt{u_n}$ converge vers $\sqrt{4}=2$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Théorème}
-            Soit $f$ une fonction \emph{continue} sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$.
             
-            Si la suite $(u_n)$ \emph{converge vers un réel} $\ell$, alors $l$ est solution de l'équation $f(x)=x$ \\ On peut dire que $\ell$ est un point fixe de $f$.
+            Si la suite $(u_n)$ \emph{converge vers un réel} $\ell$, alors $\ell$ est solution de l'équation $f(x)=x$ \\ On peut dire que $\ell$ est un point fixe de $f$.
             \begin{SSpartie}{Démonstration} 
                 $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(\ell)$
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Remarque} 
                 Graphiquement, les termes de la suite se rapprochent du point d'intersection $\mathcal{C}_f$ et la droite d'équation $y=x$. Uniquement si la suite converge !
                 \begin{center}
-                    \begin{tikzpicture}[scale=0.9]
+                    \begin{tikzpicture}[scale=1.5]
                         \begin{axis}[
                             xmin=-4, xmax=8,
                             ymin=-3, ymax=10,

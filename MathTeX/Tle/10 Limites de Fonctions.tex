@@ -8,7 +8,7 @@
     \begin{Gpartie}{Limites d'une Fonction en l'Infini} 
         \begin{Spartie}{Limite en $+\infty$} 
             \begin{SSpartie}{Définitions} 
-                Soit une fonction $f$ définie au moins sur $\big[a~;+\infty\big[$, où $a$ est un réel.
+                Soit une fonction $f$ définie au moins sur $\big[a\,;+\infty\big[$, où $a$ est un réel.
 
                 \begin{itemize}
                     \item   On dit que $f$ a pour limite $+\infty$ en $+\infty$ si pour tout réel $M$ positif, il existe un réel $A$, tel que $x>A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi grand que l'on veut.
@@ -22,7 +22,7 @@
                                 xtick=\empty,
                                 ytick=\empty
                             ]
-                                \addplot[black]{5};
+                                \addplot[thin, black]{5};
                                 \draw (0,5) node[anchor=north east] {M};
                                 \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (3.1,5);
                                 \addplot[blue, very thick, samples=50]{e^(x-1.5)};
@@ -45,7 +45,7 @@
                             ]
                                 \draw (0,-5) node[anchor=north east] {m};
                                 \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (3.1,-5);
-                                \addplot[black]{-5};
+                                \addplot[thin, black]{-5};
                                 \addplot[blue, very thick, samples=50]{-e^(x-1.5)};
                             \end{axis}
                         \end{tikzpicture}
@@ -71,21 +71,21 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $+\infty$}}
                     \end{center}
                     \vspace*{2ex}
-                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x>A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x>A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
+                    H.P.: $\quad\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: \quad}$\bigg(x>A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x>A\implies f(x)\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
+                Soit $f$ une fonction définie au moins sur $\big[A\,;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions sinus et cosinus sont bornées et n'admettent pas de limites en l'infini.
+                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions sinus et cosinus sont bornées et n'admettent pas de limites en~l'infini.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Limite en $-\infty$} 
             \begin{SSpartie}{Définitions}
-                Soit $f$ une fonction définie au moins sur $\big]-\infty~;a\big[$, où $a$ est un réel.
+                Soit $f$ une fonction définie au moins sur $\big]-\infty\,;a\big[$, où $a$ est un réel.
                 \begin{itemize}
-                    \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$ \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
+                    \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
                     
                     On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=+\infty}\]
                     \begin{center}
@@ -97,7 +97,7 @@
                                 ytick=\empty,
                                 domain=-4:1.75
                             ]
-                                \addplot[black]{5};
+                                \addplot[thin, black]{5};
                                 \draw (0,5) node[anchor=north west] {M};
                                 \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (-3.1,5);
                                 \addplot[blue, very thick, samples=50]{e^(-x-1.5)};
@@ -107,7 +107,7 @@
                     \end{center}
                     \pagebreak
                     % \vspace*{2ex}
-                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$ \\ On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=-\infty}\]
+                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$. \\ On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=-\infty}\]
                     \begin{center}
                         \begin{tikzpicture}[scale=0.7]
                             \begin{axis}[
@@ -118,7 +118,7 @@
                             ]
                                 \draw (0,-5) node[anchor=north east] {m};
                                 \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (-3.1,-5);
-                                \addplot[black]{-5};
+                                \addplot[thin, black]{-5};
                                 \addplot[blue, very thick, samples=50]{-e^(-x-1.5)};
                             \end{axis}
                         \end{tikzpicture}
@@ -141,10 +141,10 @@
                             \end{axis}
                         \end{tikzpicture}
 
-                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $2$ en $-\infty$}}
+                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $-\infty$}}
                     \end{center}
                     \vspace*{2ex}
-                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon~;\ell+\epsilon\big[\bigg)$
+                    H.P.: $\quad\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: \quad}$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
@@ -172,7 +172,7 @@
                             \addplot[blue, very thick, samples=200]{\x*(x-2)^(-2)*1/(20)};
                         \end{axis}
                     \end{tikzpicture}
-                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $2$}}
+                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $a$}}
                 \end{center}
                 \vspace*{2ex}
                 \item $f(x)$ est négatif et aussi grand que l'on veut en valeur absolue, on dit que $f$ a pour limite $-\infty$ en $a$.
@@ -209,7 +209,7 @@
     \begin{Gpartie}{Fonctions Usuelles} 
         \begin{Spartie}{Théorème} 
             \begin{SSpartie}{Fonction Racine Carrée} 
-                $\lim\limits_{x\to+\infty}\sqrt{x}=+\infty$ et $\lim\limits_{x\to0}\sqrt{x}=0$ (la fonction racine carrée est continue en $0$)
+                $\lim\limits_{x\to+\infty}\sqrt{x}=+\infty$ et $\lim\limits_{x\to0}\sqrt{x}=0$ \quad(la fonction racine carrée est continue en $0$)
             \end{SSpartie}
             \begin{SSpartie}{Fonction Inverse} 
                 $\lim\limits_{x\to+\infty}\frac{1}{x}=0,\quad\lim\limits_{\substack{x\to 0 \\ x>0}}\frac{1}{x}=+\infty,\quad\lim\limits_{\substack{x\to 0 \\ x<0}}\frac{1}{x}=-\infty,\quad\lim\limits_{x\to-\infty}\frac{1}{x}=0$
@@ -230,13 +230,14 @@
                 $\lim\limits_{x\to+\infty}\ln\,(x)=+\infty,\quad\lim\limits_{\substack{x\to0 \\ x>0}}\ln\,(x)=-\infty$
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Théorèmes de Croissance Comparée} 
             \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\qquad\lim\limits_{x\to-\infty}x\me^x=0\]
             \begin{SSpartie}{Démonstration} 
                 \begin{itemize}
                     \item On montre que $\me^x>\frac{x^2}{2}$, pour tout $x>0$ en étudiant la différence.
 
-                    Soit $f$ définie sur $\big]0~;+\infty\big[$ par $f(x)=\me^x-\frac{x^2}{2}$. Étudions les variations de $f$.
+                    Soit $f$ définie sur $\big]0\,;+\infty\big[$ par $f(x)=\me^x-\frac{x^2}{2}$. Étudions les variations de $f$.
 
                     $f'(x)=\me^x-x$ on ne conclut pas directement sur le signe. Dérivons encore :
 
@@ -244,7 +245,7 @@
 
                     Donc, $f''(x)$ est strictement positive pour $x>0$.
 
-                    Ainsi on a $f'(x)$ strictement croissante sur $\big]0~;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0~;+\infty\big[$ :
+                    Ainsi on a $f'(x)$ strictement croissante sur $\big]0\,;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0\,;+\infty\big[$ :
                     \begin{center}                        
                         \vspace*{2ex}
                         \begin{tikzpicture}
@@ -256,28 +257,30 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Tableau de Variation de $f$ et $f'$}}
                         \vspace*{2ex}
                     \end{center}
-                    Donc, pour tout $x\in\big]0~;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$ \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
-                    \item On pose $X=-x$ et alors, $\lim\limits_{x\to-\infty}X=+\infty$ et $x\me^x=-X\me^{x}=-\frac{X}{\me^X}$
+                    Donc, pour tout $x\in\big]0\,;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$. \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
+                    \item On pose $X=-x$ et alors, $\lim\limits_{x\to-\infty}X=+\infty$ et $x\me^x=-X\me^{x}=-\frac{X}{\me^X}$.
                     
                     Donc, par passage à l'inverse de la limite précédente : 
                     \[\lim\limits_{x\to-\infty}x\me^x=\lim\limits_{X\to+\infty}-\frac{X}{\me^X}=0\quad\square\]
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Théorème} 
             Quel que soit l'entier $n>0$ : \[\lim\limits_{x\to_\infty}\frac{\me^x}{x^n}=+\infty\quad\text{et}\quad\lim\limits_{x\to-\infty}x^n\me^x=0\]
         \end{Spartie}
         \begin{Spartie}{Théorèmes de Croissance Comparée (bis)} 
             \[\lim\limits_{x\to+\infty}\frac{\ln\,(x)}{x}=0\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}x\ln\,(x)=0\]
             \begin{SSpartie}{Démonstration} 
-                On pose le changement de variable $X=\ln\,(x)$ et donc $x=\me^X$. On a alors $\lim\limits_{x\to+\infty}X=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty$.
+                On pose le changement de variable $X=\ln\,(x)$ et donc $x=\me^X$. On a alors : \[\lim\limits_{x\to+\infty}X=+\infty\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty\]
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Opérations sur les Limites} 
         \begin{Spartie}{Limites de Somme, Produit et Quotient} 
             Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $\ell$ et $\ell'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
-            N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$.
+            N.B.: $\pm\infty$ désigne ici $+\infty$ ou $-\infty$.
+            \pagebreak
             \begin{SSpartie}{Limite de Somme} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
@@ -322,6 +325,7 @@
                     }
                 \end{table}
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Limite d'un Quotient $f/g$} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
@@ -357,7 +361,7 @@
                     $\lim\limits_{x\to+\infty}x+\dfrac{1}{x^2}-1=+\infty$\quad(remarquons qu'on a la même limite quand $x\to0$)
                 \end{SSSpartie}
                 \begin{SSSpartie}{Produit} 
-                    $\lim\limits_{x\to0}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=-\infty$\qquad En effet, $\lim\limits_{x\to0}-3+x=-3$ et $\lim\limits_{x\to0}1+\frac{1}{x^2}=+\infty$
+                    $\lim\limits_{x\to0}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=-\infty$\qquad En effet, $\lim\limits_{x\to0}-3+x=-3$ et $\lim\limits_{x\to0}1+\frac{1}{x^2}=+\infty$.
     
                     Par contre, remarquons que $\lim\limits_{x\to+\infty}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=+\infty$.
                 \end{SSSpartie}
@@ -376,7 +380,7 @@
             \begin{SSpartie}{Théorème} 
                 Soient $a$, $b$ et $c$ trois réels ou $+\infty$ ou $-\infty$. Soient $f$ et $g$ deux fonctions, définies au bon endroit. 
                 
-                Alors, si $\lim\limits_{x\to a}f(x)=\boldsymbol{b}$\quad et\quad$\lim\limits_{x\to\boldsymbol{b}}g(x)=c$, on a : \[\lim\limits_{x\to a}(g\circ f)(x)=c\]
+                Alors, si $\lim\limits_{x\to a}f(x)=\boxed{\boldsymbol{b}}$\quad et\quad$\lim\limits_{x\to\boxed{\boldsymbol{b}}}g(x)=c$, on a : \[\lim\limits_{x\to a}(g\circ f)(x)=c\]
                 Attention aux limites !
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
@@ -386,7 +390,7 @@
         \begin{Spartie}{Comparaison} 
             $a$ désigne un réel ou $+\infty$ ou $-\infty$.
             \begin{SSpartie}{Théorème} 
-                Si $f$ et $g$ sont deux fonctions telles que pour tout $x$ voisin de $a$, $f(x)\leq g(x)$
+                Si $f$ et $g$ sont deux fonctions telles que pour tout $x$ voisin de $a$, $f(x)\leq g(x)$ :
                 \begin{itemize}
                     \item Si $\lim\limits_{x\to a}f(x)=+\infty\quad$ alors $\quad\lim\limits_{x\to a}g(x)=+\infty$.
                     \item Si $\lim\limits_{x\to a}g(x)=-\infty\quad$ alors $\quad\lim\limits_{x\to a}f(x)=-\infty$.

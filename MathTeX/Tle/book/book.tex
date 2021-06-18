@@ -15,15 +15,18 @@
     \end{titlepage}
     
     \KOMAoptions{open=left}
+    \pagestyle{plain}
     \tableofcontents
+    \clearpage
+    \pagestyle{scrheadings}
     
-    \chapter{Suites : La Démonstration par Récurrence}
+    \chapter{La Démonstration par Récurrence}
 
     % \setlength{\baselineskip}{1.5em}
     \begin{Gpartie}{Exemple}
-        On considère la suite $\left(u_n\right)$, définie pour tout entier naturel $n$, par\quad$u_n=4^n-1$ :
-            \[\left(u_n\right)=\big\{~0~;~3~;~15~;~63~;~255~;~\dotso~\big\}\]
-        On remarque que tous ces nombres sont des multiples de 3. On se demande si pour tout entier naturel $n$, \quad$4^n-1$\quad est un multiple de 3.
+        On considère la suite $\left(u_n\right)$, définie pour tout entier naturel $n$, par $u_n=4^n-1$ :
+            \[\left(u_n\right)=\big\{\,0\,; 3\,; 15\,; 63\,; 255\,; \dotso\,\big\}\]
+        On remarque que tous ces nombres sont des multiples de 3. On se demande si pour tout entier naturel $n$, $4^n-1$ est un multiple de 3.
     \end{Gpartie}
     \begin{Gpartie}{Axiome de Récurrence}
         Soit $\Pde(n)$, une propriété dépendante de l'entier naturel $n$.\\
@@ -38,7 +41,7 @@
         Initialisation : La propriété : \og $4^n-1$ est un multiple de 3 \fg{}, est vraie pour $n=0$. La~propriété est donc initialisée. \\ 
         Hérédité : Supposons que la propriété est vraie à un certain rang $k$, (fixe). C'est~l'hypothèse de la récurrence, et montrons qu'alors, elle est vraie au rang $k+1$.
         
-        L'Hypothèse de récurrence est donc : \og $4^n-1$ est un multiple de 3 \fg{}. C'est-à-dire qu'il existe un entier $p$ tel que $\quad4^n-1=3p\quad$ et donc $\quad4^n=3p+1$.
+        L'Hypothèse de récurrence est donc : \og $4^n-1$ est un multiple de 3 \fg{}. C'est-à-dire qu'il existe un entier $p$ tel que $4^n-1=3p$ et donc $4^n=3p+1$.
         \vspace*{-1ex}\[\begin{aligned}[t]
             4^{k+1}-1&=4\times 4^k-1 &\\
             &= 4\times\left(3p+1\right)-1 \quad \text{(Hypothèse de récurrence)} &\\
@@ -46,7 +49,7 @@
             &=12p+3 &\\
             &=3\left(4p+1\right) \quad \text{(Il s'agit bien d'un multiple de 3)}
         \end{aligned}\]
-        Donc, la propriété est héréditaire et on a démontré par récurrence que \quad$\forall n\in\mathbb{N},~4^n-1$\quad est un multiple de 3.
+        Donc, la propriété est héréditaire et on a démontré par récurrence que $\forall n\in\mathbb{N},~4^n-1$ est un multiple de 3.
     \end{Gpartie}
 
 
@@ -59,7 +62,7 @@
 
         H.P.: $\quad\forall\epsilon >0,~\exists\alpha >0,~\forall x\in\big]a-\alpha\,;a+\alpha\big[,~f(x)\in\big]f(a)-\epsilon\,;f(a)+\epsilon\big[$
         \begin{Spartie}{Exemple}
-            La fonction inverse est continue sur $\big]-\infty\,~;0\big[$, et sur $\big]0\,~;+\infty\big[$.
+            La fonction inverse est continue sur $\big]-\infty\,;0\big[$, et sur $\big]0\,;+\infty\big[$.
 
             La fonction \og Partie Entière \fg{} est définie sur $\mathbb{R}$, mais pas continue sur $\mathbb{R}$.
             \begin{center}\begin{tikzpicture}[scale=0.7]
@@ -83,7 +86,7 @@
         \end{Spartie}
         \begin{Spartie}{Propriété}
             La somme, le produit et la composée de deux fonctions continues est continue. \\
-            L'inverse d'une fonction continue est continue sur tout intervalle où elle ne s'annule pas.
+            L'inverse d'une fonction continue est continue sur tout intervalle où elle ne s'annule~pas.
             \[f : x\mapsto x^2\quad\text{continue}\] \[g : x\mapsto\dfrac{1}{x^2}\quad\text{Définie sur }\mathbb{R}^*\text{, continue sur }\big]-\infty\,;0\big[\text{ et }\big]0\,;+\infty\big]\]
         \end{Spartie}
     \end{Gpartie}
@@ -161,14 +164,11 @@
 
 
 
-
-
-
     \chapter{Dénombrement et Combinatoire}
 
     \begin{Gpartie}{Parties d'un Ensemble}
         \begin{Spartie}{Définition}
-            $E$ étant un ensemble, la notation $\subset$ signifie \og inclus dans \fg{}.
+            $E$ étant un ensemble, la notation $\subset$ signifie \og inclus dans \fg{} :
             \[A\subset E\]
             C'est-à-dire que tout élément de $A$ appartient à $E$. \\
             On dit alors que $A$ est une partie, ou sous-ensemble de $E$. \\
@@ -176,7 +176,7 @@
             L'Ensemble des parties de $E$ est noté $\mathcal{P}(E)$.
             \begin{SSpartie}{Exemple}
                 Si $E=\big\{x\,;y\big\}$ est un ensemble de deux éléments :
-                \[\mathcal{P}(E)=\Big\{\,\varnothing~,\,\big\{\,x~\big\}~,\,\big\{\,y~\big\}~,\,\big\{\,x~;\,y~\big\}~\Big\}\]
+                \[\mathcal{P}(E)=\Big\{\,\varnothing\,, \big\{\, x\,\big\}\,, \big\{\, y\,\big\}\,, \big\{\,x\,; y\,\big\}\,\Big\}\]
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Définition}
@@ -192,7 +192,7 @@
         \begin{Spartie}{Propriété (Principe Additif)}
             Si $A$ et $B$ sont deux parties quelconques d'un ensemble fini $E$, alors :
             \[\mathrm{Card}\,(A\cup B)=\mathrm{Card}\,(A)+\mathrm{Card}\,(B)-\mathrm{Card}\,(A\cap B)\]
-            De plus, si $A_1~,~A_2~,\dotsc,~A_p$ sont $p$ parties \emph{deux à deux disjointes} d'un ensemble~fini,~alors~:
+            De plus, si $A_1~,~A_2~,\dotsc,~A_p$ sont $p$ parties \emph{deux à deux disjointes} d'un ensemble~fini~:
             \[\mathrm{Card}\,\left(A_1\cup A_2\cup\dotsb\cup A_p\right)=\mathrm{Card}\,(A_1)+\mathrm{Card}\,(A_2)+\dotsb+\mathrm{Card}\,\left(A_p\right)\]
         \end{Spartie}
         \begin{Spartie}{Propriété}
@@ -223,12 +223,12 @@
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
-                \item $E$ et $F$ étant deux ensembles, le \emph{produit cartésien} $E\times F$ est l'ensemble de couples $(\,a~;\,b~)$, où $a\in E$ et $b\in F$.
-                \item $E$, $F$ et $G$ étant trois ensembles, le \emph{produit cartésien} $E\times F\times G$ est l'ensemble des triplets $(\,a~;\,b~;\,c~)$ où $a\in E$, $b\in F$ et $c\in G$.
+                \item $E$ et $F$ étant deux ensembles, le \emph{produit cartésien} $E\times F$ est l'ensemble de couples $(a\,; b)$, où $a\in E$ et $b\in F$.
+                \item $E$, $F$ et $G$ étant trois ensembles, le \emph{produit cartésien} $E\times F\times G$ est l'ensemble des triplets $(a\,; b\,; c)$ où $a\in E$, $b\in F$ et $c\in G$.
             \end{itemize}
             \begin{SSpartie}{Cas Général}
                 \begin{itemize}
-                    \item Le \emph{produit cartésien} $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1,\,E_2,\,\dotsc,\,E_n$ est l'ensemble des \emph{n-uplets} $(\,a_1~;\,a_2~;\dotsc;\,a_n~)$ où $a_1\in E_1,\,a_2\in E_2,\,\dotsc,\,a_n\in E_n$.
+                    \item Le \emph{produit cartésien} $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1, E_2,\dotsc,E_n$ est l'ensemble des \emph{n-uplets} $(a_1\,; a_2\,;\dotsc\,; a_n)$ où $a_1\in E_1,a_2\in E_2,\dotsc,a_n\in E_n$.
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
@@ -236,15 +236,15 @@
             $E\times E$ se note $E^2$, $\overbrace{E\times E\times\dotsb\times E}^\text{$k$ fois}$ se note $E^k$.
         \end{Spartie}
         \begin{Spartie}{Exemples}
-            Soit $E=\big\{\,a~;\,b~;\,c~\big\}$ et $F=\big\{\,1~;\,2~\big\}$.
+            Soit $E=\big\{\, a\;\, b\,; c\,\big\}$ et $F=\big\{\,1\,; 2\,\big\}$.
             \begin{itemize}
-                \item $E\times F=\big\{\,(\,a~;\,1~)~;\,(\,a~;\,2~)~;\,(\,b~;\,1~)~;\,(\,b~;\,2~)~;\,(\,c~;\,1~)~;\,(\,c~;\,2~)~\big\}$
-                \item $F\times F=\big\{\,(\,1~;\,1~)~;\,(\,1~;\,2~)~;\,(\,2~;\,1~)~;\,(\,2~;\,2~)~\big\}$
-                \item $(\,a~;\,b~;\,b~;\,a~;\,c~)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$.
+                \item $E\times F=\big\{\,(a\,; 1)\,;(a\,; 2)\,; (b\,; 1)\,; (b\,; 2)\,; (c\,; 1)\,; (c\,; 2)\,\big\}$
+                \item $F\times F=\big\{\,(1\,; 1)\,; (1\,; 2)\,; (2\,; 1)\,; (2\,; 2)\,\big\}$
+                \item $(a\,; b\,; b\,; a\,; c)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Si $E_1,\,E_2,\,\dotsc,\,E_n$ sont $n$ ensembles finis :
+            Si $E_1,E_2,\dotsc,E_n$ sont $n$ ensembles finis :
             \[\mathrm{Card}\,(E_1\times E_2\times\dotsb\times E_n)=\mathrm{Card}\,(E_1)\times\mathrm{Card}\,(E_2)\times\dotsb\times\mathrm{Card}\,(E_n)\]
             \begin{SSpartie}{Cas Particulier}
                 Si $E$ est un ensemble fini, pour tout $k\in\mathbb{N^*}$ :
@@ -265,8 +265,8 @@
 
             Autrement dit, une permutation est une façon d'ordonner les $n$ éléments de $E$.
             \begin{SSpartie}{Exemple}
-                On considère l'ensemble $G=\big\{\,a~;\,b~;\,c~\big\}$. \\ Ses permutations sont :
-                \[(\,a~;\,b~;\,c~)~,\,(\,a~;\,c~;\,b~),\,(\,b~;\,a~;\,c~)~,\,(\,b~;\,c~;\,a~)~,\,(\,c~;\,a~;\,b~)~,\,(\,c~;\,b~;\,a)~\]
+                On considère l'ensemble $G=\big\{a\,; b\,; c\big\}$. \\ Ses permutations sont :
+                \[(a\,; b\,; c)\,, (a\,; c\,; b)\,, (b\,; a\,; c)\,, (b\,; c\,; a)\,, ( c\,; a\,; b)\,,(c\,; b\,; a)\]
                 $G$ admet donc 6 permutations.
             \end{SSpartie}
         \end{Spartie}
@@ -328,7 +328,7 @@
             Démonstration Alternative : 
             \[\binom{n}{n-p}=\dfrac{n!}{(n-p)!(n-(n-p))!}=\dfrac{n!}{(n-p)!p!}=\binom{n}{p}\]
         \end{Spartie}
-        \begin{Spartie}{Propriété : Relation de Pascal}
+        \begin{Spartie}{Propriété : Relation de \textsc{Pascal}}
             \[\binom{n+1}{p+1}=\binom{n}{p}+\binom{n}{p+1}\]
             \begin{SSpartie}{Démonstration}
                 Soit $E$, un ensemble à $n+1$ éléments (on va compter le nombre de parties de E à $p+1$ éléments).
@@ -341,12 +341,12 @@
 
                 Donc il y a $\binom{n}{p}$ à $p$ éléments de $E\setminus\big\{x\big\}$.
 
-                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui contiennent~$x$.
+                En leur adjoignant $x$, on obtient toutes les parties à $p+1$ éléments qui \\ contiennent~$x$.
 
                 Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).$\quad\square$
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Triangle de Pascal}
+        \begin{Spartie}{Triangle de \textsc{Pascal}}
             \begin{center}
                 \begin{tabular}{ M{12pt} | *{7}{M{12pt}}}
                     \diagbox[innerwidth=12pt, height=1.5\line, font=\footnotesize]{\raisebox{-3pt}{n}}{\raisebox{8pt}{p}}  
@@ -359,14 +359,13 @@
                     5 & 1 & 5 & 10& 10& 5 & 1 &   \\
                     6 & 1 & 6 & 15& 20& 15& 6 & 1 \\
                 \end{tabular}
-                \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de Pascal}}
+                \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de \textsc{Pascal}}}
             \end{center}
         \end{Spartie}
         \begin{Spartie}{Propriété}
             \[\sum_{p=0}^{n}\binom{n}{p}=\binom{n}{0}+\binom{n}{1}+\dotsb+\binom{n}{n}=2^n\]
         \end{Spartie}
     \end{Gpartie}
-
 
 
 
@@ -389,7 +388,7 @@
             De plus :
             \[\lim_{x\to -\infty} \me^x=0\quad\text{ et }\quad\lim_{x\to +\infty} \me^x=+\infty\]
 
-            D'après le corollaire du Théorème des Valeurs Intermédiaires, pour tout nombre $k\in\big]\,0~;\,+\infty~\big]$, il existe un unique réel $a\in\mathbb{R}$ tel que $\me^a=k$.$\quad\square$
+            D'après le corollaire du Théorème des Valeurs Intermédiaires, pour tout nombre $k\in\big]0\,;+\infty\big]$, il existe un unique réel $a\in\mathbb{R}$ tel que $\me^a=k$.$\quad\square$
         \end{Spartie}
         \begin{Spartie}{Remarques}
             La fonction $\ln$ est la fonction réciproque de $\exp$.
@@ -397,18 +396,17 @@
             On déduit que : \[\boxed{\ln\,(1)=0\quad\text{et}\quad\ln\,(\me)=1}\]
         \end{Spartie}
         \begin{Spartie}{Propriétés}
-            \[\forall x\in\big]\,0~;\,+\infty~\big[,~\boxed{\me^{\ln\,(x)}=x}\]
+            \[\forall x\in\big]0\,;+\infty\big[,~\boxed{\me^{\ln\,(x)}=x}\]
             \[\forall x\in\mathbb{R},~\boxed{\ln\,\left(\me^x\right)=x}\]
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Étude de la Fonction ln}
         \begin{Spartie}{Continuité, Dérivabilité}
             \begin{SSpartie}{Propriété}
                 \begin{enumerate}[(1)]
-                    \item La fonction $\ln$ est \emph{continue} sur $\big]\,0~;\,+\infty~\big]$
-                    \item La fonction $\ln$ est \emph{dérivable} sur $\big]\,0~;\,+\infty~\big]$ et $\forall x\in\big]\,0~;\,+\infty~\big[$, $\boxed{\ln'(x)=\frac{1}{x}}$
-                    \item La fonction $\ln$ est \emph{strictement croissante} sur $\big]\,0~;\,+\infty~\big[$
+                    \item La fonction $\ln$ est \emph{continue} sur $\big]0\,;+\infty\big]$.
+                    \item La fonction $\ln$ est \emph{dérivable} sur $\big]0\,;+\infty\big]$ et $\forall x\in\big]0\,;+\infty\big[$, $\boxed{\ln'(x)=\frac{1}{x}}$.
+                    \item La fonction $\ln$ est \emph{strictement croissante} sur $\big]0\,;+\infty\big[$.
                 \end{enumerate}
                 \begin{SSSpartie}{Démonstration (2) (Facile)}
                     Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$.
@@ -452,7 +450,7 @@
             \[\boxed{\lim_{x\to+\infty}\ln\,(x)=+\infty\quad\text{et}\quad\lim_{x\to 0}\ln\,(x)=-\infty}\]
             \begin{SSpartie}{Démonstration} 
                 Soit $M>0$, en posant $A=\me^M,~\exists A>0$ tel que :
-                \[\forall x\in\big]\,0~;\,+\infty~\big[,~x>A\implies\ln\,(x)>M\]
+                \[\forall x\in\big]0\,;+\infty\big[,~x>A\implies\ln\,(x)>M\]
                 En effet, $x>A\iff x>\me^M$. \\ Comme $\ln$ est strictement croissante :
                 \[\begin{aligned}[t]
                     \ln\,(x)&>\ln\,\left(\me^M\right) \\
@@ -462,7 +460,7 @@
         \end{Spartie}
         \begin{Spartie}{Représentation Graphique}
             \begin{center}
-                \begin{tikzpicture}[scale=1.5]
+                \begin{tikzpicture}
                     \begin{axis}[
                         xmin=-0.5,  xmax=8.5,
                         ymin=-2.5,  ymax=2.5,
@@ -479,10 +477,9 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Propriétés Algébriques de la Fonction ln}
         \begin{Spartie}{Propriété Fondamentale}
-            Quels que soient les réels $a$ et $b$, strictement positifs, 
+            Quels que soient les réels $a$ et $b$, strictement positifs :
             \[\boxed{\ln\,(a\times b)=\ln\,(a)+\ln\,(b)}\]
             \begin{SSpartie}{Démonstration}
                 Rappel : \[X=Y\iff \me^X=\me^Y\]
@@ -495,7 +492,7 @@
         \begin{Spartie}{Conséquences}
             \begin{enumerate}[(1)]
                 \item Quels que soient les réels $a$ et $b$, strictement positifs :
-                \[\boxed{\ln\,\left(\frac{a}{b}\right)=\ln\,(a)-\ln\,(b)}\text{\quad et \quad}\boxed{\ln\,\left(\frac{1}{b}\right)=-\ln\,(b)}\]
+                \[\boxed{\ln\,\left(\frac{a}{b}\right)=\ln\,(a)-\ln\,(b)\text{\quad et \quad}\ln\,\left(\frac{1}{b}\right)=-\ln\,(b)}\]
                 \begin{SSpartie}{Démonstration (1)} 
                     Pour tous réels $a$ et $b$ strictement positifs : \[\ln\,(a)=\ln\,\left(\frac{a}{b}\times b\right)=\ln\,\left(\frac{a}{b}\right)+\ln\,(b)\]
                     D'où : \[\ln\,\left(\frac{a}{b}\right)=\ln\,(a)-\ln\,(b)\quad\square\]
@@ -504,7 +501,6 @@
                 \end{SSpartie}
                 \item Quels que soient les réels $a_1, a_2,\dotsc, a_n$, strictement positifs : 
                 \[\boxed{\ln\,(a_1a_2\dotsb a_n)=\ln\,(a_1)+\ln\,(a_2)+\dotsb+\ln\,(a_n)}\]
-                \pagebreak
                 \begin{SSpartie}{Démonstration par Récurrence (2)}
                     \begin{SSSpartie}{Initialisation}
                         \[\ln\,(a_1)=\ln\,(a_1)\]
@@ -519,7 +515,7 @@
                         \end{aligned}\]
                     \end{SSSpartie}
                 \end{SSpartie}
-                \item De plus, $\forall a\in\big]\,0~;\,+\infty~\big[,~\forall n\in\mathbb{Z}$ :
+                \item De plus, $\forall a\in\big]0\,;+\infty\big[,~\forall n\in\mathbb{Z}$ :
                 \[\boxed{\ln\,\left(a^n\right)=n\ln\,(a)}\]
                 \begin{SSpartie}{Démonstration (3)}
                     \begin{itemize}
@@ -527,7 +523,7 @@
                         \[\ln\,(a_1a_2\dotsb a_n)=\ln\,(a_1)+\ln\,(a_2)+\dotsb+\ln\,(a_n)\]
                         \[a_1=a_2=\dotsb=a_n=a\]
                         \[\ln\,(a^n)=\ln\,(a)+\ln\,(a)+\dotsb+\ln\,(a)=n\ln\,(a)\quad\square\]
-                        \item Dans le cas où $n$ est négatif, on prend $m=-n$
+                        \item Dans le cas où $n$ est négatif, on prend $m=-n$ :
                         \[\ln\,(a^n)=\ln\,(a^{-m})=\ln\,\left(\frac{1}{a^m}\right)=-\ln\,(a^m)=-m\ln\,(a)=n\ln\,(a)\quad\square\]
                     \end{itemize}
                 \end{SSpartie}
@@ -541,7 +537,6 @@
             \end{enumerate}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Résolution d'Inéquations du type $a^n>M$}
         \begin{Spartie}{Exemple}
             On sait que : \[\lim_{n\to+\infty}3^n=+\infty\]
@@ -557,20 +552,19 @@
         \begin{Spartie}{Exemple}
             On sait que : \[\lim_{n\to+\infty}\left(\frac{1}{2}\right)^n=0\text{\qquad \big(car $0<\tfrac{1}{2}<1$\big)}\]
             
-            On veut résoudre $\left(\frac{1}{2}\right)^n\leq 0{,}0001$ :
+            On veut résoudre $\left(\frac{1}{2}\right)^n\leq 0{,}000\,1$ :
             \[\begin{aligned}[t]
-                \iff&\quad\ln\,\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln\,(0{,}0001)\text{\qquad $\ln$ strictement croissante} \\
-                \iff&\quad n\ln\,\big(\tfrac{1}{2}\big)\leq\ln\,(0{,}0001) \\
-                \iff&\quad n\geq\frac{\ln\,(0{,}0001)}{\ln\,\left(\frac{1}{2}\right)}\approx13{,}3
+                \iff&\quad\ln\,\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln\,(0{,}000\,1)\text{\qquad $\ln$ strictement croissante} \\
+                \iff&\quad n\ln\,\big(\tfrac{1}{2}\big)\leq\ln\,(0{,}000\,1) \\
+                \iff&\quad n\geq\frac{\ln\,(0{,}000\,1)}{\ln\,\left(\frac{1}{2}\right)}\approx13{,}3
             \end{aligned}\]
 
-            Donc, $n\geq 14$
+            Donc, $n\geq 14$.
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Logarithme Décimal} 
         \begin{Spartie}{Définition} 
-            La fonction logarithme décimal, notée $\log$, est définie sur $\big]\,0~;\,+\infty~\big[$, par :
+            La fonction logarithme décimal, notée $\log$, est définie sur $\big]0\,;+\infty\big[$, par :
             \[\log\,(x)=\frac{\ln\,(x)}{\ln\,(10)}\]
         \end{Spartie}
         \begin{Spartie}{Propriétés} 
@@ -580,8 +574,6 @@
             La fonction $\log$ est la fonction réciproque de $f:x\mapsto 10^x$.
         \end{Spartie}
     \end{Gpartie}
-
-
 
 
 
@@ -600,11 +592,13 @@
         \end{tabular}\end{center}
         \parbox{\linewidth}{\captionof{figure}{\centering Schéma de la Fonction Composée}}
         \begin{Spartie}{Exemples} 
-            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln\,(x)$ est définie sur $\big]\,0~;~+\infty\,\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},~u(x)\in\big]\,0~;~+\infty\,\big[$, et $(f\circ u)(x)=\ln\,\left(x^2+1\right)$.
+            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln\,(x)$ est définie sur $\big]0\,;+\infty\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},~u(x)\in\big]0\,;+\infty\big[$, et $(f\circ u)(x)=\ln\,\left(x^2+1\right)$.
 
             La fonction $g:x\mapsto g(x)=\sqrt{5x-3}$ est la fonction composée de la fonction affine $x\mapsto 5x-3$ et de la fonction racine carrée. Elle est définie sur $\Big[\frac{3}{5}\,;+\infty\Big]$, intervalle sur lequel $5x-3\in\mathbb{R^{+}}$.
         \end{Spartie}
     \end{Gpartie}
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Dérivée d'une Fonction Composée} 
         \begin{Spartie}{Théorème} 
             Si $u$ est dérivable en un réel $a$ et $f$ est dérivable en $u(a)$ alors $f\circ u$ est dérivable en~$a$ et $(f\circ u)'(a)=u'(a)\times f'\big(u(a)\big)$.
@@ -614,23 +608,21 @@
         \begin{Spartie}{Exemples} 
             Si on appelle $h$ la fonction par $h:x\mapsto h(x)=\ln\,(x^2+1)$, alors $h$ est dérivable sur $\mathbb{R}$, et pour tout réel $x$, $h'(x)=\frac{2x}{x^2+1}$.
 
-            La fonction $g$ ci-dessus, définie par $g:x\mapsto g(x)=\sqrt{5x-3}$, est dérivable sur~$\Big]\frac{3}{5}\,;+\infty\Big[$, et pour tout $x\in\Big]\frac{3}{5}\,;+\infty\Big[$, $g'(x)=\frac{5}{2\sqrt{5x-3}}$.
+            La fonction $g$ ci-dessus, définie par $g:x\mapsto g(x)=\sqrt{5x-3}$, est dérivable \\ sur~$\Big]\frac{3}{5}\,;+\infty\Big[$, et pour tout $x\in\Big]\frac{3}{5}\,;+\infty\Big[$, $g'(x)=\frac{5}{2\sqrt{5x-3}}$.
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Limites d'une Fonction Composée} 
         \begin{Spartie}{Théorème} 
-            Soient $a$, $b$ et $c$ sont trois réels, ou $\pm\infty$
+            Soient $a$, $b$ et $c$ sont trois réels, $+\infty$ ou $-\infty$ :
 
-            Si \qquad$\lim\limits_{x\to a}u(x)=\boldsymbol{b}$\qquad et \qquad $\lim\limits_{X\to \boldsymbol{b}}f(X)=c$ \qquad alors, \qquad $\boxed{\lim\limits_{x\to a}f\big(u(x)\big)=c}$
+            Si \qquad$\lim\limits_{x\to a}u(x)=\boxed{\boldsymbol{b}}$\qquad et \qquad $\lim\limits_{X\to \boxed{\boldsymbol{b}}}f(X)=c$ \qquad alors, \qquad $\boxed{\lim\limits_{x\to a}f\big(u(x)\big)=c}$
         \end{Spartie}
         \begin{Spartie}{Exemple} 
-            Soit $g:x\mapsto g(x)=\me^{-x^2}$
+            Soit $g:x\mapsto g(x)=\me^{-x^2}$ :
 
             $\lim\limits_{x\to +\infty} -x^2=-\infty$\qquad et \qquad$\lim\limits_{X\to -\infty} \me^X=0$\qquad donc \qquad$\lim\limits_{x\to +\infty}g(x)=0$
         \end{Spartie}
     \end{Gpartie}
-
-
 
 
 
@@ -652,34 +644,39 @@
         \begin{Spartie}{Remarques} 
             \begin{enumerate}[(1)]
                 \item L'équation est dite de \emph{premier ordre} ou \emph{d'ordre 1} lorsque seule intervient la dérivée première d'une fonction (et éventuellement la fonction). \\ Par exemple : $y'=3y-5$.
-                \item Plutôt que d'écrire l'équation $f'(x)=3f(x)-5$, on note $f(x)$ à l'aide de la variable $y$, qui joue le rôle d'inconnue, ou plutôt de \og fonction inconnue \fg{}, car un point $(\,x~;~y\,)$ appartient à la courbe représentative de $f$ si et seulement si $y=f(x)$. \\ $y$ étant la variable utilisée pour les ordonnées et les images, il est cohérent de l'utiliser pour symboliser une fonction.
+                \item Plutôt que d'écrire l'équation $f'(x)=3f(x)-5$, on note $f(x)$ à l'aide de la variable $y$, qui joue le rôle d'inconnue, ou plutôt de \og fonction inconnue \fg{}, car un point $(x\,; y)$ appartient à la courbe représentative de $f$ si et seulement si $y=f(x)$. \\ $y$ étant la variable utilisée pour les ordonnées et les images, il est cohérent de l'utiliser pour symboliser une fonction.
             \end{enumerate}
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Primitives d'une Fonction Continue \big(Solutions de $y'=f(x)$\big)} 
+        \vspace{-5ex}
         \begin{Spartie}{Définition} 
             Soit $f$ une fonction continue sur un intervalle $I$. Une primitive de $f$ sur $I$ est une fonction $F$ telle que :
             \[F'=f\]
         \end{Spartie}
+        \vspace{-5ex}
         \begin{Spartie}{Exemple} 
             La fonction $F:x\mapsto\frac{1}{x}$ est une primitive de $f:x\mapsto\frac{-1}{x^2}$, sur $\mathbb{R^{+*}}$.
         \end{Spartie}
+        \vspace{-3ex}
         \begin{Spartie}{Théorème (Démontré dans le Chapitre sur l'Intégration)} 
             Toute fonction continue sur un intervalle $I$ admet une primitive sur $I$.
         \end{Spartie}
+        \vspace{-3ex}
         \begin{Spartie}{Remarque} 
             Il arrive qu'on ne puisse pas exprimer cette primitive avec les fonctions classiques.
             \begin{SSpartie}{Exemple} 
                 $f:x\mapsto \me^{x^2}$
             \end{SSpartie}
         \end{Spartie}
+        \vspace{-5ex}
         \begin{Spartie}{Théorème} 
             Soit $f$ une fonction continue sur un intervalle $I$ et $F$ est une primitive de $f$ sur $I$.
 
-            Alors, $f$ admet une infinité de primitives sur $I$\textsuperscript{\raisebox{.5pt}{\textcircled{\raisebox{-.9pt}{1}}}} et toute primitive $G$ de $f$ sur $I$ est définie par $G(x)=F(x)+k$\textsuperscript{\raisebox{.5pt}{\textcircled{\raisebox{-.9pt}{2}}}} où $k$ est une constante réelle.
+            Alors, $f$ admet une infinité de primitives sur $I$\textsuperscript{\circled{1}} et toute primitive $G$ de $f$ sur $I$ est définie par $G(x)=F(x)+k$\textsuperscript{\circled{2}} où $k$ est une constante réelle.
 
             \begin{SSpartie}{Démonstration} 
-                \begin{enumerate}
+                \begin{enumerate}\vspace*{-2ex}
                     \item Si $F$ est une primitive de $f$, quel que soit le réel $k$, la fonction $G:x\mapsto F(x)+k$ est une primitive de $f$. En effet, $G'(x)=F'(x)=f(x)$, donc, il y a une infinité de primitives.
                     \item Si $F$ et $G$ sont deux primitives d'une même fonction $f$, alors :
                     \[(F-G)'(x)=F'(x)-G'(x)=f(x)-f(x)=0\]
@@ -697,15 +694,15 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Calcul des Primitives} 
+        \vspace{-5ex}
         \begin{Spartie}{Primitives des Fonctions usuelles} 
             \begin{table}[H] \centering \captionabove{Tableau des Primitives des Fonctions Usuelles}
                 \begin{tabular}[c]{ @{}*{3}{C}@{} } \toprule
                     Fonction $f:x\mapsto$                       & Primitive $F:x\mapsto$                                            & Intervalle  \\ \midrule
                     $k$ (constante)                             & $kx$                                                              & $\mathbb{R}$ \\ 
                     $x^n$ ($n\in\mathbb{N}$)                    & $\frac{x^{n+1}}{n+1}$                                             & $\mathbb{R}$ \\ 
-                    $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]\,-\infty~;~0\,\big[$ ou $\big]\,0~;~+\infty\,\big[$ \\ 
+                    $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]-\infty\,; 0\big[$ ou $\big]0\,; +\infty\big[$ \\ 
                     $\frac{1}{x}$                               & $\ln\,(x)$                                                          & $\mathbb{R^{+*}}$ \\ 
                     $\frac{1}{\sqrt{x}}$                        & $2\sqrt{x}$                                                       & $\mathbb{R^{+*}}$ \\ 
                     $\me^x$                                       & $\me^x$                                                             & $\mathbb{R}$ \\ 
@@ -715,14 +712,14 @@
             \end{table}
         \end{Spartie}
         \begin{Spartie}{Primitives de Fonctions Composées}
-            Les primitives se déduisent des formules de dérivation. $u$ désigne une fonction continue sur $I$
+            Les primitives se déduisent des formules de dérivation. $u$ désigne une fonction continue sur $I$ 
             \begin{table}[H] \centering \captionabove{Tableau des Primitives de Fonctions Composées}
                 \begin{tabular}[c]{ @{}*{3}{C}@{} } \toprule
                     Fonction $f$ du type                                    & Primitive $F$                                                             & Conditions  \\ \midrule
                     $u'u^n$ ($n\in\mathbb{N}$)                              & $\frac{1}{n+1}\times u^{n+1}$                                             & \---\\
-                    $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,\ u(x)\neq0$ \\
-                    $\frac{u'}{u}$                                          & $\ln\,(u)$                                                                  & $\forall x\in I,\ u(x)>0$ \\
-                    $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,\ u(x)>0$ \\
+                    $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,~u(x)\neq0$ \\
+                    $\frac{u'}{u}$                                          & $\ln\,(u)$                                                                  & $\forall x\in I,~u(x)>0$ \\
+                    $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,~u(x)>0$ \\
                     $u'\me^u$                                                 & $\me^u$                                                                     & \---\\
                     $u'\sin\,(u)$                                             & $-\cos\,(u)$                                                                & \---\\
                     $u'\cos\,(u)$                                             & $\sin\,(u)$                                                                 & \---\\ \bottomrule
@@ -749,7 +746,7 @@
     \end{Gpartie}
     \begin{Gpartie}{Équation Différentielle $y'-ay=0$} 
         \begin{Spartie}{Théorème} 
-            Posons $(E) : y'=ay$
+            Posons $(E) : y'=ay$.
 
             Soit $a\in\mathbb{R}$, les solutions sur $\mathbb{R}$ de l'équation différentielle $(E)$ sont les fonctions définies sur $\mathbb{R}$ par $f(x)=C\me^{ax}$, où $C$ est une constante réelle :
             \[y'-ay=0\qquad\mathcal{S}=\big\{\,x\mapsto C\me^{ax},~C\in\mathbb{R}\,\big\}\]
@@ -780,6 +777,7 @@
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Équations Différentielles $y'-ay=k(x)$, $k$ étant Continue} 
+        \vspace{-5ex}
         \begin{Spartie}{Méthode} 
             Supposons qu'on a deux fonctions $f$ et $g$, solutions de l'équation $(E): y'-ay=k(x)$.
 
@@ -830,18 +828,14 @@
 
 
 
-
-
-
-
     \chapter{Limites de Suites}
 
     \begin{Gpartie}{Suites Majorées, Minorées et Bornées} 
         \begin{Spartie}{Définitions} 
             \begin{itemize}
-                \item Une suite ($u_n$) est \emph{majorée} s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},~u_n\leq M$
-                \item Une suite ($u_n$) est \emph{minorée} s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},~u_n\geq m$
-                \item Une suite est \emph{bornée} si elle est majorée \emph{et} bornée
+                \item Une suite ($u_n$) est \emph{majorée} s'il existe un réel $M$ tel que : $\forall n\in\mathbb{N},~u_n\leq M$.
+                \item Une suite ($u_n$) est \emph{minorée} s'il existe un réel $m$ tel que : $\forall n\in\mathbb{N},~u_n\geq m$.
+                \item Une suite est \emph{bornée} si elle est majorée \emph{et} bornée.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Exemple} 
@@ -852,25 +846,26 @@
     \end{Gpartie}
     \begin{Gpartie}{Définitions} 
         \begin{Spartie}{Limite Infinie}
+            \vspace*{-2ex}
             \begin{SSpartie}{Définition} 
-                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]\,M~;~+\infty\,\big[$ contient tous les termes de la suite à partir d'un certain rang.
+                Une suite $(u_n)$ a pour limite $+\infty$ si, quel que soit le réel $M$, l'intervalle $\big]M\,;+\infty\big[$ contient tous les termes de la suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $M$, on peut trouver un rang $n$ tel que : \[\forall n\geq N,\quad u_n>M\]
                 A partir du rang $N$, tous les termes sont supérieurs à $M$.
 
                 On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=+\infty}\] On peut dire que la suite diverge vers $+\infty$.
 
-                H.P. : $\forall M\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n>M)$
+                H.P. : $\quad\forall M\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n>M)$
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
-                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]\,-\infty~;~m\,\big[$ contient tous les termes de le suite à partir d'un certain rang.
+                Une suite ($u_n$) a pour limite $-\infty$, si, quel que soit le réel $m$, l'intervalle $\big]-\infty\,; m\big[$ contient tous les termes de le suite à partir d'un certain rang.
 
                 Autrement dit, pour tout réel $m$, on peut trouver un rang $N$ tel que : \[\forall n\geq N,\quad u_n<m\]
                 A partir du rang $N$, tous les termes sont inférieurs à $m$.
 
                 On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=-\infty}\] On peut dire que la suite diverge vers $-\infty$.
 
-                H.P. : $\forall m\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n<m)$
+                H.P. : $\quad\forall m\in\mathbb{R},~\exists N\in\mathbb{N},~\forall n\in\mathbb{N},~(n\geq N\implies u_n<m)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème}
                 \begin{center}$\begin{array}{cc}
@@ -898,18 +893,17 @@
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Limites Finies / Suites Convergentes} 
             \begin{SSpartie}{Définition} 
                 Une suite ($u_n$) \emph{converge} vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
-                Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $l$.
+                Autrement dit, on peut trouver un rang $N$ à partir duquel tous les termes de la suite sont aussi près que l'on veut de $\ell$.
 
-                On dit que $l$ est la \emph{limite} de la suite ($u_n$) et que la suite est \emph{convergente}.
+                On dit que $\ell$ est la \emph{limite} de la suite ($u_n$) et que la suite est \emph{convergente}.
 
                 On note : \[\boxed{\lim\limits_{n\to +\infty} u_n=\ell}\]
 
-                H.P. : $\forall\epsilon >0,~\exists N\in\mathbb{N},~\forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\,\ell-\epsilon~;~\ell+\epsilon\,\big[\Big)$
+                H.P. : $\quad\forall\epsilon >0,~\exists N\in\mathbb{N},~\forall n\in\mathbb{N}, \Big(n\geq N\implies u_n\in\big]\ell-\epsilon\,; \ell+\epsilon\big[\Big)$
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
                 \begin{center}$\begin{array}{cc}
@@ -925,7 +919,7 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-
+    \pagebreak
     \begin{Gpartie}{Propriétés sur les Limites} 
         \begin{Spartie}{Théorèmes de Comparaison} 
             \begin{SSpartie}{Théorème} 
@@ -943,27 +937,27 @@
 
                 Or, il existe un rang $N_2$, à partir duquel $n>N_2,\ v_n\geq u_n$.
 
-                Donc, il existe un rang $N=\max\,(\,N_1~;~N_2\,)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
+                Donc, il existe un rang $N=\max\,(N_1\,; N_2)$ à partir duquel $v_n\geq u_n>M$ donc: \[\lim\limits_{n\to +\infty}v_n=+\infty\quad\square\]
             \end{SSpartie}
             \begin{SSpartie}{Théorème dit \og des Gendarmes \fg{} (Théorème d'Encadrement)}
-                Soient $(u_n),\ (v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain rang~$u_n\leq v_n\leq w_n$ :
+                Soient $(u_n),~(v_n),$ et $(w_n)$ trois suites telles qu'à partir d'un certain \\ rang~${u_n\leq v_n\leq w_n}$ :
 
                 Si $\lim\limits_{n\to +\infty}u_n=\ell$ et $\lim\limits_{n\to +\infty}w_n=\ell$ où $\ell$ est un réel alors :
                 \[\lim\limits_{n\to +\infty}v_n=\ell\]
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
-                Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$
+                Soit $(u_n)$ définie par $u_n=\frac{(-1)^n}{n}$.
 
                 $\begin{aligned}[t]
                     \forall n\in\mathbb{N},&\quad-1\leq (-1)^n\leq 1 \\
                     \iff&\quad\frac{-1}{n}\leq\frac{(-1)^n}{n}\leq\frac{1}{n}
                 \end{aligned}$ \\[2ex]
-                Or, $\lim\limits_{n\to +\infty}\frac{-1}{n}=0,\ \lim\limits_{n\to +\infty}\frac{1}{n}=0$
+                Or, $\lim\limits_{n\to +\infty}\frac{-1}{n}=0,\ \lim\limits_{n\to +\infty}\frac{1}{n}=0$.
 
-                D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$
+                D'après le Théorème des Gendarmes, $\lim\limits_{n\to +\infty}u_n=0$.
             \end{SSpartie}
         \end{Spartie}
-
+        \pagebreak
         \begin{Spartie}{Convergence Monotone} 
             \begin{SSpartie}{Théorème Admis} 
                 Toute suite croissante et majorée converge vers une limite finie.
@@ -980,6 +974,7 @@
                         Alors, $u_p\leq u_n$.
                     \end{SSSSpartie}
                     \begin{SSSSpartie}{Démonstration de la Lemme par Récurrence}
+                        \vspace{-1em}
                         \begin{itemize}
                             \item Initialisation : On fixe $p$ donc $u_p\leq u_{p+1}$.
                             \item Hérédité : On suppose que $k\geq 1,\ u_p\leq u_{p+k}$. \\
@@ -990,31 +985,32 @@
 
                     Or tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite à partir d'un certain rang.
 
-                    Prenons l'intervalle ouvert $\big]\,a~;~b\,\big[$ tel que $\ell<b<u_{n_0}$.
+                    Prenons l'intervalle ouvert $\big]a\,; b\big[$ tel que $\ell<b<u_{n_0}$.
 
-                    Il existe un indice $p>n_0$ tel que $u_p\in\big]\,a~;~b\,\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
+                    Il existe un indice $p>n_0$ tel que $u_p\in\big]a\,; b\big[$ \\ (Ils y sont tous à partir d'un certain rang !)
 
                     Donc, $u_p<b<u_{n_0}$, ce qui impossible car $(u_n)$ est croissante et d'après la~lemme,~$p>n_0\implies u_p\geq u_{n_0}$.
 
                     C'est absurde, donc, $\forall n\in\mathbb{N},~u_n\leq\ell$.$\quad\square$
                 \end{SSSpartie}
             \end{SSpartie}
+            \vfill
+            \pagebreak
             \begin{SSpartie}{Théorème} 
-                Toute suite croissante et non-majorée diverge vers $+\infty$
+                Toute suite croissante et non-majorée diverge vers $+\infty$.
 
-                Toute suite décroissante et non-minorée diverge vers $-\infty$
+                Toute suite décroissante et non-minorée diverge vers $-\infty$.
 
                 \begin{SSSpartie}{Démonstration} 
                     Soit $M$ un réel, et $(u_n)_{n\in\mathbb{N}}$, une suite croissante, non-majorée.
 
-                    Il existe un rang $N$ tel que $u_N>M$
+                    Il existe un rang $N$ tel que $u_N>M$.
 
-                    Donc, $(u_n)$ diverge vers $+\infty$
+                    Donc, $(u_n)$ diverge vers $+\infty$.
                     \begin{itemize}
-                        \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance, 
-                        \[\lim\limits_{n\to +\infty}u_n=\ell\implies\forall n\in\mathbb{N},\ u_n\leq\ell\] $(u_n)$ est majorée par $\ell$, c'est une contradiction.$\quad\square$
-                        \\[2ex]
-                        \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme : $(u_n)$ croissante, $p,\ n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$ \\ $\forall n\geq n_0,\ u_n\geq u_{n_0}>M$ \\ Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où : \[\lim\limits_{n\to +\infty}u_n=+\infty\]
+                        \item Si $(u_n)$ admettait une limite finie, d'après le théorème de croissance :	
+                        \[\lim\limits_{n\to +\infty}u_n=\ell\implies\forall n\in\mathbb{N},\ u_n\leq\ell\] \\ $(u_n)$ est majorée par $\ell$, c'est une contradiction.$\quad\square$
+                        \item Soit $M\in\mathbb{R}$ et $(u_n)_{n\in\mathbb{N}}$, une suite non-majorée, donc, $\exists n_0,\ u_{n_0}>M$ \\ D'après la lemme, pour $(u_n)$ croissante : $p,~n\in\mathbb{N},\ p\leq n\implies u_p\leq u_n$. \\ Ainsi : \[\forall n\geq n_0,\ u_n\geq u_{n_0}>M\] Donc, tous les termes à partir de $n_0$ sont supérieurs à $M$. D'où : \[\lim\limits_{n\to +\infty}u_n=+\infty\]
                     \end{itemize}
                 \end{SSSpartie}
             \end{SSpartie}
@@ -1022,7 +1018,7 @@
         \begin{Spartie}{Rappel : Limite de $\left(q^n\right)$ où $q\in\mathbb{R}$} 
             \begin{SSpartie}{Théorème} 
                 \begin{itemize}
-                    \setlength\itemsep{0.3em}
+                    \setlength\itemsep{0.5em}
                     \item Si $q>1,~\lim\limits_{n\to+\infty}q^n=+\infty$
                     \item Si $q=1,~\lim\limits_{n\to+\infty}q^n=1$
                     \item Si $-1<q<1,~\lim\limits_{n\to+\infty}q^n=0$
@@ -1031,9 +1027,11 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \begin{Gpartie}{Opérations sur les Limites}
+    \pagebreak
+    \begin{Gpartie}{Opérations sur les Limites} 
         On considère les suites $(u_n)_{n\in\mathbb{N}}$ et $(v_n)_{n\in\mathbb{N}}$ admettant des limites finies ou infinies. \\ F.I. : Forme Indéterminée, il faut faire un calcul pour lever l'indétermination
         \begin{Spartie}{Somme}
+            \vspace{-2ex}
             \begin{table}[H] \centering \captionabove{Tableau des Limites de Sommes de Suites} 
                     %  tableau alternatif, avec barres verticales
                     % \begin{tabular}{ |p{0.15\textwidth}||w{c}{0.1\textwidth}|w{c}{0.1\textwidth}|w{c}{0.1\textwidth}| } \hline
@@ -1042,7 +1040,7 @@
                     %     $+\infty$                                                   & $+\infty$     & $+\infty$ & F.I.\footnotemark[1] \\ \hline
                     %     $-\infty$                                                   & $-\infty$     & F.I.\footnotemark[1] & $-\infty$ \\ \hline
                     % \end{tabular}
-                \resizebox{0.75\linewidth}{!}{
+                \resizebox{0.6\linewidth}{!}{
                     \begin{tabular}{ p{0.15\linewidth} *{3}{M{0.15\linewidth} }} \toprule
                         {}  & \multicolumn{3}{c}{$\lim u_n$}                \\ \cmidrule(r l){2-4}
                         $\lim v_n$  & $\ell'$       & $+\infty$ & $-\infty$ \\ \midrule
@@ -1051,17 +1049,11 @@
                         $-\infty$   & $-\infty$     & F.I.      & $-\infty$ \\ \bottomrule
                     \end{tabular}
                 }
-            \end{table}\pagebreak
-            \begin{SSpartie}{Exemple} 
-                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
-
-                $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
-                \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
-
-                Donc, par produit, $\lim\limits_{n\to +\infty}n(n+1)=+\infty$ \\ et donc, $\lim\limits_{n\to +\infty}u_n=+\infty$
-            \end{SSpartie}
+            \end{table}
         \end{Spartie}
+        \vspace{-2ex}
         \begin{Spartie}{Produit}
+            \vspace{-2ex}
             \begin{table}[H] \centering \captionabove{Tableau des Limites de Produits de Suites}
                 % tableau alternatif, avec barres verticales
                 % \begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
@@ -1071,7 +1063,7 @@
                 % $+\infty$                                                       & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $+\infty$ & $-\infty$ \\ \hline
                 %     $-\infty$                                                   & $\pm\infty\text{\tiny{ selon signe }}\ell$ & F.I. & $-\infty$ & $-\infty$ \\ \hline
                 % \end{tabular}
-                \resizebox{0.85\linewidth}{!}{
+                \resizebox{0.75\linewidth}{!}{
                     \begin{tabular}{ p{0.15\linewidth} *{4}{M{0.17\linewidth} }} \toprule
                         {} & \multicolumn{4}{c}{$\lim u_n$} \\ \cmidrule(r l){2-5}
                         $\lim v_n$  & $\ell\neq0$                                   & $0$ & $+\infty$                                   & $-\infty$                                     \\ \midrule
@@ -1082,24 +1074,10 @@
                     \end{tabular}
                 }
             \end{table}
-            \begin{SSpartie}{Exemple} 
-                Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
-
-                Soit $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{\sqrt{n}}\quad\lim\limits_{n\to +\infty}v_n=0$
-
-                $u_n\times v_n=n\times\frac{1}{\sqrt{n}}=\sqrt{n}\quad\text{or}\quad\lim\limits_{n\to +\infty}\sqrt{n}=+\infty$
-
-                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=+\infty$
-            \end{SSpartie}
-            \begin{SSpartie}{Exemple 2} 
-                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n^2\quad\lim\limits_{n\to +\infty}u_n=+\infty$
-
-                $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{n}-4\quad\lim\limits_{n\to +\infty}v_n=-4$ (Somme)
-
-                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
-            \end{SSpartie}
-        \end{Spartie}\pagebreak
+        \end{Spartie}
+        \vspace{-2ex}
         \begin{Spartie}{Quotient}
+            \vspace{-2ex}
             \begin{table}[H]% en commentaire : tableau alternatif, avec barres verticales.
                 \centering \captionabove{Tableau des Limites de Quotients de Suites}
                 % \begin{tabular}{ |p{0.15\textwidth}||w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}|w{c}{0.15\textwidth}| } \hline
@@ -1109,7 +1087,7 @@
                 %     $+\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
                 %     $-\infty$                                                   & 0 & 0 & F.I. & F.I. \\ \hline
                 % \end{tabular}
-                \resizebox{0.85\linewidth}{!}{
+                \resizebox{0.75\linewidth}{!}{
                     \begin{tabular}{ p{0.15\linewidth} *{4}{M{0.17\linewidth} }} \toprule
                         {}              & \multicolumn{4}{c}{$\lim u_n$} \\ \cmidrule(l r){2-5}
                         $\lim v_n$      & $\ell\neq0$                                                   & $0$ & $+\infty$                                   & $-\infty$                                     \\ \midrule
@@ -1120,27 +1098,57 @@
                     \end{tabular}
                 }
             \end{table}
-            \begin{SSpartie}{Exemple} 
-                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
+        \end{Spartie}
+        \begin{Spartie}{Exemples} 
+            \begin{SSpartie}{Somme} 
+                $(u_n)_{n\in\mathbb{N}}$ définie par $\begin{aligned}[t]u_n&=n^2-n\quad\text{F.I.} \\ &=n(n-1)\quad\text{On a levé l'indétermination}\end{aligned}$
 
-                Donc, par quotient, $\lim\limits_{n\to +\infty}u_n=0$
+                $\underbrace{\lim\limits_{n\to +\infty}n^2=+\infty\quad\lim\limits_{n\to +\infty}-n=-\infty}_{F.I.}$
+                \qquad$\lim\limits_{n\to +\infty}n=+\infty\quad\lim\limits_{n\to +\infty}n-1=+\infty$
+
+                Donc, par produit, $\lim\limits_{n\to +\infty}n(n+1)=+\infty$ \\ et donc, $\lim\limits_{n\to +\infty}u_n=+\infty$
+            \end{SSpartie}
+            \begin{SSpartie}{Produit} 
+                Soit $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n\quad\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                Soit $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{\sqrt{n}}\quad\lim\limits_{n\to +\infty}v_n=0$
+
+                $u_n\times v_n=n\times\frac{1}{\sqrt{n}}=\sqrt{n}\quad\text{or}\quad\lim\limits_{n\to +\infty}\sqrt{n}=+\infty$
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=+\infty$
+                
+                \vspace{2ex}Autre Exemple :
+
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=n^2\quad\lim\limits_{n\to +\infty}u_n=+\infty$
+
+                $(v_n)_{n\in\mathbb{N}}$, définie par $v_n=\frac{1}{n}-4\quad\lim\limits_{n\to +\infty}v_n=-4$ (Somme)
+
+                Donc, $\lim\limits_{n\to +\infty}(u_n\times v_n)=-\infty$
+            \end{SSpartie}
+            \begin{SSpartie}{Quotient} 
+                $(u_n)_{n\in\mathbb{N}}$, définie par $u_n=\frac{1}{n^2-3}\quad\lim\limits_{n\to +\infty}u_n=+\infty$ (Somme)
+                
+                Donc, par quotient, $\lim\limits_{n\to +\infty}u_n=0$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
     \pagebreak
     \begin{Gpartie}{Limite de Suite et Continuité} 
+        \vspace{-4ex}
         \begin{Spartie}{Théorème} 
-            Soit $f$ une fonction \emph{continue} sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, telle que $\forall n\in\mathbb{N},\ u_n\in I,~\ell\in I$, alors, la suite $\big(f(u_n)\big)$ converge~vers~$f(\ell)$.
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$ et $(u_n)_{n\in\ I}$, une suite qui converge vers un réel $\ell$, telle que $\forall n\in\mathbb{N},\ u_n\in I,~\ell\in I$, alors, la suite $\big(f(u_n)\big)$ converge vers~$f(\ell)$.
             \begin{SSpartie}{Exemple} 
-                Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$
+                Soit le suite $(u_n)$, définie par $u_n=\frac{4n}{n+1}$. Alors $\lim\limits_{n\to +\infty}u_n=4$.
                 
                 Donc, la suite $(v_n)$, définie par $v_n=\sqrt{u_n}$ converge vers $\sqrt{4}=2$.
             \end{SSpartie}
         \end{Spartie}
+        \vspace{-4ex}
         \begin{Spartie}{Théorème}
-            Soit $f$ une fonction \emph{continue} sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$
+            Soit $f$ une fonction \emph{continue} sur un intervalle $I$, telle que $f(I)\subset I$ et $(u_n)_{n\in\mathbb{N}}$ une suite définie par $u_{n+1}=f(u_n)$ et $u_0\in I$.
             
-            Si la suite $(u_n)$ \emph{converge vers un réel} $\ell$, alors $l$ est solution de l'équation $f(x)=x$ \\ On peut dire que $\ell$ est un point fixe de $f$.
+            Si la suite $(u_n)$ \emph{converge vers un réel} $\ell$, alors $\ell$ est solution de l'équation $f(x)=x$ \\ On peut dire que $\ell$ est un point fixe de $f$.
             \begin{SSpartie}{Démonstration} 
                 $\lim\limits_{n\to +\infty}u_{n+1}=\lim\limits_{n\to +\infty}u_n=f(\ell)$
             \end{SSpartie}
@@ -1201,12 +1209,6 @@
 
 
 
-
-
-
-
-
-
     \chapter{Géométrie Vectorielle dans l'Espace}
 
     \begin{Gpartie}{Vecteurs de l'Espace} 
@@ -1225,18 +1227,19 @@
             Deux vecteurs de l'espace $\vec{u}$ et $\vec{v}$ sont \emph{colinéaires} si et seulement si il existe un réel $k$ tel que $\vec{u}=k\vec{v}$ ou $\vec{v}=k\vec{u}$.
         \end{Spartie}
         \begin{Spartie}{Propriété} 
-            Toutes les opérations sur les vecteurs, en particulier la relation de Chasles sont identiques dans l'espace comme dans le plan.
+            Toutes les opérations sur les vecteurs, en particulier la relation de \textsc{Chasles} sont identiques dans l'espace comme dans le plan.
         \end{Spartie}
         \begin{Spartie}{Theorème} 
-            $A$ et $B$ étant deux points distincts de l'espace, $\big(AB\big)$ est l'ensemble des points $M$ de l'espace tels que $\overrightarrow{AM}=t \overrightarrow{AB},\ t\in\mathbb{R}$
+            $A$ et $B$ étant deux points distincts de l'espace, $\big(AB\big)$ est l'ensemble des points $M$ de l'espace tels que $\overrightarrow{AM}=t \overrightarrow{AB},\ t\in\mathbb{R}$.
 
             $\big(AB\big)=\big\{~M\in\mathcal{E},~\overrightarrow{AM}=t\overrightarrow{AB},~t\in\mathbb{R}~\big\}$
         \end{Spartie}
         \begin{Spartie}{Définition} 
-            Un vecteur $\vec{k}$ est une \emph{combinaison linéaire} des vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$ s'il existe des réels $a$, $b$ et $c$ tels que $\vec{k}=a\vec{u}+b\vec{v}+c\vec{w}$
+            Un vecteur $\vec{k}$ est une \emph{combinaison linéaire} des vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$ s'il existe des réels $a$, $b$ et $c$ tels que $\vec{k}=a\vec{u}+b\vec{v}+c\vec{w}$.
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Vecteurs Coplanaires} 
+        \vspace{-4ex}
         \begin{Spartie}{Définition} 
             Des vecteurs sont \emph{coplanaires} s'ils admettent des représentants dont les extrémités sont dans un même plan.
             \begin{center}
@@ -1248,31 +1251,32 @@
                     \draw[fill=lightgray, opacity=0.7] (-3,-0.5) -- (1,-0.5) -- (3,1) -- (-1,1) -- cycle;
                     \draw[dashed] (B) -- (C);
                     \draw[dashed] (C) -- (A);
-                    \draw[-stealth, blue] (O) -- (A) node [midway, label={[scale=0.5, label distance=-6pt]below:$\vec{u}$}] {};
-                    \draw[-stealth, green] (O) -- (B) node [midway, label={[scale=0.5, label distance=-6pt]left:$\vec{v}$}] {};
-                    \draw[-stealth, red] (O) -- (C) node [midway, label={[scale=0.5, label distance=-6pt]right:$\vec{w}$}] {};
+                    \draw[-stealth, blue] (O) -- (A) node [midway, label={[scale=0.501, label distance=-6pt]below:$\vec{u}$}] {};
+                    \draw[-stealth, green] (O) -- (B) node [midway, label={[scale=0.502, label distance=-6pt]left:$\vec{v}$}] {};
+                    \draw[-stealth, red] (O) -- (C) node [midway, label={[scale=0.503, label distance=-6pt]right:$\vec{w}$}] {};
 
-                    \draw[-stealth, blue] (1,2) -- (1.65,2) node [midway, label={[scale=0.5, label distance=-6pt]below:$\vec{u}$}] {};
-                    \draw[-stealth, green] (2.5,0) -- (3,0.5) node [midway, label={[scale=0.5, label distance=-6pt]left:$\vec{v}$}] {};
-                    \draw[-stealth, red] (-1,2) -- (0,2.5) node [midway, label={[scale=0.5, label distance=-6pt]right:$\vec{w}$}] {};
+                    \draw[-stealth, blue] (1,2) -- (1.65,2) node [midway, label={[scale=0.504, label distance=-6pt]below:$\vec{u}$}] {};
+                    \draw[-stealth, green] (2.5,0) -- (3,0.5) node [midway, label={[scale=0.505, label distance=-6pt]left:$\vec{v}$}] {};
+                    \draw[-stealth, red] (-1,2) -- (0,2.5) node [midway, label={[scale=0.506, label distance=-6pt]right:$\vec{w}$}] {};
                 \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{Illustration de la Définition}}
             \end{center}
-            Si $O$ est un point quelconque et $A$, $B$ et $C$ sont tels que $\overrightarrow{OA}=\vec{u},\ \overrightarrow{OB}=\vec{v},\ \text{et}\ \overrightarrow{OC}=\vec{w}$
+            Si $O$ est un point quelconque et $A$, $B$ et $C$ sont tels que $\overrightarrow{OA}=\vec{u},\ \overrightarrow{OB}=\vec{v},\ \text{et}\ \overrightarrow{OC}=\vec{w}$.
 
-            $\vec{u}$, $\vec{v}$, et $\vec{s}$ coplanaires $\iff$ $O$, $A$, $B$, et $C$ coplanaires
+            $\vec{u}$, $\vec{v}$, et $\vec{s}$ coplanaires $\iff$ $O$, $A$, $B$, et $C$ coplanaires.
         \end{Spartie}
         \begin{Spartie}{Théorème} 
             $\vec{u}$, $\vec{v}$ et $\vec{w}$ étant trois vecteurs de l'espace avec $\vec{u}$ et $\vec{v}$ non colinéaires.
 
             $\vec{u}$, $\vec{v}$ et $\vec{w}$ sont coplanaires si et seulement si il existe deux réels $\alpha$ et $\beta$ tels que $\vec{w}=\alpha\vec{u}+\beta\vec{v}$. \quad\big($\vec{w}$ est une \emph{combinaison linéaire} de $\vec{u}$ et $\vec{v}$\big)
             \begin{SSpartie}{Démonstration} 
-                Soient $O$, $A$, $B$, et $C$ quatre points tels que $\overrightarrow{OA}=\vec{u},~\overrightarrow{OB}=\vec{v}$ et $\overrightarrow{OC}=\vec{w}$
+                Soient $O$, $A$, $B$, et $C$ quatre points tels que $\overrightarrow{OA}=\vec{u},~\overrightarrow{OB}=\vec{v}$ et $\overrightarrow{OC}=\vec{w}$.
 
-                $\vec{u}$ et $\vec{v}$ sont non-colinéaires donc, $O$, $A$ et $B$ sont non alignés, et $\big(OAB\big)$ est un plan de base $\left(O\,,\overrightarrow{OA}\,,\overrightarrow{OB}\right)$
+                $\vec{u}$ et $\vec{v}$ sont non-colinéaires donc, $O$, $A$ et $B$ sont non alignés, et $\big(OAB\big)$ est un plan de base $\left(O\,,\overrightarrow{OA}\,,\overrightarrow{OB}\right)$.
                 \begin{itemize}[leftmargin=7ex]
                     \item[``$\implies$''] On suppose que $\vec{u}$, $\vec{v}$, et $\vec{w}$ sont coplanaires. Alors, $C\in\big(OAB\big)$. \\ $C$ admet donc des coordonnées $\big(\alpha\,;\beta\big)$ dans la base $\left(O\,,\overrightarrow{OA}\,,\overrightarrow{OB}\right)$. C'est-à-dire $\overrightarrow{OC}=\alpha\overrightarrow{OA}+\beta\overrightarrow{OB}$ ou encore $\vec{w}=\alpha\vec{u}+\beta\vec{v}$.$\quad\square$
-                    \item[``$\impliedby$''] On suppose que $\vec{w}=\alpha\vec{u}+\beta\vec{v}$ \\ Soit $D$ le point de $\big(OAB\big)$ de coordonnées $\big(\alpha\,;\beta\big)$ \\ Alors, 
+                    \pagebreak 
+                    \item[``$\impliedby$''] On suppose que $\vec{w}=\alpha\vec{u}+\beta\vec{v}$. \\ Soit $D$ le point de $\big(OAB\big)$ de coordonnées $\big(\alpha\,;\beta\big)$. \\ Alors : 
                      
                     $\begin{aligned}[t]
                         \overrightarrow{OD}&=\alpha\overrightarrow{OA}+\beta\overrightarrow{OB} \\
@@ -1287,11 +1291,12 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
     \begin{Gpartie}{Repèrage dans l'Espace} 
         \begin{Spartie}{Définition} 
-            Un repère de l'espace est constitué d'un point appelé origine du repère (en général $O$) et d'un triplet de vecteurs non-coplanaires (en général $\vec{\imath}$, $\vec{\jmath}$ et $\vec{k}$)
+            Un repère de l'espace est constitué d'un point appelé origine du repère (en général $O$) et d'un triplet de vecteurs non-coplanaires (en général $\vec{\imath}$, $\vec{\jmath}$ et $\vec{k}$).
 
-            On le note $\left(O\,;\vec{\imath}\,,\vec{\jmath}\,,\vec{k}\right)$
+            On le note $\left(O\,;\vec{\imath}\,,\vec{\jmath}\,,\vec{k}\right)$.
         \end{Spartie}
         \begin{Spartie}{Vocabulaire} 
             La droite $\big(O\,;\vec{\imath}\big)$ est appelée axe des \emph{abscisses}.
@@ -1302,11 +1307,12 @@
 
             Lorsque ces trois axes sont perpendiculaires deux à deux, le repère est \emph{orthogonal}. \\ Si de plus $\lvert\lvert\vec{\imath}\rvert\rvert=\lvert\lvert\vec{\jmath}\rvert\rvert=\lvert\lvert\vec{k}\rvert\rvert=1$, le repère est \emph{orthonormé}.
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Coordonnées dans l'Espace} 
             \begin{SSpartie}{Théorème} 
                 Si $\left(O\,;\vec{\imath}\,,\vec{\jmath}\,,\vec{k}\right)$ est un repère, pour tout point $M$, il existe un unique triplet $\big(x\,; y\,; z\big)$ de réels tels que $\overrightarrow{OM}=x\vec{\imath}+y\vec{\jmath}+z\vec{k}$, appelés coordonnées de $M$.
 
-                On note $M~\big(x\,;y\,;z\big)$
+                On note $M\,\big(x\,; y\,; z\big)$.
                 \begin{SSSpartie}{Démonstration} 
                     % \begin{center}
                         % \begin{tikzpicture}
@@ -1319,7 +1325,7 @@
 
                     $\overrightarrow{OM'}=x\vec{\imath}+y\vec{\jmath}$
 
-                    $\overrightarrow{M'M}$ est colinéaire à $\vec{k}$ (on a projeté dans sa direction). Il existe un réel $z$ tek que $\overrightarrow{M'M}=z\vec{k}$
+                    $\overrightarrow{M'M}$ est colinéaire à $\vec{k}$ (on a projeté dans sa direction). Il existe un réel $z$ tel que $\overrightarrow{M'M}=z\vec{k}$.
 
                     Donc, $\overrightarrow{OM}=x\vec{\imath}+y\vec{\jmath}+z\vec{k}\quad\square$ \\
                     (On admet l'unicité)
@@ -1329,10 +1335,10 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Si dans un repère $A~\big(x_A\,; y_A\,; z_A\big)$ et $B~\big(x_B\,; y_B\,; z_B\big)$ sont deux points, le vecteur $\overrightarrow{AB}$ a pour coordonnées : 
+                Si dans un repère $A\,\big(x_A\,; y_A\,; z_A\big)$ et $B\,\big(x_B\,; y_B\,; z_B\big)$ sont deux points, le vecteur $\overrightarrow{AB}$ a pour coordonnées : 
                 \[\overrightarrow{AB}~\begin{psmallmatrix} x_B-x_A \\ y_B-y_A \\ z_B-z_A \end{psmallmatrix}\]
                 Et $I$, le point du milieu de $\big[AB\big]$ :
-                \[I~\Bigg(~\frac{x_A+x_B}{2}~;~\frac{y_A+y_B}{2}~;~\frac{z_A+z_B}{2}~\Bigg)\]
+                \[I\,\Bigg(\frac{x_A+x_B}{2}\,;\frac{y_A+y_B}{2};\,\frac{z_A+z_B}{2}\Bigg)\]
                 Dans un repère orthonormé, un vecteur $\vec{u}~\begin{psmallmatrix}x \\ y \\ z\end{psmallmatrix}$ a pour norme :
                 \[\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}\]
                 \begin{SSSpartie}{Démonstration} 
@@ -1346,17 +1352,12 @@
                     $\begin{aligned}[t]
                         \overrightarrow{MI}&=\overrightarrow{MA}+\overrightarrow{AI} \\
                         &=\tfrac{1}{2}\overrightarrow{MA}+\tfrac{1}{2}\overrightarrow{MA}+\tfrac{1}{2}\overrightarrow{AB} \\
-                        &=\tfrac{1}{2}\overrightarrow{MA}+\tfrac{1}{2}\overrightarrow{MB}\quad\text{(Chasles)}
+                        &=\tfrac{1}{2}\overrightarrow{MA}+\tfrac{1}{2}\overrightarrow{MB}\quad\textsc{(Chasles)}
                     \end{aligned}$
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-
-
-
-
-
 
 
 
@@ -1411,8 +1412,8 @@
             \end{center}
             Ainsi, $A$ et $B$ sont deux événements indépendants si et seulement si :
             \begin{itemize}
-                \item $P_A(B)=P_{\overline{A}}(B)=P(B)$
-                \item $P(A\cap B)=P(A)\times P(B)$
+                \item $\Pde_A(B)=\Pde_{\overline{A}}(B)=\Pde(B)$
+                \item $\Pde(A\cap B)=\Pde(A)\times\Pde(B)$
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Modélisations} 
@@ -1420,13 +1421,12 @@
 
             Si les $n$ épreuves indépendantes ont pour univers respectifs $\Omega_1\,,\Omega_2\,,\dotsb\,,\Omega_n$, les issues de ces $n$ épreuves sont les éléments du produit cartésien $\Omega_1\times\Omega_2\times\dotsb\times\Omega_n$.
         \end{Spartie}
-        \pagebreak
         \begin{Spartie}{Exemple} 
             Un restaurant propose deux entrées $e_1$ et $e_2$, trois plats $p_1$, $p_2$, et $p_3$ et un dessert $d$.
 
             Un client prend au hasard une entrée, un plat, et un dessert.
 
-            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où \\ $\Omega_1=\big\{e_1\,; e_2\big\},\ \Omega_2=\big\{p_1\,; p_2\,; p_3\big\},\text{ et }\Omega_3=\big\{d\big\}$.
+            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où $\Omega_1=\big\{e_1\,; e_2\big\},\\{\Omega_2=\big\{p_1\,; p_2\,; p_3\big\}},\text{ et }\Omega_3=\big\{d\big\}$.
 
             Ainsi, $\Omega=\bigg\{\big(e_1\,, p_1\,, d\big)\,;\big(e_1\,, p_2\,, d\big)\,;\dotsc\bigg\}$.
 
@@ -1467,9 +1467,12 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
-    \vfill\pagebreak
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Loi Binomiale} 
+        \vspace{-5ex}
         \begin{Spartie}{Épreuve de Bernoulli} 
+            \vspace{-3ex}
             \begin{SSpartie}{Définition} 
                 Une \emph{épreuve de} \textsc{Bernoulli} est un expérience aléatoire possédant deux issues qu'on appelle généralement \og succès \fg{} et \og échec \fg{}. La probabilité du succès $p$ est appelée paramètre de la loi de \textsc{Bernoulli}.
                 \begin{center}
@@ -1499,14 +1502,16 @@
                 Un exemple de tirage est $\big(P\,, F\,, F\,, F\big)$. On peut aussi noter $S$ et $\overline{S}$ au lieu de $P$ et $F$.
             \end{SSpartie}
         \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Loi Binomiale} 
             \begin{SSpartie}{Définition} 
                 On considère une expérience aléatoire qui suit un schéma de \textsc{Bernoulli}, autrement dit, une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues (succès et échec) dont la probabilité de succès est $p$.
 
-                La variable aléatoire donnant le nombre de succès suit la \emph{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}(n\,, p)$. Cette loi est aussi parfois appelée loi du nombre de succès.
+                La variable aléatoire donnant le nombre de succès suit la \emph{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}\,\left(n\,, p\right)$. Cette loi est aussi parfois appelée loi du nombre de succès.
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Soit $X$ une variable aléatoire suivant la loi binomiale de paramètres $n$ et $p$, on peut aussi noter $X\sim\mathcal{B}(n\,, p)$.
+                Soit $X$ une variable aléatoire suivant la loi binomiale de paramètres $n$ et $p$, on peut aussi noter $X\sim\mathcal{B}\,\left(n\,, p\right)$.
 
                 Pour tout entier $k$ compris entre $0$ et $n$ :
                 \[\boxed{P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}}\]
@@ -1577,6 +1582,8 @@
                     \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{Illustration de la Loi Binomiale}}
                 \end{center}
+                \vfill
+                \pagebreak
                 \begin{SSSpartie}{Démonstration} 
                     Dans l'arbre, chaque chemin contenant exactement $k$ succès passe par $k$ branches de probabilité $p$ et $n-k$ branches de probabilité $1-p$. Ainsi la probabilité d'un tel chemin est $p^k(1-p)^{n-k}$.
 
@@ -1592,24 +1599,21 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}(n\,, p)$.
+                Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}\,\left(n\,, p\right)$.
 
-                L'Espérance de $X$ est $\boxed{E(X)=np}$ \\ La variance de $X$ est $\boxed{V(X)=np(1-p)}$ \\ L'Écart-type de $X$ est $\boxed{\sigma(X)=\sqrt{np(1-p)}}$
+                L'Espérance de $X$ est $\boxed{E(X)=np}$. \\ La variance de $X$ est $\boxed{V(X)=np(1-p)}$. \\ L'Écart-type de $X$ est $\boxed{\sigma(X)=\sqrt{np(1-p)}}$.
 
                 Démonstration dans chapitre sur les opérations sur les Variables Aléatoires.
                 \begin{SSSpartie}{Exemple} 
                     On reprend la pièce truquée précédente, qu'on lance quatre fois. $X$ est toujours la variable aléatoire donnant le nombre de \og pile \fg.
 
-                    $E(X)=4\times\frac{2}{3}\approx 2{,}67$\quad (On peut espérer d'obtenir 2{,}67 piles sur 4 tirages).
+                    $E(X)=4\times\frac{2}{3}\approx 2{,}67$\quad (On peut espérer d'obtenir 2{,}67 piles sur 4 tirages)
 
-                    $\sigma(X)=\sqrt{4\times\frac{2}{3}\times\frac{1}{3}}\approx 0{,}94$\quad (Dont l'interprétation est moins intéressante).
+                    $\sigma(X)=\sqrt{4\times\frac{2}{3}\times\frac{1}{3}}\approx 0{,}94$\quad (Dont l'interprétation est moins intéressante)
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-
-
-
 
 
 
@@ -1618,7 +1622,7 @@
     \begin{Gpartie}{Limites d'une Fonction en l'Infini} 
         \begin{Spartie}{Limite en $+\infty$} 
             \begin{SSpartie}{Définitions} 
-                Soit une fonction $f$ définie au moins sur $\big[a~;+\infty\big[$, où $a$ est un réel.
+                Soit une fonction $f$ définie au moins sur $\big[a\,;+\infty\big[$, où $a$ est un réel.
 
                 \begin{itemize}
                     \item   On dit que $f$ a pour limite $+\infty$ en $+\infty$ si pour tout réel $M$ positif, il existe un réel $A$, tel que $x>A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi grand que l'on veut.
@@ -1632,7 +1636,7 @@
                                 xtick=\empty,
                                 ytick=\empty
                             ]
-                                \addplot[black]{5};
+                                \addplot[thin, black]{5};
                                 \draw (0,5) node[anchor=north east] {M};
                                 \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (3.1,5);
                                 \addplot[blue, very thick, samples=50]{e^(x-1.5)};
@@ -1640,6 +1644,7 @@
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $+\infty$}}
                     \end{center}
+                    \vfill
                     \pagebreak
                     \item   On dit que $f$ a pour limite $-\infty$ en $+\infty$ si pout tout réel $m$ négatif, il existe un réel $A$, tel que $x>A$, $f(x)\leq m$. \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ est négatif et peut être aussi grand que l'on veut en valeur absolue.
                     
@@ -1654,12 +1659,13 @@
                             ]
                                 \draw (0,-5) node[anchor=north east] {m};
                                 \draw[thin, dashed] (3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (3.1,-5);
-                                \addplot[black]{-5};
+                                \addplot[thin, black]{-5};
                                 \addplot[blue, very thick, samples=50]{-e^(x-1.5)};
                             \end{axis}
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $-\infty$ en $+\infty$}}
                     \end{center}
+                    \vspace*{2ex}
                     \item   On dit que $f$ a pour limite $\ell$ en $+\infty$ où $\ell$ est un réel si pour tout intervalle ouvert $I$ contenant $\ell$, il existe un réel $A$ tel que $x>A$ implique $f(x)\in I$ \\ Autrement dit, lorsque $x$ prend des valeurs de plus en plus grandes, $f(x)$ peut être aussi près de $\ell$ que l'on veut.
                     
                     On note : \[\boxed{\lim\limits_{x\to +\infty}f(x)=\ell}\]
@@ -1678,22 +1684,22 @@
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $+\infty$}}
                     \end{center}
-                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x>A\implies\left\lvert f(x)-l\right\rvert <\epsilon\bigg)$ ou $\bigg(x>A\implies f(x)\in\big]l-\epsilon~;l+\epsilon\big[\bigg)$
+                    \vspace*{2ex}
+                    H.P.: $\quad\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: \quad}$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction définie au moins sur $\big[A~;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
+                Soit $f$ une fonction définie au moins sur $\big[A\,;+\infty\big[$, où $A$ est un réel, et $\mathcal{C}$ sa courbe représentative dans un repère. \\ Si $\lim\limits_{x\to+\infty}f(x)=\ell$ alors $\mathcal{C}$ admet une \emph{asymptote horizontale} en $+\infty$ \\ d'équation $y=\ell$.
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions sinus et cosinus sont bornées et n'admettent pas de limites en l'infini.
+                Une fonction n'admet pas forcément de limite en $+\infty$, par exemple, les fonctions sinus et cosinus sont bornées et n'admettent pas de limites en~l'infini.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Limite en $-\infty$} 
             \begin{SSpartie}{Définitions}
-                Soit $f$ une fonction définie au moins sur $\big]-\infty~;a\big[$, où $a$ est un réel.
+                Soit $f$ une fonction définie au moins sur $\big]-\infty\,;a\big[$, où $a$ est un réel.
                 \begin{itemize}
-                    \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$ \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
+                    \item   On dit que $f$ a pour limite $+\infty$ en $-\infty$ si pour tout réel $M$, positif, il existe un réel $A$ tel que $x<A$ implique $f(x)\geq M$. \\ Autrement dit, lorsque $x$ prend des valeurs négatives de plus en plus grandes en valeur absolue, $f(x)$ peut être aussi grand que l'on veut.
                     
                     On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=+\infty}\]
                     \begin{center}
@@ -1705,7 +1711,7 @@
                                 ytick=\empty,
                                 domain=-4:1.75
                             ]
-                                \addplot[black]{5};
+                                \addplot[thin, black]{5};
                                 \draw (0,5) node[anchor=north west] {M};
                                 \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]below:$A$}] {} -- (-3.1,5);
                                 \addplot[blue, very thick, samples=50]{e^(-x-1.5)};
@@ -1713,8 +1719,10 @@
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $-\infty$}}
                     \end{center}
+                    \vfill
                     \pagebreak
-                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$ \\ On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=-\infty}\]
+                    % \vspace*{2ex}
+                    \item   On dit que $f$ a pour limite $-\infty$ en $-\infty$ si pour tout réel $m$ négatif, il existe un réel $A$ tel que $x<A$ implique $f(x)\leq m$. \\ On note : \[\boxed{\lim\limits_{x\to-\infty}f(x)=-\infty}\]
                     \begin{center}
                         \begin{tikzpicture}[scale=0.7]
                             \begin{axis}[
@@ -1725,7 +1733,7 @@
                             ]
                                 \draw (0,-5) node[anchor=north east] {m};
                                 \draw[thin, dashed] (-3.1,0) node[dot,label={[label distance=-2pt]above:$A$}] {} -- (-3.1,-5);
-                                \addplot[black]{-5};
+                                \addplot[thin, black]{-5};
                                 \addplot[blue, very thick, samples=50]{-e^(-x-1.5)};
                             \end{axis}
                         \end{tikzpicture}
@@ -1748,9 +1756,10 @@
                             \end{axis}
                         \end{tikzpicture}
 
-                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $2$ en $-\infty$}}
+                        \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $\ell$ en $-\infty$}}
                     \end{center}
-                    H.P.: $\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: }$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon~;\ell+\epsilon\big[\bigg)$
+                    \vspace*{2ex}
+                    H.P.: $\quad\forall\epsilon >0,~\exists A\in\mathbb{R},~\forall x\in\mathcal{D}_f$ \\ \phantom{H.P.: \quad}$\bigg(x<A\implies\left\lvert f(x)-\ell\right\rvert <\epsilon\bigg)$ ou $\bigg(x<A\implies f(x)\in\big]\ell-\epsilon\,;\ell+\epsilon\big[\bigg)$
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
@@ -1778,8 +1787,9 @@
                             \addplot[blue, very thick, samples=200]{\x*(x-2)^(-2)*1/(20)};
                         \end{axis}
                     \end{tikzpicture}
-                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $2$}}
+                    \parbox{\linewidth}{\captionof{figure}{\centering Représentation Graphique d'une Fonction qui Semble Tendre vers $+\infty$ en $a$}}
                 \end{center}
+                \vspace*{2ex}
                 \item $f(x)$ est négatif et aussi grand que l'on veut en valeur absolue, on dit que $f$ a pour limite $-\infty$ en $a$.
 
                 On note : \[\boxed{\lim\limits_{x\to a}f(x)=-\infty}\]
@@ -1810,10 +1820,12 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Fonctions Usuelles} 
-        \begin{Spartie}{Théorème} 
+        \begin{Spartie}{Théorème}
             \begin{SSpartie}{Fonction Racine Carrée} 
-                $\lim\limits_{x\to+\infty}\sqrt{x}=+\infty$ et $\lim\limits_{x\to0}\sqrt{x}=0$ (la fonction racine carrée est continue en $0$)
+                $\lim\limits_{x\to+\infty}\sqrt{x}=+\infty$ et $\lim\limits_{x\to0}\sqrt{x}=0$\quad (la fonction racine carrée est continue en $0$)
             \end{SSpartie}
             \begin{SSpartie}{Fonction Inverse} 
                 $\lim\limits_{x\to+\infty}\frac{1}{x}=0,\quad\lim\limits_{\substack{x\to 0 \\ x>0}}\frac{1}{x}=+\infty,\quad\lim\limits_{\substack{x\to 0 \\ x<0}}\frac{1}{x}=-\infty,\quad\lim\limits_{x\to-\infty}\frac{1}{x}=0$
@@ -1823,7 +1835,7 @@
 
                 Si $p$ est pair, $\lim\limits_{x\to-\infty}x^p=+\infty$ et si $p$ est impair, $\lim\limits_{x\to-\infty}x^p=-\infty$.
                 
-                Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}\frac{1}{x^p}=0$, et $\lim\limits_{x\to-\infty}\frac{1}{x^p}=0$.
+                \vspace*{2ex}Quel que soit $p\in\mathbb{N^*},~\lim\limits_{x\to+\infty}\frac{1}{x^p}=0$, et $\lim\limits_{x\to-\infty}\frac{1}{x^p}=0$.
 
                 Si $p$ est pair, $\lim\limits_{x\to0}\frac{1}{x^p}=+\infty$ et si $p$ est impair, $\lim\limits_{\substack{x\to0 \\ x>0}}\frac{1}{x^p}=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x<0}}\frac{1}{x^p}=-\infty$.
             \end{SSpartie}
@@ -1834,13 +1846,15 @@
                 $\lim\limits_{x\to+\infty}\ln\,(x)=+\infty,\quad\lim\limits_{\substack{x\to0 \\ x>0}}\ln\,(x)=-\infty$
             \end{SSpartie}
         \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Théorèmes de Croissance Comparée} 
             \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\qquad\lim\limits_{x\to-\infty}x\me^x=0\]
             \begin{SSpartie}{Démonstration} 
                 \begin{itemize}
                     \item On montre que $\me^x>\frac{x^2}{2}$, pour tout $x>0$ en étudiant la différence.
 
-                    Soit $f$ définie sur $\big]0~;+\infty\big[$ par $f(x)=\me^x-\frac{x^2}{2}$. Étudions les variations de $f$.
+                    Soit $f$ définie sur $\big]0\,;+\infty\big[$ par $f(x)=\me^x-\frac{x^2}{2}$. Étudions les variations de $f$.
 
                     $f'(x)=\me^x-x$ on ne conclut pas directement sur le signe. Dérivons encore :
 
@@ -1848,9 +1862,9 @@
 
                     Donc, $f''(x)$ est strictement positive pour $x>0$.
 
-                    Ainsi on a $f'(x)$ strictement croissante sur $\big]0~;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0~;+\infty\big[$ :
-                    
-                    \begin{center}
+                    Ainsi on a $f'(x)$ strictement croissante sur $\big]0\,;+\infty\big[$ et comme $f'(0)=1>0$, $f'$ est strictement positive sur $\big]0\,;+\infty\big[$ :
+                    \begin{center}                        
+                        \vspace*{2ex}
                         \begin{tikzpicture}
                             \tkzTabInit{$x$ /1, $f''(x)$ /1, $f'(x)$ /1, $f(x)$ /1}{$0$, $+\infty$}
                             \tkzTabLine{z,+,}
@@ -1858,30 +1872,31 @@
                             \tkzTabVar{-/$1$,+/}
                         \end{tikzpicture}
                         \parbox{\linewidth}{\captionof{figure}{\centering Tableau de Variation de $f$ et $f'$}}
-                    \end{center} 
-                    
-                    Donc, pour tout $x\in\big]0~;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$ \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
-                    \item On pose $X=-x$ et alors, $\lim\limits_{x\to-\infty}X=+\infty$ et $x\me^x=-X\me^{x}=-\frac{X}{\me^X}$
+                        \vspace*{2ex}
+                    \end{center}
+                    Donc, pour tout $x\in\big]0\,;+\infty\big[,~\me^x-\frac{x^2}{2}>0$ et donc $\me^x>\frac{x^2}{2}$. \\ Comme $x>0$ on peut diviser par $x$ : \\ Donc, $\frac{\me^x}{x}>\frac{x}{2}$ et comme $\lim\limits_{x\to+\infty}\frac{x}{2}=+\infty$, par comparaison : \[\lim\limits_{x\to+\infty}\frac{\me^x}{x}=+\infty\quad\square\]
+                    \item On pose $X=-x$ et alors, $\lim\limits_{x\to-\infty}X=+\infty$ et $x\me^x=-X\me^{x}=-\frac{X}{\me^X}$.
                     
                     Donc, par passage à l'inverse de la limite précédente : 
                     \[\lim\limits_{x\to-\infty}x\me^x=\lim\limits_{X\to+\infty}-\frac{X}{\me^X}=0\quad\square\]
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Théorème} 
             Quel que soit l'entier $n>0$ : \[\lim\limits_{x\to_\infty}\frac{\me^x}{x^n}=+\infty\quad\text{et}\quad\lim\limits_{x\to-\infty}x^n\me^x=0\]
         \end{Spartie}
         \begin{Spartie}{Théorèmes de Croissance Comparée (bis)} 
             \[\lim\limits_{x\to+\infty}\frac{\ln\,(x)}{x}=0\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}x\ln\,(x)=0\]
             \begin{SSpartie}{Démonstration} 
-                On pose le changement de variable $X=\ln\,(x)$ et donc $x=\me^X$. On a alors $\lim\limits_{x\to+\infty}X=+\infty$ et $\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty$.
+                On pose le changement de variable $X=\ln\,(x)$ et donc $x=\me^X$. On a alors : \[\lim\limits_{x\to+\infty}X=+\infty\quad\text{et}\quad\lim\limits_{\substack{x\to0 \\ x>0}}X=-\infty\]
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Opérations sur les Limites} 
         \begin{Spartie}{Limites de Somme, Produit et Quotient} 
             Dans cette sous-partie, les limites des fonctions $f$ et $g$ sont prises soit en $-\infty$, soit en $+\infty$ soit en un réel $a$. $\ell$ et $\ell'$ sont des nombres réels. \\ Lorsqu'il n'y a pas de conclusion en général, on dit alors qu'il y a un cas de forme indéterminée. (F.I.) \\
-            N.B.: $\pm\infty$ désigne $+\infty$ ou $-\infty$. \pagebreak
+            N.B.: $\pm\infty$ désigne ici $+\infty$ ou $-\infty$.
             \begin{SSpartie}{Limite de Somme} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{6}{>{\centering\arraybackslash}m{0.1\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$        & $\ell$    & $\ell$    & $+\infty$ & $-\infty$ & $+\infty$ \\\hline
@@ -1889,9 +1904,10 @@
                 %     $\lim (f+g)$    & $\ell+\ell'$  & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.      \\\hline
                 % \end{tabular}\end{center}
                 % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites de Sommes de Fonctions}}
+                \vspace{-2ex}
                 \begin{table}[H]
                     \centering \captionabove{Tableau des Limites de Sommes de Fonctions}
-                    \resizebox{0.85\linewidth}{!}{
+                    \resizebox{0.7\linewidth}{!}{
                         \begin{tabular}{ p{0.15\linewidth} *{3}{M{0.17\linewidth}} } \toprule
                             {} & \multicolumn{3}{c}{$\lim f$} \\ \cmidrule(l r){2-4}
                             $\lim g$    & $\ell$        & $+\infty$ & $-\infty$ \\ \midrule
@@ -1903,12 +1919,14 @@
                 \end{table}
             \end{SSpartie}
             \begin{SSpartie}{Limite d'un Produit} 
+                
                 % \begin{center}\begin{tabular}{ |m{0.12\linewidth}||*{9}{>{\centering\arraybackslash}m{0.061\linewidth}| }} \hline
                 %     Si $\lim f$         & $\ell$            & $\ell>0$  & $\ell>0$  & $\ell<0$  & $\ell<0$  & $+\infty$ & $+\infty$ & $-\infty$ & $0$ \\\hline
                 %     Si $\lim g$         & $\ell'$           & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
                 %     $\lim (fg)$  & $\ell\times\ell'$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & F.I. \\\hline
                 % \end{tabular}\end{center}
                 % \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Produits de Fonctions}}
+                \vspace{-2ex}
                 \begin{table}[H]
                     \centering \captionabove{Tableau des Limites des Produits de Fonctions}
                     \resizebox{0.85\linewidth}{!}{
@@ -1925,7 +1943,7 @@
                         \end{tabular}
                     }
                 \end{table}
-            \end{SSpartie}\pagebreak
+            \end{SSpartie}
             \begin{SSpartie}{Limite d'un Quotient $f/g$} 
                 % \begin{center}\begin{tabular}{ |m{0.15\linewidth}||*{7}{>{\centering\arraybackslash}m{0.082\linewidth}| }} \hline
                 %     Si $\lim f$     & $\ell$                & $\ell$        & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ & $\pm\infty$ \\\hline
@@ -1956,12 +1974,14 @@
             %     \end{tabular}\end{center}
             %     \parbox{\linewidth}{\captionof{figure}{\centering Tableau des Limites des Quotients de Fonctions, où la Limite de $g$ est nulle}}
             % \end{SSpartie}
+            \vfill
+            \pagebreak
             \begin{SSpartie}{Exemples} 
                 \begin{SSSpartie}{Somme} 
                     $\lim\limits_{x\to+\infty}x+\dfrac{1}{x^2}-1=+\infty$\quad(remarquons qu'on a la même limite quand $x\to0$)
                 \end{SSSpartie}
                 \begin{SSSpartie}{Produit} 
-                    $\lim\limits_{x\to0}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=-\infty$\qquad En effet, $\lim\limits_{x\to0}-3+x=-3$ et $\lim\limits_{x\to0}1+\frac{1}{x^2}=+\infty$
+                    $\lim\limits_{x\to0}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=-\infty$\qquad En effet, $\lim\limits_{x\to0}-3+x=-3$ et $\lim\limits_{x\to0}1+\frac{1}{x^2}=+\infty$.
     
                     Par contre, remarquons que $\lim\limits_{x\to+\infty}\left(-3+x\right)\left(1+\frac{1}{x^2}\right)=+\infty$.
                 \end{SSSpartie}
@@ -1979,7 +1999,7 @@
             \begin{SSpartie}{Théorème} 
                 Soient $a$, $b$ et $c$ trois réels ou $+\infty$ ou $-\infty$. Soient $f$ et $g$ deux fonctions, définies au bon endroit. 
                 
-                Alors, si $\lim\limits_{x\to a}f(x)=\boldsymbol{b}$\quad et\quad$\lim\limits_{x\to\boldsymbol{b}}g(x)=c$, on a : \[\lim\limits_{x\to a}(g\circ f)(x)=c\]
+                Alors, si $\lim\limits_{x\to a}f(x)=\boxed{\boldsymbol{b}}$\quad et\quad$\lim\limits_{x\to\boxed{\boldsymbol{b}}}g(x)=c$, on a : \[\lim\limits_{x\to a}(g\circ f)(x)=c\]
                 Attention aux limites !
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
@@ -1989,14 +2009,14 @@
         \begin{Spartie}{Comparaison} 
             $a$ désigne un réel ou $+\infty$ ou $-\infty$.
             \begin{SSpartie}{Théorème} 
-                Si $f$ et $g$ sont deux fonctions telles que pour tout $x$ voisin de $a$, $f(x)\leq g(x)$
+                Si $f$ et $g$ sont deux fonctions telles que pour tout $x$ voisin de $a$, $f(x)\leq g(x)$ :
                 \begin{itemize}
                     \item Si $\lim\limits_{x\to a}f(x)=+\infty\quad$ alors $\quad\lim\limits_{x\to a}g(x)=+\infty$.
                     \item Si $\lim\limits_{x\to a}g(x)=-\infty\quad$ alors $\quad\lim\limits_{x\to a}f(x)=-\infty$.
                 \end{itemize}
             \end{SSpartie}
             \begin{SSpartie}{Théorème dit \og des Gendarmes \fg{}} 
-                Soient $f$, $g$ et $h$ trois fonctions telles que pour tout $x$ voisin de $a$, $g(x)\leq f(x)\leq h(x)$.
+                Soient $f$, $g$ et $h$ trois fonctions telles que pour tout $x$ voisin de $a$, \\ $g(x)\leq f(x)\leq h(x)$.
 
                 Si $\lim\limits_{x\to a}g(x)=\ell\quad$ et $\quad\lim\limits_{x\to a}h(x)=\ell\quad$ où $\ell$ est un réel, alors $\quad\lim\limits_{x\to a}f(x)=\ell$.
             \end{SSpartie}
@@ -2005,15 +2025,12 @@
 
 
 
-
-
-
-
     \chapter{Géométrie dans l'Espace}
 
     \begin{Gpartie}{Positions Relatives de Droites et de Plans} 
         \begin{Spartie}{Positions Relatives de Deux Plans} 
             Deux plans de l'espace non parallèles sont sécants. Leur intersection est une \emph{droite}.
+            \vfill
             \begin{center}
                     \begin{minipage}{5cm}\includegraphics[width=5cm]{rsc/11fig1a.png}\\ \centering Plans strictement parallèles\end{minipage}
                     \begin{minipage}{5cm}\includegraphics[width=5cm]{rsc/11fig1b.png}\\ \centering Plans Confondus\phantom{p}\end{minipage} \\[2ex] % p pour alignement vertical 
@@ -2021,7 +2038,9 @@
                     \includegraphics[width=5cm]{rsc/11fig1c.png} \\
                     Plans sécants
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration des Positions Relatives de Deux Plans}}
-            \end{center} \pagebreak
+            \end{center} 
+            \vfill
+            \pagebreak
             \begin{SSpartie}{Propriété} 
                 Deux plans sont parallèles si et seulement si \emph{deux} droites \emph{sécantes} incluses dans le premier sont parallèles à deux droites sécantes dans le deuxième.
                 \begin{center}
@@ -2043,7 +2062,9 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Théorème}}
                 \end{center}
             \end{SSpartie}
-        \end{Spartie} \pagebreak
+        \end{Spartie} 
+        \vfill
+        \pagebreak
         \begin{Spartie}{Positions Relatives d'une Droite et un Plan} 
             Une droite non parallèle à un plan est sécante à ce plan. Leur intersection est un~\emph{point}.
             \begin{center}
@@ -2070,8 +2091,9 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
                 \end{center}
             \end{SSpartie}
+            \vfill
             \begin{SSpartie}{Remarque} 
-                Deux droites confondues sont parallèles (au sens large)
+                Deux droites confondues sont parallèles (au sens large).
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 En général, deux droites de l'espace sont non coplanaires.
@@ -2080,18 +2102,11 @@
     \end{Gpartie}
 
 
-
-
-
-
-
-
-
-
     
     \chapter{Orthogonalité dans l'Espace}
     
     \begin{Gpartie}{Différentes Expressions du Produit Scalaire} 
+        \vspace{-2ex}
         \begin{Spartie}{Définitions} 
             $\vec{u}$ et $\vec{v}$ étant deux vecteurs de l'espace, soit un point $A$ de l'espace, et les points $B$ et $C$ tels que $\overrightarrow{AB}=\vec{u}$ et $\overrightarrow{AC}=\vec{v}$.
 
@@ -2128,6 +2143,7 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration du Produit Scalaire par Projeté Orthogonal}}
                 \end{center}
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Définitions avec les Normes} 
                 $\vec{u}\cdot\vec{v}=\dfrac{1}{2}\left(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2\right)=\dfrac{1}{2}\left(\lvert\lvert\vec{u}\rvert\rvert^2+\lvert\lvert\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2\right)$
 
@@ -2138,10 +2154,10 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriétés} 
-            Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
+            Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symmétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
         \end{Spartie}
-        \begin{Spartie}{Expression Analytique du Produit Scalaire} 
-            Dans un repère orthonormé de l'espace, $\vec{u}~\left(x~;y~;z\right)$ et $\vec{v}~\left(x'~;y'~;z'\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
+        \begin{Spartie}{Expressions Analytique du Produit Scalaire} 
+            Dans un repère orthonormé de l'espace, $\vec{u}\,\left(x\,; y\,; z\right)$ et $\vec{v}\,\left(x'\,; y'\,; z'\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
             \begin{SSpartie}{Démonstration} 
                 On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$ :
 
@@ -2153,19 +2169,20 @@
                 \end{aligned}$
             \end{SSpartie}
         \end{Spartie}
-    \end{Gpartie} \pagebreak
+    \end{Gpartie}
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Orthogonalité} 
         \begin{Spartie}{Vecteurs Orthogonaux} 
             \begin{SSpartie}{Définition} 
                 Deux vecteurs de l'espace non nuls sont orthogonaux si deux droites qu'ils dirigent sont orthogonales.
 
                 Par convention le vecteur nul est orthogonal à tout vecteur.
-                \begin{SSSpartie}{Exemple} 
-                    $\vec{u}$ et $\vec{v}$ sont orthogonaux.
 
+                \begin{SSSpartie}{Exemple} 
                     \begin{center}
                             \includegraphics[width=5cm]{rsc/12fig2.png}
-                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DH}\quad\text{sont orthogonaux.}\]
+                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DH}\quad\text{sont orthogonaux}\]
                         \parbox{\linewidth}{\captionof{figure}{\centering Illustration de deux Vecteurs Orthogonaux}}
                     \end{center}
                 \end{SSSpartie}
@@ -2174,9 +2191,11 @@
                 Deux vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux si et seulement si $\vec{u}\cdot\vec{v}=0$.
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Dans un repère orthonormé, deux vecteurs $\vec{u}~\left(x~;y~;z\right)$ et $\vec{v}~\left(x'~;y'~;z'\right)$ sont orthogonaux si et seulement si $xx'+yy'+zz'=0$ (par définition analytique)
+                Dans un repère orthonormé, deux vecteurs $\vec{u}\,\left(x\,;y\,;z\right)$ et $\vec{v}\,\left(x'\,;y'\,;z'\right)$ sont orthogonaux si et seulement si $xx'+yy'+zz'=0$. \quad(par définition analytique)
             \end{SSpartie}
-        \end{Spartie} \pagebreak
+        \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Vecteur Normal à un Plan} 
             \begin{SSpartie}{Définition} 
                 Un vecteur \emph{normal} à un plan est un vecteur directeur d'une droite orthogonale à un plan.
@@ -2188,21 +2207,23 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
                 \end{center}
             \end{SSpartie}
-            \begin{SSpartie}{Caractérisation d'un Plan}
-                Un plan est caractérisé par \emph{un point} et \emph{un vecteur normal}.
+            \begin{SSpartie}{Caractérisation d'un Plan} 
+                Un plan est caractérisé par \emph{un point} et un \emph{vecteur normal}.
 
                 \begin{center}
                     \includegraphics[width=5cm]{rsc/12fig4.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Caractérisation d'un Plan}}
                 \end{center}
                 
-                                    Sur ce dessin, les deux plans ont le meme vecteur normal $\vec{n}$, donc la meme direction. La position d'un plan sera déterminée par un point.
+                                    Sur ce dessin, les deux plans ont le meme vecteur normal $\vec{n}$, donc la même direction. La position d'un plan sera déterminée par un point.
                 
                                     On en déduit que deux plans parallèles admettent le meme vecteur normal, c'est-à-dire des vecteurs normaux colinéaires.
                 \begin{SSSpartie}{Rappel} 
                     On peut aussi définir un plan par trois points non alignés, ou par deux droites sécantes (c'est-à-dire un point et deux vecteurs directeurs), ou, beaucoup plus rare, par deux droites parallèles non confondues.
                 \end{SSSpartie}
             \end{SSpartie}
+            \vfill
+            \pagebreak
             \begin{SSpartie}{Théorème} 
                 Le plan $\mathcal{P}$ qui passe par un point $A$ et de vecteur normal $\vec{n}$ est l'ensemble des point $M$ tels que $\overrightarrow{AM}\cdot\vec{n}=0$.\quad (admis ou définition d'un plan)
 
@@ -2219,27 +2240,27 @@
                     \item[``$\implies$''] Si une droite est orthogonale à un plan, elle est orthogonale à toute droite de ce plan, en particulier deux droites sécantes de ce plan.
                     \item[``$\impliedby$''] Supposons qu'une droite $(d)$ est orthogonale à deux droites sécantes $d_1$ et $d_2$ du plan $\mathcal{P}$. Notons $A$ le point d'intersection de $d_1$ et $d_2$, et $\vec{u_1}$ et $\vec{u_2}$ deux vecteurs directeurs de $d_1$ et $d_2$.
 
-                    Ainsi $\left(~A~;~\vec{u_1}~,~\vec{u_2}~\right)$ est un repère du plan $\mathcal{P}$, car $\vec{u_1}$ et $\vec{u_2}$ ne sont pas colinéaires.
+                    Ainsi $\left(A\,;\vec{u_1}\,,\vec{u_2}\right)$ est un repère du plan $\mathcal{P}$, car $\vec{u_1}$ et $\vec{u_2}$ ne sont pas colinéaires.
 
                     Notons $\vec{n}$ un vecteur directeur de $(d)$. (on trace ci-dessous uniquement les vecteurs directeurs)
-                    \vspace{-0.2ex}
                     \begin{center}
                         \includegraphics[width=5cm]{rsc/12fig6.png}
                         \parbox{\linewidth}{\captionof{figure}{\centering Représentation de la Situation}}
                     \end{center}
-    
+                    \vspace{1ex}
                     Alors, $\vec{n}$ est orthogonal à $\vec{u_1}$ et $\vec{u_2}$.
 
                     Soit une droite du plan $\mathcal{P}$, dont le vecteur directeur est $\vec{u}$.
 
-                    Alors, il existe deux réels $\alpha$ et $\beta$ tels que $\vec{u}=\alpha\vec{u_1}+\beta\vec{u_2}$~($\vec{u}$, $\vec{u_1}$, $\vec{u_2}$ coplanaires)
+                    Alors, il existe deux réels $\alpha$ et $\beta$ tels que $\vec{u}=\alpha\vec{u_1}+\beta\vec{u_2}$. \\ ($\vec{u}$, $\vec{u_1}$, $\vec{u_2}$ coplanaires)
 
-                    Donc, $\vec{n}\cdot\vec{u}=\alpha\vec{n}\cdot\vec{u_1}+\beta\vec{n}\cdot\vec{u_2}=0$\quad (car $\vec{n}$ orthogonal à $\vec{u_1}$ et $\vec{u_2}$)
+                    Donc, $\vec{n}\cdot\vec{u}=\alpha\vec{n}\cdot\vec{u_1}+\beta\vec{n}\cdot\vec{u_2}=0$.\quad (car $\vec{n}$ orthogonal à $\vec{u_1}$ et $\vec{u_2}$)
 
                     Ainsi, $\vec{n}$ est orthogonal à $\vec{u}$, et donc $(d)$ est orthogonale à toute droite du plan~$\mathcal{P}$.\quad$\square$
                 \end{itemize}
             \end{SSpartie}
-        \end{Spartie} \pagebreak
+        \end{Spartie}
+        \vfill
         \begin{Spartie}{Plans Perpendiculaires} 
             Deux plans $\mathcal{P}_1$ et $\mathcal{P}_2$ admettant pour vecteurs normaux respectivement $\vec{n_1}$ et $\vec{n_2}$ sont perpendiculaires si et seulement si $\vec{n_1}\cdot\vec{n_2}=0$.
 
@@ -2249,6 +2270,7 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
     \begin{Gpartie}{Projection Orthogonale d'un Point} 
         \begin{Spartie}{Projeté Orthogonal d'un Point sur un Plan} 
             \begin{SSSpartie}{Définition} 
@@ -2257,16 +2279,16 @@
             \begin{SSSpartie}{Remarque} 
                 Il existe une unique droite orthogonale (perpendiculaire) à $\mathcal{P}$ passant par $A$.
             \end{SSSpartie}
+            \pagebreak
             \begin{SSSpartie}{Propriété} 
                 Si $H$ est le projeté orthogonal du point $A$ sur le plan $\mathcal{P}$, le point $H$ est le point de $\mathcal{P}$ le plus proche de $A$. On l'appelle distance du point $A$ au plan $\mathcal{P}$.
-                
                 \begin{center}
                     \includegraphics[width=5cm]{rsc/12fig8.png}
                     \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
                 \end{center}
 
                 \begin{SSSSpartie}{Démonstration} 
-                    Soit $M$ un point de $\mathcal{P}$, comme $(AH)\perp\mathcal{P},~(AH)$ est orthogonale à toute droite de ce plan. \\ Donc $AMH$ est un triangle rectangle en $H$ et $AH^2=AM^2-MH^2\leq AM^2$
+                    Soit $M$ un point de $\mathcal{P}$, comme $(AH)\perp\mathcal{P},~(AH)$ est orthogonale à toute droite de ce plan. \\ Donc $AMH$ est un triangle rectangle en $H$ et $AH^2=AM^2-MH^2\leq AM^2$.
 
                     Donc, pour tout point $M$ du plan, $AH\leq AM$.
 
@@ -2277,13 +2299,13 @@
                 \end{SSSSpartie}
             \end{SSSpartie}
             \begin{SSSpartie}{Propriété} 
-                Pour tout point $M$ du plan $\mathcal{P}$ : \[AH=\frac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=d~\left(~A~,~\mathcal{P}~\right)\]
+                Pour tout point $M$ du plan $\mathcal{P}$ : \[AH=\frac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=d\,\left(A\,, \mathcal{P}\right)\]
                 \begin{SSSSpartie}{Démonstration} 
                     $AH=AM\times\cos\,\left(~\widehat{MAH}~\right)$\quad (triangle rectangle AMH)
 
-                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)$
+                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(\overrightarrow{AM}\,,\vec{n}\right)$.
 
-                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\widehat{MAH}~\right)$
+                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\,\left(\overrightarrow{AM}\,, \vec{n}\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\widehat{MAH}~\right)$
 
                     Et donc, $\dfrac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=AH$
                 \end{SSSSpartie}
@@ -2304,39 +2326,37 @@
 
 
 
-
-
-
     \chapter{Équations dans l'Espace}
 
-    
     \begin{Gpartie}{Représentation Paramétrique d'une Droite} 
-        Dans un repère $\left(O~;\vec{\imath}~,\vec{\jmath}~,\vec{k}\right)$, soit $(d)$ la droite passant par un point $A~\left(x_A~;y_A~;z_A\right)$ et de vecteur directeur $\vec{u}~\big(a~;b~;c\big)$
+        Dans un repère $\left(O\,;\vec{\imath}\,,\vec{\jmath}\,,\vec{k}\right)$, soit $(d)$ la droite passant par un point $A\,\left(x_A\,; y_A\,; z_A\right)$ et de vecteur directeur $\vec{u}\,\big(a\,; b\,; c\big)$.
 
-        Un point $M~\left(x~;y~;z\right)$ appartient à $(d)$ si et seulement si il existe un réel $t$ tel que $\overrightarrow{AM}=t\vec{u}$
+        Un point $M\,\left(x\,; y\,; z\right)$ appartient à $(d)$ si et seulement si il existe un réel $t$ tel~que~$\overrightarrow{AM}=t\vec{u}$.
 
         C'est-à-dire : $(S)\begin{cases} x=x_A+ta \\ y=y_A+tb \\ z=z_A+tc \end{cases}\left(t\in\mathbb{R}\right)$
 
         \begin{Spartie}{Définition} 
-            Le système $(S)$ est une représentation paramétrique de la droite $(d)$. $t$ est le paramètre de cette représentation.
+            Le système $(S)$ est une représentation paramétrique de la droite $(d)$. \\ $t$ est le paramètre de cette représentation.
             \begin{SSpartie}{Démonstration}
-                Reprenons la situation précédente. 
+                Reprenons la situation précédente :
                 
-                $\overrightarrow{AM}~\begin{psmallmatrix} x_M-x_A &=\ x-x_A \\ y_M-y_A &=\ y-y_A \\ z_M-z_A &=\ z-z_A \end{psmallmatrix}$
+                $\overrightarrow{AM}\,\begin{psmallmatrix} x_M-x_A &=\ x-x_A \\ y_M-y_A &=\ y-y_A \\ z_M-z_A &=\ z-z_A \end{psmallmatrix}$
 
                 $\begin{aligned}[t]
                     M\in(d)&\iff\overrightarrow{AM}=t\vec{u} \\
-                    &\iff\begin{pmatrix} x-x_A \\ y-y_A \\ z-z_a \end{pmatrix}=t\begin{pmatrix} a \\ b \\ c \end{pmatrix} \\
+                    &\iff\begin{psmallmatrix} x-x_A \\ y-y_A \\ z-z_a \end{psmallmatrix}=t\begin{psmallmatrix} a \\ b \\ c \end{psmallmatrix} \\
                     &\iff\begin{cases}x-x_A=ta \\ y-y_A=tb \\ z-z_A= t c \end{cases} \\ %spaces to supress spellchecker
                     &\iff\begin{cases}x=x_A+ta \\ y=y_A+tb \\ z=z_A+ t c \end{cases}
                 \end{aligned}$
             \end{SSpartie}
         \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Exemple} 
-            La droite $(d)$ passant par $A~\left(~2~;0~;-1~\right)$ et de vecteur directeur $\vec{u}~\begin{psmallmatrix}1 \\ -3 \\ 2\end{psmallmatrix}$ a pour représentation paramétrique : \[(d)\begin{cases} x=2+t \\ y=-3t \\ z=-1+2t
+            La droite $(d)$ passant par $A\,\left(2\,;0\,;-1\right)$ et de vecteur directeur $\vec{u}~\begin{psmallmatrix}1 \\ -3 \\ 2\end{psmallmatrix}$ a pour représentation paramétrique : \[(d)\begin{cases} x=2+t \\ y=-3t \\ z=-1+2t
             \end{cases}\left(t\in\mathbb{R}\right)\]
 
-            Les points $M~\left(~0~;~6~;~-5~\right)$ et $N~\left(~1~;~3~;~2~\right)$ appartiennent-ils à $(d)$ ?
+            Les points $M\,\left(0\,;6\,;-5\right)$ et $N\,\left(1\,;3\,;2\right)$ appartiennent-ils à $(d)$ ?
             \begin{itemize}
                 \item $M$ : $\begin{cases} 0=2+t \\ 6=-3t \\ -5=-1+2t \end{cases}M\in(d)$, car $-2$ est solution du système.
                 \item $N$ : $\begin{cases} 1=2+t \\ 3=-3t \\ 2=-1+2t \end{cases}N\notin(d)$, car $-1$ est solution de $(1)$ et $(2)$ mais pas $(3)$.
@@ -2345,21 +2365,23 @@
     \end{Gpartie}
     \begin{Gpartie}{Équation Cartésienne de Plan} 
         \begin{Spartie}{Rappel} 
-            La plan $\mathcal{P}$ qui passe par un point $A$ et de vecteur normal $\vec{n}$ est l'ensemble des points $M$ tels que $\overrightarrow{AM}\cdot\vec{n}=0$
+            La plan $\mathcal{P}$ qui passe par un point $A$ et de vecteur normal $\vec{n}$ est l'ensemble des points $M$ tels que $\overrightarrow{AM}\cdot\vec{n}=0$.
         \end{Spartie}
         \begin{Spartie}{Théorème} 
             \begin{enumerate}[(1)]
-                \item   L'ensemble des points $M~\left(x~;y~;z\right)$ tels que $ax+by+cz+d=0$, où $a$, $b$, $c$ et $d$ sont quatre réels tels que $a$, $b$ et $c$ sont non nuls, est un plan de vecteur normal $\vec{n}~\left(a~,b~,c\right)$.
+                \item   L'ensemble des points $M\,\left(x\,; y\,; z\right)$ tels que $ax+by+cz+d=0$, où $a$, $b$, $c$ et $d$ sont quatre réels tels que $a$, $b$ et $c$ sont non nuls, est un plan de vecteur normal $\vec{n}\,\left(a\,, b\,, c\right)$.
                 
-                \item   Réciproquement : si $\vec{n}~\left(a~,b~,c\right)$ est un vecteur normal d'un plan $\mathcal{P}$, une équation cartésienne de ce plan est $ax+by+cz+d=0$ où $d$ est un réel.
+                \item   Réciproquement : si $\vec{n}\,\left(a\,, b\,, c\right)$ est un vecteur normal d'un plan $\mathcal{P}$, une équation cartésienne de ce plan est $ax+by+cz+d=0$ où $d$ est un réel.
                 
-                Autrement dit, pour tout point $M~\left(x~;y~;z\right)$ de $\mathcal{P}$ vérifie $ax+by+cz+d=0$
+                Autrement dit, pour tout point $M\,\left(x\,; y\,; z\right)$ de $\mathcal{P}$ vérifie $ax+by+cz+d=0$.
             \end{enumerate}
+            \vfill
+            \pagebreak
             \begin{SSpartie}{Démonstration} 
                 \begin{enumerate}[(1)]
-                    \item   Appelons $\mathcal{E}$ l'ensemble des points $M~\left(x~;y~;z\right)$ tels que $ax+by+cz+d=0$ (on ne sait pas que c'est un plan) \\ Soit le vecteur $\vec{n}~\left(a~,b~,c\right)$
+                    \item   Appelons $\mathcal{E}$ l'ensemble des points $M\,\left(x\,; y\,; z\right)$ tels que $ax+by+cz+d=0$. (on ne sait pas que c'est un plan) \\ Soit le vecteur $\vec{n}\,\left(a\,, b\,, c\right)$.
                     
-                    Supposons $a\neq 0$, prenons le point $A~\left(\frac{-d}{a}~;0~;0\right)$
+                    Supposons $a\neq 0$, prenons le point $A\,\left(\frac{-d}{a}\,; 0\,; 0\right)$.
 
                     Vérifions que $A\in\mathcal{E}$ :
 
@@ -2368,28 +2390,30 @@
                         &\iff a\times\tfrac{-d}{a}-a\times\tfrac{-d}{a}=0
                     \end{aligned}$
 
-                    C'est identique pour les points $\left(0~;\frac{-d}{b}~;0\right)$ ou $\left(0~;0~;\frac{-d}{c}\right)$
+                    C'est identique pour les points $\left(0\,; \frac{-d}{b}\,; 0\right)$ ou $\left(0\,; 0\,; \frac{-d}{c}\right)$.
                     
-                    Quel que soit 
-                    $\begin{aligned}[t]
-                        M~\left(~x~;~y~;~z~\right)\in\mathcal{E},~\overrightarrow{AM}\cdot\vec{n}=0&\iff\begin{psmallmatrix} x-\frac{-d}{a} \\ y \\ z\end{psmallmatrix}\cdot \begin{psmallmatrix}a \\ b \\ c\end{psmallmatrix} \\ &\iff a x+by+cz+d=0 %supress spellcheck
-                    \end{aligned}$
+                    Donc, quel que soit $M\,\left(x\,; y\,; z\right)\in\mathcal{E}$ :
+                    \[\begin{aligned}[t]
+                        \overrightarrow{AM}\cdot\vec{n}=0&\iff\begin{psmallmatrix} x-\frac{-d}{a} \\ y \\ z\end{psmallmatrix}\cdot \begin{psmallmatrix}a \\ b \\ c\end{psmallmatrix} \\ &\iff a x+by+cz+d=0 %supress spellcheck
+                    \end{aligned}\]
 
                     Donc, tout point $M$ de $\mathcal{E}$ vérifie $\overrightarrow{AM}\cdot\vec{n}=0$, donc appartient au plan passant par $A$ et de vecteur normal $\vec{n}$. (c'est la caractérisation d'un plan) $\quad\square$
 
-                    Ainsi, $\mathcal{E}\subset\mathcal{P}$
+                    Ainsi, $\mathcal{E}\subset\mathcal{P}$.
 
-                    \item   Soit $A~\left(~x_A~;~y_A~;~z_A~\right)\in\mathcal{P}$. Pour tout point $M~\left(~x~;~y~;~z~\right)$ du plan $\mathcal{P}$ on calcule le produit scalaire $\overrightarrow{AM}\cdot\vec{n}$ qui est nul par définition (voir le rappel) d'un plan de vecteur normal $\vec{n}~\left(~a~;~b~;~c~\right)$.
+                    \item   Soit $A\,\left(x_A\,; y_A\,; z_A\right)\in\mathcal{P}$. \\ Pour tout point $M\,\left(x\,; y\,; z\right)$ du plan $\mathcal{P}$ on calcule le produit scalaire $\overrightarrow{AM}\cdot\vec{n}$ qui est nul par définition (voir le rappel) d'un plan de vecteur normal $\vec{n}\,\left(a\,; b\,; c\right)$.
                     
-                    On trouve $a\left(x-x_A\right)+b\left(y-y_A\right)+c\left(z-z_A\right)=0$ et donc $ax+by+cz+d=0$, où $d=-ax_A-by_A-cz_A\quad\square$
+                    On trouve $a\left(x-x_A\right)+b\left(y-y_A\right)+c\left(z-z_A\right)=0$ et donc $ax+by+cz+d=0$, où $d=-ax_A-by_A-cz_A.\quad\square$
 
-                    Ainsi $\mathcal{P}\subset\mathcal{E}$
+                    Ainsi $\mathcal{P}\subset\mathcal{E}$.
                 \end{enumerate}
                 \vspace*{2ex}
-                Comme $\mathcal{E}\subset\mathcal{P}$ et $\mathcal{P}\subset\mathcal{E}$, $\mathcal{P}=\mathcal{E}$
+                Comme $\mathcal{E}\subset\mathcal{P}$ et $\mathcal{P}\subset\mathcal{E}$, $\mathcal{P}=\mathcal{E}$.
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+
+
 
     \chapter{Convexité}
 
@@ -2401,6 +2425,7 @@
 
             $f$ est \emph{concave} sur $I$ si quels que soient les points $A$ et $B$ de la courbe $\mathcal{C}$ sur $I$, le segment $\big[AB\big]$ est en dessous de $\mathcal{C}$ entre $A$ et $B$.
 
+            \vfill
             \begin{center}
                 \begin{tikzpicture}
                     \begin{axis}[
@@ -2434,6 +2459,8 @@
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Définition}}
             \end{center}
         \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Propriété} 
             Si $f$ est convexe sur $I$, pour tous réels $a$ et $b$ de $I$, $f\left(\frac{a+b}{2}\right)\leq\frac{f(a)+f(b)}{2}$.
 
@@ -2441,14 +2468,15 @@
             \begin{SSpartie}{Démonstration} 
                 Supposons $f$ convexe.
 
-                Soit $A~\left(a~;f(a)\right)$ et $B~\left(b~;f(b)\right)$ deux points de $\mathcal{C}$, alors $\big[AB\big]$ est au dessus de $\mathcal{C}$, en particulier, le milieu de $\big[AB\big]$ d'abscisse $\frac{a+b}{2}$ et d'ordonnée $\frac{f(a)+f(b)}{2}$ est au dessus de l'image de $\frac{a+b}{2}$ par $f$.
+                Soit $A\,\left(a\,; f(a)\right)$ et $B\,\left(b\,; f(b)\right)$ deux points de $\mathcal{C}$, alors $\big[AB\big]$ est au dessus de $\mathcal{C}$, en particulier, le milieu de $\big[AB\big]$ d'abscisse $\frac{a+b}{2}$ et d'ordonnée $\frac{f(a)+f(b)}{2}$ est au dessus de l'image de $\frac{a+b}{2}$ par $f$.
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Propriété (admise)} 
-            $f$ est convexe sur $I$ si et seulement si $\mathcal{C}$ est située au dessus de chacune de ses tangentes sur $I$
+            $f$ est convexe sur $I$ si et seulement si $\mathcal{C}$ est située au dessus de chacune de ses tangentes sur $I$.
 
-            $f$ est concave sur $I$ si et seulement si $\mathcal{C}$ est située en dessous de chacune de ses tangentes sur $I$
+            $f$ est concave sur $I$ si et seulement si $\mathcal{C}$ est située en dessous de chacune de ses tangentes sur $I$.
 
+            \vfill
             \begin{center}
                 \begin{tikzpicture}
                     \begin{axis}[
@@ -2482,7 +2510,9 @@
                 \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{\centering Illustration de la Propriété}}
             \end{center}
-        \end{Spartie} \pagebreak
+        \end{Spartie}
+        \vfill
+        \pagebreak
         \begin{Spartie}{Définition} 
             $A$ est un point d'inflexion de $\mathcal{C}$ si au point $A$, la courbe traverse sa tangente.
 
@@ -2514,17 +2544,17 @@
 
             $f$ est convexe sur $I$ si et seulement si :
             \begin{itemize}
-                \item $f'$ est croissante sur $I$
-                \item $f''$ est positive sur $I$
-                \item La courbe représentative est située au dessus de ses tangentes sur $I$
+                \item $f'$ est croissante sur $I$.
+                \item $f''$ est positive sur $I$.
+                \item La courbe représentative est située au dessus de ses tangentes sur $I$.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété} 
             $f$ est concave sur $I$ si et seulement si :
             \begin{itemize}
-                \item $f'$ est décroissante sur $I$
-                \item $f''$ est négative sur $I$
-                \item La courbe représentative est située en dessous de ses tangentes sur $I$
+                \item $f'$ est décroissante sur $I$.
+                \item $f''$ est négative sur $I$.
+                \item La courbe représentative est située en dessous de ses tangentes sur $I$.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété} 
@@ -2559,14 +2589,14 @@
 
         Une variable aléatoire $X$ est une fonction qui à tout élément de $\Omega$ associe un nombre~réel.
         \begin{Spartie}{Exemple} 
-            On tire deux fois une pièce : $\Omega=\big\{~PP~,~PF~,~FP~,~FF~\big\}$.
+            On tire deux fois une pièce : $\Omega=\big\{PP\,, PF\,, FP\,, FF\big\}$.
 
             Soit $X$ la variable aléatoire définie sur $\Omega$ qui donne le nombre de \og pile \fg{} obtenus.
 
             Soit $G$ la variable aléatoire égale au gain suivant :
             \begin{itemize}
-                \item Deux faces identiques ( PP et FF ) font gagner $\pounds~2$.
-                \item Deux faces différentes ( PF et FP ) font perdre $\pounds~2$.
+                \item Deux faces identiques (PP et FF) font gagner $\pounds~2$.
+                \item Deux faces différentes (PF et FP) font perdre $\pounds~2$.
             \end{itemize}
 
             Les lois de probabilités des variables aléatoires $X$ et $G$ sont :
@@ -2607,6 +2637,8 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Opérations sur les Variables Aléatoires} 
         \begin{Spartie}{Changement Affine} 
             \begin{SSpartie}{Théorème} 
@@ -2644,7 +2676,7 @@
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Somme de Variables Aléatoires} 
-            Dans cette sous-partie, $X$ et $Y$ sont deux variables aléatoires prenant respectivement les valeurs $\big\{~a_1~,~a_2~,~\dotsc~,~a_n~\big\}$ et $\big\{~b_1~,~b_2~,~\dotsc~,~b_m~\big\}$, où $n$ et $m$ sont des entiers naturels non nuls.
+            Dans cette sous-partie, $X$ et $Y$ sont deux variables aléatoires prenant respectivement les valeurs $\big\{a_1\,, a_2\,, \dotsc\,, a_n\big\}$ et $\big\{b_1\,, b_2\,, \dotsc\,, b_m\big\}$, où $n$ et $m$ sont des entiers naturels non nuls.
             \begin{SSpartie}{Définition} 
                 La variable aléatoire $X+Y$ prend tous les valeurs $a_i+b_j$ possibles (où $1\leq i\leq n$ et $q\leq j\leq m$).
 
@@ -2654,7 +2686,7 @@
                 \[E(X+Y)=E(X)+E(Y)\]
             \end{SSpartie}
             \begin{SSpartie}{Rappel} 
-                $A$ et $B$ sont deux événements indépendants si et seulement si $P\left(A\cap B\right)=P(A)\times P(B)$.
+                $A$ et $B$ sont deux événements indépendants si et seulement si \\ $P\left(A\cap B\right)=P(A)\times P(B)$.
             \end{SSpartie}
             \begin{SSpartie}{Définition} 
                 Deux variables aléatoires sont indépendantes si elles donnent des résultats de deux expériences aléatoires indépendantes.
@@ -2667,10 +2699,11 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
     \begin{Gpartie}{Applications} 
         \begin{Spartie}{Loi Binomiale} 
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire qui suit la loi binomiale $\mathcal{B}\left(n~;p\right)$ : \[E(X)=np\qquad V(X)=np\left(1-p\right)\qquad\sigma(X)=\sqrt{np\left(1-p\right)}\]
+                Si $X$ est une variable aléatoire qui suit la loi binomiale $\mathcal{B}\,\left(n\,; p\right)$ : \[E(X)=np\qquad V(X)=np\left(1-p\right)\qquad\sigma(X)=\sqrt{np\left(1-p\right)}\]
                 \begin{SSSpartie}{Démonstration} 
                     $X$ est la somme de $n$ variables aléatoires indépendantes $X_1~,~X_2~,\dotsc,~X_n~$, suivant la loi de \textsc{Bernoulli}.
 
@@ -2686,8 +2719,8 @@
                 Un échantillon de taille $n$ d'une loi de probabilité est une liste $\big\{~X_1~,~X_2~,~\dotsc~,~X_n~\big\}$ de $n$ variables aléatoires identiques et indépendantes qui suivent toutes cette loi.
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Si on note $X$ une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og somme \fg{} de cet échantillon $S_n=X_1+X_2+\dotsb+X_n$ vérifie : \[(1)~E\left(S_n\right)=nE(X)\qquad(2)~V\left(S_n\right)=nV(X)\qquad(3)~\sigma\left(S_n\right)=\sqrt{n}\sigma(X)\]
-                \begin{SSSpartie}{Démonstration} 
+                Si on note $X$ une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og somme \fg{} de cet échantillon $S_n=X_1+X_2+\dotsb+X_n$ vérifie : \vfill \[(1)~E\left(S_n\right)=nE(X)\qquad(2)~V\left(S_n\right)=nV(X)\qquad(3)~\sigma\left(S_n\right)=\sqrt{n}\sigma(X)\] \vfill
+                \begin{SSSpartie}{Démonstration}
                     \begin{enumerate}[(1)]
                         \item $\begin{aligned}[t]
                             E\left(S_n\right)&=E\left(X_1+X_2+\dotsb+X_n\right) \\
@@ -2705,10 +2738,13 @@
                             &=\sqrt{n}\sigma(X)
                         \end{aligned}$
                     \end{enumerate}
+                    \vfill
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$~vérifie~: \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\] \pagebreak
+                Si $X$ est une variable aléatoire suivant la loi de probabilité de cet échantillon, la variable aléatoire \og moyenne \fg{} de cet échantillon $M_n=\frac{X_1+X_2+\dotsb+X_n}{n}=\frac{S_n}{n}$~vérifie~: \vfill \[(1)~E\left(M_n\right)=E(X)\qquad(2)~V(M_n)=\frac{V(X)}{n}\qquad(3)~\sigma(M_n)=\frac{\sigma(X)}{\sqrt{n}}\]
+                \vfill
+                \pagebreak
                 \begin{SSSpartie}{Démonstration} 
                     \begin{enumerate}[(1)]
                         \item $\begin{aligned}[t]
@@ -2735,24 +2771,19 @@
 
 
 
-
-
-
-
-
     \chapter{Calcul Intégral}
 
     \begin{Gpartie}{Notion d'Intégrale} 
         \begin{Spartie}{Aire sous la Courbe et Intégrale} 
             \begin{SSpartie}{Défintion} 
-                Soit $f$ une fonction \emph{continue et positive} sur un intervalle $\big[a~;b\big]~\left(a\leq b\right)$ et $\mathcal{C}$ sa courbe représentative dans un repère orthogonal.
+                Soit $f$ une fonction \emph{continue et positive} sur un intervalle $\big[a\,; b\big]~\left(a\leq b\right)$ et $\mathcal{C}$ sa courbe représentative dans un repère orthogonal.
 
-                L'aire délimitée par $\mathcal{C}$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est l'intégrale de $f$ sur $\big[a~;b\big]$, et se note : \[\int_a^b f(t)\dt\]
+                L'aire délimitée par $\mathcal{C}$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est l'intégrale de $f$ sur $\big[a\,; b\big]$, et se note : \[\int_a^b f(t)\dt\]
             \end{SSpartie}
             \begin{SSpartie}{Remarques} 
-                $\int_a^b f(t)\dt$ se lit \og intégrale de $a$ à $b$ de $f$ de $t~\dt$ \fg{} \\ ou \og somme de $a$ à $b$ de $f$ de $t~\dt$ \fg{}.
+                $\int_a^b f(t)\dt$ se lit \og intégrale de $a$ à $b$ de $f$ de $t~\dt$ \fg{}. \\ ou \og somme de $a$ à $b$ de $f$ de $t~\dt$ \fg{}.
 
-                $\int_a^b f(t)\dt$ se note indifféremment $\int_a^b f(x)\dx$
+                $\int_a^b f(t)\dt$ se note indifféremment $\int_a^b f(x)\dx$.
 
                 $\int_a^b f(t)\dt$ se mesure en unité d'aire ($u.a.$). Où $1~u.a.$ est l'aire du rectangle de base (1 sur 1).
             \end{SSpartie}
@@ -2761,14 +2792,15 @@
 
                 Par convention, on compte positivement les aires lorsque $\mathcal{C}$ est au dessus de l'axe des abscisses et négativement lorsqu'elle est en dessous.
             \end{SSpartie}
-        \end{Spartie} \pagebreak
+        \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Dérivabilité de la Fonction Aire} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue et positive sur $\big[a~;b\big]~\left(a\leq b\right)$
+                Soit $f$ une fonction continue et positive sur $\big[a\,; b\big]~\left(a\leq b\right)$.
 
-                Alors, la fonction $\Phi:x\mapsto\int_a^xf(t)\dt$ est dérivable sur $\big[a~;b\big]$ et : \[\Phi'=f\qquad\text{($\Phi$ est une primitive de $f$)}\]
+                Alors, la fonction $\Phi:x\mapsto\int_a^xf(t)\dt$ est dérivable sur $\big[a\,; b\big]$ et : \[\Phi'=f\qquad\text{($\Phi$ est une primitive de $f$)}\]
                 \begin{SSSpartie}{Démonstration \big($f$ croissante\big)} 
-                    Soit $x_0\in\big[a~;b\big]$ et $h\neq 0$ tel que $x_0+h\in\big[a~;b\big]$. Notons $\mathcal{C}$ la courbe représentative de $f$.
+                    Soit $x_0\in\big[a\,; b\big]$ et $h\neq 0$ tel que $x_0+h\in\big[a\,; b\big]$. Notons $\mathcal{C}$ la courbe représentative de $f$.
 
                     \begin{center}
                         \begin{tikzpicture}[scale=0.8]
@@ -2793,11 +2825,11 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Encadrement de la Fonction $\Phi$}}
                     \end{center}
 
-                    Étudions $\lim\limits_{h\to0}\dfrac{\Phi\left(x_0+h\right)-\Phi\left(x_0\right)}{h}$
+                    Étudions $\lim\limits_{h\to0}\dfrac{\Phi\left(x_0+h\right)-\Phi\left(x_0\right)}{h}$.
 
                     $\Phi\left(x_0+h\right)-\Phi(x_0)$ est l'aire sous la courbe entre $x_0$ et $x_0+h$.
 
-                    On encadre cette aire par les aires des deux rectangles de largeur $\lvert h\rvert$ et de hauteur $f(x_0)$ (en vert) et $f(x_0+h)$ (en rouge)
+                    On encadre cette aire par les aires des deux rectangles de largeur $\lvert h\rvert$ et de hauteur $f(x_0)$ (en vert) et $f(x_0+h)$ (en rouge).
 
                     \begin{itemize}
                         \item Si $h>0$, et comme $f$ est croissante :
@@ -2814,7 +2846,7 @@
                             \iff&\quad f(x_0+h)\leq\frac{\Phi\left(x_0+h\right)-\Phi(x_0)}{h}\leq f(x_0)
                         \end{aligned}$
                     \end{itemize}
-                    Or $f$ est continue, donc $\lim\limits_{h\to0}f(x_0+h)=f(x_0)$
+                    Or $f$ est continue, donc $\lim\limits_{h\to0}f(x_0+h)=f(x_0)$.
 
                     Donc, d'après le théorème des gendarmes : \[\lim\limits_{h\to0}\frac{\Phi\left(x_0+h\right)-\Phi(x_0)}{h}=f(x_0)\quad\square\]
 
@@ -2829,23 +2861,24 @@
                 Alors, $f$ admet une infinité de primitives sur $I$ et toute primitive $F$ de $f$ est définie par $F(x)=\Phi(x)+k,~k\in\mathbb{R}$.
             \end{SSpartie}
             \begin{SSpartie}{Conséquence} 
-                Soit $f$ une fonction continue et positive sur $\big[a~;b\big]$.
+                Soit $f$ une fonction continue et positive sur $\big[a\,; b\big]$.
 
-                Le premier théorème prouve l'existence d'une primitive $\Phi$ de $f$ sur $\big[a~;b\big]$, définie par $\Phi(x)=\int_a^xf(t)\dt$.
+                Le premier théorème prouve l'existence d'une primitive $\Phi$ de $f$ sur $\big[a\,; b\big]$, définie par $\Phi(x)=\int_a^xf(t)\dt$.
 
-                Ainsi, $\int_a^b f(t)\dt=\Phi(b)$
+                Ainsi, $\int_a^b f(t)\dt=\Phi(b)$.
 
                 Et d'après le deuxième théorème (lien entre deux primitives), quelle que soit $F$,~la primitive de $f$, il existe un réel $k$ tel que $F=\Phi+k$. \\ Donc, $F(a)=\Phi(a)+k=k$ car $\Phi(a)=\int_a^af(t)\dt=0$.
 
-                Ainsi, $\Phi(b)=F(b)-k=F(b)-F(a)$
+                Ainsi, $\Phi(b)=F(b)-k=F(b)-F(a)$.
 
-                Or $\Phi(b)=\int_a^b f(t)\dt$
+                Or $\Phi(b)=\int_a^b f(t)\dt$.
                 
-                Donc, quelle que soit la primitive $F$ de $f$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
+                Donc, quelle que soit la primitive $F$ de $f$ : \[\boxed{\int_a^b f(t)\dt=F(b)-F(a)}\]
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 On note : \[\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)\]
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Exemples} 
                 \begin{itemize}
                     \item $\displaystyle \int_0^1\me^x\dx=\big[\me^x\big]_0^1=\me^1-\me^0=\me-1$
@@ -2853,15 +2886,15 @@
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
-    \end{Gpartie} \pagebreak
+    \end{Gpartie}
     \begin{Gpartie}{Intégrale d'une Fonction Continue} 
         \begin{Spartie}{Extension de la Notion d'Intégrale} 
-            On a défini l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\big[a~;b\big]~\left(a\leq b\right)$, et on a vu que si $F$ est une primitive de $f$ sur $\big[a~;b\big]$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
+            On a défini l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\big[a\,; b\big]~\left(a\leq b\right)$, et on a vu que si $F$ est une primitive de $f$ sur $\big[a\,; b\big]$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
 
             On admet que cette formule peut être étendue au cas d'une fonction continue de signe quelconque, quelles que soient les bornes $a$ et $b$ de l'intégrale.
 
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction continue sur un intervalle $I$ et soit $F$ une primitive de $f$ sur $I$. Si $a$ et $b$ sont deux réels quelconques de $I$, l'intégrale de $f$ entre $a$ et $b$ s'écrit : \[\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)\]
+                Soit $f$ une fonction continue sur un intervalle $I$ et soit $F$ une primitive de $f$ sur $I$. Si $a$ et $b$ sont deux réels quelconques de $I$, l'intégrale de $f$ entre $a$ et $b$ s'écrit : \[\boxed{\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)}\]
             \end{SSpartie}
             \begin{SSpartie}{Exemples} 
                 \begin{itemize}
@@ -2915,7 +2948,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Relation de Chasles} 
+        \begin{Spartie}{Relation de \textsc{Chasles}} 
             \begin{SSpartie}{Théorème} 
                 Soit $f$ une fonction continue sur un intervalle $I$. Quels que soient les réels $a$, $b$ et $c$ appartenant à $I$ : \[\int_a^c f(t)\dt=\int_a^b f(t)\dt+\int_b^cf(t)\dt\]
                 \begin{SSSpartie}{Démonstration} 
@@ -2929,7 +2962,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Dans le cas où $f$ est positive et $a\leq b\leq c$, la relation de Chasles traduit l'additivité des aires de deux domaines adjacents.
+                Dans le cas où $f$ est positive et $a\leq b\leq c$, la relation de \textsc{Chasles} traduit l'additivité des aires de deux domaines adjacents.
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
                 Intégrale d'une fonction définie par morceaux : \[\int_{-2}^5f(x)\dx\quad\text{où}\quad f:x\mapsto\lvert x\rvert-2\qquad\lvert x\rvert\begin{cases}x\geq0:x\\x<0:-x\end{cases}\]
@@ -2943,15 +2976,15 @@
         \end{Spartie}
         \begin{Spartie}{Positivité et Ordre} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue sur $I$, et $a$ et $b$ deux réels de $I$ tels que $a\leq b$
+                Soit $f$ une fonction continue sur $I$, et $a$ et $b$ deux réels de $I$ tels que $a\leq b$.
 
                 Si $\forall t\in I,~f(t)\geq0$ : \[\int_a^b f(x)\dt\geq0\]
                 \begin{SSSpartie}{Démonstration} 
-                    Dans le cas d'une fonction continue et positive sur $\big[a~;b\big],~\int_a^b f(t)\dt$ est l'aire sous la courbe représentative de $f$ entre $a$ et $b$, elle est positive.
+                    Dans le cas d'une fonction continue et positive sur $\big[a\,; b\big],~\int_a^b f(t)\dt$ est l'aire sous la courbe représentative de $f$ entre $a$ et $b$, elle est positive.
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$ et $a$ et $b$ deux réels tels que $a\leq b$
+                Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$ et $a$ et $b$ deux réels tels que $a\leq b$.
 
                 Si $\forall t\in I,~f(t)\leq g(t)$ : \[\int_a^b f(t)\dt\leq\int_a^bg(t)\dt\]
                 \begin{SSSpartie}{Démonstration} 
@@ -2966,13 +2999,15 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \pagebreak
     \begin{Gpartie}{Valeur Moyenne d'une Fonction Continue} 
         \begin{Spartie}{Valeur Moyenne} 
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction continue sur un intervalle $\big[a~;b\big]$, avec $a<b$, la valeur moyenne de la fonction $f$ sur $\big[a~;b\big]$ est le nombre $\mu$ défini par : \[\mu=\frac{1}{b-a}\int_a^b f(t)\dt\]
+                Soit $f$ une fonction continue sur un intervalle $\big[a\,; b\big]$, avec $a<b$, la valeur moyenne de la fonction $f$ sur $\big[a\,; b\big]$ est le nombre $\mu$ défini par : \vfill \[\mu=\frac{1}{b-a}\int_a^b f(t)\dt\]
+                \vfill
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Interprétation dans le cas d'une fonction positive : \[\int_a^b f(t)\dt=\mu(b-a)\]
+                Interprétation dans le cas d'une fonction positive : \vfill \[\int_a^b f(t)\dt=\mu(b-a)\] \vfill
                 \begin{center}
                     \begin{tikzpicture}
                         \begin{axis}[
@@ -3015,14 +3050,14 @@
                         \end{axis}
                     \end{tikzpicture}
                     \parbox{\linewidth}{\captionof{figure}{\centering Interprétation Graphique de la Valeur Moyenne pour une Fonction Positive}}
-                \end{center}
-
+                \end{center}                
                 $\mu$ est la hauteur du rectangle de largeur $b-a$ dont l'aire est la même que celle du domaine situé en sous la courbe $\mathcal{C}_f$ entre $a$ et $b$.
             \end{SSpartie}
         \end{Spartie}
+        \pagebreak
         \begin{Spartie}{Inégalité de la Moyenne (encadrement \og grossier \fg{} de l'intégrale)} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue sur $\big[a~;b\big]$, $a<b$ et $m$ et $M$ deux réels tels que $\forall x\in\big[a~;b\big],~m\leq f(x)\leq M$
+                Soit $f$ une fonction continue sur $\big[a\,; b\big]$, $a<b$ et $m$ et $M$ deux réels tels que $\forall x\in\big[a\,; b\big],~m\leq f(x)\leq M$.
 
                 On a donc : \[m(b-a)\leq\int_a^b f(t)\dt\leq M(b-a)\]
                 \begin{SSSpartie}{Démonstration} 
@@ -3034,8 +3069,8 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Remarques} 
-                Interprétation en cas d'une fonction positive : l'aire de la courbe $\mathcal{C}_f$ est comprise entre les aires des rectangles de longueur $b-a$ et de hauteurs respectives $m$ et $M$.
-                \pagebreak
+                Interprétation en cas d'une fonction positive : L'aire de la courbe $\mathcal{C}_f$ est comprise entre les aires des rectangles de longueur $b-a$ et de hauteurs respectives $m$ et $M$.
+                
                 Encadrement de la valeur moyenne :
 
                 $\begin{aligned}[t]
@@ -3046,11 +3081,13 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Intégration par Parties} 
         \begin{Spartie}{Propriété} 
-            Soient $u$ et $v$ deux fonction dérivables telles que leurs dérivées $u'$ et $v'$ sont continues sur un intervalle $\big[a~;b\big]$. Alors : \[\int_a^b u(x)v'(x)\dx=\big[u(x)v(x)\big]_a^b-\int_a^b u'(x)v(x)\]
+            Soient $u$ et $v$ deux fonction dérivables telles que leurs dérivées $u'$ et $v'$ sont continues sur un intervalle $\big[a\,; b\big]$. \\ Alors : \[\boxed{\int_a^b u(x)v'(x)\dx=\big[u(x)v(x)\big]_a^b-\int_a^b u'(x)v(x)}\]
             \begin{SSpartie}{Démonstration} 
-                Pour toute fonction $f$ dérivable dont la dérivée $f'$ est continue sur $\big[a~;b\big]$ :
+                Pour toute fonction $f$ dérivable dont la dérivée $f'$ est continue sur $\big[a\,; b\big]$ :
 
                 $\displaystyle \int_a^b f'(x)\dx=f(b)-f(a)=\big[f(x)\big]_a^b$\quad En effet, $f$ est un primitive de $f'$.
 
@@ -3073,13 +3110,11 @@
 
 
 
-
-
-\chapter{Fonctions Trigonométriques}
+    \chapter{Fonctions Trigonométriques}
 
     \begin{Gpartie}{Définition et Propriétés} 
         \begin{Spartie}{Rappel} 
-            Soit un réel $x$ et $M$ le point correspondant sur le cercle trigonométrique dans une repère orthonormé $\left(O~;\vec{\imath}~,\vec{\jmath}\right)$.
+            Soit un réel $x$ et $M$ le point correspondant sur le cercle trigonométrique dans une repère orthonormé $\left(O\,; \vec{\imath}\,, \vec{\jmath}\right)$.
 
             Le cosinus de $x$ est noté $\cos\,(x)$, où $\cos\,(x)$ est l'abscisse du point $M$. \\
             Le sinus de $x$ est noté $\sin\,(x)$, où $\sin\,(x)$ est l'ordonnée du point $M$.
@@ -3114,13 +3149,14 @@
             Les fonctions cosinus et sinus sont donc \emph{périodiques de période} $2\pi$ ($2\pi$-périodiques).
         \end{Spartie}
         \begin{Spartie}{Remarque} 
-            Ces deux propriétés permettent de réduire l'intervalle d'étude des fonctions cosinus et sinus à $\big[0~;\pi\big]$.
+            Ces deux propriétés permettent de réduire l'intervalle d'étude des fonctions cosinus et sinus à $\big[0\,; \pi\big]$.
 
-            Par parité, on peut déduire $\big[-\pi~;0\big]$, donc $\big[-\pi~;\pi\big]$.
+            Par parité, on peut déduire $\big[-\pi\,; 0\big]$, donc $\big[-\pi\,; \pi\big]$.
             
             Par périodicité on peut déduire les résultats sur $\mathbb{R}$.
         \end{Spartie}
     \end{Gpartie}
+    \vfill
     \begin{Gpartie}{Dérivabilité} 
         \begin{Spartie}{Étude des Fonctions Sinus et Cosinus} 
             \begin{SSpartie}{Théorème} 
@@ -3210,26 +3246,25 @@
             L'inégalité de \textsc{Bienaymé-Tchebychev} montre notamment que des écarts de $X$ à $E(X)$ de quelques $\sigma$ deviennent improbables.
         \end{Spartie}
         \begin{Spartie}{Remarque} 
-            L'Inégalité de Bienaymé-Tchebychev est loin de donner le meilleur majorant.
+            L'Inégalité de \textsc{Bienaymé-Tchebychev} est loin de donner le meilleur majorant.
 
-            Si $X$ est une variable aléatoire suivant la loi binomiale $\mathcal{B}\left(n~;p\right)$, on a $\Pde\big(\vert X-E(X)\rvert\geq 2\sigma\big)\approx 0,05$ ce qui est bien meilleur que le $0,25$ obtenu avec l'inégalité.
+            Si $X$ est une variable aléatoire suivant la loi binomiale $\mathcal{B}\,\left(n\,; p\right)$, on a \\ $\Pde\big(\vert X-E(X)\rvert\geq 2\sigma\big)\approx 0{,}05$ ce qui est bien meilleur que le $0{,}25$ obtenu avec l'inégalité.
 
-            En effet, si $\delta=2\sigma$ et $X\sim\mathcal{B}(~n~;~p~)$ : \[\frac{V(X)}{\delta^2}=\frac{np(1-p)}{\left(4\sqrt{np(1-p)}\right)^2}=\frac{1}{4}\]
+            En effet, si $\delta=2\sigma$ et $X\sim\mathcal{B}\,\left(n\,; p\right)$ : \[\frac{V(X)}{\delta^2}=\frac{np(1-p)}{\left(2\sqrt{np(1-p)}\right)^2}=\frac{1}{4}\]
         \end{Spartie}
     \end{Gpartie}
-
-
-
+    \vfill
+    \pagebreak
     \begin{Gpartie}{Loi des Grands Nombres}
-        \vspace*{-2ex}
+        \vspace{-5ex}
         \begin{Spartie}{Propriété} 
-            Soit une variable aléatoire $X$ associée à un échantillon $\big(~X_1~,~X_2~,\dotsc,~X_n~\big)$, c'est-à-dire que $\big(~X_1~,~X_2~,\dotsc,~X_n~\big)$ est un échantillon de $n$ variables aléatoires identiques et indépendantes qui suivent toutes la loi de probabilité suivie par $X$. \ \\ On note $M_n$ la moyenne de cet échantillon. 
+            Soit une variable aléatoire $X$ associée à un échantillon $\big(X_1\,, X_2\,,\dotsc\,, X_n\big)$, c'est-à-dire que $\big(X_1\,, X_2\,,\dotsc\,, X_n\big)$ est un échantillon de $n$ variables aléatoires identiques et indépendantes qui suivent toutes la loi de probabilité suivie par $X$. \ \\ On note $M_n$ la moyenne de cet échantillon. 
             
             Alors, pour tout réel $\delta>0$ : \[\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)\leq\frac{V(X)}{n\delta^2}\quad\text{(c'est l'inégalité de concentration)}\]\[\boxed{\lim\limits_{n\to +\infty}\Pde\big(\lvert M_n-E(X)\rvert\geq\delta\big)=0}\quad\text{(c'est la loi des grands nombres)}\]
 
-            Autrement dit, plus la taille $n$ d'un échantillon d'une variable aléatoire $X$ est grande, plus l'écart entre la moyenne de cet échantillon et l'espérance de $X$ est faible. \pagebreak
+            Autrement dit, plus la taille $n$ d'un échantillon d'une variable aléatoire $X$ est grande, plus l'écart entre la moyenne de cet échantillon et l'espérance de $X$ est faible. 
             \begin{SSpartie}{Démonstration} 
-                \vspace*{-2ex}
+                \vspace{-5ex}
                 \begin{SSSpartie}{Rappels} 
                     Si $X$ et $Y$ sont deux variables aléatoires avec $Y$ telle que $Y=aX+b$ alors :
                     \begin{itemize}
@@ -3237,7 +3272,7 @@
                         \item $E(X+Y)=E(X)+E(Y)\quad\text{et, si $X$ et $Y$ indépendantes}\quad \mbox{V(X+Y)=V(X)+V(Y)}$
                     \end{itemize}
 
-                    Pour un échantillon $\big\{~X_1~;X_2~;\dotsb;X_n ~\big\}$ où $X_i$ sont indépendantes, et suivent une loi $X$ :
+                    Pour un échantillon $\big\{\,X_1\,; X_2\,;\dotso\,; X_n\,\big\}$ où $X_i$ sont indépendantes, et suivent une loi $X$ :
                     \begin{itemize}
                         \item $S_n=X_1+X_2+\dotsb+X_n$\quad$E\left(S_n\right)=nE(X)$\quad$V\left(S_n\right)=nV(X)$
                         \item $M_n=\frac{S_n}{n}$\quad$E\left(M_n\right)=E(X)$\quad$V\left(M_n\right)=\frac{V(X)}{n}$
@@ -3286,12 +3321,12 @@
                     % \draw pic["$a$", draw=orange, <->, angle eccentricity=1.2, angle radius=0.75cm]{angle=a--o--u};
                 \end{tikzpicture}
                 \parbox{\linewidth}{\captionof{figure}{\centering Représentation de $\vec{u}$ et $\vec{v}$ dans le Cercle Trigonométrique}}
-                $\lvert\lvert\vec{u}\rvert\rvert=\lvert\lvert\vec{v}\rvert\rvert=1\quad\left(\overrightarrow{OI}~;\vec{u}\right)=a\quad\left(\overrightarrow{OI}~;\vec{v}\right)=b\quad\vec{u}\begin{psmallmatrix}\cos a \\ \sin a\end{psmallmatrix}\quad\vec{v}\begin{psmallmatrix}\cos a \\ \sin a\end{psmallmatrix}$
+                $\lvert\lvert\vec{u}\rvert\rvert=\lvert\lvert\vec{v}\rvert\rvert=1\quad\left(\overrightarrow{OI}\,;\vec{u}\right)=a\quad\left(\overrightarrow{OI}\,;\vec{v}\right)=b\quad\vec{u}\begin{psmallmatrix}\cos a \\ \sin a\end{psmallmatrix}\quad\vec{v}\begin{psmallmatrix}\cos a \\ \sin a\end{psmallmatrix}$
             \end{center}
 
             Or, $\vec{u}\cdot\vec{v}=\cos\,(a)\cos\,(b)+\sin\,(a)\sin\,(b)$
             
-            Mais, $\vec{u}\cdot\vec{v}=\lvert\lvert\vec{u}\rvert\rvert\times\lvert\lvert\vec{v}\rvert\rvert\times\cos\,(~\vec{u}~;~\vec{v}~)\quad$ avec $(~\vec{u}~;~\vec{v}~)=a-b$ ou $b-a$ 
+            Mais, $\vec{u}\cdot\vec{v}=\lvert\lvert\vec{u}\rvert\rvert\times\lvert\lvert\vec{v}\rvert\rvert\times\cos\,(\vec{u}\,; \vec{v})\quad$ avec $(\vec{u}\,; \vec{v})=a-b$ ou $b-a$ 
 
             Ainsi : \[\cos\,(a-b)=\cos\,(a)\cos\,(b)+\sin\,(a)\sin\,(b)\]
             \begin{SSpartie}{Exemple} 
@@ -3360,7 +3395,7 @@
             \end{center}
             On veut encadrer l'aire entre $OHM$ et $OIT$.
 
-            $M\in\big]0~;\frac{\pi}{2}\big[$ est associé au réel $x$ sur le cercle trigonométrique.
+            $M\in\big]0\,;\frac{\pi}{2}\big[$ est associé au réel $x$ sur le cercle trigonométrique.
 
             $H$ est le projeté orthogonal de $M$ sur $\big(OI\big)$.
 
@@ -3443,9 +3478,11 @@
     \end{Gpartie}
 	
 	\chapter{Remerciements}
-	J'espère que ce petit livret peut vous servir comme un souvenir de cette année et que nos chemins se croiseront dans le futur proche !
+	J'espère que ce petit livret peut vous servir comme un souvenir de cette année merveilleuse et j'espère également que nos chemins se croiseront dans le futur proche !
 	
-	Merci a vous, a Florian et Valentin qui m'ont aidé dans la relecture (faite \textit{très} rapidement), ainsi qu'à la classe entière pour l'atmosphère excellent tout au long de l'année.
-	
+	Merci à Florian, à Valentin et à Inès qui m'ont aidé à la relecture, ainsi qu'à la classe entière qui a créé une atmosphère excellente tout au long de cette année scolaire, mais surtout à vous, pour votre soutien, votre conseil mais aussi votre gentillesse.
+
 	À bientôt !
+
+    -- Diego Van Overberghe
 \end{document}

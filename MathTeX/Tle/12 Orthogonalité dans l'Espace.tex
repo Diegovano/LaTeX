@@ -6,6 +6,7 @@
     \maketitle{12}
 
     \begin{Gpartie}{Différentes Expressions du Produit Scalaire} 
+        \vspace{-2ex}
         \begin{Spartie}{Définitions} 
             $\vec{u}$ et $\vec{v}$ étant deux vecteurs de l'espace, soit un point $A$ de l'espace, et les points $B$ et $C$ tels que $\overrightarrow{AB}=\vec{u}$ et $\overrightarrow{AC}=\vec{v}$.
 
@@ -17,7 +18,7 @@
             \begin{SSpartie}{Définition avec le Projeté Orthogonal} 
                 $\vec{u}$ et $\vec{v}$ étant deux vecteurs de l'espace, soit un point $A$ de l'espace, et les points $B$ et $C$ tels que $\overrightarrow{AB}=\vec{u}$ et $\overrightarrow{AC}=\vec{v}$.
 
-                Soit $H$ le projeté orthogonal de $C$ sur $(AB)$,
+                Soit $H$ le projeté orthogonal de $C$ sur $(AB)$ :
 
                 $\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de même sens. \\
                 $\overrightarrow{AB}\cdot\overrightarrow{AC}=-AB\times AH$ si $\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont de sens contraire.
@@ -56,7 +57,7 @@
             Pour tous vecteurs $\vec{u}$, $\vec{v}$ et $\vec{w}$, et pour tout réel $\lambda$ : \[\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}\qquad\text{(symmétrie du produit scalaire)}\] \[\begin{drcases}\left(\lambda\vec{u}\right)\cdot\vec{v}=\lambda\times\left(\vec{u}\cdot\vec{v}\right)=\vec{u}\cdot\left(\lambda\vec{v}\right) \\ \vec{u}\cdot\left(\vec{v}+\vec{w}\right)=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}\end{drcases}\text{(bilinéarité du produit scalaire)}\]
         \end{Spartie}
         \begin{Spartie}{Expressions Analytique du Produit Scalaire} 
-            Dans un repère orthonormé de l'espace, $\vec{u}~\left(~x~;~y~;~z~\right)$ et $\vec{v}~\left(~x'~;y'~;~z'~\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
+            Dans un repère orthonormé de l'espace, $\vec{u}\,\left(x\,; y\,; z\right)$ et $\vec{v}\,\left(x'\,; y'\,; z'\right)$ étant deux vecteurs, alors : \[\vec{u}\cdot\vec{v}=xx'+yy'+zz'\] 
             \begin{SSpartie}{Démonstration} 
                 On rappelle que $\lvert\lvert\vec{u}\rvert\rvert=\sqrt{x^2+y^2+z^2}$ :
 
@@ -78,11 +79,9 @@
                 Par convention le vecteur nul est orthogonal à tout vecteur.
 
                 \begin{SSSpartie}{Exemple} 
-                    $\vec{u}$ et $\vec{v}$ sont orthogonaux.
-
                     \begin{center}
                             \includegraphics[width=5cm]{rsc/12fig2.png}
-                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DC}\quad\text{sont orthogonaux.}\]
+                            \[\overrightarrow{AB}\quad\text{et}\quad\overrightarrow{DH}\quad\text{sont orthogonaux}\]
                         \parbox{\linewidth}{\captionof{figure}{\centering Illustration de deux Vecteurs Orthogonaux}}
                     \end{center}
                 \end{SSSpartie}
@@ -91,7 +90,7 @@
                 Deux vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux si et seulement si $\vec{u}\cdot\vec{v}=0$.
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Dans un repère orthonormé, deux vecteurs $\vec{u}~\left(~x~;~y~;~z~\right)$ et $\vec{v}~\left(~x'~;~y'~;~z'~\right)$ sont orthogonaux si et seulement si $xx'+yy'+zz'=0$ (par définition analytique)
+                Dans un repère orthonormé, deux vecteurs $\vec{u}~\left(x\,;y\,;z\right)$ et $\vec{v}~\left(x'\,;y'\,;z'\right)$ sont orthogonaux si et seulement si $xx'+yy'+zz'=0$. \quad(par définition analytique)
             \end{SSpartie}
         \end{Spartie}
         \pagebreak
@@ -114,7 +113,7 @@
                     \parbox{\linewidth}{\captionof{figure}{\centering Caractérisation d'un Plan}}
                 \end{center}
                 
-                                    Sur ce dessin, les deux plans ont le meme vecteur normal $\vec{n}$, donc la meme direction. La position d'un plan sera déterminée par un point.
+                                    Sur ce dessin, les deux plans ont le meme vecteur normal $\vec{n}$, donc la même direction. La position d'un plan sera déterminée par un point.
                 
                                     On en déduit que deux plans parallèles admettent le meme vecteur normal, c'est-à-dire des vecteurs normaux colinéaires.
                 \begin{SSSpartie}{Rappel} 
@@ -138,7 +137,7 @@
                     \item[``$\implies$''] Si une droite est orthogonale à un plan, elle est orthogonale à toute droite de ce plan, en particulier deux droites sécantes de ce plan.
                     \item[``$\impliedby$''] Supposons qu'une droite $(d)$ est orthogonale à deux droites sécantes $d_1$ et $d_2$ du plan $\mathcal{P}$. Notons $A$ le point d'intersection de $d_1$ et $d_2$, et $\vec{u_1}$ et $\vec{u_2}$ deux vecteurs directeurs de $d_1$ et $d_2$.
 
-                    Ainsi $\left(~A~;~\vec{u_1}~,~\vec{u_2}~\right)$ est un repère du plan $\mathcal{P}$, car $\vec{u_1}$ et $\vec{u_2}$ ne sont pas colinéaires.
+                    Ainsi $\left(A\,;\vec{u_1}\,,\vec{u_2}\right)$ est un repère du plan $\mathcal{P}$, car $\vec{u_1}$ et $\vec{u_2}$ ne sont pas colinéaires.
 
                     Notons $\vec{n}$ un vecteur directeur de $(d)$. (on trace ci-dessous uniquement les vecteurs directeurs)
                     \vspace{-0.2ex}
@@ -151,9 +150,9 @@
 
                     Soit une droite du plan $\mathcal{P}$, dont le vecteur directeur est $\vec{u}$.
 
-                    Alors, il existe deux réels $\alpha$ et $\beta$ tels que $\vec{u}=\alpha\vec{u_1}+\beta\vec{u_2}$~($\vec{u}$, $\vec{u_1}$, $\vec{u_2}$ coplanaires)
+                    Alors, il existe deux réels $\alpha$ et $\beta$ tels que $\vec{u}=\alpha\vec{u_1}+\beta\vec{u_2}$. \\ ($\vec{u}$, $\vec{u_1}$, $\vec{u_2}$ coplanaires)
 
-                    Donc, $\vec{n}\cdot\vec{u}=\alpha\vec{n}\cdot\vec{u_1}+\beta\vec{n}\cdot\vec{u_2}=0$\quad (car $\vec{n}$ orthogonal à $\vec{u_1}$ et $\vec{u_2}$)
+                    Donc, $\vec{n}\cdot\vec{u}=\alpha\vec{n}\cdot\vec{u_1}+\beta\vec{n}\cdot\vec{u_2}=0$.\quad (car $\vec{n}$ orthogonal à $\vec{u_1}$ et $\vec{u_2}$)
 
                     Ainsi, $\vec{n}$ est orthogonal à $\vec{u}$, et donc $(d)$ est orthogonale à toute droite du plan~$\mathcal{P}$.\quad$\square$
                 \end{itemize}
@@ -185,7 +184,7 @@
                 \end{center}
 
                 \begin{SSSSpartie}{Démonstration} 
-                    Soit $M$ un point de $\mathcal{P}$, comme $(AH)\perp\mathcal{P},~(AH)$ est orthogonale à toute droite de ce plan. \\ Donc $AMH$ est un triangle rectangle en $H$ et $AH^2=AM^2-MH^2\leq AM^2$
+                    Soit $M$ un point de $\mathcal{P}$, comme $(AH)\perp\mathcal{P},~(AH)$ est orthogonale à toute droite de ce plan. \\ Donc $AMH$ est un triangle rectangle en $H$ et $AH^2=AM^2-MH^2\leq AM^2$.
 
                     Donc, pour tout point $M$ du plan, $AH\leq AM$.
 
@@ -200,9 +199,9 @@
                 \begin{SSSSpartie}{Démonstration} 
                     $AH=AM\times\cos\,\left(~\widehat{MAH}~\right)$\quad (triangle rectangle AMH)
 
-                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)$
+                    Or $\overrightarrow{AM}\cdot\vec{n}=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(\overrightarrow{AM}\,,\vec{n}\right)$.
 
-                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\,\left(~\overrightarrow{AM}~,~\vec{n}~\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\widehat{MAH}~\right)$
+                    Donc $\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\left\lvert\cos\,\left(\overrightarrow{AM}\,, \vec{n}\right)\right\rvert=AM\times\lvert\lvert\vec{n}\rvert\rvert\times\cos\,\left(~\widehat{MAH}~\right)$
 
                     Et donc, $\dfrac{\left\lvert\overrightarrow{AM}\cdot\vec{n}\right\rvert}{\lvert\lvert\vec{n}\rvert\rvert}=AH$
                 \end{SSSSpartie}

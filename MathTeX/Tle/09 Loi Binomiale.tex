@@ -1,7 +1,6 @@
 \documentclass{cours}
-\setlength{\headheight}{30pt}
 
-\title{Succession d'Épreuves Indépendantes \\ Loi Binomiale}
+\title{Loi Binomiale}
 
 \begin{document}
     \maketitle{9}
@@ -55,8 +54,8 @@
             \end{center}
             Ainsi, $A$ et $B$ sont deux événements indépendants si et seulement si :
             \begin{itemize}
-                \item $P_A(B)=P_{\overline{A}}(B)=P(B)$
-                \item $P(A\cap B)=P(A)\times P(B)$
+                \item $\Pde_A(B)=\Pde_{\overline{A}}(B)=\Pde(B)$
+                \item $\Pde(A\cap B)=\Pde(A)\times\Pde(B)$
             \end{itemize}
         \end{Spartie}
         \pagebreak
@@ -70,7 +69,7 @@
 
             Un client prend au hasard une entrée, un plat, et un dessert.
 
-            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où $\Omega_1=\big\{e_1\,; e_2\big\},\ \Omega_2=\big\{p_1\,; p_2\,; p_3\big\},\text{ et }\Omega_3=\big\{d\big\}$.
+            L'ensemble des issues de cette expérience est $\Omega=\Omega_1\times\Omega_2\times\Omega_3$ où $\Omega_1=\big\{e_1\,; e_2\big\},~\Omega_2=\big\{p_1\,; p_2\,; p_3\big\},\text{ et }\Omega_3=\big\{d\big\}$.
 
             Ainsi, $\Omega=\bigg\{\big(e_1\,, p_1\,, d\big)\,;\big(e_1\,, p_2\,, d\big)\,;\dotsc\bigg\}$.
 
@@ -114,7 +113,9 @@
     \end{Gpartie}
     \pagebreak
     \begin{Gpartie}{Loi Binomiale} 
+        \vspace{-5ex}
         \begin{Spartie}{Épreuve de Bernoulli} 
+            \vspace{-3ex}
             \begin{SSpartie}{Définition} 
                 Une \emph{épreuve de} \textsc{Bernoulli} est un expérience aléatoire possédant deux issues qu'on appelle généralement \og succès \fg{} et \og échec \fg{}. La probabilité du succès $p$ est appelée paramètre de la loi de \textsc{Bernoulli}.
                 \begin{center}
@@ -149,10 +150,10 @@
             \begin{SSpartie}{Définition} 
                 On considère une expérience aléatoire qui suit un schéma de \textsc{Bernoulli}, autrement dit, une répétition de $n$ épreuves \emph{identiques} et \emph{indépendantes} à deux issues (succès et échec) dont la probabilité de succès est $p$.
 
-                La variable aléatoire donnant le nombre de succès suit la \emph{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}(n\,, p)$. Cette loi est aussi parfois appelée loi du nombre de succès.
+                La variable aléatoire donnant le nombre de succès suit la \emph{loi binomiale} de paramètres $n$ et $p$, notée $\mathcal{B}\,\left(n\,, p\right)$. Cette loi est aussi parfois appelée loi du nombre de succès.
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Soit $X$ une variable aléatoire suivant la loi binomiale de paramètres $n$ et $p$, on peut aussi noter $X\sim\mathcal{B}(n\,, p)$.
+                Soit $X$ une variable aléatoire suivant la loi binomiale de paramètres $n$ et $p$, on peut aussi noter $X\sim\mathcal{B}\,\left(n\,, p\right)$.
 
                 Pour tout entier $k$ compris entre $0$ et $n$ :
                 \[\boxed{P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}}\]
@@ -239,17 +240,17 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Propriété} 
-                Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}(n\,, p)$.
+                Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}\,\left(n\,, p\right)$.
 
-                L'Espérance de $X$ est $\boxed{E(X)=np}$ \\ La variance de $X$ est $\boxed{V(X)=np(1-p)}$ \\ L'Écart-type de $X$ est $\boxed{\sigma(X)=\sqrt{np(1-p)}}$
+                L'Espérance de $X$ est $\boxed{E(X)=np}$. \\ La variance de $X$ est $\boxed{V(X)=np(1-p)}$. \\ L'Écart-type de $X$ est $\boxed{\sigma(X)=\sqrt{np(1-p)}}$.
 
                 Démonstration dans chapitre sur les opérations sur les Variables Aléatoires.
                 \begin{SSSpartie}{Exemple} 
                     On reprend la pièce truquée précédente, qu'on lance quatre fois. $X$ est toujours la variable aléatoire donnant le nombre de \og pile \fg.
 
-                    $E(X)=4\times\frac{2}{3}\approx 2{,}67$\quad (On peut espérer d'obtenir 2{,}67 piles sur 4 tirages).
+                    $E(X)=4\times\frac{2}{3}\approx 2{,}67$\quad (On peut espérer d'obtenir 2{,}67 piles sur 4 tirages)
 
-                    $\sigma(X)=\sqrt{4\times\frac{2}{3}\times\frac{1}{3}}\approx 0{,}94$\quad (Dont l'interprétation est moins intéressante).
+                    $\sigma(X)=\sqrt{4\times\frac{2}{3}\times\frac{1}{3}}\approx 0{,}94$\quad (Dont l'interprétation est moins intéressante)
                 \end{SSSpartie}
             \end{SSpartie}
         \end{Spartie}

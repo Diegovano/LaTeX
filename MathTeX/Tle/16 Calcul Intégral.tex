@@ -8,14 +8,14 @@
     \begin{Gpartie}{Notion d'Intégrale} 
         \begin{Spartie}{Aire sous la Courbe et Intégrale} 
             \begin{SSpartie}{Défintion} 
-                Soit $f$ une fonction \emph{continue et positive} sur un intervalle $\big[a~;b\big]~\left(a\leq b\right)$ et $\mathcal{C}$ sa courbe représentative dans un repère orthogonal.
+                Soit $f$ une fonction \emph{continue et positive} sur un intervalle $\big[a\,; b\big]~\left(a\leq b\right)$ et $\mathcal{C}$ sa courbe représentative dans un repère orthogonal.
 
-                L'aire délimitée par $\mathcal{C}$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est l'intégrale de $f$ sur $\big[a~;b\big]$, et se note : \[\int_a^b f(t)\dt\]
+                L'aire délimitée par $\mathcal{C}$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est l'intégrale de $f$ sur $\big[a\,; b\big]$, et se note : \[\int_a^b f(t)\dt\]
             \end{SSpartie}
             \begin{SSpartie}{Remarques} 
-                $\int_a^b f(t)\dt$ se lit \og intégrale de $a$ à $b$ de $f$ de $t~\dt$ \fg{} \\ ou \og somme de $a$ à $b$ de $f$ de $t~\dt$ \fg{}.
+                $\int_a^b f(t)\dt$ se lit \og intégrale de $a$ à $b$ de $f$ de $t~\dt$ \fg{}. \\ ou \og somme de $a$ à $b$ de $f$ de $t~\dt$ \fg{}.
 
-                $\int_a^b f(t)\dt$ se note indifféremment $\int_a^b f(x)\dx$
+                $\int_a^b f(t)\dt$ se note indifféremment $\int_a^b f(x)\dx$.
 
                 $\int_a^b f(t)\dt$ se mesure en unité d'aire ($u.a.$). Où $1~u.a.$ est l'aire du rectangle de base (1 sur 1).
             \end{SSpartie}
@@ -28,11 +28,11 @@
         \pagebreak
         \begin{Spartie}{Dérivabilité de la Fonction Aire} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue et positive sur $\big[a~;b\big]~\left(a\leq b\right)$
+                Soit $f$ une fonction continue et positive sur $\big[a\,; b\big]~\left(a\leq b\right)$.
 
-                Alors, la fonction $\Phi:x\mapsto\int_a^xf(t)\dt$ est dérivable sur $\big[a~;b\big]$ et : \[\Phi'=f\qquad\text{($\Phi$ est une primitive de $f$)}\]
+                Alors, la fonction $\Phi:x\mapsto\int_a^xf(t)\dt$ est dérivable sur $\big[a\,; b\big]$ et : \[\Phi'=f\qquad\text{($\Phi$ est une primitive de $f$)}\]
                 \begin{SSSpartie}{Démonstration \big($f$ croissante\big)} 
-                    Soit $x_0\in\big[a~;b\big]$ et $h\neq 0$ tel que $x_0+h\in\big[a~;b\big]$. Notons $\mathcal{C}$ la courbe représentative de $f$.
+                    Soit $x_0\in\big[a\,; b\big]$ et $h\neq 0$ tel que $x_0+h\in\big[a\,; b\big]$. Notons $\mathcal{C}$ la courbe représentative de $f$.
 
                     \begin{center}
                         \begin{tikzpicture}[scale=0.8]
@@ -57,11 +57,11 @@
                         \parbox{\linewidth}{\captionof{figure}{\centering Encadrement de la Fonction $\Phi$}}
                     \end{center}
 
-                    Étudions $\lim\limits_{h\to0}\dfrac{\Phi\left(x_0+h\right)-\Phi\left(x_0\right)}{h}$
+                    Étudions $\lim\limits_{h\to0}\dfrac{\Phi\left(x_0+h\right)-\Phi\left(x_0\right)}{h}$.
 
                     $\Phi\left(x_0+h\right)-\Phi(x_0)$ est l'aire sous la courbe entre $x_0$ et $x_0+h$.
 
-                    On encadre cette aire par les aires des deux rectangles de largeur $\lvert h\rvert$ et de hauteur $f(x_0)$ (en vert) et $f(x_0+h)$ (en rouge)
+                    On encadre cette aire par les aires des deux rectangles de largeur $\lvert h\rvert$ et de hauteur $f(x_0)$ (en vert) et $f(x_0+h)$ (en rouge).
 
                     \begin{itemize}
                         \item Si $h>0$, et comme $f$ est croissante :
@@ -78,7 +78,7 @@
                             \iff&\quad f(x_0+h)\leq\frac{\Phi\left(x_0+h\right)-\Phi(x_0)}{h}\leq f(x_0)
                         \end{aligned}$
                     \end{itemize}
-                    Or $f$ est continue, donc $\lim\limits_{h\to0}f(x_0+h)=f(x_0)$
+                    Or $f$ est continue, donc $\lim\limits_{h\to0}f(x_0+h)=f(x_0)$.
 
                     Donc, d'après le théorème des gendarmes : \[\lim\limits_{h\to0}\frac{\Phi\left(x_0+h\right)-\Phi(x_0)}{h}=f(x_0)\quad\square\]
 
@@ -93,23 +93,24 @@
                 Alors, $f$ admet une infinité de primitives sur $I$ et toute primitive $F$ de $f$ est définie par $F(x)=\Phi(x)+k,~k\in\mathbb{R}$.
             \end{SSpartie}
             \begin{SSpartie}{Conséquence} 
-                Soit $f$ une fonction continue et positive sur $\big[a~;b\big]$.
+                Soit $f$ une fonction continue et positive sur $\big[a\,; b\big]$.
 
-                Le premier théorème prouve l'existence d'une primitive $\Phi$ de $f$ sur $\big[a~;b\big]$, définie par $\Phi(x)=\int_a^xf(t)\dt$.
+                Le premier théorème prouve l'existence d'une primitive $\Phi$ de $f$ sur $\big[a\,; b\big]$, définie par $\Phi(x)=\int_a^xf(t)\dt$.
 
-                Ainsi, $\int_a^b f(t)\dt=\Phi(b)$
+                Ainsi, $\int_a^b f(t)\dt=\Phi(b)$.
 
                 Et d'après le deuxième théorème (lien entre deux primitives), quelle que soit $F$,~la primitive de $f$, il existe un réel $k$ tel que $F=\Phi+k$. \\ Donc, $F(a)=\Phi(a)+k=k$ car $\Phi(a)=\int_a^af(t)\dt=0$.
 
-                Ainsi, $\Phi(b)=F(b)-k=F(b)-F(a)$
+                Ainsi, $\Phi(b)=F(b)-k=F(b)-F(a)$.
 
-                Or $\Phi(b)=\int_a^b f(t)\dt$
+                Or $\Phi(b)=\int_a^b f(t)\dt$.
                 
-                Donc, quelle que soit la primitive $F$ de $f$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
+                Donc, quelle que soit la primitive $F$ de $f$ : \[\boxed{\int_a^b f(t)\dt=F(b)-F(a)}\]
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 On note : \[\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)\]
             \end{SSpartie}
+            \pagebreak
             \begin{SSpartie}{Exemples} 
                 \begin{itemize}
                     \item $\displaystyle \int_0^1\me^x\dx=\big[\me^x\big]_0^1=\me^1-\me^0=\me-1$
@@ -120,12 +121,12 @@
     \end{Gpartie}
     \begin{Gpartie}{Intégrale d'une Fonction Continue} 
         \begin{Spartie}{Extension de la Notion d'Intégrale} 
-            On a défini l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\big[a~;b\big]~\left(a\leq b\right)$, et on a vu que si $F$ est une primitive de $f$ sur $\big[a~;b\big]$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
+            On a défini l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\big[a\,; b\big]~\left(a\leq b\right)$, et on a vu que si $F$ est une primitive de $f$ sur $\big[a\,; b\big]$ : \[\int_a^b f(t)\dt=F(b)-F(a)\]
 
             On admet que cette formule peut être étendue au cas d'une fonction continue de signe quelconque, quelles que soient les bornes $a$ et $b$ de l'intégrale.
 
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction continue sur un intervalle $I$ et soit $F$ une primitive de $f$ sur $I$. Si $a$ et $b$ sont deux réels quelconques de $I$, l'intégrale de $f$ entre $a$ et $b$ s'écrit : \[\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)\]
+                Soit $f$ une fonction continue sur un intervalle $I$ et soit $F$ une primitive de $f$ sur $I$. Si $a$ et $b$ sont deux réels quelconques de $I$, l'intégrale de $f$ entre $a$ et $b$ s'écrit : \[\boxed{\int_a^b f(t)\dt=\big[F(t)\big]_a^b=F(b)-F(a)}\]
             \end{SSpartie}
             \begin{SSpartie}{Exemples} 
                 \begin{itemize}
@@ -149,7 +150,6 @@
                     \end{aligned}$
                 \end{itemize}
             \end{SSpartie}
-            \pagebreak
             \begin{SSpartie}{Conséquences} 
                 \begin{itemize}
                     \item $\displaystyle\int_a^af(t)\dt=0\quad\big(=F(a)-F(a)\big)$
@@ -181,7 +181,7 @@
             \end{SSpartie}
         \end{Spartie}
         \pagebreak
-        \begin{Spartie}{Relation de Chasles} 
+        \begin{Spartie}{Relation de \textsc{Chasles}} 
             \begin{SSpartie}{Théorème} 
                 Soit $f$ une fonction continue sur un intervalle $I$. Quels que soient les réels $a$, $b$ et $c$ appartenant à $I$ : \[\int_a^c f(t)\dt=\int_a^b f(t)\dt+\int_b^cf(t)\dt\]
                 \begin{SSSpartie}{Démonstration} 
@@ -195,7 +195,7 @@
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
-                Dans le cas où $f$ est positive et $a\leq b\leq c$, la relation de Chasles traduit l'additivité des aires de deux domaines adjacents.
+                Dans le cas où $f$ est positive et $a\leq b\leq c$, la relation de \textsc{Chasles} traduit l'additivité des aires de deux domaines adjacents.
             \end{SSpartie}
             \begin{SSpartie}{Exemple} 
                 Intégrale d'une fonction définie par morceaux : \[\int_{-2}^5f(x)\dx\quad\text{où}\quad f:x\mapsto\lvert x\rvert-2\qquad\lvert x\rvert\begin{cases}x\geq0:x\\x<0:-x\end{cases}\]
@@ -210,15 +210,15 @@
         \pagebreak
         \begin{Spartie}{Positivité et Ordre} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue sur $I$, et $a$ et $b$ deux réels de $I$ tels que $a\leq b$
+                Soit $f$ une fonction continue sur $I$, et $a$ et $b$ deux réels de $I$ tels que $a\leq b$.
 
                 Si $\forall t\in I,~f(t)\geq0$ : \[\int_a^b f(x)\dt\geq0\]
                 \begin{SSSpartie}{Démonstration} 
-                    Dans le cas d'une fonction continue et positive sur $\big[a~;b\big],~\int_a^b f(t)\dt$ est l'aire sous la courbe représentative de $f$ entre $a$ et $b$, elle est positive.
+                    Dans le cas d'une fonction continue et positive sur $\big[a\,; b\big],~\int_a^b f(t)\dt$ est l'aire sous la courbe représentative de $f$ entre $a$ et $b$, elle est positive.
                 \end{SSSpartie}
             \end{SSpartie}
             \begin{SSpartie}{Théorème} 
-                Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$ et $a$ et $b$ deux réels tels que $a\leq b$
+                Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$ et $a$ et $b$ deux réels tels que $a\leq b$.
 
                 Si $\forall t\in I,~f(t)\leq g(t)$ : \[\int_a^b f(t)\dt\leq\int_a^bg(t)\dt\]
                 \begin{SSSpartie}{Démonstration} 
@@ -237,7 +237,7 @@
     \begin{Gpartie}{Valeur Moyenne d'une Fonction Continue} 
         \begin{Spartie}{Valeur Moyenne} 
             \begin{SSpartie}{Définition} 
-                Soit $f$ une fonction continue sur un intervalle $\big[a~;b\big]$, avec $a<b$, la valeur moyenne de la fonction $f$ sur $\big[a~;b\big]$ est le nombre $\mu$ défini par : \[\mu=\frac{1}{b-a}\int_a^b f(t)\dt\]
+                Soit $f$ une fonction continue sur un intervalle $\big[a\,; b\big]$, avec $a<b$, la valeur moyenne de la fonction $f$ sur $\big[a\,; b\big]$ est le nombre $\mu$ défini par : \[\mu=\frac{1}{b-a}\int_a^b f(t)\dt\]
             \end{SSpartie}
             \begin{SSpartie}{Remarque} 
                 Interprétation dans le cas d'une fonction positive : \[\int_a^b f(t)\dt=\mu(b-a)\]
@@ -291,7 +291,7 @@
         \pagebreak
         \begin{Spartie}{Inégalité de la Moyenne (encadrement \og grossier \fg{} de l'intégrale)} 
             \begin{SSpartie}{Théorème} 
-                Soit $f$ une fonction continue sur $\big[a~;b\big]$, $a<b$ et $m$ et $M$ deux réels tels que $\forall x\in\big[a~;b\big],~m\leq f(x)\leq M$
+                Soit $f$ une fonction continue sur $\big[a\,; b\big]$, $a<b$ et $m$ et $M$ deux réels tels que $\forall x\in\big[a\,; b\big],~m\leq f(x)\leq M$.
 
                 On a donc : \[m(b-a)\leq\int_a^b f(t)\dt\leq M(b-a)\]
                 \begin{SSSpartie}{Démonstration} 
@@ -318,9 +318,9 @@
     \pagebreak
     \begin{Gpartie}{Intégration par Parties} 
         \begin{Spartie}{Propriété} 
-            Soient $u$ et $v$ deux fonction dérivables telles que leurs dérivées $u'$ et $v'$ sont continues sur un intervalle $\big[a~;b\big]$. Alors : \[\int_a^b u(x)v'(x)\dx=\big[u(x)v(x)\big]_a^b-\int_a^b u'(x)v(x)\]
+            Soient $u$ et $v$ deux fonction dérivables telles que leurs dérivées $u'$ et $v'$ sont continues sur un intervalle $\big[a\,; b\big]$. \\ Alors : \[\boxed{\int_a^b u(x)v'(x)\dx=\big[u(x)v(x)\big]_a^b-\int_a^b u'(x)v(x)}\]
             \begin{SSpartie}{Démonstration} 
-                Pour toute fonction $f$ dérivable dont la dérivée $f'$ est continue sur $\big[a~;b\big]$ :
+                Pour toute fonction $f$ dérivable dont la dérivée $f'$ est continue sur $\big[a\,; b\big]$ :
 
                 $\displaystyle \int_a^b f'(x)\dx=f(b)-f(a)=\big[f(x)\big]_a^b$\quad En effet, $f$ est un primitive de $f'$.
 

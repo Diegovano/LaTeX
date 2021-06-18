@@ -49,6 +49,7 @@
     every axis/.style={
         xticklabel style = {fill=white},
         yticklabel style = {fill=white},
+        axis line style=thick,
         axis equal image,
         axis lines=center,
         grid=major,
@@ -73,8 +74,8 @@
 
 \newcommand{\me}{\mathrm{e}} % exp
 \newcommand{\Pde}{\mathrm{P}} % P de ... P(X=5)
-\newcommand{\dt}{\,\mathrm{d}t}
-\newcommand{\dx}{\,\mathrm{d}x}
+\newcommand{\dt}{\,\mathrm{d}\hspace*{-0.05em}t}
+\newcommand{\dx}{\,\mathrm{d}\hspace*{-0.05em}x}
 
 \let\oldgeq\geq
 \let\oldleq\leq
@@ -147,7 +148,7 @@
 \makeatletter
 \renewcommand{\maketitle}[1]{\raggedright
     \setcounter{chapter}{#1}
-    \chapter*{Chapitre \Roman{chapter}}
+    \chapter*{Chapitre \arabic{chapter}}
 
     \setlength{\baselineskip}{20pt}
     {\LARGE \bfseries {{\@title}}} \\[4ex]

@@ -8,7 +8,7 @@
 
     \begin{Gpartie}{Parties d'un Ensemble}
         \begin{Spartie}{Définition}
-            $E$ étant un ensemble, la notation $\subset$ signifie \og inclus dans \fg{}.
+            $E$ étant un ensemble, la notation $\subset$ signifie \og inclus dans \fg{} :
             \[A\subset E\]
             C'est-à-dire que tout élément de $A$ appartient à $E$. \\
             On dit alors que $A$ est une partie, ou sous-ensemble de $E$. \\
@@ -16,7 +16,7 @@
             L'Ensemble des parties de $E$ est noté $\mathcal{P}(E)$.
             \begin{SSpartie}{Exemple}
                 Si $E=\big\{x\,;y\big\}$ est un ensemble de deux éléments :
-                \[\mathcal{P}(E)=\Big\{\,\varnothing~,\,\big\{\,x~\big\}~,\,\big\{\,y~\big\}~,\,\big\{\,x~;\,y~\big\}~\Big\}\]
+                \[\mathcal{P}(E)=\Big\{\,\varnothing\,, \big\{\, x\,\big\}\,, \big\{\, y\,\big\}\,, \big\{\,x\,; y\,\big\}\,\Big\}\]
             \end{SSpartie}
         \end{Spartie}
         \begin{Spartie}{Définition}
@@ -63,12 +63,12 @@
     \begin{Gpartie}{Produit Cartésien d'Ensembles}
         \begin{Spartie}{Définition}
             \begin{itemize}
-                \item $E$ et $F$ étant deux ensembles, le \emph{produit cartésien} $E\times F$ est l'ensemble de couples $(\,a~;\,b~)$, où $a\in E$ et $b\in F$.
-                \item $E$, $F$ et $G$ étant trois ensembles, le \emph{produit cartésien} $E\times F\times G$ est l'ensemble des triplets $(\,a~;\,b~;\,c~)$ où $a\in E$, $b\in F$ et $c\in G$.
+                \item $E$ et $F$ étant deux ensembles, le \emph{produit cartésien} $E\times F$ est l'ensemble de couples $(a\,; b)$, où $a\in E$ et $b\in F$.
+                \item $E$, $F$ et $G$ étant trois ensembles, le \emph{produit cartésien} $E\times F\times G$ est l'ensemble des triplets $(a\,; b\,; c)$ où $a\in E$, $b\in F$ et $c\in G$.
             \end{itemize}
             \begin{SSpartie}{Cas Général}
                 \begin{itemize}
-                    \item Le \emph{produit cartésien} $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1,\,E_2,\,\dotsc,\,E_n$ est l'ensemble des \emph{n-uplets} $(\,a_1~;\,a_2~;\dotsc;\,a_n~)$ où $a_1\in E_1,\,a_2\in E_2,\,\dotsc,\,a_n\in E_n$.
+                    \item Le \emph{produit cartésien} $E_1\times E_2\times\dotsb\times E_n$ des ensembles $E_1, E_2,\dotsc,E_n$ est l'ensemble des \emph{n-uplets} $(a_1\,; a_2\,;\dotsc\,; a_n)$ où $a_1\in E_1,a_2\in E_2,\dotsc,a_n\in E_n$.
                 \end{itemize}
             \end{SSpartie}
         \end{Spartie}
@@ -76,15 +76,15 @@
             $E\times E$ se note $E^2$, $\overbrace{E\times E\times\dotsb\times E}^\text{$k$ fois}$ se note $E^k$.
         \end{Spartie}
         \begin{Spartie}{Exemples}
-            Soit $E=\big\{\,a~;\,b~;\,c~\big\}$ et $F=\big\{\,1~;\,2~\big\}$.
+            Soit $E=\big\{\, a\;\, b\,; c\,\big\}$ et $F=\big\{\,1\,; 2\,\big\}$.
             \begin{itemize}
-                \item $E\times F=\big\{\,(\,a~;\,1~)~;\,(\,a~;\,2~)~;\,(\,b~;\,1~)~;\,(\,b~;\,2~)~;\,(\,c~;\,1~)~;\,(\,c~;\,2~)~\big\}$
-                \item $F\times F=\big\{\,(\,1~;\,1~)~;\,(\,1~;\,2~)~;\,(\,2~;\,1~)~;\,(\,2~;\,2~)~\big\}$
-                \item $(\,a~;\,b~;\,b~;\,a~;\,c~)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$.
+                \item $E\times F=\big\{\,(a\,; 1)\,;(a\,; 2)\,; (b\,; 1)\,; (b\,; 2)\,; (c\,; 1)\,; (c\,; 2)\,\big\}$
+                \item $F\times F=\big\{\,(1\,; 1)\,; (1\,; 2)\,; (2\,; 1)\,; (2\,; 2)\,\big\}$
+                \item $(a\,; b\,; b\,; a\,; c)$ est un 5-uplet d'élément de $E$, il appartient à $E^5$.
             \end{itemize}
         \end{Spartie}
         \begin{Spartie}{Propriété}
-            Si $E_1,\,E_2,\,\dotsc,\,E_n$ sont $n$ ensembles finis :
+            Si $E_1,E_2,\dotsc,E_n$ sont $n$ ensembles finis :
             \[\mathrm{Card}\,(E_1\times E_2\times\dotsb\times E_n)=\mathrm{Card}\,(E_1)\times\mathrm{Card}\,(E_2)\times\dotsb\times\mathrm{Card}\,(E_n)\]
             \begin{SSpartie}{Cas Particulier}
                 Si $E$ est un ensemble fini, pour tout $k\in\mathbb{N^*}$ :
@@ -105,8 +105,8 @@
 
             Autrement dit, une permutation est une façon d'ordonner les $n$ éléments de $E$.
             \begin{SSpartie}{Exemple}
-                On considère l'ensemble $G=\big\{\,a~;\,b~;\,c~\big\}$. \\ Ses permutations sont :
-                \[(\,a~;\,b~;\,c~)~,\,(\,a~;\,c~;\,b~),\,(\,b~;\,a~;\,c~)~,\,(\,b~;\,c~;\,a~)~,\,(\,c~;\,a~;\,b~)~,\,(\,c~;\,b~;\,a)~\]
+                On considère l'ensemble $G=\big\{a\,; b\,; c\big\}$. \\ Ses permutations sont :
+                \[(a\,; b\,; c)\,, (a\,; c\,; b)\,, (b\,; a\,; c)\,, (b\,; c\,; a)\,, ( c\,; a\,; b)\,,(c\,; b\,; a)\]
                 $G$ admet donc 6 permutations.
             \end{SSpartie}
         \end{Spartie}
@@ -168,7 +168,7 @@
             Démonstration Alternative : 
             \[\binom{n}{n-p}=\dfrac{n!}{(n-p)!(n-(n-p))!}=\dfrac{n!}{(n-p)!p!}=\binom{n}{p}\]
         \end{Spartie}
-        \begin{Spartie}{Propriété : Relation de Pascal}
+        \begin{Spartie}{Propriété : Relation de \textsc{Pascal}}
             \[\binom{n+1}{p+1}=\binom{n}{p}+\binom{n}{p+1}\]
             \begin{SSpartie}{Démonstration}
                 Soit $E$, un ensemble à $n+1$ éléments (on va compter le nombre de parties de E à $p+1$ éléments).
@@ -186,7 +186,7 @@
                 Il y a $\binom{n}{p+1}$ parties de $E$ qui ne contiennent pas $x$. (On choisit $p+1$ éléments dans $E\setminus\{x\}$ qui contient $n$ éléments).$\quad\square$
             \end{SSpartie}
         \end{Spartie}
-        \begin{Spartie}{Triangle de Pascal}
+        \begin{Spartie}{Triangle de \textsc{Pascal}}
             \begin{center}
                 \begin{tabular}{ M{12pt} | *{7}{M{12pt}}}
                     \diagbox[innerwidth=12pt, height=1.5\line, font=\footnotesize]{\raisebox{-3pt}{n}}{\raisebox{8pt}{p}}  
@@ -199,7 +199,7 @@
                     5 & 1 & 5 & 10& 10& 5 & 1 &   \\
                     6 & 1 & 6 & 15& 20& 15& 6 & 1 \\
                 \end{tabular}
-                \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de Pascal}}
+                \parbox{\linewidth}{\captionof{figure}{Représentation du Triangle de \textsc{Pascal}}}
             \end{center}
         \end{Spartie}
         \begin{Spartie}{Propriété}

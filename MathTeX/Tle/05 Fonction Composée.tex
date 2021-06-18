@@ -19,7 +19,7 @@
         \end{tabular}\end{center}
         \parbox{\linewidth}{\captionof{figure}{\centering Schéma de la Fonction Composée}}
         \begin{Spartie}{Exemples} 
-            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln\,(x)$ est définie sur $\big]\,0~;~+\infty\,\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},~u(x)\in\big]\,0~;~+\infty\,\big[$, et $(f\circ u)(x)=\ln\,\left(x^2+1\right)$.
+            La fonction $u:x\mapsto u(x)=x^2+1$ est définie sur $\mathbb{R}$, et $f:x\mapsto f(x)=\ln\,(x)$ est définie sur $\big]0\,;+\infty\big[$, la fonction $f\circ u$ est définie sur $\mathbb{R}$ car $\forall x\in\mathbb{R},~u(x)\in\big]0\,;+\infty\big[$, et $(f\circ u)(x)=\ln\,\left(x^2+1\right)$.
 
             La fonction $g:x\mapsto g(x)=\sqrt{5x-3}$ est la fonction composée de la fonction affine $x\mapsto 5x-3$ et de la fonction racine carrée. Elle est définie sur $\Big[\frac{3}{5}\,;+\infty\Big]$, intervalle sur lequel $5x-3\in\mathbb{R^{+}}$.
         \end{Spartie}
@@ -39,12 +39,12 @@
     \end{Gpartie}
     \begin{Gpartie}{Limites d'une Fonction Composée} 
         \begin{Spartie}{Théorème} 
-            Soient $a$, $b$ et $c$ sont trois réels, ou $\pm\infty$
+            Soient $a$, $b$ et $c$ sont trois réels, $+\infty$ ou $-\infty$ :
 
-            Si \qquad$\lim\limits_{x\to a}u(x)=\boldsymbol{b}$\qquad et \qquad $\lim\limits_{X\to \boldsymbol{b}}f(X)=c$ \qquad alors, \qquad $\boxed{\lim\limits_{x\to a}f\big(u(x)\big)=c}$
+            Si \qquad$\lim\limits_{x\to a}u(x)=\boxed{\boldsymbol{b}}$\qquad et \qquad $\lim\limits_{X\to \boxed{\boldsymbol{b}}}f(X)=c$ \qquad alors, \qquad $\boxed{\lim\limits_{x\to a}f\big(u(x)\big)=c}$
         \end{Spartie}
         \begin{Spartie}{Exemple} 
-            Soit $g:x\mapsto g(x)=\me^{-x^2}$
+            Soit $g:x\mapsto g(x)=\me^{-x^2}$ :
 
             $\lim\limits_{x\to +\infty} -x^2=-\infty$\qquad et \qquad$\lim\limits_{X\to -\infty} \me^X=0$\qquad donc \qquad$\lim\limits_{x\to +\infty}g(x)=0$
         \end{Spartie}

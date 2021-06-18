@@ -1,7 +1,6 @@
 \documentclass{cours}
 
-\title{Équations Différentielles \\ et Primitives}
-\setlength{\headheight}{30pt}
+\title{Équations Différentielles et Primitives}
 
 \begin{document}
     \maketitle{6}
@@ -22,28 +21,32 @@
         \begin{Spartie}{Remarques} 
             \begin{enumerate}[(1)]
                 \item L'équation est dite de \emph{premier ordre} ou \emph{d'ordre 1} lorsque seule intervient la dérivée première d'une fonction (et éventuellement la fonction). \\ Par exemple : $y'=3y-5$.
-                \item Plutôt que d'écrire l'équation $f'(x)=3f(x)-5$, on note $f(x)$ à l'aide de la variable $y$, qui joue le rôle d'inconnue, ou plutôt de \og fonction inconnue \fg{}, car un point $(\,x~;~y\,)$ appartient à la courbe représentative de $f$ si et seulement si $y=f(x)$. \\ $y$ étant la variable utilisée pour les ordonnées et les images, il est cohérent de l'utiliser pour symboliser une fonction.
+                \item Plutôt que d'écrire l'équation $f'(x)=3f(x)-5$, on note $f(x)$ à l'aide de la variable $y$, qui joue le rôle d'inconnue, ou plutôt de \og fonction inconnue \fg{}, car un point $(x\,; y)$ appartient à la courbe représentative de $f$ si et seulement si $y=f(x)$. \\ $y$ étant la variable utilisée pour les ordonnées et les images, il est cohérent de l'utiliser pour symboliser une fonction.
             \end{enumerate}
         \end{Spartie}
     \end{Gpartie}
     \begin{Gpartie}{Primitives d'une Fonction Continue \big(Solutions de $y'=f(x)$\big)} 
+        \vspace{-5ex}
         \begin{Spartie}{Définition} 
             Soit $f$ une fonction continue sur un intervalle $I$. Une primitive de $f$ sur $I$ est une fonction $F$ telle que :
             \[F'=f\]
         \end{Spartie}
-        \vspace*{-4ex}
+        \vspace{-5ex}
         \begin{Spartie}{Exemple} 
             La fonction $F:x\mapsto\frac{1}{x}$ est une primitive de $f:x\mapsto\frac{-1}{x^2}$, sur $\mathbb{R^{+*}}$.
         \end{Spartie}
+        \vspace{-3ex}
         \begin{Spartie}{Théorème (Démontré dans le Chapitre sur l'Intégration)} 
             Toute fonction continue sur un intervalle $I$ admet une primitive sur $I$.
         \end{Spartie}
+        \vspace{-3ex}
         \begin{Spartie}{Remarque} 
             Il arrive qu'on ne puisse pas exprimer cette primitive avec les fonctions classiques.
             \begin{SSpartie}{Exemple} 
                 $f:x\mapsto \me^{x^2}$
             \end{SSpartie}
         \end{Spartie}
+        \vspace{-5ex}
         \begin{Spartie}{Théorème} 
             Soit $f$ une fonction continue sur un intervalle $I$ et $F$ est une primitive de $f$ sur $I$.
 
@@ -68,15 +71,15 @@
             \end{SSpartie}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Calcul des Primitives} 
+        \vspace{-5ex}
         \begin{Spartie}{Primitives des Fonctions usuelles} 
             \begin{table}[H] \centering \captionabove{Tableau des Primitives des Fonctions Usuelles}
                 \begin{tabular}[c]{ @{}*{3}{C}@{} } \toprule
                     Fonction $f:x\mapsto$                       & Primitive $F:x\mapsto$                                            & Intervalle  \\ \midrule
                     $k$ (constante)                             & $kx$                                                              & $\mathbb{R}$ \\ 
                     $x^n$ ($n\in\mathbb{N}$)                    & $\frac{x^{n+1}}{n+1}$                                             & $\mathbb{R}$ \\ 
-                    $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]\,-\infty~;~0\,\big[$ ou $\big]\,0~;~+\infty\,\big[$ \\ 
+                    $\frac{1}{x^n}=x^{-n}$ ($n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{x^{n-1}}$ ou $\frac{x^{-n+1}}{-n+1}$& $\big]-\infty\,; 0\big[$ ou $\big]0\,; +\infty\big[$ \\ 
                     $\frac{1}{x}$                               & $\ln\,(x)$                                                          & $\mathbb{R^{+*}}$ \\ 
                     $\frac{1}{\sqrt{x}}$                        & $2\sqrt{x}$                                                       & $\mathbb{R^{+*}}$ \\ 
                     $\me^x$                                       & $\me^x$                                                             & $\mathbb{R}$ \\ 
@@ -86,14 +89,14 @@
             \end{table}
         \end{Spartie}
         \begin{Spartie}{Primitives de Fonctions Composées}
-            Les primitives se déduisent des formules de dérivation. $u$ désigne une fonction continue sur $I$ \vspace{2ex}
+            Les primitives se déduisent des formules de dérivation. $u$ désigne une fonction continue sur $I$ 
             \begin{table}[H] \centering \captionabove{Tableau des Primitives de Fonctions Composées}
                 \begin{tabular}[c]{ @{}*{3}{C}@{} } \toprule
                     Fonction $f$ du type                                    & Primitive $F$                                                             & Conditions  \\ \midrule
                     $u'u^n$ ($n\in\mathbb{N}$)                              & $\frac{1}{n+1}\times u^{n+1}$                                             & \---\\
-                    $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,\ u(x)\neq0$ \\
-                    $\frac{u'}{u}$                                          & $\ln\,(u)$                                                                  & $\forall x\in I,\ u(x)>0$ \\
-                    $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,\ u(x)>0$ \\
+                    $\frac{u'}{u^n}=u'u^{-n}$ ($n\geq2, n\in\mathbb{N}$)   & $-\frac{1}{n-1}\times\frac{1}{u^{n-1}}$ ou $\frac{u^{-n+1}}{-n+1}$        & $\forall x\in I,~u(x)\neq0$ \\
+                    $\frac{u'}{u}$                                          & $\ln\,(u)$                                                                  & $\forall x\in I,~u(x)>0$ \\
+                    $\frac{u'}{\sqrt{u}}$                                   & $2\sqrt{u}$                                                               & $\forall x\in I,~u(x)>0$ \\
                     $u'\me^u$                                                 & $\me^u$                                                                     & \---\\
                     $u'\sin\,(u)$                                             & $-\cos\,(u)$                                                                & \---\\
                     $u'\cos\,(u)$                                             & $\sin\,(u)$                                                                 & \---\\ \bottomrule
@@ -120,7 +123,7 @@
     \end{Gpartie}
     \begin{Gpartie}{Équation Différentielle $y'-ay=0$} 
         \begin{Spartie}{Théorème} 
-            Posons $(E) : y'=ay$
+            Posons $(E) : y'=ay$.
 
             Soit $a\in\mathbb{R}$, les solutions sur $\mathbb{R}$ de l'équation différentielle $(E)$ sont les fonctions définies sur $\mathbb{R}$ par $f(x)=C\me^{ax}$, où $C$ est une constante réelle :
             \[y'-ay=0\qquad\mathcal{S}=\big\{\,x\mapsto C\me^{ax},~C\in\mathbb{R}\,\big\}\]

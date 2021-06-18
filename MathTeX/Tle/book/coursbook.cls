@@ -3,12 +3,15 @@
 \ProvidesClass{coursbook}[2021/27/05]
 
 \LoadClass[ 12pt,
+            % draft,
+            % overfullrule,
             a4paper, 
             titlepage=firstiscover, 
             toc=chapterentrywithdots,
             open=left,
             chapterprefix]{scrbook}
 
+% \RequirePackage{showframe}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
@@ -63,6 +66,7 @@
         yticklabel style = {fill=white},
         axis equal image,
         axis lines=center,
+        axis line style=thick,
         grid=major,
         xlabel=$x$,
         ylabel=$y$,
@@ -80,11 +84,17 @@
     }
 }
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 \newcommand*\nowtitle{}
 
 \RedeclareSectionCommand[tocnumwidth=2em]{chapter}
 \RedeclareSectionCommand[tocindent=2em]{section}
+\RedeclareSectionCommand[tocbeforeskip=1em plus 3pt]{chapter}
+\makeatletter
+\renewcommand{\@pnumwidth}{1.75em}
+\makeatother
 
 \let\oldchaptermark=\chaptermark
 \renewcommand*\chaptermark[1]{%
@@ -101,8 +111,8 @@
 
 \newcommand{\me}{\mathrm{e}} % exp
 \newcommand{\Pde}{\mathrm{P}} % P de ... P(X=5)
-\newcommand{\dt}{\,\mathrm{d}t}
-\newcommand{\dx}{\,\mathrm{d}x}
+\newcommand{\dt}{\,\mathrm{d}\hspace*{-0.05em}t}
+\newcommand{\dx}{\,\mathrm{d}\hspace*{-0.05em}x}
 
 \let\oldgeq\geq
 \let\oldleq\leq
@@ -114,6 +124,8 @@
 
 \setlength{\parindent}{0pt}
 \def\arraystretch{1.5}
+
+\addtokomafont{disposition}{\rmfamily}
 
 \setkomafont{pagehead}{\normalfont}
 \setkomafont{pagefoot}{\normalfont}

@@ -23,7 +23,7 @@
             De plus :
             \[\lim_{x\to -\infty} \me^x=0\quad\text{ et }\quad\lim_{x\to +\infty} \me^x=+\infty\]
 
-            D'après le corollaire du Théorème des Valeurs Intermédiaires, pour tout nombre $k\in\big]\,0~;\,+\infty~\big]$, il existe un unique réel $a\in\mathbb{R}$ tel que $\me^a=k$.$\quad\square$
+            D'après le corollaire du Théorème des Valeurs Intermédiaires, pour tout nombre $k\in\big]0\,;+\infty\big]$, il existe un unique réel $a\in\mathbb{R}$ tel que $\me^a=k$.$\quad\square$
         \end{Spartie}
         \begin{Spartie}{Remarques}
             La fonction $\ln$ est la fonction réciproque de $\exp$.
@@ -31,18 +31,17 @@
             On déduit que : \[\boxed{\ln\,(1)=0\quad\text{et}\quad\ln\,(\me)=1}\]
         \end{Spartie}
         \begin{Spartie}{Propriétés}
-            \[\forall x\in\big]\,0~;\,+\infty~\big[,~\boxed{\me^{\ln\,(x)}=x}\]
+            \[\forall x\in\big]0\,;+\infty\big[,~\boxed{\me^{\ln\,(x)}=x}\]
             \[\forall x\in\mathbb{R},~\boxed{\ln\,\left(\me^x\right)=x}\]
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Étude de la Fonction ln}
         \begin{Spartie}{Continuité, Dérivabilité}
             \begin{SSpartie}{Propriété}
                 \begin{enumerate}[(1)]
-                    \item La fonction $\ln$ est \emph{continue} sur $\big]\,0~;\,+\infty~\big]$
-                    \item La fonction $\ln$ est \emph{dérivable} sur $\big]\,0~;\,+\infty~\big]$ et $\forall x\in\big]\,0~;\,+\infty~\big[$, $\boxed{\ln'(x)=\frac{1}{x}}$
-                    \item La fonction $\ln$ est \emph{strictement croissante} sur $\big]\,0~;\,+\infty~\big[$
+                    \item La fonction $\ln$ est \emph{continue} sur $\big]0\,;+\infty\big]$.
+                    \item La fonction $\ln$ est \emph{dérivable} sur $\big]0\,;+\infty\big]$ et $\forall x\in\big]0\,;+\infty\big[$, $\boxed{\ln'(x)=\frac{1}{x}}$.
+                    \item La fonction $\ln$ est \emph{strictement croissante} sur $\big]0\,;+\infty\big[$.
                 \end{enumerate}
                 \begin{SSSpartie}{Démonstration (2) (Facile)}
                     Admettre que si $f$ et $u$ sont dérivables, $f\big(u(x)\big)'=u'(x)\times f(u(x))$.
@@ -86,7 +85,7 @@
             \[\boxed{\lim_{x\to+\infty}\ln\,(x)=+\infty\quad\text{et}\quad\lim_{x\to 0}\ln\,(x)=-\infty}\]
             \begin{SSpartie}{Démonstration} 
                 Soit $M>0$, en posant $A=\me^M,~\exists A>0$ tel que :
-                \[\forall x\in\big]\,0~;\,+\infty~\big[,~x>A\implies\ln\,(x)>M\]
+                \[\forall x\in\big]0\,;+\infty\big[,~x>A\implies\ln\,(x)>M\]
                 En effet, $x>A\iff x>\me^M$. \\ Comme $\ln$ est strictement croissante :
                 \[\begin{aligned}[t]
                     \ln\,(x)&>\ln\,\left(\me^M\right) \\
@@ -113,10 +112,9 @@
             \end{center}
         \end{Spartie}
     \end{Gpartie}
-    \pagebreak
     \begin{Gpartie}{Propriétés Algébriques de la Fonction ln}
         \begin{Spartie}{Propriété Fondamentale}
-            Quels que soient les réels $a$ et $b$, strictement positifs, 
+            Quels que soient les réels $a$ et $b$, strictement positifs :
             \[\boxed{\ln\,(a\times b)=\ln\,(a)+\ln\,(b)}\]
             \begin{SSpartie}{Démonstration}
                 Rappel : \[X=Y\iff \me^X=\me^Y\]
@@ -138,7 +136,6 @@
                 \end{SSpartie}
                 \item Quels que soient les réels $a_1, a_2,\dotsc, a_n$, strictement positifs : 
                 \[\boxed{\ln\,(a_1a_2\dotsb a_n)=\ln\,(a_1)+\ln\,(a_2)+\dotsb+\ln\,(a_n)}\]
-                \pagebreak
                 \begin{SSpartie}{Démonstration par Récurrence (2)}
                     \begin{SSSpartie}{Initialisation}
                         \[\ln\,(a_1)=\ln\,(a_1)\]
@@ -153,7 +150,7 @@
                         \end{aligned}\]
                     \end{SSSpartie}
                 \end{SSpartie}
-                \item De plus, $\forall a\in\big]\,0~;\,+\infty~\big[,~\forall n\in\mathbb{Z}$ :
+                \item De plus, $\forall a\in\big]0\,;+\infty\big[,~\forall n\in\mathbb{Z}$ :
                 \[\boxed{\ln\,\left(a^n\right)=n\ln\,(a)}\]
                 \begin{SSpartie}{Démonstration (3)}
                     \begin{itemize}
@@ -161,7 +158,7 @@
                         \[\ln\,(a_1a_2\dotsb a_n)=\ln\,(a_1)+\ln\,(a_2)+\dotsb+\ln\,(a_n)\]
                         \[a_1=a_2=\dotsb=a_n=a\]
                         \[\ln\,(a^n)=\ln\,(a)+\ln\,(a)+\dotsb+\ln\,(a)=n\ln\,(a)\quad\square\]
-                        \item Dans le cas où $n$ est négatif, on prend $m=-n$
+                        \item Dans le cas où $n$ est négatif, on prend $m=-n$ :
                         \[\ln\,(a^n)=\ln\,(a^{-m})=\ln\,\left(\frac{1}{a^m}\right)=-\ln\,(a^m)=-m\ln\,(a)=n\ln\,(a)\quad\square\]
                     \end{itemize}
                 \end{SSpartie}
@@ -192,24 +189,22 @@
         \begin{Spartie}{Exemple}
             On sait que : \[\lim_{n\to+\infty}\left(\frac{1}{2}\right)^n=0\text{\qquad \big(car $0<\tfrac{1}{2}<1$\big)}\]
             
-            On veut résoudre $\left(\frac{1}{2}\right)^n\leq 0{,}0001$ :
+            On veut résoudre $\left(\frac{1}{2}\right)^n\leq 0{,}000\,1$ :
             \[\begin{aligned}[t]
-                \iff&\quad\ln\,\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln\,(0{,}0001)\text{\qquad $\ln$ strictement croissante} \\
-                \iff&\quad n\ln\,\big(\tfrac{1}{2}\big)\leq\ln\,(0{,}0001) \\
-                \iff&\quad n\geq\frac{\ln\,(0{,}0001)}{\ln\,\left(\frac{1}{2}\right)}\approx13{,}3
+                \iff&\quad\ln\,\Big(\big(\tfrac{1}{2}\big)^n\Big)\leq\ln\,(0{,}000\,1)\text{\qquad $\ln$ strictement croissante} \\
+                \iff&\quad n\ln\,\big(\tfrac{1}{2}\big)\leq\ln\,(0{,}000\,1) \\
+                \iff&\quad n\geq\frac{\ln\,(0{,}000\,1)}{\ln\,\left(\frac{1}{2}\right)}\approx13{,}3
             \end{aligned}\]
 
-            Donc, $n\geq 14$
+            Donc, $n\geq 14$.
         \end{Spartie}
     \end{Gpartie}
     \vspace{-2ex}
     \begin{Gpartie}{Logarithme Décimal} 
-        \vspace{-2ex}
         \begin{Spartie}{Définition} 
-            La fonction logarithme décimal, notée $\log$, est définie sur $\big]\,0~;\,+\infty~\big[$, par :
+            La fonction logarithme décimal, notée $\log$, est définie sur $\big]0\,;+\infty\big[$, par :
             \[\log\,(x)=\frac{\ln\,(x)}{\ln\,(10)}\]
         \end{Spartie}
-        \vspace{-4ex}
         \begin{Spartie}{Propriétés} 
             De part de sa définition, la fonction $\log$ a les mêmes propriétés algébriques et analytiques que la fonction $\ln$ (dérivable, strictement croissante).
         \end{Spartie}
