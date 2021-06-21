@@ -1,0 +1,53 @@
+\documentclass[DIV=12]{scrartcl}
+\usepackage[french]{babel}
+\usepackage{newpxtext}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\selectlanguage{french}
+\usepackage[varbb]{newpxmath}
+\setlength{\parskip}{1.5\baselineskip}
+\setlength{\parindent}{0pt}
+
+\sisetup{
+    inter-unit-product = \ensuremath{{}\cdot{}}
+}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+\title{Pourquoi Certains Écrans Tactiles Fonctionnent-ils avec des Gants et d'Autres~Non~?}
+\author{Diego Van Overberghe}
+\setitemize{itemsep=1ex}
+
+\begin{document}
+    \maketitle
+   \section{L'histoire des Écrans Tactiles}
+   Deux Types de Technologies :
+   \begin{itemize}
+       \item Capteurs Tactiles Résistifs, développés en 1971  par Sam Hurst aux États-Unis.
+       \item Capteurs Tactiles Capacitifs, développés dans les années 1970 au CERN, iPhone multi-touch en 2007.
+   \end{itemize}
+   \section{Fonctionnement}
+   \begin{itemize}
+        \item Les capteurs de type résistifs sont composés de deux plaques conductrices, transparentes, séparées les unes des autres par un isolant tel qu'une couche d'air.
+        Lorsqu'un utilisateur met de la pression sur l'écran, les deux plaques se rapprochent, et la distance séparant les conducteurs diminue. La résistance est proportionnelle à la distance donc, la résistance diminue : \[R\propto\ell\quad\text{car}\quad R=\rho\frac{\ell}{A}\qquad\begin{cases}~R&\text{Résistance en \si{\ohm}}\\~\ell&\text{Distance qui sépare les plaques en \si{\metre}}\\~A&\text{Aire des conducteurs en \si{\metre\squared}}\\~\rho&\text{Résistivité électrique du matériau en \si{\ohm\meter}}\end{cases}\]
+        D'après la loi d'Ohm, si l'intensité est fixe, un changement de résistance provoque  un changement de tension entre les deux plaques.
+
+        Une grille $x$/$y$ permet de trouver l'emplacement du toucher.
+
+        Les écrans tactiles résistifs sont typiquement utilisés sur les distributeurs automatiques, les caisses automatiques au supermarché ou sur les GPS. \\
+        On peut aussi utiliser ce type d'écran sous l'eau ou dans des environments difficiles, ou avec des gants ! Finalement, ce type d'écran est moins cher à produire, mais a une durée de vie inférieure.     
+       
+        Le changement de résistance est mesuré verticalement et horizontalement par deux circuits différents, permettant d'accorder au toucher des coordonnées.
+
+        \item Les capteurs de type capacitifs sont eux aussi composés de deux plaques conductrices et transparentes. Une tension est appliquée entre les plaques que l'on assimilera à deux armatures d'un condensateur plan. Lorsque le doigt de l'utilisateur touche l'écran, il y a modification du champ électrique entre les plaques. Dans un condensateur plan, la relation entre charge, capacité électrique et tension est : \[q=C\cdot u_C\qquad\begin{cases}~q&\text{Charge en \si{\coulomb}}\\~C&\text{Capacité électrique en \si{\farad}}\\~u_C&\text{Tension en \si{\volt}}\end{cases}\]
+        Ainsi, comme le doigt est un conducteur électrique, il y a changement d'une des armatures et donc de capacité électrique au niveau de l'emplacement du toucher. Comme la tension est fixe, il y a donc un mouvement de charge, qui se caractérise par un changement d'intensité. 
+
+        Les écrans capacitifs sont plus rigides, réactifs et surtout permettent le multi-touch, fonction essentielle pour un téléphone portable moderne. Cependant, ce type d'écran nécessite des matériaux à propriétés très spécifiques, notamment un matériau à la fois transparent et conducteur. Typiquement, l'oxyde d'indium étain est utilisé.
+   \end{itemize}
+   \section{Réponse à la Question Posée}
+   Pour les écrans à capteurs résistifs, il suffit d'une force mécanique pour enregistrer un toucher, ainsi on peut utiliser ce type d'écran avec des gants sans problème.
+
+   Cependant, nous voyons donc que le fonctionnement des écrans à capteurs capacitifs dépend de la détection d'un changement de capacité. La capacité d'un condensateur plan est :
+   \[C=\frac{\epsilon_0\epsilon_r S}{d}\qquad\begin{cases}~C&\text{capacité électrique en \si{\farad}}\\~\epsilon_0&\text{permittivité du vide en $\si{\farad\per\meter}$}\\~\epsilon_r&\text{permittivité relative, sans unité}\\~S&\text{surface des armatures en \si{\metre\squared}}\\~d&\text{écartement des armatures en $\si{m}$}\end{cases}\]
+   La majorité des gants sont isolants, donc, empêchent le doigt de modifier le champ électrique entre les armatures. Le role de champ électrique est représenté par la permittivité dans l'expression de la capacité électrique. La permittivité est essentiellement la capacité d'un isolant à se polariser, c'est-à-dire comment l'isolant réagit lorsqu'un champ électrique est formé.
+\end{document}
