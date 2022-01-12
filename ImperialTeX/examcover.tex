@@ -1,0 +1,42 @@
+\documentclass[a4, 12pt]{article}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{geometry}
+% \usepackage{showframe}
+
+\definecolor{imperialblue}{RGB}{0,62,116}
+
+\newcommand{\documenttype}{Module Examination}
+\newcommand{\modulecode}{ELEC40010}
+\newcommand{\modulename}{Mathematics 1A}
+\newcommand{\cid}{02030354}
+\newcommand{\degreeyear}{1}
+\newcommand{\degree}{Electrical and Electronic Engineering}
+
+\geometry{
+    a4paper,
+    lmargin=1in,
+    rmargin=1in
+}
+
+\begin{document}
+\thispagestyle{empty}
+\includegraphics[height=2cm]{IMP_ML_1CS_4CP_CLEAR-SPACE.png}
+    % \hspace{-11em}\makebox[\paperwidth][l]{\tikz{\filldraw[imperialblue,anchor=center](0,0) rectangle (\paperwidth,2cm); \node[inner sep=0pt] at (6.5,1){\includegraphics[height=2cm]{IMP_ML_W_N_CLEAR-SPACE.png}};}}
+    \vspace{4cm}
+    \begin{center}
+        \LARGE \documenttype
+    \end{center}
+    \vspace{1cm}
+    \begin{center}
+        \textsc{\LARGE \bfseries \modulecode \quad \modulename}
+    \end{center}
+    \begin{center}
+        {\Large \degree \quad Year \degreeyear}
+    \end{center}
+    \vspace{1cm}
+    \begin{center}
+        {\Large CID: \cid}
+    \end{center}
+\end{document}
