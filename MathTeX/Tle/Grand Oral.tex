@@ -23,10 +23,10 @@
 
     $\mathrm{N}\mathrm{B}$ : Il ne s'agit pas de simplement remplacer les fonctions entières par des simplifications polynomiales, car l'approximation n'est pas valable sur un intervalle large. On  utilise donc ce rapprochement uniquement si l'on analyse l'évolution d'une variable sur un domaine~restreint.
 
-    Ceci mène naturellement à la question de pourquoi et comment développe-t-on des polynômes qui se rapprochent d'une fonction donnée, et pourquoi cette approximation n'est-elle que valable sur un petit intervalle ?
+    Ceci mène naturellement à la question de comment est-ce qu'on développe des polynômes qui se rapprochent d'une fonction donnée, et pourquoi cette approximation n'est-elle que valable sur un petit intervalle ?
 
     \section{La recherche d'une approximation pour la fonction sinus}
-    On cherche a faire l'approximation de la fonction sinus proche de zéro.
+    On cherche a faire l'approximation de la fonction sinus \emph{proche de zéro}.
 
     La fonction sinus est une fonction paire, sa représentation graphique est sinusoïdale (vague). 
     
@@ -55,8 +55,8 @@
 
     Le polynôme résultant se nomme \og développement limité \fg{}.
 
-    Soit $g$ une approximation de $f$, et $f^n$ la n-ième dérivée de $f$ : \[g(x)=\underbrace{f(a)+f'(a)x}_\text{tangente}+\frac{f''(a)x^2}{2}+\dotsb\] Ou, avec la notation sigma : \[g(x)=\sum_{n=0}^{\infty}\frac{f^n(a)x^n}{n!}+R(x)\]
+    Soit $g$ une approximation de $f$, et $f^n$ la n-ième dérivée de $f$ : \[g(x)=\underbrace{f(a)+f'(a)x}_\text{tangente}+\frac{f''(a)x^2}{2}+\dotsb\] Ou, avec la notation sigma : \[g(x)=\sum_{n=0}^{\infty}\frac{f^n(a)x^n}{n!}\]
     Le $n!$ s'explique par les règles de dérivation des fonctions de type $x^n$ car la dérivée est $nx^{n-1}$. Si l'on dérive à nouveau on a $n(n-1)x^{n-2}$, d'où le factorielle pour compenser ces facteurs.
 
-    Cette année, on a utilisé certaines méthodes telles que la méthode des rectangles ou la méthode de Monte-Carlo afin d'approcher l'aire sous une courbe. On peut utiliser le développement limité pour par exemple approcher des fonctions dont on ne peut pas exprimer de primitive avec des fonctions classiques, comme par exemple $x\mapsto e^{x^2}$. \\ Le développement linéaire d'ordre 2 serait : \[1+x^2\quad\text{d'où une primitive : }\quad x+\frac{x^3}{3}\]
+    Cette année, on a utilisé certaines méthodes telles que la méthode des rectangles ou la méthode de Monte-Carlo afin d'approcher l'aire sous une courbe. On peut utiliser le développement limité pour par exemple approcher des fonctions dont on ne peut pas exprimer de primitive avec des fonctions classiques, comme par exemple $x\mapsto e^{x^2}$. \\ Le développement limité d'ordre 2 serait : \[1+x^2\quad\text{d'où une primitive : }\quad x+\frac{x^3}{3}\]
 \end{document}
